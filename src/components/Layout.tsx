@@ -86,6 +86,10 @@ export function Layout() {
                                 <a href="https://floatingpragma.io/starklab/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>STARK Lab</a>
                                 {' \u2022 '}
                                 <a href="https://floatingpragma.io/selected-works/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Selected Works</a>
+                                {' \u2022 '}
+                                <a href="https://floatingpragma.io/awesome-zk-proofs/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>ZK Proofs</a>
+                                {' \u2022 '}
+                                <a href="https://floatingpragma.io/awesome-ai-security/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>AI Security</a>
                             </p>
                             <p style={{ marginTop: '8px' }}>
                                 Bernhard Mueller
