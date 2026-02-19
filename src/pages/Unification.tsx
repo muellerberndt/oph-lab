@@ -76,7 +76,7 @@ export function UnificationPage() {
                 representations:
             </p>
             <div className="math-block" style={{ fontSize: '0.9em' }}>
-                L&sup2;(G) = &bigoplus;<sub>R</sub> V<sub>R</sub> &otimes; V<sub>R</sub>*
+                L&sup2;(G) = ⨁<sub>R</sub> V<sub>R</sub> &otimes; V<sub>R</sub>*
             </div>
             <p style={{ marginBottom: '16px' }}>
                 Each representation R appears with multiplicity d<sub>R</sub> (the dimension of R). The

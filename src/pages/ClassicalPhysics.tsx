@@ -20,7 +20,7 @@ export function ClassicalPhysicsPage() {
 
             <div className="math-block" style={{ fontSize: '1em', lineHeight: '2.2' }}>
                 A1-A4 (Axioms) &rarr; Entropy &amp; Area Bound &rarr; Conf&#8314;(S&sup2;) = SO&#8314;(3,1) &rarr;
-                Modular Flow = Time &rarr; MaxEnt + &delta;S<sub>gen</sub> = 0 &rarr; G<sub>ab</sub> + &Lambda;g<sub>ab</sub> = 8&pi;G&langle;T<sub>ab</sub>&rangle;
+                Modular Flow = Time &rarr; MaxEnt + &delta;S<sub>gen</sub> = 0 &rarr; G<sub>ab</sub> + &Lambda;g<sub>ab</sub> = 8&pi;G⟨T<sub>ab</sub>⟩
                 &rarr; Classical Physics
             </div>
 

@@ -33,7 +33,7 @@ export function ErrorCorrectionPage() {
                     </div>
                     <div style={{ padding: '8px', background: 'rgba(0,255,65,0.1)', border: '1px solid rgba(0,255,65,0.3)' }}>
                         <div style={{ color: 'var(--accent-green)', fontWeight: 600 }}>Recovery</div>
-                        <div style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>010 &rarr; 000 &checkmark;</div>
+                        <div style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>010 &rarr; 000 ✓</div>
                     </div>
                 </div>
             </div>
@@ -45,13 +45,13 @@ export function ErrorCorrectionPage() {
                 code: it encodes 1 logical qubit into 9 physical qubits and can correct any single-qubit error.
             </p>
             <p style={{ marginBottom: '8px' }}>
-                The key idea: encode the logical qubit |&psi;&rangle; = &alpha;|0<sub>L</sub>&rangle; + &beta;|1<sub>L</sub>&rangle;
+                The key idea: encode the logical qubit |&psi;⟩ = &alpha;|0<sub>L</sub>⟩ + &beta;|1<sub>L</sub>⟩
                 into a code subspace C &sub; H<sup>&otimes;n</sup>:
             </p>
             <div className="math-block" style={{ fontSize: '0.9em', lineHeight: '1.8' }}>
-                |0<sub>L</sub>&rangle; = (|000&rangle; + |111&rangle;)(|000&rangle; + |111&rangle;)(|000&rangle; + |111&rangle;) / 2&radic;2
+                |0<sub>L</sub>⟩ = (|000⟩ + |111⟩)(|000⟩ + |111⟩)(|000⟩ + |111⟩) / 2&radic;2
                 <br />
-                |1<sub>L</sub>&rangle; = (|000&rangle; &minus; |111&rangle;)(|000&rangle; &minus; |111&rangle;)(|000&rangle; &minus; |111&rangle;) / 2&radic;2
+                |1<sub>L</sub>⟩ = (|000⟩ &minus; |111⟩)(|000⟩ &minus; |111⟩)(|000⟩ &minus; |111⟩) / 2&radic;2
             </div>
             <p style={{ marginBottom: '16px' }}>
                 Errors are detected by measuring syndromes (without disturbing the logical information) and
@@ -137,7 +137,7 @@ export function ErrorCorrectionPage() {
                     holographic code, the distance is related to the minimal surface area (in Planck units).
                 </p>
                 <p>
-                    The Planck area l<sub>P</sub>&sup2; = &hbar;G/c&sup3; is the "pixel size" of the screen.
+                    The Planck area l<sub>P</sub>&sup2; = ℏG/c&sup3; is the "pixel size" of the screen.
                     The code distance is the number of pixels in the minimal RT surface, which is A(&gamma;)/(4l<sub>P</sub>&sup2;).
                     This is why gravity breaks down at the Planck scale: you cannot correct errors smaller than one
                     pixel.

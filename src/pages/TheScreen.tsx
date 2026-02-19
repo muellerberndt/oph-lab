@@ -200,7 +200,7 @@ export function TheScreenPage() {
                 </p>
                 <p>
                     Crucially, the conformal group of S&sup2; turns out to be the Lorentz group:
-                    Conf&sup;(S&sup2;) = PSL(2,&Copf;) = SO&sup;(3,1). Special relativity is a screen symmetry.
+                    Conf&sup;(S&sup2;) = PSL(2,ℂ) = SO&sup;(3,1). Special relativity is a screen symmetry.
                 </p>
             </Explainer>
 

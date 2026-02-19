@@ -70,7 +70,7 @@ export function GravityPage() {
             </p>
 
             <div className="math-block" style={{ fontSize: '1.1em', marginBottom: '32px' }}>
-                MaxEnt &rArr; &delta;S<sub>gen</sub> = 0 &rArr; &delta;Q = T dS &rArr; G<sub>ab</sub> + &Lambda;g<sub>ab</sub> = 8&pi;G&langle;T<sub>ab</sub>&rangle;
+                MaxEnt &rArr; &delta;S<sub>gen</sub> = 0 &rArr; &delta;Q = T dS &rArr; G<sub>ab</sub> + &Lambda;g<sub>ab</sub> = 8&pi;G⟨T<sub>ab</sub>⟩
             </div>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Derivation, Step by Step</h3>
@@ -136,7 +136,7 @@ export function GravityPage() {
                 just outside this horizon sees:
             </p>
             <ul style={{ paddingLeft: '20px', lineHeight: '1.8', marginBottom: '16px' }}>
-                <li>A <strong>thermal state</strong> at the Unruh temperature T = &hbar;a/(2&pi;ck<sub>B</sub>)</li>
+                <li>A <strong>thermal state</strong> at the Unruh temperature T = ℏa/(2&pi;ck<sub>B</sub>)</li>
                 <li>An <strong>entropy</strong> proportional to the horizon area: S = A/(4l<sub>P</sub>&sup2;)</li>
                 <li><strong>Heat flux</strong> &delta;Q = T<sub>ab</sub> k<sup>a</sup> d&Sigma;<sup>b</sup> across the horizon</li>
             </ul>
@@ -146,7 +146,7 @@ export function GravityPage() {
                 The only tensor equation that satisfies this constraint for all null k<sup>a</sup> is:
             </p>
             <div className="math-block" style={{ fontSize: '1.1em' }}>
-                G<sub>ab</sub> + &Lambda;g<sub>ab</sub> = 8&pi;G &langle;T<sub>ab</sub>&rangle;
+                G<sub>ab</sub> + &Lambda;g<sub>ab</sub> = 8&pi;G ⟨T<sub>ab</sub>⟩
             </div>
             <p style={{ marginBottom: '24px' }}>
                 Einstein's equations. Gravity is not a force &mdash; it is what happens when entanglement entropy
@@ -185,7 +185,7 @@ export function GravityPage() {
 
             <Explainer title="Beyond semiclassical: quantum corrections">
                 <p>
-                    The derivation above gives the semiclassical Einstein equations with &langle;T<sub>ab</sub>&rangle;
+                    The derivation above gives the semiclassical Einstein equations with ⟨T<sub>ab</sub>⟩
                     on the right-hand side. Quantum corrections arise from:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>

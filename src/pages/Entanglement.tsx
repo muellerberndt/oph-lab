@@ -66,7 +66,7 @@ export function EntanglementPage() {
             <p style={{ marginBottom: '16px' }}>
                 Consider two observers, Alice and Bob, who share an entangled pair (say, a spin singlet).
                 Each chooses a measurement direction and records +1 or &minus;1. The correlation function
-                E(a,b) = &langle;A(a) &middot; B(b)&rangle; measures how correlated their outcomes are for
+                E(a,b) = ⟨A(a) &middot; B(b)⟩ measures how correlated their outcomes are for
                 directions a and b.
             </p>
             <p style={{ marginBottom: '8px' }}>
@@ -109,7 +109,7 @@ export function EntanglementPage() {
             </p>
             <p style={{ marginBottom: '16px' }}>
                 In OPH, the Tsirelson bound follows from the complex Hilbert space structure (which follows
-                from the screen being &Copf;P&sup1;). The bound 2&radic;2 is the maximum value of 2&radic;2
+                from the screen being ℂP&sup1;). The bound 2&radic;2 is the maximum value of 2&radic;2
                 &middot; sin(&theta;) for the optimal angle &theta; = &pi;/4, a consequence of the geometry
                 of the complex projective space.
             </p>

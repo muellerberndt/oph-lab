@@ -52,7 +52,7 @@ export function DeSitterPage() {
                 de Sitter space detects thermal radiation at a temperature set by the Hubble parameter H:
             </p>
             <div className="math-block" style={{ fontSize: '1.1em' }}>
-                T<sub>dS</sub> = &hbar;H / (2&pi;k<sub>B</sub>)
+                T<sub>dS</sub> = ℏH / (2&pi;k<sub>B</sub>)
             </div>
             <p style={{ marginBottom: '16px' }}>
                 This is the de Sitter analog of the Unruh temperature: the cosmological horizon acts like a Rindler

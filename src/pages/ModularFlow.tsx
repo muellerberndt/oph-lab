@@ -17,7 +17,7 @@ export function ModularFlowPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Tomita-Takesaki Modular Theory</h3>
             <p style={{ marginBottom: '16px' }}>
-                Given a von Neumann algebra A (the observables of a patch) and a cyclic separating state |&Omega;&rangle;
+                Given a von Neumann algebra A (the observables of a patch) and a cyclic separating state |&Omega;⟩
                 (the vacuum), the Tomita-Takesaki theorem constructs two operators:
             </p>
 
@@ -25,9 +25,9 @@ export function ModularFlowPage() {
                 <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '8px 16px', fontSize: '0.85em' }}>
                     <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>S</span>
                     <span style={{ color: 'var(--text-secondary)' }}>
-                        The Tomita operator: S(A|&Omega;&rangle;) = A&dagger;|&Omega;&rangle; for A &isin; A
+                        The Tomita operator: S(A|&Omega;⟩) = A†|&Omega;⟩ for A &isin; A
                     </span>
-                    <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>&Delta; = S&dagger;S</span>
+                    <span style={{ color: 'var(--accent-cyan)', fontWeight: 600 }}>&Delta; = S†S</span>
                     <span style={{ color: 'var(--text-secondary)' }}>
                         The modular operator: a positive self-adjoint operator
                     </span>
@@ -84,7 +84,7 @@ export function ModularFlowPage() {
                 sees the vacuum as a thermal state. The Unruh temperature is:
             </p>
             <div className="math-block" style={{ fontSize: '1.1em' }}>
-                T<sub>U</sub> = &hbar;a / (2&pi;ck<sub>B</sub>)
+                T<sub>U</sub> = ℏa / (2&pi;ck<sub>B</sub>)
             </div>
             <p style={{ marginBottom: '16px' }}>
                 where a is the proper acceleration. This is not a separate postulate but a theorem: modular flow

@@ -70,7 +70,7 @@ export function EntropyPage() {
             </div>
             <p style={{ marginBottom: '16px' }}>
                 For a pure state, S = 0 (no ignorance). For a maximally mixed state on a d-dimensional Hilbert space,
-                S = ln d. Crucially, for a bipartite pure state |&psi;&rangle;<sub>AB</sub>, the reduced states &rho;<sub>A</sub> and
+                S = ln d. Crucially, for a bipartite pure state |&psi;⟩<sub>AB</sub>, the reduced states &rho;<sub>A</sub> and
                 &rho;<sub>B</sub> have equal von Neumann entropy &mdash; this is <strong>entanglement entropy</strong>, and
                 it is the bridge between quantum information and geometry.
             </p>
@@ -84,7 +84,7 @@ export function EntropyPage() {
                 S<sub>BH</sub> = A / (4 l<sub>P</sub>&sup2;)
             </div>
             <p style={{ marginBottom: '16px' }}>
-                where A is the horizon area and l<sub>P</sub> = &radic;(&hbar;G/c&sup3;) &asymp; 1.616 &times; 10&sup;&minus;&sup3;&sup5; m
+                where A is the horizon area and l<sub>P</sub> = &radic;(ℏG/c&sup3;) &asymp; 1.616 &times; 10&sup;&minus;&sup3;&sup5; m
                 is the Planck length. This says a black hole of area A can store at most A/(4l<sub>P</sub>&sup2;) nats of information.
             </p>
             <p style={{ marginBottom: '24px' }}>

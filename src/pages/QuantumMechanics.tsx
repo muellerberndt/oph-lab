@@ -21,11 +21,11 @@ export function QuantumMechanicsPage() {
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Step 1: Why Complex Hilbert Spaces?</h3>
             <p style={{ marginBottom: '16px' }}>
                 Axiom A1 assigns a von Neumann algebra A(P) to each patch P. Von Neumann algebras act on
-                Hilbert spaces over &Copf; (the complex numbers). But why complex, not real or quaternionic?
+                Hilbert spaces over ℂ (the complex numbers). But why complex, not real or quaternionic?
             </p>
             <p style={{ marginBottom: '16px' }}>
-                The answer comes from the screen S&sup2; and its conformal structure. The sphere S&sup2; = &Copf;P&sup1;
-                is a complex manifold. The group PSL(2,&Copf;) acts by M&ouml;bius transformations. The natural
+                The answer comes from the screen S&sup2; and its conformal structure. The sphere S&sup2; = ℂP&sup1;
+                is a complex manifold. The group PSL(2,ℂ) acts by M&ouml;bius transformations. The natural
                 representation theory of this group requires complex Hilbert spaces. Real Hilbert spaces would
                 not support the conformal structure of the screen; quaternionic spaces would over-constrain it.
             </p>
@@ -35,7 +35,7 @@ export function QuantumMechanicsPage() {
                 Given a quantum state &rho; and an observable A, the Born rule says the expectation value is:
             </p>
             <div className="math-block">
-                &langle;A&rangle; = Tr(&rho; A)
+                ⟨A⟩ = Tr(&rho; A)
             </div>
             <p style={{ marginBottom: '16px' }}>
                 In standard QM, this is a postulate (Born's rule). In OPH, it is a <strong>theorem</strong>.
@@ -142,15 +142,15 @@ export function QuantumMechanicsPage() {
             <Explainer title="Superposition and interference">
                 <p>
                     Superposition is not a property of the system but of the observer's <em>state of knowledge</em>.
-                    When an observer assigns &rho; = |+&rangle;&langle;+| where |+&rangle; = (|0&rangle; + |1&rangle;)/&radic;2,
+                    When an observer assigns &rho; = |+⟩⟨+| where |+⟩ = (|0⟩ + |1⟩)/&radic;2,
                     they are saying: "I have a definite state of knowledge, but that knowledge is incompatible with
                     knowing whether the outcome is 0 or 1."
                 </p>
                 <p>
                     Interference arises because the Born rule involves Tr(&rho;P), which for pure states gives
-                    |&langle;&psi;|&phi;&rangle;|&sup2;. The cross-terms in this expression are interference terms.
+                    |⟨&psi;|&phi;⟩|&sup2;. The cross-terms in this expression are interference terms.
                     They are a consequence of the complex Hilbert space structure, which is itself a consequence
-                    of the screen being S&sup2; = &Copf;P&sup1;.
+                    of the screen being S&sup2; = ℂP&sup1;.
                 </p>
             </Explainer>
 
