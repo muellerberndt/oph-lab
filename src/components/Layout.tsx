@@ -1,12 +1,21 @@
-import { useState } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import './Layout.css';
 import { WALKTHROUGH_STEPS, PART_LABELS, PART_COLORS, type PartId } from '../routes/walkthrough';
 import { WalkthroughNav } from './WalkthroughNav';
 
+const SITE_SUFFIX = ' | OPH Lab';
+
 export function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        const path = location.pathname.replace(/\/$/, '') || '/';
+        const step = WALKTHROUGH_STEPS.find(s => s.to === path);
+        document.title = step ? step.seoTitle + SITE_SUFFIX : 'OPH Lab — Theory of Everything Interactive Guide';
+    }, [location.pathname]);
 
     // Group steps by part
     const parts = new Map<PartId, typeof WALKTHROUGH_STEPS>();
