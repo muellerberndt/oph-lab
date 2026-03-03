@@ -1,6 +1,97 @@
+import { useMemo, useState } from 'react';
 import { Explainer } from '../components/Explainer';
+import {
+    BETA_COEFFICIENTS_MSSM_LIKE,
+    BETA_COEFFICIENTS_SM_1LOOP,
+    PIXEL_REFERENCE,
+    solveGaugeClosure,
+} from '../core/ophMath';
+
+type RunningPreset = 'sm-only' | 'edge-canonical' | 'edge-custom';
+
+const ALPHA_EM_INV_REFERENCE = 127.952;
+const SIN2_THETA_W_REFERENCE = 0.23122;
+const ALPHA_S_REFERENCE = 0.1179;
+
+function formatNumber(value: number, digits = 3) {
+    if (!Number.isFinite(value)) {
+        return 'n/a';
+    }
+    return value.toExponential(digits);
+}
+
+function runOneLoopAlpha(alphaU: number, betaCoefficient: number, mu0GeV: number, muGeV: number): number {
+    if (alphaU <= 0 || mu0GeV <= 0 || muGeV <= 0) {
+        return Number.NaN;
+    }
+    const inverse = (1 / alphaU) + (betaCoefficient / (2 * Math.PI)) * Math.log(mu0GeV / muGeV);
+    if (!Number.isFinite(inverse) || inverse <= 0) {
+        return Number.NaN;
+    }
+    return 1 / inverse;
+}
 
 export function UnificationPage() {
+    const [preset, setPreset] = useState<RunningPreset>('edge-canonical');
+    const [edgeShiftScale, setEdgeShiftScale] = useState(1);
+    const [pixelConstant, setPixelConstant] = useState(PIXEL_REFERENCE);
+    const [su2MaxJ, setSu2MaxJ] = useState(30);
+    const [su3MaxIndex, setSu3MaxIndex] = useState(14);
+    const [alphaStep, setAlphaStep] = useState(0.0005);
+    const [probeLogMu, setProbeLogMu] = useState(2);
+
+    const effectiveShiftScale =
+        preset === 'sm-only' ? 0 :
+        preset === 'edge-canonical' ? 1 :
+        edgeShiftScale;
+
+    const betaCoefficients = useMemo<[number, number, number]>(() => {
+        return [0, 1, 2].map(index => {
+            const sm = BETA_COEFFICIENTS_SM_1LOOP[index];
+            const delta = BETA_COEFFICIENTS_MSSM_LIKE[index] - sm;
+            return sm + effectiveShiftScale * delta;
+        }) as [number, number, number];
+    }, [effectiveShiftScale]);
+
+    const closure = useMemo(
+        () =>
+            solveGaugeClosure(pixelConstant, {
+                betaCoefficients,
+                su2MaxJ,
+                su3MaxIndex,
+                alphaRange: { min: 0.015, max: 0.09, step: alphaStep },
+            }),
+        [alphaStep, betaCoefficients, pixelConstant, su2MaxJ, su3MaxIndex]
+    );
+
+    const probeMuGeV = Math.pow(10, probeLogMu);
+
+    const probeCouplings = useMemo(() => {
+        const alpha1 = runOneLoopAlpha(closure.alphaU, betaCoefficients[0], closure.unificationScaleGeV, probeMuGeV);
+        const alpha2 = runOneLoopAlpha(closure.alphaU, betaCoefficients[1], closure.unificationScaleGeV, probeMuGeV);
+        const alpha3 = runOneLoopAlpha(closure.alphaU, betaCoefficients[2], closure.unificationScaleGeV, probeMuGeV);
+        const alphaEm =
+            Number.isFinite(alpha1) && Number.isFinite(alpha2) && alpha1 > 0 && alpha2 > 0
+                ? 1 / ((1 / alpha2) + (1 / ((3 / 5) * alpha1)))
+                : Number.NaN;
+        const sin2ThetaW =
+            Number.isFinite(alphaEm) && Number.isFinite(alpha2) && alpha2 > 0 ? alphaEm / alpha2 : Number.NaN;
+        return { alpha1, alpha2, alpha3, alphaEm, sin2ThetaW };
+    }, [betaCoefficients, closure.alphaU, closure.unificationScaleGeV, probeMuGeV]);
+
+    const deltaB = betaCoefficients.map((value, index) => value - BETA_COEFFICIENTS_SM_1LOOP[index]) as [number, number, number];
+
+    const alphaEmInv = Number.isFinite(closure.alphaEm) && closure.alphaEm > 0 ? 1 / closure.alphaEm : Number.NaN;
+    const alphaEmResidualPercent = Number.isFinite(alphaEmInv)
+        ? ((alphaEmInv - ALPHA_EM_INV_REFERENCE) / ALPHA_EM_INV_REFERENCE) * 100
+        : Number.NaN;
+    const sin2ResidualPercent = Number.isFinite(closure.sin2ThetaW)
+        ? ((closure.sin2ThetaW - SIN2_THETA_W_REFERENCE) / SIN2_THETA_W_REFERENCE) * 100
+        : Number.NaN;
+    const alphaSResidualPercent = Number.isFinite(closure.alpha3)
+        ? ((closure.alpha3 - ALPHA_S_REFERENCE) / ALPHA_S_REFERENCE) * 100
+        : Number.NaN;
+
     return (
         <div>
             <div className="section-header">
@@ -9,175 +100,259 @@ export function UnificationPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                In the Standard Model, the three gauge couplings (g<sub>1</sub>, g<sub>2</sub>, g<sub>3</sub>)
-                run with energy due to quantum loop corrections. A tantalizing observation: if you extrapolate
-                the couplings to high energy, they <em>almost</em> meet at a single point around 10<sup>16</sup> GeV.
-                They don't quite meet in the Standard Model alone, but they do in the MSSM (Minimal Supersymmetric
-                Standard Model).
-            </p>
-            <p style={{ marginBottom: '24px' }}>
-                OPH achieves the same unification <strong>without superpartner particles</strong>. The edge modes
-                at patch boundaries produce the exact same beta-function shifts as MSSM superpartners. Same math,
-                no new particles.
+                This page now mirrors the latest supplement derivation: choose an edge-running model, solve the pixel
+                closure for <strong>alpha_U</strong>, then inspect one-loop running at any scale.
             </p>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Beta Functions and Running Couplings</h3>
-            <p style={{ marginBottom: '8px' }}>
-                The one-loop renormalization group equation for each gauge coupling &alpha;<sub>i</sub> = g<sub>i</sub>&sup2;/(4&pi;) is:
-            </p>
-            <div className="math-block">
-                &alpha;<sub>i</sub><sup>&minus;1</sup>(&mu;) = &alpha;<sub>i</sub><sup>&minus;1</sup>(M<sub>Z</sub>) &minus; (b<sub>i</sub> / 2&pi;) &middot; ln(&mu; / M<sub>Z</sub>)
-            </div>
-            <p style={{ marginBottom: '8px' }}>
-                where the b<sub>i</sub> coefficients determine how fast each coupling runs:
-            </p>
-            <div className="card" style={{ marginBottom: '24px' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px', fontSize: '0.85em', textAlign: 'center' }}>
-                    <div style={{ padding: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid var(--border-color)' }}>
-                        <div style={{ color: 'var(--accent-green)', fontWeight: 600, marginBottom: '4px' }}>U(1)<sub>Y</sub></div>
-                        <div style={{ color: 'var(--text-secondary)' }}>b<sub>1</sub> = 41/10</div>
-                        <div style={{ color: 'var(--text-muted)', fontSize: '0.85em' }}>(grows stronger)</div>
+            <div className="demo-container">
+                <div className="demo-label">Interactive Unification Derivation</div>
+
+                <div style={{ display: 'grid', gap: '14px', marginBottom: '18px' }}>
+                    <div>
+                        <div style={{ fontSize: '0.8em', color: 'var(--accent-gold)', marginBottom: '6px' }}>Running preset</div>
+                        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                            <button
+                                className={`btn ${preset === 'sm-only' ? 'btn-primary' : 'btn-ghost'}`}
+                                onClick={() => setPreset('sm-only')}
+                                style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                            >
+                                SM only
+                            </button>
+                            <button
+                                className={`btn ${preset === 'edge-canonical' ? 'btn-primary' : 'btn-ghost'}`}
+                                onClick={() => setPreset('edge-canonical')}
+                                style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                            >
+                                Edge canonical
+                            </button>
+                            <button
+                                className={`btn ${preset === 'edge-custom' ? 'btn-primary' : 'btn-ghost'}`}
+                                onClick={() => setPreset('edge-custom')}
+                                style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                            >
+                                Edge custom
+                            </button>
+                        </div>
                     </div>
-                    <div style={{ padding: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid var(--border-color)' }}>
-                        <div style={{ color: 'var(--accent-blue)', fontWeight: 600, marginBottom: '4px' }}>SU(2)<sub>L</sub></div>
-                        <div style={{ color: 'var(--text-secondary)' }}>b<sub>2</sub> = &minus;19/6</div>
-                        <div style={{ color: 'var(--text-muted)', fontSize: '0.85em' }}>(grows weaker)</div>
+
+                    {preset === 'edge-custom' && (
+                        <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                                <span style={{ color: 'var(--accent-gold)' }}>Edge beta-shift scale s</span>
+                                <span style={{ color: 'var(--accent-cyan)' }}>{edgeShiftScale.toFixed(3)}</span>
+                            </div>
+                            <input
+                                type="range"
+                                min="0"
+                                max="1.6"
+                                step="0.01"
+                                value={edgeShiftScale}
+                                onChange={event => setEdgeShiftScale(Number(event.target.value))}
+                            />
+                        </div>
+                    )}
+
+                    <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                            <span style={{ color: 'var(--accent-gold)' }}>Pixel constant P = a_cell / l_P^2</span>
+                            <span style={{ color: 'var(--accent-cyan)' }}>{pixelConstant.toFixed(5)}</span>
+                        </div>
+                        <input
+                            type="range"
+                            min="1.15"
+                            max="2.15"
+                            step="0.005"
+                            value={pixelConstant}
+                            onChange={event => setPixelConstant(Number(event.target.value))}
+                        />
                     </div>
-                    <div style={{ padding: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid var(--border-color)' }}>
-                        <div style={{ color: 'var(--accent-rose)', fontWeight: 600, marginBottom: '4px' }}>SU(3)<sub>c</sub></div>
-                        <div style={{ color: 'var(--text-secondary)' }}>b<sub>3</sub> = &minus;7</div>
-                        <div style={{ color: 'var(--text-muted)', fontSize: '0.85em' }}>(asymptotic freedom)</div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+                        <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                                <span style={{ color: 'var(--accent-gold)' }}>SU(2) cutoff j_max</span>
+                                <span style={{ color: 'var(--accent-cyan)' }}>{su2MaxJ}</span>
+                            </div>
+                            <input
+                                type="range"
+                                min="8"
+                                max="60"
+                                step="1"
+                                value={su2MaxJ}
+                                onChange={event => setSu2MaxJ(Number(event.target.value))}
+                            />
+                        </div>
+
+                        <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                                <span style={{ color: 'var(--accent-gold)' }}>SU(3) cutoff p,q max</span>
+                                <span style={{ color: 'var(--accent-cyan)' }}>{su3MaxIndex}</span>
+                            </div>
+                            <input
+                                type="range"
+                                min="4"
+                                max="20"
+                                step="1"
+                                value={su3MaxIndex}
+                                onChange={event => setSu3MaxIndex(Number(event.target.value))}
+                            />
+                        </div>
+
+                        <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                                <span style={{ color: 'var(--accent-gold)' }}>Alpha scan step</span>
+                                <span style={{ color: 'var(--accent-cyan)' }}>{alphaStep.toFixed(4)}</span>
+                            </div>
+                            <input
+                                type="range"
+                                min="0.0002"
+                                max="0.0015"
+                                step="0.0001"
+                                value={alphaStep}
+                                onChange={event => setAlphaStep(Number(event.target.value))}
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                            <span style={{ color: 'var(--accent-gold)' }}>Probe scale log10(mu/GeV)</span>
+                            <span style={{ color: 'var(--accent-cyan)' }}>{probeLogMu.toFixed(2)}</span>
+                        </div>
+                        <input
+                            type="range"
+                            min="2"
+                            max="16"
+                            step="0.1"
+                            value={probeLogMu}
+                            onChange={event => setProbeLogMu(Number(event.target.value))}
+                        />
+                    </div>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '10px' }}>
+                    <div className="card" style={{ padding: '12px' }}>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)' }}>b = (b1,b2,b3)</div>
+                        <div style={{ color: 'var(--accent-cyan)', fontWeight: 700, fontSize: '0.84em' }}>
+                            ({betaCoefficients[0].toFixed(3)}, {betaCoefficients[1].toFixed(3)}, {betaCoefficients[2].toFixed(3)})
+                        </div>
+                    </div>
+                    <div className="card" style={{ padding: '12px' }}>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)' }}>alpha_U^-1</div>
+                        <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{closure.alphaInvU.toFixed(3)}</div>
+                    </div>
+                    <div className="card" style={{ padding: '12px' }}>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)' }}>M_U</div>
+                        <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{formatNumber(closure.unificationScaleGeV, 2)} GeV</div>
+                    </div>
+                    <div className="card" style={{ padding: '12px' }}>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)' }}>Pixel residual</div>
+                        <div
+                            style={{
+                                color: Math.abs(closure.pixelResidual) < 5e-4 ? 'var(--accent-green)' : 'var(--accent-rose)',
+                                fontWeight: 700,
+                            }}
+                        >
+                            {closure.pixelResidual.toExponential(3)}
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>MSSM-Like Beta Shifts Without Superpartners</h3>
-            <p style={{ marginBottom: '8px' }}>
-                In the MSSM, each Standard Model particle has a superpartner that shifts the beta coefficients.
-                The MSSM shifts are:
-            </p>
-            <div className="math-block">
-                &Delta;b &asymp; (2.49, 4.38, 3.97)
-            </div>
-            <p style={{ marginBottom: '16px' }}>
-                (for U(1), SU(2), SU(3) respectively). These shifts bring the three couplings to exact unification
-                at M<sub>GUT</sub> &asymp; 2 &times; 10<sup>16</sup> GeV.
-            </p>
-            <p style={{ marginBottom: '16px' }}>
-                In OPH, these same shifts arise from <strong>edge modes at patch boundaries</strong>. The
-                edge-sector Hilbert space at each boundary contributes to the running of the couplings in
-                exactly the same way as MSSM superpartners. The mechanism is the Peter-Weyl second-index
-                decomposition of the edge-mode partition function.
-            </p>
+            <h3 style={{ fontSize: '1em', marginTop: '28px' }}>Derivation Stages</h3>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Peter-Weyl Mechanism</h3>
-            <p style={{ marginBottom: '16px' }}>
-                The Peter-Weyl theorem decomposes the L&sup2; space on a compact group G into irreducible
-                representations:
-            </p>
-            <div className="math-block" style={{ fontSize: '0.9em' }}>
-                L&sup2;(G) = ⨁<sub>R</sub> V<sub>R</sub> &otimes; V<sub>R</sub>*
+            <div className="card" style={{ marginBottom: '10px', borderLeft: '3px solid var(--accent-gold)' }}>
+                <h4 style={{ margin: '0 0 10px 0', fontSize: '0.86em' }}>Stage 1: Edge-sector beta shift</h4>
+                <div className="math-block" style={{ fontSize: '0.84em' }}>
+                    b_i = b_i^SM + s * Delta b_i, Delta b_i = b_i^edge-canonical - b_i^SM
+                </div>
+                <div style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
+                    s = {effectiveShiftScale.toFixed(3)}, Delta b = ({deltaB[0].toFixed(3)}, {deltaB[1].toFixed(3)}, {deltaB[2].toFixed(3)})
+                </div>
             </div>
-            <p style={{ marginBottom: '16px' }}>
-                Each representation R appears with multiplicity d<sub>R</sub> (the dimension of R). The
-                <strong> first index</strong> transforms under gauge transformations (and contributes to the
-                standard beta function). The <strong>second index</strong> is an internal degree of freedom
-                of the edge mode.
-            </p>
-            <p style={{ marginBottom: '16px' }}>
-                When you integrate over the edge modes (as required by the path integral at patch boundaries),
-                the second index contributes additional running. This contribution has exactly the same
-                mathematical structure as a superpartner's loop contribution. The result: MSSM-like beta
-                shifts without MSSM particles.
-            </p>
 
-            <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-blue)' }}>
-                <h4 style={{ margin: '0 0 12px 0', fontSize: '0.9em', color: 'var(--accent-blue)' }}>
-                    Comparison: MSSM vs. OPH
-                </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.85em' }}>
+            <div className="card" style={{ marginBottom: '10px', borderLeft: '3px solid var(--accent-blue)' }}>
+                <h4 style={{ margin: '0 0 10px 0', fontSize: '0.86em' }}>Stage 2: Pixel-derived unification scale</h4>
+                <div className="math-block" style={{ fontSize: '0.84em' }}>
+                    M_U = (E_P / e^(2pi)) * P^(1/6)
+                </div>
+                <div style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
+                    M_U = {formatNumber(closure.unificationScaleGeV, 3)} GeV from P = {pixelConstant.toFixed(5)}
+                </div>
+            </div>
+
+            <div className="card" style={{ marginBottom: '10px', borderLeft: '3px solid var(--accent-cyan)' }}>
+                <h4 style={{ margin: '0 0 10px 0', fontSize: '0.86em' }}>Stage 3: Solve alpha_U from pixel closure</h4>
+                <div className="math-block" style={{ fontSize: '0.84em' }}>
+                    P/4 ?= lbar_SU2(4pi^2 alpha2) + lbar_SU3(4pi^2 alpha3)
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '8px', fontSize: '0.82em' }}>
+                    <div>lbar_SU2 = {closure.entropySU2.toFixed(6)}</div>
+                    <div>lbar_SU3 = {closure.entropySU3.toFixed(6)}</div>
+                    <div>target P/4 = {closure.entropyTarget.toFixed(6)}</div>
+                    <div>alpha_U = {closure.alphaU.toFixed(5)}</div>
+                </div>
+            </div>
+
+            <div className="card" style={{ marginBottom: '12px', borderLeft: '3px solid var(--accent-rose)' }}>
+                <h4 style={{ margin: '0 0 10px 0', fontSize: '0.86em' }}>Stage 4: Run couplings to probe scale</h4>
+                <div className="math-block" style={{ fontSize: '0.84em' }}>
+                    alpha_i^-1(mu) = alpha_U^-1 + (b_i/2pi) ln(M_U/mu)
+                </div>
+                <div style={{ fontSize: '0.82em', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                    mu = {formatNumber(probeMuGeV, 2)} GeV
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '8px', fontSize: '0.82em' }}>
+                    <div>alpha1(mu) = {probeCouplings.alpha1.toFixed(5)}</div>
+                    <div>alpha2(mu) = {probeCouplings.alpha2.toFixed(5)}</div>
+                    <div>alpha3(mu) = {probeCouplings.alpha3.toFixed(5)}</div>
+                    <div>alpha_em(mu)^-1 = {Number.isFinite(probeCouplings.alphaEm) && probeCouplings.alphaEm > 0 ? (1 / probeCouplings.alphaEm).toFixed(3) : 'n/a'}</div>
+                </div>
+            </div>
+
+            <div className="card" style={{ borderLeft: '3px solid var(--accent-green)', marginBottom: '18px' }}>
+                <h4 style={{ marginTop: 0, fontSize: '0.86em' }}>Low-Energy Check Around m_Z</h4>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '8px', fontSize: '0.8em' }}>
                     <div>
-                        <div style={{ color: 'var(--accent-rose)', fontWeight: 600, marginBottom: '8px' }}>
-                            MSSM Approach
-                        </div>
-                        <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8', color: 'var(--text-secondary)' }}>
-                            <li>Postulate superpartner for each SM particle</li>
-                            <li>Superpartner loops shift beta functions</li>
-                            <li>Couplings unify at 10<sup>16</sup> GeV</li>
-                            <li>Predicts superpartners at TeV scale</li>
-                            <li>None found at LHC</li>
-                        </ul>
+                        alpha_em^-1: {Number.isFinite(alphaEmInv) ? alphaEmInv.toFixed(3) : 'n/a'} (ref {ALPHA_EM_INV_REFERENCE})<br />
+                        residual: {Number.isFinite(alphaEmResidualPercent) ? `${alphaEmResidualPercent.toFixed(2)}%` : 'n/a'}
                     </div>
                     <div>
-                        <div style={{ color: 'var(--accent-green)', fontWeight: 600, marginBottom: '8px' }}>
-                            OPH Approach
-                        </div>
-                        <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8', color: 'var(--text-secondary)' }}>
-                            <li>Edge modes arise from patch boundaries</li>
-                            <li>Peter-Weyl second index shifts beta functions</li>
-                            <li>Couplings unify at 10<sup>16</sup> GeV</li>
-                            <li>Predicts NO superpartners at any scale</li>
-                            <li>Consistent with LHC null results</li>
-                        </ul>
+                        sin^2(theta_W): {closure.sin2ThetaW.toFixed(5)} (ref {SIN2_THETA_W_REFERENCE})<br />
+                        residual: {Number.isFinite(sin2ResidualPercent) ? `${sin2ResidualPercent.toFixed(2)}%` : 'n/a'}
+                    </div>
+                    <div>
+                        alpha_s: {closure.alpha3.toFixed(5)} (ref {ALPHA_S_REFERENCE})<br />
+                        residual: {Number.isFinite(alphaSResidualPercent) ? `${alphaSResidualPercent.toFixed(2)}%` : 'n/a'}
                     </div>
                 </div>
             </div>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Unification Without a Simple Group</h3>
-            <p style={{ marginBottom: '16px' }}>
-                Standard grand unification embeds SU(3) &times; SU(2) &times; U(1) into a simple group
-                (SU(5), SO(10), or E<sub>6</sub>) that breaks at M<sub>GUT</sub>. This predicts proton decay
-                and magnetic monopoles.
-            </p>
-            <p style={{ marginBottom: '16px' }}>
-                OPH achieves coupling unification in a different way: the couplings converge because the
-                edge-mode contributions make all three beta functions flow to a common value, but the gauge
-                group remains a <strong>product group</strong> at all scales. There is no simple GUT group,
-                no proton decay, and no magnetic monopoles.
-            </p>
-            <p style={{ marginBottom: '16px' }}>
-                The "unification" in OPH is not a unification of gauge groups but a unification of
-                <strong> information content</strong>: at the unification scale, each gauge factor saturates
-                the same fraction of the screen entropy budget. The couplings converge because the screen
-                treats all edge sectors democratically at high enough energy.
-            </p>
+            <div className="card" style={{ borderLeft: '3px solid var(--accent-blue)', marginBottom: '18px' }}>
+                <h4 style={{ marginTop: 0, fontSize: '0.86em' }}>Concept Dictionary</h4>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '8px', fontSize: '0.78em' }}>
+                    <div><strong>b_i</strong>: one-loop beta coefficients for U(1), SU(2), SU(3).</div>
+                    <div><strong>Delta b_i</strong>: edge-sector shift relative to SM one-loop running.</div>
+                    <div><strong>P</strong>: pixel constant controlling M_U and closure target P/4.</div>
+                    <div><strong>lbar_SU2/lbar_SU3</strong>: edge entropy means from heat-kernel sums.</div>
+                    <div><strong>alpha_U</strong>: unified coupling solved by entropy closure, not fit directly.</div>
+                    <div><strong>mu</strong>: probe scale where running couplings are evaluated.</div>
+                </div>
+            </div>
 
-            <Explainer title="Why the LHC found no superpartners">
+            <Explainer title="How this aligns with the latest derivation notes">
                 <p>
-                    The LHC has searched for superpartners up to several TeV with null results. In the MSSM,
-                    naturalness arguments suggested superpartners should appear near the electroweak scale
-                    (&sim;1 TeV). Their absence is the "SUSY naturalness crisis."
-                </p>
-                <p>
-                    In OPH, there was never a prediction of superpartners. The beta-function shifts needed for
-                    unification come from edge modes, not particles. The LHC null results are a <em>success</em>
-                    for OPH, not a puzzle.
+                    The supplement decomposes unification into exactly these parts: edge-sector beta shifts,
+                    pixel-constraint closure, then one-loop running checks. This simulator keeps each stage visible so
+                    you can perturb assumptions one by one.
                 </p>
             </Explainer>
 
-            <Explainer title="The proton decay prediction">
+            <Explainer title="What changes when you switch presets">
                 <p>
-                    GUTs predict proton decay via leptoquark gauge bosons (X, Y) with mass &sim;M<sub>GUT</sub>.
-                    The predicted lifetime is &tau;<sub>p</sub> &sim; M<sub>GUT</sub><sup>4</sup> / (m<sub>p</sub><sup>5</sup> &alpha;<sub>GUT</sub><sup>2</sup>) &sim; 10<sup>34-36</sup> years.
-                </p>
-                <p>
-                    OPH predicts <strong>no proton decay</strong> at any lifetime. The gauge group is a product
-                    group, so there are no leptoquark bosons. This is a clean, falsifiable distinction between
-                    OPH and GUTs. If proton decay is ever observed, OPH is falsified.
-                </p>
-            </Explainer>
-
-            <Explainer title="Two-loop and threshold corrections">
-                <p>
-                    The one-loop analysis is an approximation. At two loops and beyond, the running becomes more
-                    complex. Threshold corrections (from integrating out heavy states at M<sub>GUT</sub>) also
-                    modify the picture.
-                </p>
-                <p>
-                    In OPH, the edge-mode contributions are naturally organized by the collar refinement
-                    (Assumption F), which provides a systematic expansion in powers of the collar width.
-                    The leading term gives the MSSM-like &Delta;b shifts; subleading terms give corrections
-                    analogous to two-loop and threshold effects.
+                    <strong>SM only</strong> removes the edge shift. <strong>Edge canonical</strong> applies the paper's
+                    canonical MSSM-like shift. <strong>Edge custom</strong> lets you dial interpolation and inspect the
+                    sensitivity of alpha_s, sin^2(theta_W), and pixel residual.
                 </p>
             </Explainer>
         </div>

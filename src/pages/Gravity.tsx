@@ -1,54 +1,92 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Explainer } from '../components/Explainer';
+import {
+    PIXEL_REFERENCE,
+    SCREEN_CAPACITY_REFERENCE_LOG10,
+    deSitterRadiusFromLambda,
+    lambdaFromScreen,
+} from '../core/ophMath';
 
-interface Step {
-    title: string;
-    axioms: string;
-    content: string;
-    equation: string;
+function formatNumber(value: number, digits = 3) {
+    if (!Number.isFinite(value)) {
+        return 'n/a';
+    }
+    return value.toExponential(digits);
 }
 
-const DERIVATION_STEPS: Step[] = [
-    {
-        title: 'Start: Local patch with area bound',
-        axioms: 'A1 + A3',
-        content: 'Each observer has a patch P on S\u00b2 with algebra A(P) and state \u03c1_P. The generalized entropy is bounded by the area of the patch boundary.',
-        equation: 'S_gen(C) = A(\u2202C) / (4G) + S_bulk(C)',
-    },
-    {
-        title: 'MaxEnt selection',
-        axioms: 'B',
-        content: 'Among all states compatible with the local constraints, nature selects the one that maximizes the von Neumann entropy. This is not dynamics; it is typicality.',
-        equation: '\u03c1_P = argmax S(\u03c1) subject to local constraints',
-    },
-    {
-        title: 'Entanglement equilibrium',
-        axioms: 'A3 + B',
-        content: 'At the MaxEnt state, the generalized entropy is stationary under first-order perturbations of the entangling surface. This is the entanglement equilibrium condition.',
-        equation: '\u03b4S_gen = 0 \u21d4 \u03b4(A/(4G)) + \u03b4S_bulk = 0',
-    },
-    {
-        title: 'Modular Hamiltonian identification',
-        axioms: 'BW theorem',
-        content: 'For a causal diamond C near the entangling surface, the Bisognano-Wichmann theorem identifies the modular Hamiltonian with the boost generator. The linearized modular Hamiltonian involves the stress-energy tensor.',
-        equation: 'K_C = 2\u03c0 \u222b d\u03a3\u1d43 x\u1d47 T_ab',
-    },
-    {
-        title: 'First law of entanglement',
-        axioms: 'A3 + BW',
-        content: 'The entanglement first law relates variations of the modular Hamiltonian to variations of the entanglement entropy. Combined with the area identification, this gives a Clausius-like relation.',
-        equation: '\u03b4\u27e8K\u27e9 = \u03b4S_EE \u21d4 \u03b4Q = T \u00b7 dS',
-    },
-    {
-        title: 'Jacobson\'s thermodynamic derivation',
-        axioms: 'A1-A3 + B + BW',
-        content: 'Apply \u03b4Q = TdS to every local Rindler horizon through every point in every direction. The Clausius relation must hold for all null directions at all points. The ONLY geometric equation consistent with this is Einstein\'s equation.',
-        equation: 'G_ab + \u039bg_ab = 8\u03c0G \u27e8T_ab\u27e9',
-    },
-];
-
 export function GravityPage() {
-    const [activeStep, setActiveStep] = useState(0);
+    const [pixelConstant, setPixelConstant] = useState(PIXEL_REFERENCE);
+    const [logCapacity, setLogCapacity] = useState(SCREEN_CAPACITY_REFERENCE_LOG10);
+    const [nullEnergy, setNullEnergy] = useState(1);
+    const [curvatureResponse, setCurvatureResponse] = useState(1);
+    const [stripWeight, setStripWeight] = useState(0.08);
+    const [nullGenerators, setNullGenerators] = useState(8);
+
+    const derivation = useMemo(() => {
+        const gRatio = pixelConstant / PIXEL_REFERENCE;
+        const lambda = lambdaFromScreen(pixelConstant, logCapacity);
+        const deSitterRadius = deSitterRadiusFromLambda(lambda);
+
+        const effectiveWeight = stripWeight * nullGenerators;
+        const einsteinTarget = 8 * Math.PI * gRatio * nullEnergy;
+        const trialRkk = curvatureResponse * einsteinTarget;
+
+        const deltaSArea = -(effectiveWeight / (4 * gRatio)) * trialRkk;
+        const deltaSBulk = 2 * Math.PI * effectiveWeight * nullEnergy;
+        const deltaSGen = deltaSArea + deltaSBulk;
+
+        return {
+            gRatio,
+            lambda,
+            deSitterRadius,
+            effectiveWeight,
+            einsteinTarget,
+            trialRkk,
+            deltaSArea,
+            deltaSBulk,
+            deltaSGen,
+            einsteinResidual: trialRkk - einsteinTarget,
+        };
+    }, [curvatureResponse, logCapacity, nullEnergy, nullGenerators, pixelConstant, stripWeight]);
+
+    const stepCards = [
+        {
+            title: 'Step 1: Null-sheet area response',
+            equation: 'delta(A/4G_eff) = -(W / 4G_eff) * R_kk',
+            value: `delta(A/4G_eff) = ${derivation.deltaSArea.toFixed(6)}`,
+            concept: 'Raychaudhuri area variation on local null strips',
+        },
+        {
+            title: 'Step 2: Modular first-law matter term',
+            equation: 'delta(S_bulk) = 2pi * W * T_kk',
+            value: `delta(S_bulk) = ${derivation.deltaSBulk.toFixed(6)}`,
+            concept: 'Modular Hamiltonian variation in null direction',
+        },
+        {
+            title: 'Step 3: Entanglement equilibrium condition',
+            equation: 'delta(S_gen) = delta(A/4G_eff) + delta(S_bulk)',
+            value: `delta(S_gen) = ${derivation.deltaSGen.toFixed(6)}`,
+            concept: 'A3 + MaxEnt stationarity target is zero',
+        },
+        {
+            title: 'Step 4: Null Einstein closure',
+            equation: 'R_kk ?= 8pi G_eff T_kk',
+            value: `R_kk = ${derivation.trialRkk.toFixed(6)}, target = ${derivation.einsteinTarget.toFixed(6)}`,
+            concept: 'Geometric response must match stress flux for every null k',
+        },
+        {
+            title: 'Step 5: Tensor residual (up to Lambda)',
+            equation: 'G_ab + Lambda g_ab - 8pi G_eff<T_ab> = 0',
+            value: `Null residual = ${derivation.einsteinResidual.toExponential(3)}`,
+            concept: 'Null data fix tensor equation up to cosmological constant term',
+        },
+        {
+            title: 'Step 6: Global completion',
+            equation: 'Lambda = 3pi / (G_eff * log(dim H_tot))',
+            value: `Lambda = ${formatNumber(derivation.lambda, 2)} m^-2`,
+            concept: 'Screen capacity closes the Lambda ambiguity',
+        },
+    ];
 
     return (
         <div>
@@ -58,160 +96,211 @@ export function GravityPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This is the <strong>key page of Chain 1</strong>. Here we show how Einstein's field equations &mdash;
-                the fundamental law of gravity &mdash; are <em>derived</em> from the OPH axioms. Gravity is not a
-                fundamental force. It is an <strong>entropic consistency condition</strong>: the requirement that
-                entanglement entropy is maximized on every local causal horizon.
-            </p>
-            <p style={{ marginBottom: '16px' }}>
-                The derivation follows Jacobson's 1995 thermodynamic argument, extended by the entanglement equilibrium
-                approach of Jacobson (2015) and others. In OPH, this derivation is not an analogy &mdash; it IS the
-                origin of gravity. The axioms (A1-A3 + MaxEnt) logically entail Einstein's equations.
+                This simulator follows the latest paper logic: local null-strip equilibrium gives Einstein closure,
+                then global screen capacity fixes Lambda. Every symbol below is defined in-page.
             </p>
 
-            <div className="math-block" style={{ fontSize: '1.1em', marginBottom: '32px' }}>
-                MaxEnt &rArr; &delta;S<sub>gen</sub> = 0 &rArr; &delta;Q = T dS &rArr; G<sub>ab</sub> + &Lambda;g<sub>ab</sub> = 8&pi;G⟨T<sub>ab</sub>⟩
-            </div>
+            <div className="demo-container">
+                <div className="demo-label">Interactive Einstein Derivation (Expanded)</div>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Derivation, Step by Step</h3>
-            <p style={{ marginBottom: '16px', fontSize: '0.9em', color: 'var(--text-muted)' }}>
-                Click each step to expand the details. The derivation proceeds from axioms to Einstein's equations
-                in six logical steps.
-            </p>
-
-            <div style={{ display: 'flex', gap: '16px', marginBottom: '24px', flexWrap: 'wrap' }}>
-                {DERIVATION_STEPS.map((_, i) => (
-                    <button
-                        key={i}
-                        className={`btn ${activeStep === i ? 'btn-primary' : 'btn-ghost'}`}
-                        onClick={() => setActiveStep(i)}
-                        style={{ fontSize: '0.75em', padding: '6px 12px', minWidth: '36px' }}
-                    >
-                        {i + 1}
-                    </button>
-                ))}
-            </div>
-
-            {DERIVATION_STEPS.map((step, i) => (
-                <div
-                    key={i}
-                    className="card"
-                    style={{
-                        marginBottom: '12px',
-                        borderLeft: `3px solid ${i === activeStep ? 'var(--accent-rose)' : 'var(--border-color)'}`,
-                        opacity: i === activeStep ? 1 : 0.5,
-                        transition: 'opacity 0.3s, border-color 0.3s',
-                    }}
-                >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                        <span style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            width: '28px',
-                            height: '28px',
-                            background: i === activeStep ? 'rgba(201, 112, 112, 0.2)' : 'rgba(255,255,255,0.05)',
-                            border: `1px solid ${i === activeStep ? 'var(--accent-rose)' : 'var(--border-color)'}`,
-                            fontSize: '0.75em',
-                            fontWeight: 700,
-                            color: i === activeStep ? 'var(--accent-rose)' : 'var(--text-muted)',
-                        }}>
-                            {i + 1}
-                        </span>
-                        <h4 style={{ margin: 0, fontSize: '0.9em' }}>{step.title}</h4>
-                        <span style={{ fontSize: '0.7em', color: 'var(--accent-gold)', marginLeft: 'auto' }}>
-                            [{step.axioms}]
-                        </span>
+                <div style={{ display: 'grid', gap: '14px', marginBottom: '18px' }}>
+                    <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                            <span style={{ color: 'var(--accent-gold)' }}>Pixel constant P = a_cell / l_P^2</span>
+                            <span style={{ color: 'var(--accent-cyan)' }}>{pixelConstant.toFixed(4)}</span>
+                        </div>
+                        <input
+                            type="range"
+                            min="1.1"
+                            max="2.2"
+                            step="0.01"
+                            value={pixelConstant}
+                            onChange={event => setPixelConstant(Number(event.target.value))}
+                        />
                     </div>
-                    <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>{step.content}</p>
-                    <div className="math-block" style={{ margin: '8px 0 0 0', fontSize: '0.85em' }}>
+
+                    <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                            <span style={{ color: 'var(--accent-gold)' }}>log10(dim H_tot)</span>
+                            <span style={{ color: 'var(--accent-cyan)' }}>{logCapacity.toFixed(2)}</span>
+                        </div>
+                        <input
+                            type="range"
+                            min="118"
+                            max="126"
+                            step="0.1"
+                            value={logCapacity}
+                            onChange={event => setLogCapacity(Number(event.target.value))}
+                        />
+                    </div>
+
+                    <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                            <span style={{ color: 'var(--accent-gold)' }}>Null stress flux T_kk</span>
+                            <span style={{ color: 'var(--accent-cyan)' }}>{nullEnergy.toFixed(3)}</span>
+                        </div>
+                        <input
+                            type="range"
+                            min="0.2"
+                            max="2.5"
+                            step="0.01"
+                            value={nullEnergy}
+                            onChange={event => setNullEnergy(Number(event.target.value))}
+                        />
+                    </div>
+
+                    <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                            <span style={{ color: 'var(--accent-gold)' }}>Strip weight per generator (W0)</span>
+                            <span style={{ color: 'var(--accent-cyan)' }}>{stripWeight.toFixed(3)}</span>
+                        </div>
+                        <input
+                            type="range"
+                            min="0.02"
+                            max="0.2"
+                            step="0.002"
+                            value={stripWeight}
+                            onChange={event => setStripWeight(Number(event.target.value))}
+                        />
+                    </div>
+
+                    <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                            <span style={{ color: 'var(--accent-gold)' }}>Number of sampled null generators</span>
+                            <span style={{ color: 'var(--accent-cyan)' }}>{nullGenerators}</span>
+                        </div>
+                        <input
+                            type="range"
+                            min="1"
+                            max="24"
+                            step="1"
+                            value={nullGenerators}
+                            onChange={event => setNullGenerators(Number(event.target.value))}
+                        />
+                    </div>
+
+                    <div>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
+                            <span style={{ color: 'var(--accent-gold)' }}>Geometry response factor kappa_R</span>
+                            <span style={{ color: 'var(--accent-cyan)' }}>{curvatureResponse.toFixed(3)}</span>
+                        </div>
+                        <input
+                            type="range"
+                            min="0.6"
+                            max="1.4"
+                            step="0.005"
+                            value={curvatureResponse}
+                            onChange={event => setCurvatureResponse(Number(event.target.value))}
+                        />
+                    </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap' }}>
+                    <button className="btn btn-ghost" onClick={() => setCurvatureResponse(1)} style={{ fontSize: '0.72em', padding: '4px 10px' }}>
+                        Snap kappa_R to 1
+                    </button>
+                    <button
+                        className="btn btn-ghost"
+                        onClick={() => {
+                            setPixelConstant(PIXEL_REFERENCE);
+                            setLogCapacity(SCREEN_CAPACITY_REFERENCE_LOG10);
+                            setNullEnergy(1);
+                            setStripWeight(0.08);
+                            setNullGenerators(8);
+                            setCurvatureResponse(1);
+                        }}
+                        style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                    >
+                        Reset canonical point
+                    </button>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '10px' }}>
+                    <div className="card" style={{ padding: '12px' }}>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)' }}>G_eff / G_ref</div>
+                        <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{derivation.gRatio.toFixed(4)}</div>
+                    </div>
+                    <div className="card" style={{ padding: '12px' }}>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)' }}>Effective W</div>
+                        <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{derivation.effectiveWeight.toFixed(4)}</div>
+                    </div>
+                    <div className="card" style={{ padding: '12px' }}>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)' }}>Lambda</div>
+                        <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{formatNumber(derivation.lambda, 2)} m^-2</div>
+                    </div>
+                    <div className="card" style={{ padding: '12px' }}>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)' }}>de Sitter radius</div>
+                        <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{formatNumber(derivation.deSitterRadius, 2)} m</div>
+                    </div>
+                    <div className="card" style={{ padding: '12px' }}>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)' }}>delta S_gen</div>
+                        <div
+                            style={{
+                                color: Math.abs(derivation.deltaSGen) < 1e-4 ? 'var(--accent-green)' : 'var(--accent-rose)',
+                                fontWeight: 700,
+                            }}
+                        >
+                            {derivation.deltaSGen.toExponential(3)}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style={{ fontSize: '1em', marginTop: '28px' }}>Six-Step Derivation Trace</h3>
+            <p style={{ marginBottom: '12px', fontSize: '0.86em', color: 'var(--text-muted)' }}>
+                At kappa_R=1 the null closure exactly cancels generalized-entropy variation for any sampled null weight W.
+            </p>
+
+            {stepCards.map((step, index) => (
+                <div key={step.title} className="card" style={{ marginBottom: '10px', borderLeft: '3px solid var(--accent-rose)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '12px' }}>
+                        <h4 style={{ margin: 0, fontSize: '0.88em' }}>{index + 1}. {step.title}</h4>
+                    </div>
+                    <div className="math-block" style={{ marginBottom: '10px', fontSize: '0.84em' }}>
                         {step.equation}
                     </div>
+                    <div style={{ color: 'var(--accent-cyan)', fontSize: '0.86em', marginBottom: '4px' }}>{step.value}</div>
+                    <div style={{ color: 'var(--text-muted)', fontSize: '0.75em' }}>{step.concept}</div>
                 </div>
             ))}
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Physical Picture</h3>
-            <p style={{ marginBottom: '16px' }}>
-                Consider a small patch of any null surface (a local Rindler horizon). An accelerating observer
-                just outside this horizon sees:
-            </p>
-            <ul style={{ paddingLeft: '20px', lineHeight: '1.8', marginBottom: '16px' }}>
-                <li>A <strong>thermal state</strong> at the Unruh temperature T = ℏa/(2&pi;ck<sub>B</sub>)</li>
-                <li>An <strong>entropy</strong> proportional to the horizon area: S = A/(4l<sub>P</sub>&sup2;)</li>
-                <li><strong>Heat flux</strong> &delta;Q = T<sub>ab</sub> k<sup>a</sup> d&Sigma;<sup>b</sup> across the horizon</li>
-            </ul>
-            <p style={{ marginBottom: '16px' }}>
-                The Clausius relation &delta;Q = T&middot;dS demands that the heat flux equals the temperature times
-                the change in entropy (= change in area). This must hold for EVERY null surface at EVERY point.
-                The only tensor equation that satisfies this constraint for all null k<sup>a</sup> is:
-            </p>
-            <div className="math-block" style={{ fontSize: '1.1em' }}>
-                G<sub>ab</sub> + &Lambda;g<sub>ab</sub> = 8&pi;G ⟨T<sub>ab</sub>⟩
-            </div>
-            <p style={{ marginBottom: '24px' }}>
-                Einstein's equations. Gravity is not a force &mdash; it is what happens when entanglement entropy
-                is maximized.
-            </p>
-
-            <Explainer title="Why this is not just an analogy">
-                <p>
-                    When Jacobson first published his derivation in 1995, many physicists viewed it as a beautiful
-                    analogy. But in OPH, the screen and its entropy are the <em>fundamental</em> degrees of freedom.
-                    The Bekenstein-Hawking area-entropy relation is not an analogy with thermodynamics &mdash; it IS
-                    the fundamental statement (Axiom A3). The thermodynamic derivation is therefore the actual origin
-                    of gravity, not a metaphor.
-                </p>
-                <p>
-                    This is strengthened by the entanglement equilibrium approach: the condition &delta;S<sub>gen</sub> = 0
-                    is a variational principle for entanglement entropy. Einstein's equations are literally the
-                    Euler-Lagrange equations for entanglement.
-                </p>
-            </Explainer>
-
-            <Explainer title="The cosmological constant">
-                <p>
-                    The integration constant &Lambda; in Einstein's equations gets a specific interpretation in OPH:
-                    it is set by the total screen capacity. See the de Sitter page for the derivation:
-                </p>
-                <div className="math-block" style={{ fontSize: '0.85em' }}>
-                    &Lambda; = 3&pi; / (G &middot; log dim H<sub>tot</sub>)
+            <div className="card" style={{ borderLeft: '3px solid var(--accent-blue)', marginBottom: '18px' }}>
+                <h4 style={{ marginTop: 0, fontSize: '0.86em' }}>Symbol Dictionary</h4>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '8px', fontSize: '0.78em' }}>
+                    <div><strong>G_eff</strong>: effective gravitational scale ratio from P.</div>
+                    <div><strong>T_kk</strong>: null-projected stress tensor flux through the local horizon strip.</div>
+                    <div><strong>R_kk</strong>: null-projected Ricci response of local geometry.</div>
+                    <div><strong>W</strong>: sampled strip weight across null generators.</div>
+                    <div><strong>delta S_bulk</strong>: modular first-law matter contribution.</div>
+                    <div><strong>delta S_gen</strong>: generalized entropy variation, target 0 at equilibrium.</div>
                 </div>
+            </div>
+
+            <div className="card" style={{ borderLeft: '3px solid var(--accent-gold)', marginBottom: '18px' }}>
+                <h4 style={{ marginTop: 0, fontSize: '0.86em' }}>Assumption Stack Used Here</h4>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '8px', fontSize: '0.78em' }}>
+                    <div>A3: generalized entropy + focusing</div>
+                    <div>B: local MaxEnt state selection</div>
+                    <div>N1-N3: null modular bridge</div>
+                    <div>G: Euclidean regularity (2pi normalization)</div>
+                    <div>Null ambiguity lemma: tensor closure up to Lambda g_ab</div>
+                    <div>Global capacity closure for Lambda</div>
+                </div>
+            </div>
+
+            <Explainer title="What this simulator is proving">
                 <p>
-                    This resolves the cosmological constant problem: &Lambda; is not vacuum energy (which is null-blind)
-                    but a screen-capacity parameter. The 120-order-of-magnitude discrepancy between QFT vacuum energy
-                    and the observed &Lambda; was never a real problem &mdash; it compared the wrong quantities.
+                    The local part reproduces the Jacobson-style mechanism: stationarity of generalized entropy on
+                    local null strips gives the null Einstein closure. The global part is separate because null data
+                    cannot determine Lambda by itself.
                 </p>
             </Explainer>
 
-            <Explainer title="Beyond semiclassical: quantum corrections">
+            <Explainer title="How P and log(dim H) enter">
                 <p>
-                    The derivation above gives the semiclassical Einstein equations with ⟨T<sub>ab</sub>⟩
-                    on the right-hand side. Quantum corrections arise from:
-                </p>
-                <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li>Higher-order terms in the entanglement equilibrium expansion (&delta;&sup2;S<sub>gen</sub>)</li>
-                    <li>The bulk entropy term S<sub>bulk</sub> in the generalized entropy</li>
-                    <li>The quantum focusing inequality &Theta; &le; 0 (quantum null energy condition)</li>
-                </ul>
-                <p>
-                    These corrections are suppressed by powers of l<sub>P</sub>/L where L is the curvature scale,
-                    so the semiclassical equations are an excellent approximation at macroscopic scales.
-                </p>
-            </Explainer>
-
-            <Explainer title="Comparison with other approaches">
-                <p>
-                    Several approaches derive Einstein's equations from entanglement:
-                </p>
-                <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li><strong>Jacobson (1995):</strong> Clausius relation on local Rindler horizons</li>
-                    <li><strong>Verlinde (2010):</strong> Entropic force from holographic screens</li>
-                    <li><strong>Jacobson (2015):</strong> Entanglement equilibrium &delta;S<sub>gen</sub> = 0</li>
-                    <li><strong>Swingle (2012):</strong> Tensor network / MERA approach</li>
-                    <li><strong>OPH:</strong> All of the above unified under Axioms A1-A3 + MaxEnt</li>
-                </ul>
-                <p>
-                    OPH provides the axiomatic foundation that makes these derivations rigorous and unified.
+                    P changes the effective gravitational and entropy scales in the local closure. The screen capacity
+                    log(dim H_tot) changes only the global Lambda completion. This split is exactly how the current
+                    manuscript frames Einstein-plus-Lambda derivation.
                 </p>
             </Explainer>
         </div>
