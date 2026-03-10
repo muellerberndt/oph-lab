@@ -29,7 +29,7 @@ export function installLinkTracking(pageSection: string) {
         if (!(target instanceof Element)) return;
 
         const link = target.closest('a[href]');
-        if (!link || !hasGtag()) return;
+        if (!(link instanceof HTMLAnchorElement) || !hasGtag()) return;
 
         const url = new URL(link.href, window.location.href);
         const shouldTrack = url.host !== window.location.host ||
