@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import './Layout.css';
 import { WALKTHROUGH_STEPS, PART_LABELS, PART_COLORS, type PartId } from '../routes/walkthrough';
 import { WalkthroughNav } from './WalkthroughNav';
-import { installLinkTracking, trackEvent, trackPageView } from '../lib/analytics';
+import { installLinkTracking, trackPageView } from '../lib/analytics';
 
 const SITE_SUFFIX = ' | OPH Lab';
 
