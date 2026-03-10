@@ -24,8 +24,9 @@ export function ResourcesPage() {
                     Bernhard Mueller
                 </p>
                 <p style={{ margin: '0 0 8px 0', fontSize: '0.85em', color: 'var(--text-muted)' }}>
-                    The complete technical paper presenting the OPH framework, including the four axioms,
-                    both derivation chains (GR and QFT), and testable predictions. Contains full mathematical
+                    The complete technical paper presenting the OPH framework, including core axioms A1-A4,
+                    MAR as the fifth selection axiom in the extended theory, both derivation chains (GR and QFT),
+                    and testable predictions. Contains full mathematical
                     details and derivations.
                 </p>
                 <a
@@ -48,12 +49,12 @@ export function ResourcesPage() {
                     than the technical paper.
                 </p>
                 <a
-                    href="https://oth-book.lovable.app"
+                    href="https://oph-book.floatingpragma.io/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ fontSize: '0.85em' }}
                 >
-                    oth-book.lovable.app &rarr;
+                    oph-book.floatingpragma.io &rarr;
                 </a>
             </div>
 
@@ -84,12 +85,12 @@ export function ResourcesPage() {
                     key ideas and motivation.
                 </p>
                 <a
-                    href="https://floatingpragma.io"
+                    href="https://floatingpragma.io/oph/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ fontSize: '0.85em' }}
                 >
-                    floatingpragma.io &rarr;
+                    floatingpragma.io/oph/ &rarr;
                 </a>
             </div>
 

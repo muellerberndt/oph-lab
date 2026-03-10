@@ -4,18 +4,26 @@ import { Menu, X } from 'lucide-react';
 import './Layout.css';
 import { WALKTHROUGH_STEPS, PART_LABELS, PART_COLORS, type PartId } from '../routes/walkthrough';
 import { WalkthroughNav } from './WalkthroughNav';
+import { useLabState } from '../state/labState';
+import { installLinkTracking, trackEvent, trackPageView } from '../lib/analytics';
 
 const SITE_SUFFIX = ' | OPH Lab';
 
 export function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [toolStatus, setToolStatus] = useState<string | null>(null);
     const location = useLocation();
+    const { resetAll, exportState } = useLabState();
 
     useEffect(() => {
         const path = location.pathname.replace(/\/$/, '') || '/';
         const step = WALKTHROUGH_STEPS.find(s => s.to === path);
-        document.title = step ? step.seoTitle + SITE_SUFFIX : 'OPH Lab — Theory of Everything Interactive Guide';
+        const title = step ? step.seoTitle + SITE_SUFFIX : 'OPH Lab — Theory of Everything Interactive Guide';
+        document.title = title;
+        trackPageView(path, title);
     }, [location.pathname]);
+
+    useEffect(() => installLinkTracking('oph_lab'), []);
 
     // Group steps by part
     const parts = new Map<PartId, typeof WALKTHROUGH_STEPS>();
@@ -24,6 +32,39 @@ export function Layout() {
         list.push(step);
         parts.set(step.part, list);
     }
+
+    const handleGlobalReset = () => {
+        resetAll();
+        trackEvent('lab_control', { action: 'reset_all' });
+        setToolStatus('All controls reset to canonical OPH values.');
+    };
+
+    const handleExport = async () => {
+        const payload = exportState();
+        const json = JSON.stringify(payload, null, 2);
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+
+        let copied = false;
+        if (navigator.clipboard?.writeText) {
+            try {
+                await navigator.clipboard.writeText(json);
+                copied = true;
+            } catch {
+                copied = false;
+            }
+        }
+
+        const blob = new Blob([json], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = `oph-lab-state-${timestamp}.json`;
+        anchor.click();
+        URL.revokeObjectURL(url);
+
+        trackEvent('lab_control', { action: 'export_state', copied_to_clipboard: copied });
+        setToolStatus(copied ? 'State copied and downloaded as JSON.' : 'State downloaded as JSON.');
+    };
 
     return (
         <div className="layout">
@@ -63,6 +104,23 @@ export function Layout() {
                         </div>
                     ))}
                 </nav>
+
+                <div className="sidebar-tools">
+                    <div className="sidebar-tools-title">Lab Controls</div>
+                    <button
+                        className="sidebar-tool-btn"
+                        onClick={handleGlobalReset}
+                    >
+                        Global Reset (Our Universe)
+                    </button>
+                    <button
+                        className="sidebar-tool-btn secondary"
+                        onClick={handleExport}
+                    >
+                        Export State + Effects
+                    </button>
+                    {toolStatus && <div className="sidebar-tools-status">{toolStatus}</div>}
+                </div>
             </aside>
 
             <div className="main-content">
@@ -91,6 +149,12 @@ export function Layout() {
                         }}>
                             <p>
                                 <a href="https://floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Floating Pragma</a>
+                                {' \u2022 '}
+                                <a href="https://floatingpragma.io/oph/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>OPH Overview</a>
+                                {' \u2022 '}
+                                <a href="https://oph-book.floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Book</a>
+                                {' \u2022 '}
+                                <a href="https://challenge.floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Challenge</a>
                                 {' \u2022 '}
                                 <a href="https://floatingpragma.io/starklab/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>STARK Lab</a>
                                 {' \u2022 '}
