@@ -10,15 +10,15 @@ export function QftEmergesPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 This is the <strong>synthesis page for Chain 2</strong>. We have traced the derivation from the
-                four axioms to the full Standard Model of particle physics. Quantum field theory &mdash; the
+                extended axioms (A1-A4 + MAR) plus technical premises (R0, R1, [z]=0) to the full Standard Model of particle physics. Quantum field theory &mdash; the
                 framework that unifies quantum mechanics with special relativity &mdash; is not a starting point
                 in OPH. It is an <strong>emergent effective description</strong> that arises from the screen
                 algebra in the appropriate limits.
             </p>
 
             <div className="math-block" style={{ fontSize: '0.95em', lineHeight: '2.2' }}>
-                A1-A4 &rarr; Complex Hilbert Space + Born Rule &rarr; Gauge-as-Gluing &rarr;
-                SU(3)&times;SU(2)&times;U(1) &rarr; Edge-Sector Dynamics &rarr; Standard Model
+                A1-A4 + R0 + R1 + [z]=0 + MAR &rarr; QM + Gauge-as-Gluing &rarr;
+                [SU(3)&times;SU(2)&times;U(1)]/Z6, N_c=3, N_g=3 &rarr; Spectrum
             </div>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Complete Chain 2 Derivation</h3>
@@ -51,7 +51,7 @@ export function QftEmergesPage() {
                     {
                         step: '5',
                         title: 'Standard Model gauge group',
-                        detail: 'Anomaly cancellation + asymptotic freedom + minimality \u2192 SU(3) \u00d7 SU(2) \u00d7 U(1) uniquely. N_c=3, N_g=3.',
+                        detail: 'Admissibility filters + MAR lexicographic minimization over C=(chi_faith,N_nonab,N_c,N_g) \u2192 [SU(3)\u00d7SU(2)\u00d7U(1)]/Z6 with N_c=3, N_g=3.',
                         color: 'var(--accent-cyan)',
                     },
                     {
@@ -130,12 +130,16 @@ export function QftEmergesPage() {
                         <li>A2: Overlap consistency</li>
                         <li>A3: Area-entropy bound</li>
                         <li>A4: Local Markov condition</li>
+                        <li>R0: finite-dimensional regulator premise</li>
+                        <li>R1: boundary gauge fixed-point premise</li>
+                        <li>[z]=0: loop-coherent gluing / transportability</li>
+                        <li>MAR: minimal admissible realization selection axiom</li>
                         <li>B: MaxEnt selection</li>
-                        <li>C: Rotational invariance</li>
+                        <li>C: refinement-stable local branch</li>
                         <li>D: Gauge-as-gluing</li>
                         <li>E: Central defect (Z<sub>6</sub>)</li>
-                        <li>F: Collar refinement</li>
-                        <li>G: Euclidean regularity</li>
+                        <li>F: collar refinement / scaling-limit scope</li>
+                        <li>G: OPH geometric cap branch</li>
                     </ul>
                     <div style={{ marginTop: '12px', padding: '8px', background: 'rgba(0,0,0,0.2)', fontSize: '0.9em' }}>
                         <strong>Total free parameters: 2</strong>
@@ -180,14 +184,18 @@ export function QftEmergesPage() {
 
             <Explainer title="Chain 1 and Chain 2: same axioms, different paths">
                 <p>
-                    Both chains start from the same axioms A1-A4 but emphasize different aspects:
+                    Both chains share the same core local axioms A1-A4, and the extended theory adds MAR as an
+                    axiom-level selector:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
                     <li><strong>Chain 1 (GR):</strong> Emphasizes A3 (area bound) and MaxEnt. Uses entanglement equilibrium to derive Einstein's equations. Result: gravity and classical physics.</li>
-                    <li><strong>Chain 2 (QFT):</strong> Emphasizes A2 (overlap consistency) and gauge-as-gluing. Uses Gleason + Tannaka-Krein to derive quantum mechanics and gauge theory. Result: the Standard Model.</li>
+                    <li><strong>Chain 2 (QFT):</strong> Emphasizes A2 (overlap consistency), gauge-as-gluing, then R0/R1/[z]=0 with MAR for unique admissible sector selection. Uses Gleason + Tannaka-Krein + MAR to derive the Standard Model.</li>
                 </ul>
                 <p>
-                    The two chains are not independent: they share the same axioms and the same screen. The
+                    The two chains are not independent: they share the same screen and foundational structure. MAR
+                    is the extended-theory selector that resolves admissible branches in Chain 2.
+                </p>
+                <p>
                     Synthesis page shows how they combine into a unified picture.
                 </p>
             </Explainer>

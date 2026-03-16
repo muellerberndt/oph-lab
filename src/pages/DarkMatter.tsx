@@ -1,9 +1,11 @@
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import { Explainer } from '../components/Explainer';
+import { useLabSetting, useLabState } from '../state/labState';
 
 export function DarkMatterPage() {
-    const [logMass, setLogMass] = useState(11); // log10(M/M_sun)
-    const [a0Multiplier, setA0Multiplier] = useState(1.0);
+    const [logMass, setLogMass] = useLabSetting('darkMatter.logMass'); // log10(M/M_sun)
+    const [a0Multiplier, setA0Multiplier] = useLabSetting('darkMatter.a0Multiplier');
+    const { resetKeys } = useLabState();
 
     const a0_base = 1.03e-10; // m/s^2
     const a0 = a0_base * a0Multiplier;
@@ -146,6 +148,15 @@ export function DarkMatterPage() {
                     Adjust the galaxy mass and the MOND acceleration scale a<sub>0</sub>. Compare Newtonian, CDM (dark matter halo),
                     and OPH/MOND predictions.
                 </p>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
+                    <button
+                        className="btn btn-ghost"
+                        style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                        onClick={() => resetKeys(['darkMatter.logMass', 'darkMatter.a0Multiplier'])}
+                    >
+                        Reset Galaxy Defaults
+                    </button>
+                </div>
 
                 <div style={{ display: 'flex', gap: '16px', marginBottom: '16px', flexWrap: 'wrap' }}>
                     <div style={{ flex: 1, minWidth: '200px' }}>

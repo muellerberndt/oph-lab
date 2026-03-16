@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Explainer } from '../components/Explainer';
+import { useLabSetting, useLabState } from '../state/labState';
 
 type DetailLevel = 'plain' | 'physics' | 'formal';
 
@@ -43,21 +43,32 @@ const AXIOMS: Axiom[] = [
 ];
 
 export function AxiomsPage() {
-    const [level, setLevel] = useState<DetailLevel>('plain');
+    const [levelRaw, setLevel] = useLabSetting('axioms.level');
+    const { resetKeys } = useLabState();
+    const level = levelRaw as DetailLevel;
 
     return (
         <div>
             <div className="section-header">
                 <span className="section-tag foundation">Foundation</span>
-                <h1 style={{ fontSize: '1.5rem', margin: 0 }}>The Four Axioms</h1>
+                <h1 style={{ fontSize: '1.5rem', margin: 0 }}>Core Axioms and MAR Layer</h1>
             </div>
 
             <p style={{ marginBottom: '24px' }}>
-                Everything in OPH follows from four axioms. Together with a handful of additional assumptions
-                (MaxEnt, rotational invariance, gauge-as-gluing), these axioms generate all of known physics.
+                In the current extended formulation, OPH is best read as
+                <strong> five axioms: A1-A4 + MAR</strong>, together with explicit technical premises
+                <strong> R0, R1, [z]=0</strong> for gauge reconstruction. MAR is a selection axiom (not a local
+                dynamics equation), but it is still foundational in the extended theory.
             </p>
 
             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
+                <button
+                    className="btn btn-ghost"
+                    onClick={() => resetKeys(['axioms.level'])}
+                    style={{ fontSize: '0.8em', padding: '6px 14px' }}
+                >
+                    Reset
+                </button>
                 {(['plain', 'physics', 'formal'] as const).map(l => (
                     <button
                         key={l}
@@ -95,28 +106,52 @@ export function AxiomsPage() {
                 </div>
             ))}
 
-            <Explainer title="Additional assumptions beyond A1-A4">
-                <p>The paper uses additional assumptions that are not part of the core axioms but are needed for specific derivations:</p>
+            <div className="card" style={{ marginBottom: '16px', borderLeft: '3px solid var(--accent-blue)' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>MAR in the Extended Theory (Axiom 5)</h3>
+                <div style={{ fontSize: '0.84em', color: 'var(--text-secondary)', marginBottom: '10px' }}>
+                    Extended gauge package: R0 + R1 + [z]=0 + MAR
+                </div>
+                <div className="math-block" style={{ fontSize: '0.84em', marginTop: 0 }}>
+                    C(Sigma) = (chi_faith, N_nonab, N_c, N_g), lexicographic minimum over admissible Sigma
+                </div>
+                <ul style={{ paddingLeft: '20px', lineHeight: '1.8', margin: 0, fontSize: '0.84em' }}>
+                    <li><strong>R0:</strong> finite-dimensional regulator premise for local factors.</li>
+                    <li><strong>R1:</strong> region observables are fixed points of boundary gauge action.</li>
+                    <li><strong>[z]=0:</strong> loop-coherent gluing / DHR transportability condition.</li>
+                    <li><strong>MAR:</strong> pick lexicographically minimal sector only after admissibility filters are passed.</li>
+                </ul>
+                <p style={{ margin: '10px 0 0 0', fontSize: '0.82em', color: 'var(--text-muted)' }}>
+                    Directly, MAR fixes gauge structure and N_c/N_g. Indirectly, those selections propagate into
+                    beta_EW, Koide phase inputs, texture integers, and much of the downstream spectrum pipeline.
+                    In that sense, MAR functions as <strong>Nature's Occam's razor</strong> over admissible sectors.
+                </p>
+            </div>
+
+            <Explainer title="Extended Inputs Beyond Core A1-A4">
+                <p>The paper distinguishes core local axioms (A1-A4) from extended inputs needed for specific derivations:</p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
+                    <li><strong>MAR (Axiom 5)</strong> &mdash; global admissible-branch selector used across Chain 2 derivations</li>
+                    <li><strong>R0, R1, [z]=0</strong> &mdash; technical premises for gauge reconstruction</li>
                     <li><strong>B</strong> &mdash; MaxEnt selection with local constraints</li>
-                    <li><strong>C</strong> &mdash; Rotationally invariant constraints</li>
+                    <li><strong>C</strong> &mdash; refinement-stable local branch carrying quasi-local propagation and endpoint control</li>
                     <li><strong>D</strong> &mdash; Gauge-as-gluing (gauge symmetry from overlap redundancy)</li>
                     <li><strong>E</strong> &mdash; Central defect on triple overlaps</li>
-                    <li><strong>F</strong> &mdash; Collar refinement, double scaling</li>
-                    <li><strong>G</strong> &mdash; Euclidean regularity, 2&pi; KMS normalization</li>
+                    <li><strong>F</strong> &mdash; controlled collar refinement / scaling-limit scope</li>
+                    <li><strong>G</strong> &mdash; OPH geometric branch for caps; BW<sub>S&sup2;</sub> fixes the 2&pi; normalization on that branch</li>
                 </ul>
             </Explainer>
 
             <Explainer title="What these axioms give you">
-                <p>From A1-A4 alone, you already get:</p>
+                <p>From core A1-A4 (plus the stated scaling-limit and geometric-branch assumptions), you already get:</p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
                     <li>Lorentz kinematics (Conf&sup;(S&sup2;) = SO&sup;(3,1))</li>
                     <li>Semiclassical Einstein equations via entanglement equilibrium</li>
-                    <li>Compact gauge groups from edge-sector fusion</li>
                     <li>Massless photon and graviton (symmetry-protected zeros)</li>
                 </ul>
                 <p>
-                    Adding the additional assumptions progressively yields the full Standard Model,
+                    Adding R0/R1/[z]=0/MAR yields unique gauge-sector selection
+                    ([SU(3)&times;SU(2)&times;U(1)]/Z<sub>6</sub>, N<sub>c</sub>=3, N<sub>g</sub>=3).
+                    Adding the rest of the assumptions progressively yields the full Standard Model,
                     particle masses, dark matter phenomenology, and testable predictions.
                 </p>
             </Explainer>

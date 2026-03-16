@@ -1,11 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Explainer } from '../components/Explainer';
 import {
     PIXEL_REFERENCE,
-    SCREEN_CAPACITY_REFERENCE_LOG10,
     deSitterRadiusFromLambda,
     lambdaFromScreen,
 } from '../core/ophMath';
+import { useLabSetting, useLabState } from '../state/labState';
 
 function formatNumber(value: number, digits = 3) {
     if (!Number.isFinite(value)) {
@@ -15,12 +15,13 @@ function formatNumber(value: number, digits = 3) {
 }
 
 export function GravityPage() {
-    const [pixelConstant, setPixelConstant] = useState(PIXEL_REFERENCE);
-    const [logCapacity, setLogCapacity] = useState(SCREEN_CAPACITY_REFERENCE_LOG10);
-    const [nullEnergy, setNullEnergy] = useState(1);
-    const [curvatureResponse, setCurvatureResponse] = useState(1);
-    const [stripWeight, setStripWeight] = useState(0.08);
-    const [nullGenerators, setNullGenerators] = useState(8);
+    const [pixelConstant, setPixelConstant] = useLabSetting('gravity.pixelConstant');
+    const [logCapacity, setLogCapacity] = useLabSetting('gravity.logCapacity');
+    const [nullEnergy, setNullEnergy] = useLabSetting('gravity.nullEnergy');
+    const [curvatureResponse, setCurvatureResponse] = useLabSetting('gravity.curvatureResponse');
+    const [stripWeight, setStripWeight] = useLabSetting('gravity.stripWeight');
+    const [nullGenerators, setNullGenerators] = useLabSetting('gravity.nullGenerators');
+    const { resetKeys } = useLabState();
 
     const derivation = useMemo(() => {
         const gRatio = pixelConstant / PIXEL_REFERENCE;
@@ -201,14 +202,16 @@ export function GravityPage() {
                     </button>
                     <button
                         className="btn btn-ghost"
-                        onClick={() => {
-                            setPixelConstant(PIXEL_REFERENCE);
-                            setLogCapacity(SCREEN_CAPACITY_REFERENCE_LOG10);
-                            setNullEnergy(1);
-                            setStripWeight(0.08);
-                            setNullGenerators(8);
-                            setCurvatureResponse(1);
-                        }}
+                        onClick={() =>
+                            resetKeys([
+                                'gravity.pixelConstant',
+                                'gravity.logCapacity',
+                                'gravity.nullEnergy',
+                                'gravity.stripWeight',
+                                'gravity.nullGenerators',
+                                'gravity.curvatureResponse',
+                            ])
+                        }
                         style={{ fontSize: '0.72em', padding: '4px 10px' }}
                     >
                         Reset canonical point
@@ -280,9 +283,9 @@ export function GravityPage() {
                 <h4 style={{ marginTop: 0, fontSize: '0.86em' }}>Assumption Stack Used Here</h4>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '8px', fontSize: '0.78em' }}>
                     <div>A3: generalized entropy + focusing</div>
-                    <div>B: local MaxEnt state selection</div>
+                    <div>B: local MaxEnt refinement branch</div>
                     <div>N1-N3: null modular bridge</div>
-                    <div>G: Euclidean regularity (2pi normalization)</div>
+                    <div>G: OPH geometric cap branch; BW fixes the 2pi normalization there</div>
                     <div>Null ambiguity lemma: tensor closure up to Lambda g_ab</div>
                     <div>Global capacity closure for Lambda</div>
                 </div>

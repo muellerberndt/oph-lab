@@ -19,6 +19,11 @@ export function GaugeSymmetryPage() {
                 of describing the same physical data on overlapping patches. Gauge transformations are the
                 "coordinate changes" that relate different patch descriptions of the same overlap region.
             </p>
+            <p style={{ marginBottom: '16px' }}>
+                The latest derivation then adds the extended axiom package
+                <strong> R0 + R1 + [z]=0 + MAR</strong>: admissibility defines the candidate class, and MAR chooses
+                the lexicographically minimal admissible sector.
+            </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Gauge-as-Gluing (Assumption D)</h3>
             <p style={{ marginBottom: '16px' }}>
@@ -140,17 +145,17 @@ export function GaugeSymmetryPage() {
             <Explainer title="Why not other gauge groups?">
                 <p>
                     Why SU(3) &times; SU(2) &times; U(1) and not, say, SU(5) or E<sub>8</sub>? In OPH, the
-                    answer comes from three constraints:
+                    answer comes from admissibility plus MAR:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li><strong>Anomaly cancellation:</strong> The gauge group must be anomaly-free in 3+1D. This fixes the hypercharges and constrains the possible groups.</li>
-                    <li><strong>Asymptotic freedom:</strong> The strong sector must be asymptotically free (for UV completeness), constraining N<sub>c</sub>.</li>
-                    <li><strong>Minimality:</strong> The edge-sector structure selects the simplest group compatible with the constraints.</li>
+                    <li><strong>Admissibility:</strong> anomaly-free, chiral-stable, single-Higgs-completable, CP-capable, weak UV-completable, and loop-coherent ([z]=0).</li>
+                    <li><strong>Complexity vector:</strong> C(&Sigma;) = (&chi;<sub>faith</sub>, N<sub>nonab</sub>, N<sub>c</sub>, N<sub>g</sub>).</li>
+                    <li><strong>MAR:</strong> lexicographically minimize C over admissible sectors only (not over all groups).</li>
                 </ul>
                 <p>
-                    These three constraints single out SU(3) &times; SU(2) &times; U(1) uniquely (with specific
-                    representation content). The Standard Model gauge group is not arbitrary; it is the unique
-                    solution to the patch-gluing consistency conditions.
+                    This singles out [SU(3)&times;SU(2)&times;U(1)]/Z<sub>6</sub> with N<sub>c</sub>=3, N<sub>g</sub>=3.
+                    The Standard Model gauge structure is not arbitrary; it is the unique MAR-selected admissible solution.
+                    Equivalently, MAR acts as <strong>Nature's Occam's razor</strong> after admissibility.
                 </p>
             </Explainer>
 

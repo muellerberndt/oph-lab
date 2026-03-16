@@ -1,8 +1,9 @@
-import { useState } from 'react';
 import { Explainer } from '../components/Explainer';
+import { useLabSetting, useLabState } from '../state/labState';
 
 export function DeSitterPage() {
-    const [logDimH, setLogDimH] = useState(122);
+    const [logDimH, setLogDimH] = useLabSetting('deSitter.logDimH');
+    const { resetKeys } = useLabState();
 
     // Constants
     const G = 6.674e-11;
@@ -96,6 +97,15 @@ export function DeSitterPage() {
                 </p>
 
                 <div style={{ marginBottom: '16px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '8px' }}>
+                        <button
+                            className="btn btn-ghost"
+                            style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                            onClick={() => resetKeys(['deSitter.logDimH'])}
+                        >
+                            Reset to Observed 10^122
+                        </button>
+                    </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85em', marginBottom: '4px' }}>
                         <span style={{ color: 'var(--accent-gold)' }}>log<sub>10</sub>(dim H<sub>tot</sub>)</span>
                         <span style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>10<sup>{logDimH}</sup></span>

@@ -57,7 +57,7 @@ export const WALKTHROUGH_STEPS: WalkthroughStep[] = [
     { to: '/hints', icon: Lightbulb, label: 'Five Hints', part: 'foundation', seoTitle: 'Five Experimental Hints That Reality Is Not What It Seems' },
     { to: '/no-objective-reality', icon: Eye, label: 'No Objective Reality', part: 'foundation', seoTitle: 'Why There Is No Objective Reality — The 10 Hardest Questions in Physics' },
     { to: '/the-screen', icon: Globe, label: 'The Holographic Screen', part: 'foundation', seoTitle: 'The Holographic Screen — How a 2D Sphere Creates 3D Spacetime' },
-    { to: '/axioms', icon: Shield, label: 'The Four Axioms', part: 'foundation', seoTitle: 'Four Axioms for a Theory of Everything — Observer Patch Holography' },
+    { to: '/axioms', icon: Shield, label: 'Core Axioms + MAR', part: 'foundation', seoTitle: 'Core Axioms and MAR (Axiom 5) for a Theory of Everything — Observer Patch Holography' },
 
     // Chain 1: Axioms -> General Relativity
     { to: '/entropy', icon: Flame, label: 'Entropy & Area Bound', part: 'chain1-gr', seoTitle: 'Entropy & the Holographic Principle — From Bits to Black Holes' },

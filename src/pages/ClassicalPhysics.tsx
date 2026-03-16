@@ -10,7 +10,7 @@ export function ClassicalPhysicsPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 This is the <strong>synthesis page for Chain 1</strong>. We have traced the complete derivation
-                from the four axioms to Einstein's equations. But the chain does not stop at general relativity.
+                from the core local axioms (A1-A4) to Einstein's equations. But the chain does not stop at general relativity.
                 All of classical physics &mdash; Newton's laws, thermodynamics, geodesic motion, Newtonian gravity
                 &mdash; falls out as limiting cases.
             </p>
@@ -119,7 +119,7 @@ export function ClassicalPhysicsPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Complete Picture</h3>
             <p style={{ marginBottom: '16px' }}>
-                Chain 1 achieves something remarkable: starting from four axioms about observer patches on a
+                Chain 1 achieves something remarkable: starting from core axioms about observer patches on a
                 holographic screen, we derive the entire edifice of classical physics. The ingredients are:
             </p>
 
@@ -154,8 +154,8 @@ export function ClassicalPhysicsPage() {
                 <p>
                     Electromagnetism and the other gauge forces are not part of Chain 1. They arise from
                     <strong> Chain 2</strong> (Axioms &rarr; QFT) via the gauge-as-gluing mechanism. Chain 1 gives
-                    gravity; Chain 2 gives the gauge forces. Both chains start from the same axioms A1-A4 but use
-                    different additional assumptions.
+                    gravity; Chain 2 gives the gauge forces. Both chains share core A1-A4, but Chain 2 additionally
+                    uses MAR (Axiom 5) with technical premises R0/R1/[z]=0 plus different technical assumptions.
                 </p>
             </Explainer>
 

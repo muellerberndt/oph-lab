@@ -136,7 +136,7 @@ oph-lab/
 | 1 | `/hints` | Five Hints That Broke Physics | Card-flip reveal: intuition vs experimental reality |
 | 2 | `/no-objective-reality` | No Objective Reality | Hidden Assumption Revealer: 10 physics problems, flip cards |
 | 3 | `/the-screen` | The Holographic Screen | **DEMO: Patch Sphere** -- draw patches on S², see overlaps |
-| 4 | `/axioms` | The Four Axioms | Axiom cards with 3 detail levels (plain / physics / formal) |
+| 4 | `/axioms` | Core Axioms + MAR | Axiom cards with 3 detail levels (plain / physics / formal) |
 
 ### Part II: Chain 1 -- Road to General Relativity (8 pages)
 

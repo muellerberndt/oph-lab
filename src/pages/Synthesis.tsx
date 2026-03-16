@@ -10,9 +10,10 @@ export function SynthesisPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 Both chains converge. Chain 1 derives gravity and classical physics. Chain 2 derives quantum
-                mechanics and the Standard Model. Both start from the same four axioms about observer patches
-                on a holographic screen S&sup2;. The result is a <strong>complete framework for known physics</strong>
-                built from two parameters.
+                mechanics and the Standard Model. Both start from the same core local axioms A1-A4 about observer patches
+                on a holographic screen S&sup2;; the extended theory then adds MAR (Axiom 5), and Chain 2 uses
+                technical premises (R0, R1, [z]=0) for gauge reconstruction. The result is a <strong>complete framework for known physics</strong>
+                built from two parameters plus one explicit selection rule.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Two Parameters, All of Physics</h3>
@@ -52,7 +53,7 @@ export function SynthesisPage() {
             <p style={{ marginBottom: '16px' }}>
                 Everything else &mdash; the Standard Model gauge group, particle spectrum, masses, coupling
                 constants, Newton's laws, Einstein's equations, thermodynamics &mdash; follows from the axioms
-                plus these two numbers.
+                plus MAR (Axiom 5), technical premises for Chain 2, and these two numbers.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Two Chains Unified</h3>
@@ -68,7 +69,7 @@ export function SynthesisPage() {
                         fontWeight: 700,
                         fontSize: '1em',
                     }}>
-                        AXIOMS A1-A4
+                        CORE AXIOMS A1-A4
                     </div>
                     <div style={{ color: 'var(--text-muted)', margin: '8px 0', fontSize: '1.2em' }}>&darr;</div>
                 </div>
@@ -94,7 +95,7 @@ export function SynthesisPage() {
                         <div style={{ padding: '8px 16px', background: 'rgba(122,184,212,0.15)', border: '1px solid var(--accent-blue)', color: 'var(--accent-blue)', fontSize: '0.8em', fontWeight: 600, textAlign: 'center', width: '100%' }}>
                             CHAIN 2: QFT
                         </div>
-                        {['QM from Overlap Consistency', 'Gauge-as-Gluing', 'SU(3)\u00d7SU(2)\u00d7U(1)', 'Edge-Sector Dynamics', 'Standard Model', 'Quantum Field Theory'].map((step, i) => (
+                        {['R0+R1+[z]=0+MAR', 'QM from Overlap Consistency', 'Gauge-as-Gluing', '[SU(3)\u00d7SU(2)\u00d7U(1)]/Z6', 'Edge-Sector Dynamics', 'Quantum Field Theory'].map((step, i) => (
                             <div key={i} style={{ width: '100%' }}>
                                 <div style={{ padding: '6px 12px', background: 'rgba(122,184,212,0.05)', border: '1px solid rgba(122,184,212,0.2)', fontSize: '0.75em', color: 'var(--text-secondary)', textAlign: 'center' }}>
                                     {step}
@@ -151,7 +152,7 @@ export function SynthesisPage() {
                         <div style={{ color: 'var(--accent-green)', fontWeight: 600, marginBottom: '4px' }}>OPH</div>
                         <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8', color: 'var(--text-secondary)' }}>
                             <li>2D screen &rarr; 3+1D spacetime</li>
-                            <li>GR + QFT from 4 axioms</li>
+                            <li>GR + QFT from core axioms + MAR layer</li>
                             <li>Unique vacuum</li>
                             <li>2 free parameters</li>
                         </ul>
@@ -187,7 +188,7 @@ export function SynthesisPage() {
                 <span style={{ color: 'var(--accent-rose)', fontWeight: 600 }}>Old:</span>
                 <span style={{ color: 'var(--text-secondary)' }}>Gravity and QM are separate</span>
                 <span style={{ color: 'var(--accent-green)', fontWeight: 600 }}>New:</span>
-                <span style={{ color: 'var(--text-secondary)' }}>Both emerge from the same axioms</span>
+                <span style={{ color: 'var(--text-secondary)' }}>Both emerge from core axioms; gauge uniqueness uses MAR</span>
             </div>
 
             <Explainer title="Is this too good to be true?">
@@ -195,7 +196,7 @@ export function SynthesisPage() {
                     A healthy skepticism is warranted. Key questions to ask:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li><strong>Are the assumptions really as minimal as claimed?</strong> The four axioms are supplemented by assumptions B-G. A full assessment must count all logical inputs.</li>
+                    <li><strong>Are the assumptions really as minimal as claimed?</strong> Core A1-A4 are supplemented by MAR (Axiom 5), R0/R1/[z]=0, and assumptions B-G. A full assessment must count all logical inputs.</li>
                     <li><strong>Are the derivations rigorous?</strong> Some steps (e.g., the Z<sub>6</sub> Yukawa hierarchy, the Peter-Weyl unification) are at the level of physical arguments, not mathematical proofs.</li>
                     <li><strong>Can it be falsified?</strong> Yes (see Predictions page). This is the most important test of any theory.</li>
                 </ul>

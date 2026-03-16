@@ -1,10 +1,8 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Explainer } from '../components/Explainer';
 import {
     BETA_COEFFICIENTS_MSSM_LIKE,
     BETA_COEFFICIENTS_SM_1LOOP,
-    PIXEL_REFERENCE,
-    SCREEN_CAPACITY_REFERENCE_LOG10,
     estimateHadronMassesFromQcdScale,
     estimateQcdScaleGeV,
     lambdaFromScreen,
@@ -12,8 +10,7 @@ import {
     solveGaugeClosure,
     textureMassesFromVev,
 } from '../core/ophMath';
-
-type RunningModel = 'edge-mssm-like' | 'sm-1loop';
+import { useLabSetting, useLabState } from '../state/labState';
 
 function formatNumber(value: number, digits = 3) {
     if (!Number.isFinite(value)) {
@@ -36,18 +33,19 @@ function formatMassGeV(value: number) {
 }
 
 export function MassesPage() {
-    const [pixelConstant, setPixelConstant] = useState(PIXEL_REFERENCE);
-    const [logCapacity, setLogCapacity] = useState(SCREEN_CAPACITY_REFERENCE_LOG10);
-    const [runningModel, setRunningModel] = useState<RunningModel>('edge-mssm-like');
-    const [su2MaxJ, setSu2MaxJ] = useState(30);
-    const [su3MaxIndex, setSu3MaxIndex] = useState(14);
-    const [alphaStep, setAlphaStep] = useState(0.0005);
-    const [qcdFlavors, setQcdFlavors] = useState(5);
+    const [pixelConstant, setPixelConstant] = useLabSetting('masses.pixelConstant');
+    const [logCapacity, setLogCapacity] = useLabSetting('masses.logCapacity');
+    const [runningModel, setRunningModel] = useLabSetting('masses.runningModel');
+    const [su2MaxJ, setSu2MaxJ] = useLabSetting('masses.su2MaxJ');
+    const [su3MaxIndex, setSu3MaxIndex] = useLabSetting('masses.su3MaxIndex');
+    const [alphaStep, setAlphaStep] = useLabSetting('masses.alphaStep');
+    const [qcdFlavors, setQcdFlavors] = useLabSetting('masses.qcdFlavors');
 
-    const [coefficientScale, setCoefficientScale] = useState(1);
-    const [upExponentShift, setUpExponentShift] = useState(0);
-    const [downExponentShift, setDownExponentShift] = useState(0);
-    const [leptonExponentShift, setLeptonExponentShift] = useState(0);
+    const [coefficientScale, setCoefficientScale] = useLabSetting('masses.coefficientScale');
+    const [upExponentShift, setUpExponentShift] = useLabSetting('masses.upExponentShift');
+    const [downExponentShift, setDownExponentShift] = useLabSetting('masses.downExponentShift');
+    const [leptonExponentShift, setLeptonExponentShift] = useLabSetting('masses.leptonExponentShift');
+    const { resetKeys } = useLabState();
 
     const betaCoefficients = runningModel === 'edge-mssm-like' ? BETA_COEFFICIENTS_MSSM_LIKE : BETA_COEFFICIENTS_SM_1LOOP;
 
@@ -105,6 +103,29 @@ export function MassesPage() {
                 <div className="demo-label">Spectrum Pipeline Controls (Expanded)</div>
 
                 <div style={{ display: 'grid', gap: '14px', marginBottom: '16px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        <button
+                            className="btn btn-ghost"
+                            style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                            onClick={() =>
+                                resetKeys([
+                                    'masses.pixelConstant',
+                                    'masses.logCapacity',
+                                    'masses.runningModel',
+                                    'masses.su2MaxJ',
+                                    'masses.su3MaxIndex',
+                                    'masses.alphaStep',
+                                    'masses.qcdFlavors',
+                                    'masses.coefficientScale',
+                                    'masses.upExponentShift',
+                                    'masses.downExponentShift',
+                                    'masses.leptonExponentShift',
+                                ])
+                            }
+                        >
+                            Reset Mass Derivation Controls
+                        </button>
+                    </div>
                     <div>
                         <div style={{ fontSize: '0.8em', color: 'var(--accent-gold)', marginBottom: '6px' }}>Running model</div>
                         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>

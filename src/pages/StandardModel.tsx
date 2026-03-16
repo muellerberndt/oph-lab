@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Explainer } from '../components/Explainer';
+import { useLabSetting, useLabState } from '../state/labState';
 
 type AdmissibilityChecks = {
     loopCoherent: boolean;
@@ -137,20 +138,13 @@ const CANDIDATES: GaugeCandidate[] = [
     },
 ];
 
-const DEFAULT_ACTIVE_CHECKS: Record<CheckKey, boolean> = {
-    loopCoherent: true,
-    anomalyFree: true,
-    chiralStable: true,
-    singleHiggs: true,
-    cpCapable: true,
-    weakUvComplete: true,
-};
-
 export function StandardModelPage() {
-    const [stage, setStage] = useState(5);
-    const [activeChecks, setActiveChecks] = useState<Record<CheckKey, boolean>>(DEFAULT_ACTIVE_CHECKS);
-    const [ncTrial, setNcTrial] = useState(3);
-    const [ngTrial, setNgTrial] = useState(3);
+    const [stage, setStage] = useLabSetting('standardModel.stage');
+    const [activeChecksRaw, setActiveChecks] = useLabSetting('standardModel.activeChecks');
+    const [ncTrial, setNcTrial] = useLabSetting('standardModel.ncTrial');
+    const [ngTrial, setNgTrial] = useLabSetting('standardModel.ngTrial');
+    const { resetKeys } = useLabState();
+    const activeChecks = activeChecksRaw as Record<CheckKey, boolean>;
 
     const elimination = useMemo(() => {
         let survivors = [...CANDIDATES];
@@ -203,6 +197,22 @@ export function StandardModelPage() {
                 <div className="demo-label">Admissibility + MAR Eliminator</div>
 
                 <div style={{ marginBottom: '14px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '8px' }}>
+                        <button
+                            className="btn btn-ghost"
+                            style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                            onClick={() =>
+                                resetKeys([
+                                    'standardModel.stage',
+                                    'standardModel.activeChecks',
+                                    'standardModel.ncTrial',
+                                    'standardModel.ngTrial',
+                                ])
+                            }
+                        >
+                            Reset SM Derivation Controls
+                        </button>
+                    </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
                         <span style={{ color: 'var(--accent-gold)' }}>Derivation stage</span>
                         <span style={{ color: 'var(--accent-cyan)' }}>{stage} / 5</span>
@@ -369,6 +379,7 @@ export function StandardModelPage() {
                 <p>
                     MAR does not pick the absolutely smallest group. It minimizes only after admissibility filters are
                     enforced. This prevents trivial sectors (like pure U(1)) that fail chiral, CP, or Yukawa criteria.
+                    Within the admissible class, this is <strong>Nature's Occam's razor</strong>.
                 </p>
             </Explainer>
         </div>

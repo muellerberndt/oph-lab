@@ -1,23 +1,14 @@
 import { useState, useCallback } from 'react';
 import { Explainer } from '../components/Explainer';
-
-interface Patch {
-    cx: number;
-    cy: number;
-    r: number;
-    color: string;
-    label: string;
-}
+import { useLabSetting, useLabState } from '../state/labState';
 
 const COLORS = ['rgba(201, 112, 112, 0.3)', 'rgba(122, 184, 212, 0.3)', 'rgba(201, 169, 110, 0.3)', 'rgba(0, 255, 65, 0.2)'];
 const STROKE_COLORS = ['#c97070', '#7ab8d4', '#c9a96e', '#00ff41'];
 
 export function TheScreenPage() {
-    const [patches, setPatches] = useState<Patch[]>([
-        { cx: 140, cy: 130, r: 60, color: COLORS[0], label: 'Observer A' },
-        { cx: 200, cy: 170, r: 55, color: COLORS[1], label: 'Observer B' },
-    ]);
+    const [patches, setPatches] = useLabSetting('theScreen.patches');
     const [dragging, setDragging] = useState<number | null>(null);
+    const { resetKeys } = useLabState();
 
     const svgSize = 340;
     const sphereR = 140;
@@ -156,6 +147,16 @@ export function TheScreenPage() {
                         <div style={{ marginBottom: '16px' }}>
                             <button className="btn btn-ghost" onClick={addPatch} disabled={patches.length >= 4} style={{ fontSize: '0.8em' }}>
                                 + Add Observer
+                            </button>
+                            <button
+                                className="btn btn-ghost"
+                                onClick={() => {
+                                    resetKeys(['theScreen.patches']);
+                                    setDragging(null);
+                                }}
+                                style={{ fontSize: '0.8em', marginLeft: '8px' }}
+                            >
+                                Reset Patches
                             </button>
                         </div>
 

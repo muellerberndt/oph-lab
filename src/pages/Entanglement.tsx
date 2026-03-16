@@ -1,10 +1,12 @@
 import { useState, useCallback } from 'react';
 import { Explainer } from '../components/Explainer';
+import { useLabSetting, useLabState } from '../state/labState';
 
 export function EntanglementPage() {
     // Bell experiment simulator state
-    const [numTrials, setNumTrials] = useState(100);
+    const [numTrials, setNumTrials] = useLabSetting('entanglement.numTrials');
     const [results, setResults] = useState<{ classical: number; quantum: number; trials: number } | null>(null);
+    const { resetKeys } = useLabState();
 
     const runExperiment = useCallback(() => {
         let classicalCorr = 0;
@@ -134,6 +136,18 @@ export function EntanglementPage() {
                     Run a simulated Bell experiment. Compare correlations from a classical (local hidden variable)
                     model with quantum predictions. Classical models cannot exceed S = 2.
                 </p>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
+                    <button
+                        className="btn btn-ghost"
+                        style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                        onClick={() => {
+                            resetKeys(['entanglement.numTrials']);
+                            setResults(null);
+                        }}
+                    >
+                        Reset Bell Settings
+                    </button>
+                </div>
 
                 <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap' }}>
                     <div style={{ flex: 1, minWidth: '200px' }}>

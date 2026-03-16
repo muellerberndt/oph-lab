@@ -1,21 +1,12 @@
 import { useState, useCallback } from 'react';
 import { Explainer } from '../components/Explainer';
-
-interface Bond {
-    from: number;
-    to: number;
-    strength: number;
-}
+import { useLabSetting, useLabState } from '../state/labState';
 
 export function EntanglementGeometryPage() {
     const NUM_BOUNDARY = 8;
-    const [bonds, setBonds] = useState<Bond[]>([
-        { from: 0, to: 4, strength: 1.0 },
-        { from: 1, to: 5, strength: 1.0 },
-        { from: 2, to: 6, strength: 1.0 },
-        { from: 3, to: 7, strength: 1.0 },
-    ]);
+    const [bonds, setBonds] = useLabSetting('entanglementGeometry.bonds');
     const [selectedFrom, setSelectedFrom] = useState<number | null>(null);
+    const { resetKeys } = useLabState();
 
     const svgSize = 340;
     const cx = svgSize / 2;
@@ -108,6 +99,18 @@ export function EntanglementGeometryPage() {
                     Click pairs of boundary points to toggle entanglement bonds between them. Use sliders to adjust bond
                     strength. More and stronger bonds create deeper bulk geometry.
                 </p>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
+                    <button
+                        className="btn btn-ghost"
+                        style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                        onClick={() => {
+                            resetKeys(['entanglementGeometry.bonds']);
+                            setSelectedFrom(null);
+                        }}
+                    >
+                        Reset Entanglement Graph
+                    </button>
+                </div>
 
                 <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
                     <svg

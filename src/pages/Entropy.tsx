@@ -1,8 +1,10 @@
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
 import { Explainer } from '../components/Explainer';
+import { useLabSetting, useLabState } from '../state/labState';
 
 export function EntropyPage() {
-    const [probs, setProbs] = useState([0.25, 0.25, 0.25, 0.25]);
+    const [probs, setProbs] = useLabSetting('entropy.probs');
+    const { resetKeys } = useLabState();
 
     const normalize = useCallback((newProbs: number[], _changedIdx: number) => {
         const total = newProbs.reduce((s, v) => s + v, 0);
@@ -99,6 +101,15 @@ export function EntropyPage() {
                     Adjust the probability bars for 4 outcomes. The probabilities auto-normalize.
                     Watch how entropy changes: it is maximized when all outcomes are equally likely.
                 </p>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
+                    <button
+                        className="btn btn-ghost"
+                        style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                        onClick={() => resetKeys(['entropy.probs'])}
+                    >
+                        Reset to Uniform Distribution
+                    </button>
+                </div>
 
                 <div style={{ display: 'flex', gap: '32px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
                     <div style={{ flex: 1, minWidth: '240px' }}>

@@ -1,13 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { Explainer } from '../components/Explainer';
 import {
     BETA_COEFFICIENTS_MSSM_LIKE,
     BETA_COEFFICIENTS_SM_1LOOP,
-    PIXEL_REFERENCE,
     solveGaugeClosure,
 } from '../core/ophMath';
-
-type RunningPreset = 'sm-only' | 'edge-canonical' | 'edge-custom';
+import { useLabSetting, useLabState } from '../state/labState';
 
 const ALPHA_EM_INV_REFERENCE = 127.952;
 const SIN2_THETA_W_REFERENCE = 0.23122;
@@ -32,13 +30,14 @@ function runOneLoopAlpha(alphaU: number, betaCoefficient: number, mu0GeV: number
 }
 
 export function UnificationPage() {
-    const [preset, setPreset] = useState<RunningPreset>('edge-canonical');
-    const [edgeShiftScale, setEdgeShiftScale] = useState(1);
-    const [pixelConstant, setPixelConstant] = useState(PIXEL_REFERENCE);
-    const [su2MaxJ, setSu2MaxJ] = useState(30);
-    const [su3MaxIndex, setSu3MaxIndex] = useState(14);
-    const [alphaStep, setAlphaStep] = useState(0.0005);
-    const [probeLogMu, setProbeLogMu] = useState(2);
+    const [preset, setPreset] = useLabSetting('unification.preset');
+    const [edgeShiftScale, setEdgeShiftScale] = useLabSetting('unification.edgeShiftScale');
+    const [pixelConstant, setPixelConstant] = useLabSetting('unification.pixelConstant');
+    const [su2MaxJ, setSu2MaxJ] = useLabSetting('unification.su2MaxJ');
+    const [su3MaxIndex, setSu3MaxIndex] = useLabSetting('unification.su3MaxIndex');
+    const [alphaStep, setAlphaStep] = useLabSetting('unification.alphaStep');
+    const [probeLogMu, setProbeLogMu] = useLabSetting('unification.probeLogMu');
+    const { resetKeys } = useLabState();
 
     const effectiveShiftScale =
         preset === 'sm-only' ? 0 :
@@ -108,6 +107,25 @@ export function UnificationPage() {
                 <div className="demo-label">Interactive Unification Derivation</div>
 
                 <div style={{ display: 'grid', gap: '14px', marginBottom: '18px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        <button
+                            className="btn btn-ghost"
+                            style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                            onClick={() =>
+                                resetKeys([
+                                    'unification.preset',
+                                    'unification.edgeShiftScale',
+                                    'unification.pixelConstant',
+                                    'unification.su2MaxJ',
+                                    'unification.su3MaxIndex',
+                                    'unification.alphaStep',
+                                    'unification.probeLogMu',
+                                ])
+                            }
+                        >
+                            Reset Unification Controls
+                        </button>
+                    </div>
                     <div>
                         <div style={{ fontSize: '0.8em', color: 'var(--accent-gold)', marginBottom: '6px' }}>Running preset</div>
                         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>

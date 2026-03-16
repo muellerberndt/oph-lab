@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useMemo, type KeyboardEvent } from 'react';
 import { Explainer } from '../components/Explainer';
+import { useLabSetting, useLabState } from '../state/labState';
 
 interface Question {
     problem: string;
@@ -72,14 +73,23 @@ const QUESTIONS: Question[] = [
 ];
 
 export function NoObjectiveRealityPage() {
-    const [flippedSet, setFlippedSet] = useState<Set<number>>(new Set());
+    const [flippedIndices, setFlippedIndices] = useLabSetting('noObjective.flippedIndices');
+    const { resetKeys } = useLabState();
+    const flippedSet = useMemo(() => new Set(flippedIndices), [flippedIndices]);
 
     const toggle = (i: number) => {
-        setFlippedSet(prev => {
-            const next = new Set(prev);
+        setFlippedIndices(previous => {
+            const next = new Set(previous);
             if (next.has(i)) next.delete(i); else next.add(i);
-            return next;
+            return Array.from(next.values()).sort((a, b) => a - b);
         });
+    };
+
+    const handleCardKeyDown = (event: KeyboardEvent<HTMLDivElement>, index: number) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggle(index);
+        }
     };
 
     return (
@@ -99,15 +109,30 @@ export function NoObjectiveRealityPage() {
                 OPH takes this seriously. Reality IS the process of making observations between observers consistent.
             </p>
             <p style={{ marginBottom: '32px', color: 'var(--text-muted)', fontSize: '0.9em' }}>
-                Every major puzzle in physics contains a hidden assumption. Click each card to reveal it.
+                Every major puzzle in physics contains a hidden assumption. Use <strong>Reveal OPH Resolution</strong> on each card.
             </p>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '10px' }}>
+                <button
+                    className="btn btn-ghost"
+                    style={{ fontSize: '0.72em', padding: '4px 10px' }}
+                    onClick={() => resetKeys(['noObjective.flippedIndices'])}
+                >
+                    Reset Flipped Cards
+                </button>
+            </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                {QUESTIONS.map((q, i) => (
+                {QUESTIONS.map((q, i) => {
+                    const isFlipped = flippedSet.has(i);
+                    return (
                     <div
                         key={i}
-                        className={`flip-card ${flippedSet.has(i) ? 'flipped' : ''}`}
+                        className={`flip-card ${isFlipped ? 'flipped' : ''}`}
                         onClick={() => toggle(i)}
+                        onKeyDown={(event) => handleCardKeyDown(event, i)}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`${q.problem}: ${isFlipped ? 'show hidden assumption side' : 'show OPH resolution side'}`}
                     >
                         <div className="flip-card-inner" style={{ minHeight: '220px' }}>
                             <div className="flip-card-front" style={{ padding: '16px' }}>
@@ -119,6 +144,18 @@ export function NoObjectiveRealityPage() {
                                 <div style={{ fontSize: '0.75em', color: 'var(--accent-amber)' }}>
                                     Hidden assumption: {q.hiddenAssumption}
                                 </div>
+                                <div className="flip-action-row">
+                                    <span className="flip-cue">Front side</span>
+                                    <button
+                                        className="flip-action-btn"
+                                        onClick={(event) => {
+                                            event.stopPropagation();
+                                            toggle(i);
+                                        }}
+                                    >
+                                        Reveal OPH Resolution
+                                    </button>
+                                </div>
                             </div>
                             <div className="flip-card-back" style={{ padding: '16px' }}>
                                 <div style={{ fontSize: '0.65em', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--accent-green)', marginBottom: '6px' }}>
@@ -126,10 +163,22 @@ export function NoObjectiveRealityPage() {
                                 </div>
                                 <h4 style={{ fontSize: '0.9em', margin: '0 0 8px 0' }}>{q.problem}</h4>
                                 <p style={{ fontSize: '0.8em', margin: 0 }}>{q.ophResolution}</p>
+                                <div className="flip-action-row">
+                                    <span className="flip-cue">Back side</span>
+                                    <button
+                                        className="flip-action-btn"
+                                        onClick={(event) => {
+                                            event.stopPropagation();
+                                            toggle(i);
+                                        }}
+                                    >
+                                        Back to Problem
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                ))}
+                )})}
             </div>
 
             <Explainer title="The ether move">

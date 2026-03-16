@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { GLOSSARY_ENTRIES, type GlossaryCategory } from '../content/glossaryEntries';
+import { useLabSetting } from '../state/labState';
 
 const CATEGORY_LABELS: Record<GlossaryCategory, { label: string; color: string }> = {
     foundation: { label: 'Foundation', color: 'var(--accent-gold)' },
@@ -17,8 +18,9 @@ function normalized(text: string) {
 }
 
 export function GlossaryPage() {
-    const [search, setSearch] = useState('');
-    const [filterCategory, setFilterCategory] = useState<GlossaryCategory | null>(null);
+    const [search, setSearch] = useLabSetting('glossary.search');
+    const [filterCategoryRaw, setFilterCategoryRaw] = useLabSetting('glossary.filterCategory');
+    const filterCategory = filterCategoryRaw as GlossaryCategory | null;
 
     const filtered = useMemo(() => {
         const query = normalized(search);
@@ -89,7 +91,7 @@ export function GlossaryPage() {
             <div style={{ display: 'flex', gap: '8px', marginBottom: '20px', flexWrap: 'wrap' }}>
                 <button
                     className={`btn ${filterCategory === null ? 'btn-primary' : 'btn-ghost'}`}
-                    onClick={() => setFilterCategory(null)}
+                    onClick={() => setFilterCategoryRaw(null)}
                     style={{ fontSize: '0.72em', padding: '4px 10px' }}
                 >
                     All ({GLOSSARY_ENTRIES.length})
@@ -98,7 +100,7 @@ export function GlossaryPage() {
                     <button
                         key={category}
                         className={`btn ${filterCategory === category ? 'btn-primary' : 'btn-ghost'}`}
-                        onClick={() => setFilterCategory(filterCategory === category ? null : category)}
+                        onClick={() => setFilterCategoryRaw(filterCategory === category ? null : category)}
                         style={{ fontSize: '0.72em', padding: '4px 10px' }}
                     >
                         {CATEGORY_LABELS[category].label} ({conceptCountByCategory[category]})
@@ -109,6 +111,7 @@ export function GlossaryPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {filtered.map(entry => {
                     const categoryStyle = CATEGORY_LABELS[entry.category];
+                    const links = entry.links ?? [{ label: 'OPH Lab Resources', url: '/resources' }];
                     return (
                         <div key={entry.term} className="card" style={{ borderLeft: `3px solid ${categoryStyle.color}`, padding: '16px' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px', flexWrap: 'wrap' }}>
@@ -146,6 +149,27 @@ export function GlossaryPage() {
                                     >
                                         {page}
                                     </span>
+                                ))}
+                            </div>
+
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', marginTop: '10px' }}>
+                                <span style={{ fontSize: '0.68em', color: 'var(--text-muted)' }}>Learn more:</span>
+                                {links.map(link => (
+                                    <a
+                                        key={`${entry.term}-${link.url}`}
+                                        href={link.url}
+                                        target={link.url.startsWith('http') ? '_blank' : undefined}
+                                        rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        style={{
+                                            fontSize: '0.66em',
+                                            color: 'var(--accent-cyan)',
+                                            border: '1px solid var(--border-color)',
+                                            padding: '2px 6px',
+                                            textDecoration: 'none',
+                                        }}
+                                    >
+                                        {link.label}
+                                    </a>
                                 ))}
                             </div>
                         </div>

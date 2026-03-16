@@ -14,7 +14,7 @@ export function Home() {
                     }}>Observer Patch Holography</span>
                 </h1>
                 <p style={{ fontSize: '1.1rem', color: 'var(--text-primary)', marginBottom: '16px' }}>
-                    An interactive guide to deriving all of physics from four axioms on a holographic screen.
+                    An interactive guide to deriving physics from core axioms A1-A4 plus MAR (Axiom 5).
                 </p>
                 <p style={{ color: 'var(--text-muted)' }}>
                     This app walks you through two derivation chains &mdash; one leading to
@@ -40,8 +40,8 @@ export function Home() {
                     </div>
                     <h3 style={{ fontSize: '1em', margin: '0 0 8px 0' }}>Axioms &rarr; Quantum Field Theory</h3>
                     <p style={{ fontSize: '0.85em', margin: 0 }}>
-                        From overlap consistency and gluing, derive quantum mechanics, gauge symmetry,
-                        the Standard Model gauge group, and particle masses.
+                        From overlap consistency and gluing plus R0/R1/[z]=0/MAR, derive quantum mechanics,
+                        unique Standard Model gauge structure, and particle masses.
                     </p>
                 </div>
             </div>
@@ -54,7 +54,7 @@ export function Home() {
                 </p>
                 <p style={{ marginBottom: '12px' }}>
                     From this single principle &mdash; plus a handful of mathematical
-                    axioms &mdash; everything follows: special and general relativity, quantum mechanics,
+                    axioms (A1-A4 + MAR) &mdash; everything follows: special and general relativity, quantum mechanics,
                     the Standard Model of particle physics, dark matter, and the cosmological constant.
                 </p>
                 <p style={{ margin: 0 }}>

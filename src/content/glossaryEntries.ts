@@ -14,6 +14,7 @@ export type GlossaryEntry = {
     definition: string;
     category: GlossaryCategory;
     usedIn: string[];
+    links?: Array<{ label: string; url: string }>;
 };
 
 export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
@@ -75,6 +76,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
         definition: 'Local Markov/recoverability axiom: conditional mutual information is small across separators with controlled recovery.',
         category: 'axioms',
         usedIn: ['Axioms', 'Error Correction'],
+        links: [{ label: 'Fawzi-Renner (arXiv:1410.0664)', url: 'https://arxiv.org/abs/1410.0664' }],
     },
     {
         term: 'Assumption B (MaxEnt)',
@@ -245,12 +247,14 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
         definition: 'MaxEnt distribution over representations weighted by dimension and Casimir.',
         category: 'gauge',
         usedIn: ['Standard Model', 'Masses'],
+        links: [{ label: 'Heat kernel (Wikipedia)', url: 'https://en.wikipedia.org/wiki/Heat_kernel' }],
     },
     {
         term: 'Tannaka-Krein Reconstruction',
         definition: 'Reconstructs compact group from representation/fusion category data.',
         category: 'gauge',
         usedIn: ['Gauge Symmetry', 'Standard Model'],
+        links: [{ label: 'Tannaka-Krein duality', url: 'https://en.wikipedia.org/wiki/Tannaka%E2%80%93Krein_duality' }],
     },
     {
         term: 'Doplicher-Roberts Reconstruction',
@@ -258,26 +262,33 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
         definition: 'Categorical reconstruction in localized transportable sector settings.',
         category: 'gauge',
         usedIn: ['Standard Model'],
+        links: [{ label: 'Doplicher-Roberts theorem overview', url: 'https://ncatlab.org/nlab/show/Doplicher-Roberts+duality' }],
     },
     {
         term: 'Loop-Coherent Gluing',
         symbol: '[z]=0',
-        definition: 'Vanishing central obstruction class equivalent to transportability.',
+        definition: 'Vanishing loop obstruction class enforcing transportable sector gluing across overlaps.',
         category: 'gauge',
-        usedIn: ['Standard Model'],
+        usedIn: ['Axioms', 'Gauge Symmetry', 'Standard Model'],
+        links: [{ label: 'Selection and transportability notes', url: '/standard-model' }],
     },
     {
         term: 'Admissibility Conditions',
         definition: 'Sector filters: transportable, anomaly-free, chiral-stable, single-Higgs, CP-capable, weak UV-completable.',
         category: 'gauge',
-        usedIn: ['Standard Model'],
+        usedIn: ['Gauge Symmetry', 'Standard Model', 'QFT Emerges'],
+        links: [{ label: 'Admissibility simulator', url: '/standard-model' }],
     },
     {
         term: 'Selection Axiom MAR',
         symbol: 'C(Sigma)=(chi_faith,N_nonab,N_c,N_g)',
-        definition: 'Lexicographic minimal admissible realization rule selecting the realized gauge sector.',
+        definition: 'Minimal Admissible Realization: select lexicographically minimal C(Sigma) only after admissibility filters; a selection rule, not a dynamics law.',
         category: 'gauge',
-        usedIn: ['Standard Model'],
+        usedIn: ['Axioms', 'Gauge Symmetry', 'Standard Model', 'QFT Emerges', 'Synthesis'],
+        links: [
+            { label: 'Gauge derivation walkthrough', url: '/standard-model' },
+            { label: 'Paper (Zenodo)', url: 'https://doi.org/10.5281/zenodo.18288114' },
+        ],
     },
     {
         term: 'Faithful Edge Capacity',
@@ -485,6 +496,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
         definition: 'Thermal equilibrium characterization with respect to modular flow.',
         category: 'methods',
         usedIn: ['Modular Flow'],
+        links: [{ label: 'KMS state (Wikipedia)', url: 'https://en.wikipedia.org/wiki/KMS_state' }],
     },
     {
         term: 'Peter-Weyl Decomposition',
@@ -492,6 +504,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
         definition: 'Group harmonic analysis decomposition underlying edge-mode multiplicity and beta-shift effects.',
         category: 'methods',
         usedIn: ['Unification', 'Standard Model'],
+        links: [{ label: 'Peter-Weyl theorem', url: 'https://en.wikipedia.org/wiki/Peter%E2%80%93Weyl_theorem' }],
     },
     {
         term: 'Edge Beta Shift',
@@ -513,6 +526,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
         definition: 'Finite matching contributions at mass thresholds or scheme changes that perturb pure one-loop running predictions.',
         category: 'methods',
         usedIn: ['Unification', 'Masses', 'Synthesis'],
+        links: [{ label: 'Renormalization group matching', url: 'https://en.wikipedia.org/wiki/Renormalization_group' }],
     },
     {
         term: 'No-Cheat Audit',

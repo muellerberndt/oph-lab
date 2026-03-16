@@ -286,6 +286,7 @@ input[type="range"]::-webkit-slider-thumb {
 .flip-card {
   perspective: 1000px;
   cursor: pointer;
+  outline: none;
 }
 
 .flip-card-inner {
@@ -300,6 +301,12 @@ input[type="range"]::-webkit-slider-thumb {
   transform: rotateY(180deg);
 }
 
+.flip-card:focus-visible .flip-card-front,
+.flip-card:focus-visible .flip-card-back {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 1px rgba(78, 231, 255, 0.35);
+}
+
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -311,9 +318,42 @@ input[type="range"]::-webkit-slider-thumb {
 
 .flip-card-front {
   background: var(--bg-secondary);
+  border-color: rgba(201, 169, 110, 0.35);
 }
 
 .flip-card-back {
   background: var(--bg-tertiary);
   transform: rotateY(180deg);
+  border-color: rgba(0, 255, 65, 0.28);
+}
+
+.flip-action-row {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.flip-cue {
+  font-size: 0.72em;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.flip-action-btn {
+  border: 1px solid rgba(78, 231, 255, 0.45);
+  background: rgba(78, 231, 255, 0.12);
+  color: var(--accent-cyan);
+  padding: 4px 8px;
+  font-size: 0.7em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+.flip-action-btn:hover {
+  background: rgba(78, 231, 255, 0.2);
 }
