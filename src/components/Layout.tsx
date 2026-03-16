@@ -120,7 +120,7 @@ export function Layout() {
                             <p style={{ marginTop: '8px' }}>
                                 Bernhard Mueller
                                 {' \u2022 '}
-                                <a href="https://github.com/muellerberndt/observer-patch-holography" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>GitHub</a>
+                                <a href="https://github.com/FloatingPragma/observer-patch-holography" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>GitHub</a>
                                 {' \u2022 '}
                                 <a href="https://zenodo.org/records/18288114" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Paper (Zenodo)</a>
                             </p>
