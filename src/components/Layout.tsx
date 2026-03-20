@@ -5,8 +5,8 @@ import './Layout.css';
 import { WALKTHROUGH_STEPS, PART_LABELS, PART_COLORS, type PartId } from '../routes/walkthrough';
 import { WalkthroughNav } from './WalkthroughNav';
 import { installLinkTracking, trackPageView } from '../lib/analytics';
-
-const SITE_SUFFIX = ' | OPH Lab';
+import { SeoManager } from './SeoManager';
+import { getSeoMeta } from '../seo';
 
 export function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,9 +14,7 @@ export function Layout() {
 
     useEffect(() => {
         const path = location.pathname.replace(/\/$/, '') || '/';
-        const step = WALKTHROUGH_STEPS.find(s => s.to === path);
-        const title = step ? step.seoTitle + SITE_SUFFIX : 'OPH Lab — Theory of Everything Interactive Guide';
-        document.title = title;
+        const title = getSeoMeta(path).title;
         trackPageView(path, title);
     }, [location.pathname]);
 
@@ -32,6 +30,7 @@ export function Layout() {
 
     return (
         <div className="layout">
+            <SeoManager />
             <aside className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
                 <div className="sidebar-header">
                     <a href="https://floatingpragma.io/" className="back-link">&larr;</a>

@@ -18,7 +18,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://oph-lab.floatingpragma.io/" />
   <meta property="og:title" content="Theory of Everything: Derive Gravity & Quantum Mechanics from First Principles" />
-  <meta property="og:description" content="Interactive guide to a theory of everything — derive general relativity, quantum field theory, and the Standard Model from 4 axioms on a holographic screen." />
+  <meta property="og:description" content="Interactive guide to a theory of everything — derive general relativity, quantum field theory, and the Standard Model from five axioms on a holographic screen." />
   <meta property="og:site_name" content="Floating Pragma" />
   <meta property="og:image" content="https://floatingpragma.io/pragma.jpg" />
 
@@ -26,12 +26,29 @@
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://oph-lab.floatingpragma.io/" />
   <meta property="twitter:title" content="Theory of Everything: Derive Gravity & Quantum Mechanics from First Principles" />
-  <meta property="twitter:description" content="Interactive guide to a theory of everything — derive general relativity, quantum field theory, and the Standard Model from 4 axioms on a holographic screen." />
+  <meta property="twitter:description" content="Interactive guide to a theory of everything — derive general relativity, quantum field theory, and the Standard Model from five axioms on a holographic screen." />
   <meta property="twitter:image" content="https://floatingpragma.io/pragma.jpg" />
 
   <!-- Additional SEO -->
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow" />
+  <script>
+    (function () {
+      var path = window.location.pathname || '/';
+      if (path !== '/' && !path.endsWith('/')) {
+        path += '/';
+      }
+
+      var canonical = 'https://oph-lab.floatingpragma.io' + path;
+      var canonicalLink = document.querySelector('link[rel="canonical"]');
+      var ogUrl = document.querySelector('meta[property="og:url"]');
+      var twitterUrl = document.querySelector('meta[property="twitter:url"]');
+
+      if (canonicalLink) canonicalLink.setAttribute('href', canonical);
+      if (ogUrl) ogUrl.setAttribute('content', canonical);
+      if (twitterUrl) twitterUrl.setAttribute('content', canonical);
+    })();
+  </script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLGH209WMG"></script>
@@ -58,7 +75,7 @@
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "OPH Lab — Theory of Everything Interactive Guide",
-    "description": "Interactive learning platform exploring a theory of everything. Derive general relativity, quantum gravity, quantum field theory, grand unification, and the Standard Model from 4 axioms on a holographic screen.",
+    "description": "Interactive learning platform exploring a theory of everything. Derive general relativity, quantum gravity, quantum field theory, grand unification, and the Standard Model from five axioms on a holographic screen.",
     "url": "https://oph-lab.floatingpragma.io/",
     "applicationCategory": "EducationalApplication",
     "keywords": ["theory of everything", "quantum gravity", "simulation theory", "reality as simulation", "grand unified theory", "holographic principle", "emergent gravity", "emergent spacetime"],
