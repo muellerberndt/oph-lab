@@ -13,7 +13,7 @@ export function WalkthroughNav() {
 
     if (current === '/') return null;
 
-    const idx = WALKTHROUGH_STEPS.findIndex((s) => s.to === current);
+    const idx = WALKTHROUGH_STEPS.findIndex((s) => normalizePathname(s.to) === current);
     if (idx === -1) return null;
 
     const prev = idx > 0 ? WALKTHROUGH_STEPS[idx - 1] : null;

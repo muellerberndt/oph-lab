@@ -49,7 +49,7 @@ function normalizePathname(pathname: string): string {
 
 export function getSeoMeta(pathname: string): SeoMeta {
   const normalized = normalizePathname(pathname);
-  const step = WALKTHROUGH_STEPS.find((item) => item.to === normalized);
+  const step = WALKTHROUGH_STEPS.find((item) => normalizePathname(item.to) === normalized);
 
   return {
     title: step ? `${step.seoTitle}${SITE_SUFFIX}` : DEFAULT_TITLE,

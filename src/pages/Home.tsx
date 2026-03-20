@@ -64,7 +64,7 @@ export function Home() {
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
-                <Link to="/hints" className="btn btn-primary" style={{ fontSize: '1rem', padding: '14px 28px' }}>
+                <Link to="/hints/" className="btn btn-primary" style={{ fontSize: '1rem', padding: '14px 28px' }}>
                     Begin the Journey <ArrowRight size={18} />
                 </Link>
             </div>
