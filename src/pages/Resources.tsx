@@ -112,6 +112,45 @@ export function ResourcesPage() {
                 </a>
             </div>
 
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Community &amp; Ecosystem</h3>
+
+            <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-purple)' }}>
+                <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-purple)' }}>
+                    TEO Token
+                </h4>
+                <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
+                    TEO is the official OPH memecoin on Base. It is purely speculative, has no promised
+                    return, and has no announced utility at this time. Treat it as a memecoin only and
+                    do your own research.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+                    <a
+                        href="https://dexscreener.com/base/0xba55cdae026b9dd63fcb50e82094d61472948e44527ca4791033497469228049"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '0.85em' }}
+                    >
+                        DexScreener &rarr;
+                    </a>
+                    <a
+                        href="https://basescan.org/token/0xd2a7055317D0c7b316319cDadaE592D0644A0b07"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '0.85em' }}
+                    >
+                        BaseScan &rarr;
+                    </a>
+                    <a
+                        href="https://app.uniswap.org/swap?outputCurrency=0xd2a7055317D0c7b316319cDadaE592D0644A0b07&chain=base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '0.85em' }}
+                    >
+                        Buy on Uniswap &rarr;
+                    </a>
+                </div>
+            </div>
+
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Background Reading</h3>
             <p style={{ marginBottom: '16px', fontSize: '0.85em', color: 'var(--text-muted)' }}>
                 Key papers and references from the broader physics literature that OPH builds upon.
