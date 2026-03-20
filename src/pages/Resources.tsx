@@ -58,6 +58,24 @@ export function ResourcesPage() {
                 </a>
             </div>
 
+            <div className="card" style={{ marginBottom: '12px', borderLeft: '3px solid var(--accent-purple)' }}>
+                <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-purple)' }}>
+                    Third-Party Video Course
+                </h4>
+                <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
+                    Sriharsha Karamchati&apos;s chapter-by-chapter OPH playlist on YouTube. Useful as a
+                    video companion to the book for readers who want one explainer per chapter.
+                </p>
+                <a
+                    href="https://www.youtube.com/playlist?list=PLff0tYtg64Egc2sTtKgThcPRNRdR6i83O"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ fontSize: '0.85em' }}
+                >
+                    YouTube playlist &rarr;
+                </a>
+            </div>
+
             <div className="card" style={{ marginBottom: '12px', borderLeft: '3px solid var(--accent-green)' }}>
                 <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-green)' }}>
                     OPH Lab (This Site)
