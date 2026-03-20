@@ -1,4 +1,4 @@
-import { cp, mkdir } from 'node:fs/promises';
+import { cp, mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -33,8 +33,153 @@ const routes = [
   'resources',
 ];
 
+const routeMeta = {
+  hints: {
+    title: 'Five Experimental Hints That Reality Is Not What It Seems | OPH Lab',
+    description:
+      'Review the experimental and conceptual clues that motivate Observer Patch Holography as a deeper account of physical reality.',
+  },
+  'no-objective-reality': {
+    title: 'Why There Is No Objective Reality - The 10 Hardest Questions in Physics | OPH Lab',
+    description:
+      'Explore the argument that physics should be built from observer-local descriptions instead of a single objective frame.',
+  },
+  'the-screen': {
+    title: 'The Holographic Screen - How a 2D Sphere Creates 3D Spacetime | OPH Lab',
+    description:
+      'Learn how OPH models reality on a holographic screen and uses local patches to recover spacetime structure.',
+  },
+  axioms: {
+    title: 'Core Axioms and MAR (Axiom 5) for a Theory of Everything - Observer Patch Holography | OPH Lab',
+    description:
+      'See the five core OPH axioms, including MAR, and how they anchor the derivation program.',
+  },
+  entropy: {
+    title: 'Entropy & the Holographic Principle - From Bits to Black Holes | OPH Lab',
+    description:
+      'Follow the entropy and area-bound intuition that connects finite information capacity to holographic physics.',
+  },
+  'entanglement-geometry': {
+    title: 'How Entanglement Creates Geometry - The Ryu-Takayanagi Formula | OPH Lab',
+    description:
+      'Understand how entanglement structure gives rise to geometry in the OPH reconstruction program.',
+  },
+  lorentz: {
+    title: 'Deriving Special Relativity from the Holographic Screen | OPH Lab',
+    description:
+      'Study the OPH route from screen-local consistency to Lorentz symmetry and relativistic structure.',
+  },
+  'modular-flow': {
+    title: 'The Origin of Time - Modular Flow and the Unruh Effect | OPH Lab',
+    description:
+      'See how modular flow contributes an emergent account of time in the OPH framework.',
+  },
+  gravity: {
+    title: 'Deriving Einstein\'s Equations from Entanglement - Emergent Gravity | OPH Lab',
+    description:
+      'Trace the OPH argument from entanglement and consistency constraints to emergent gravitational dynamics.',
+  },
+  'de-sitter': {
+    title: 'Solving the Cosmological Constant Problem - de Sitter Space from Holography | OPH Lab',
+    description:
+      'Explore the OPH treatment of de Sitter space, cosmological horizons, and the cosmological constant problem.',
+  },
+  'dark-matter': {
+    title: 'Dark Matter & MOND Explained - Galaxy Rotation Curves from Holography | OPH Lab',
+    description:
+      'Review the OPH discussion of dark-matter-style phenomena, galaxy rotation curves, and MOND-like behavior.',
+  },
+  'classical-physics': {
+    title: 'How Classical Physics Emerges from Quantum Gravity | OPH Lab',
+    description:
+      'Follow how classical physics emerges as an effective description of deeper observer-patch dynamics.',
+  },
+  'quantum-mechanics': {
+    title: 'Why Quantum Mechanics? Deriving the Born Rule from First Principles | OPH Lab',
+    description:
+      'Inspect the OPH argument that quantum mechanics arises from overlap consistency across observers.',
+  },
+  entanglement: {
+    title: 'Bell\'s Theorem & Quantum Entanglement - Interactive Simulator | OPH Lab',
+    description:
+      'Use the entanglement lesson to connect Bell-style correlations and OPH\'s observer-consistency story.',
+  },
+  'error-correction': {
+    title: 'Spacetime as Quantum Error Correcting Code - HaPPY Code Explained | OPH Lab',
+    description:
+      'Learn how quantum error correction ideas fit into the OPH account of spacetime and holography.',
+  },
+  'gauge-symmetry': {
+    title: 'Origin of Gauge Symmetry - Why SU(3)xSU(2)xU(1)? | OPH Lab',
+    description:
+      'See how gauge symmetry is framed as a gluing phenomenon in the OPH reconstruction.',
+  },
+  'standard-model': {
+    title: 'Deriving the Standard Model - Particle Physics from Holography | OPH Lab',
+    description:
+      'Review the OPH route toward Standard Model structure as emergent effective physics.',
+  },
+  masses: {
+    title: 'Particle Mass Hierarchy Explained - Yukawa Couplings from First Principles | OPH Lab',
+    description:
+      'Explore the OPH discussion of particle masses, hierarchies, and effective coupling structure.',
+  },
+  unification: {
+    title: 'Grand Unification Without GUTs - Coupling Constant Convergence | OPH Lab',
+    description:
+      'Inspect the coupling-unification lesson and the OPH account of apparent grand-unification patterns.',
+  },
+  'qft-emerges': {
+    title: 'How Quantum Field Theory Emerges from a Holographic Screen | OPH Lab',
+    description:
+      'Follow the argument that quantum field theory is an effective layer emerging from deeper screen dynamics.',
+  },
+  predictions: {
+    title: 'Testable Predictions of Quantum Gravity - Gravitational Wave Signatures | OPH Lab',
+    description:
+      'Review the empirical and phenomenological predictions highlighted by the OPH research program.',
+  },
+  synthesis: {
+    title: 'Two Parameters, All of Physics - The Ultimate Theory of Everything | OPH Lab',
+    description:
+      'See how OPH ties the derivation chain together into one synthesis across gravity, quantum mechanics, and particle physics.',
+  },
+  glossary: {
+    title: 'Quantum Gravity & Holography Glossary - Key Terms Explained | OPH Lab',
+    description:
+      'Use the OPH Lab glossary for concise definitions of the core holography, gravity, and quantum-information terms.',
+  },
+  resources: {
+    title: 'Further Reading - Quantum Gravity, Holography & Theory of Everything | OPH Lab',
+    description:
+      'Find the main papers, book, challenge, and supporting reading for deeper study of Observer Patch Holography.',
+  },
+};
+
+function applyRouteMeta(html, canonicalUrl, meta) {
+  return html
+    .replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`)
+    .replace(/<meta name="title" content="[^"]*" \/>/, `<meta name="title" content="${meta.title}" />`)
+    .replace(/<meta name="description" content="[^"]*" \/>/, `<meta name="description" content="${meta.description}" />`)
+    .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${canonicalUrl}" />`)
+    .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${canonicalUrl}" />`)
+    .replace(/<meta property="og:title" content="[^"]*" \/>/, `<meta property="og:title" content="${meta.title}" />`)
+    .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${meta.description}" />`)
+    .replace(/<meta property="twitter:url" content="[^"]*" \/>/, `<meta property="twitter:url" content="${canonicalUrl}" />`)
+    .replace(/<meta property="twitter:title" content="[^"]*" \/>/, `<meta property="twitter:title" content="${meta.title}" />`)
+    .replace(/<meta property="twitter:description" content="[^"]*" \/>/, `<meta property="twitter:description" content="${meta.description}" />`)
+    .replace('"url": "https://oph-lab.floatingpragma.io/"', `"url": "${canonicalUrl}"`);
+}
+
+const rootHtml = await readFile(indexHtml, 'utf8');
+
 for (const route of routes) {
   const routeDir = path.join(distDir, route);
+  const routeIndexHtml = path.join(routeDir, 'index.html');
+  const canonicalUrl = `https://oph-lab.floatingpragma.io/${route}/`;
+  const meta = routeMeta[route];
+
   await mkdir(routeDir, { recursive: true });
-  await cp(indexHtml, path.join(routeDir, 'index.html'));
+  await cp(indexHtml, routeIndexHtml);
+  await writeFile(routeIndexHtml, applyRouteMeta(rootHtml, canonicalUrl, meta));
 }
