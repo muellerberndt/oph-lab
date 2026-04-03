@@ -9,11 +9,11 @@ export function SynthesisPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                Both chains converge. Chain 1 derives gravity and classical physics. Chain 2 derives quantum
-                mechanics and the Standard Model. Both start from the same core local axioms A1-A4 about observer patches
-                on a holographic screen S&sup2;; the extended theory then adds MAR (Axiom 5), and Chain 2 uses
-                technical premises (R0, R1, [z]=0) for gauge reconstruction. The result is a <strong>complete framework for known physics</strong>
-                built from two parameters plus one explicit selection rule.
+                Both chains converge, but they do so at different claim tiers. Chain 1 yields a conditional Lorentz
+                branch, a conditional Jacobson-type Einstein branch, and separate cosmological-capacity consequences.
+                Chain 2 yields the structural Standard Model branch together with several downstream continuation lanes.
+                Both start from the same five-axiom basis on a holographic screen S&sup2;, while specific pages add the
+                theorem-local technical premises needed for Lorentz, gauge, or matter-sector statements.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Two Parameters, All of Physics</h3>
@@ -51,9 +51,9 @@ export function SynthesisPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                Everything else &mdash; the Standard Model gauge group, particle spectrum, masses, coupling
-                constants, Newton's laws, Einstein's equations, thermodynamics &mdash; follows from the axioms
-                plus MAR (Axiom 5), technical premises for Chain 2, and these two numbers.
+                These two inputs feed the public quantitative surfaces, but the resulting outputs are not all on the
+                same status level. The current OPH paper set separates recovered structural theorems, explicit
+                branch-conditional results, closed calibration sectors, and open continuation lanes.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Two Chains Unified</h3>
@@ -80,7 +80,7 @@ export function SynthesisPage() {
                         <div style={{ padding: '8px 16px', background: 'rgba(201,112,112,0.15)', border: '1px solid var(--accent-rose)', color: 'var(--accent-rose)', fontSize: '0.8em', fontWeight: 600, textAlign: 'center', width: '100%' }}>
                             CHAIN 1: GR
                         </div>
-                        {['Entropy + Area Bound', 'Conf\u207a(S\u00b2) = SO\u207a(3,1)', 'Modular Flow = Time', '\u03b4S_gen = 0 (MaxEnt)', 'Einstein Equations', 'Classical Physics'].map((step, i) => (
+                        {['Entropy + Recoverability', 'Conditional Lorentz Branch', 'Geometric Modular Flow (BW branch)', 'Fixed-cap Stationarity', 'Conditional Einstein Branch', 'Classical Limits'].map((step, i) => (
                             <div key={i} style={{ width: '100%' }}>
                                 <div style={{ padding: '6px 12px', background: 'rgba(201,112,112,0.05)', border: '1px solid rgba(201,112,112,0.2)', fontSize: '0.75em', color: 'var(--text-secondary)', textAlign: 'center' }}>
                                     {step}
@@ -95,7 +95,7 @@ export function SynthesisPage() {
                         <div style={{ padding: '8px 16px', background: 'rgba(122,184,212,0.15)', border: '1px solid var(--accent-blue)', color: 'var(--accent-blue)', fontSize: '0.8em', fontWeight: 600, textAlign: 'center', width: '100%' }}>
                             CHAIN 2: QFT
                         </div>
-                        {['R0+R1+[z]=0+MAR', 'QM from Overlap Consistency', 'Gauge-as-Gluing', '[SU(3)\u00d7SU(2)\u00d7U(1)]/Z6', 'Edge-Sector Dynamics', 'Quantum Field Theory'].map((step, i) => (
+                        {['R0+R1+T1+MAR+T4-T6', 'QM from Overlap Consistency', 'Gauge-as-Gluing', '[SU(3)\u00d7SU(2)\u00d7U(1)]/Z6', 'Edge-Sector Dynamics', 'Structural SM + Continuations'].map((step, i) => (
                             <div key={i} style={{ width: '100%' }}>
                                 <div style={{ padding: '6px 12px', background: 'rgba(122,184,212,0.05)', border: '1px solid rgba(122,184,212,0.2)', fontSize: '0.75em', color: 'var(--text-secondary)', textAlign: 'center' }}>
                                     {step}
@@ -117,7 +117,7 @@ export function SynthesisPage() {
                         fontWeight: 700,
                         fontSize: '0.9em',
                     }}>
-                        UNIFIED PHYSICS (2 parameters)
+                        UNIFIED OPH PROGRAM
                     </div>
                 </div>
             </div>
@@ -152,9 +152,9 @@ export function SynthesisPage() {
                         <div style={{ color: 'var(--accent-green)', fontWeight: 600, marginBottom: '4px' }}>OPH</div>
                         <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8', color: 'var(--text-secondary)' }}>
                             <li>2D screen &rarr; 3+1D spacetime</li>
-                            <li>GR + QFT from core axioms + MAR layer</li>
-                            <li>Unique vacuum</li>
-                            <li>2 free parameters</li>
+                            <li>Shared observer-patch basis for gravity and gauge structure</li>
+                            <li>Explicit branch and continuation ledger</li>
+                            <li>2 external quantitative inputs on the public surface</li>
                         </ul>
                     </div>
                 </div>
@@ -178,12 +178,12 @@ export function SynthesisPage() {
                 <span style={{ color: 'var(--accent-rose)', fontWeight: 600 }}>Old:</span>
                 <span style={{ color: 'var(--text-secondary)' }}>Laws of physics are inputs</span>
                 <span style={{ color: 'var(--accent-green)', fontWeight: 600 }}>New:</span>
-                <span style={{ color: 'var(--text-secondary)' }}>Laws of physics are outputs (theorems)</span>
+                <span style={{ color: 'var(--text-secondary)' }}>Some laws are recovered structurally; others remain branch-conditional or continuation-level</span>
 
                 <span style={{ color: 'var(--accent-rose)', fontWeight: 600 }}>Old:</span>
                 <span style={{ color: 'var(--text-secondary)' }}>Parameters are tuned</span>
                 <span style={{ color: 'var(--accent-green)', fontWeight: 600 }}>New:</span>
-                <span style={{ color: 'var(--text-secondary)' }}>Parameters are derived from consistency</span>
+                <span style={{ color: 'var(--text-secondary)' }}>Many structural constraints are recovered; two quantitative inputs remain explicit</span>
 
                 <span style={{ color: 'var(--accent-rose)', fontWeight: 600 }}>Old:</span>
                 <span style={{ color: 'var(--text-secondary)' }}>Gravity and QM are separate</span>
@@ -196,14 +196,15 @@ export function SynthesisPage() {
                     A healthy skepticism is warranted. Key questions to ask:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li><strong>Are the assumptions really as minimal as claimed?</strong> Core A1-A4 are supplemented by MAR (Axiom 5), R0/R1/[z]=0, and assumptions B-G. A full assessment must count all logical inputs.</li>
-                    <li><strong>Are the derivations rigorous?</strong> Some steps (e.g., the Z<sub>6</sub> Yukawa hierarchy, the Peter-Weyl unification) are at the level of physical arguments, not mathematical proofs.</li>
+                    <li><strong>Are the assumptions really as minimal as claimed?</strong> The five axioms are supplemented by theorem-local technical premises such as T1-T6, R0/R1, and branch-specific conditions. A full assessment must count all logical inputs.</li>
+                    <li><strong>Are the derivations rigorous?</strong> The recovered structural core is stronger than the downstream continuation lanes. BW internalization, some particle continuations, and several phenomenology surfaces remain conditional or open.</li>
                     <li><strong>Can it be falsified?</strong> Yes (see Predictions page). This is the most important test of any theory.</li>
                 </ul>
                 <p>
                     OPH should be evaluated by the same standards as any physical theory: internal consistency,
-                    agreement with existing data, and testable predictions. The framework passes all three
-                    at the present level of analysis.
+                    agreement with existing data, and testable predictions. The current paper surface supports a
+                    mixed ledger of structural theorems, branch conditions, closed calibration sectors, and open
+                    scaffold items.
                 </p>
             </Explainer>
 
@@ -213,7 +214,7 @@ export function SynthesisPage() {
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
                     <li><strong>AdS/CFT:</strong> The holographic principle and bulk reconstruction, but extended beyond AdS to cosmological spacetimes</li>
-                    <li><strong>Jacobson's thermodynamic gravity:</strong> Einstein equations from &delta;Q = TdS, elevated from analogy to derivation</li>
+                    <li><strong>Jacobson&apos;s thermodynamic gravity:</strong> Einstein-equilibrium logic used in the conditional gravity branch</li>
                     <li><strong>It from bit (Wheeler):</strong> Information as the foundation of physics, made precise through von Neumann algebras</li>
                     <li><strong>QBism:</strong> Observer-relative quantum states, grounded in patch structure</li>
                     <li><strong>Tensor networks:</strong> MERA and HaPPY codes, as models of the screen-to-bulk map</li>

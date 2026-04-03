@@ -120,9 +120,9 @@ const routeMeta = {
       'Review the OPH route toward Standard Model structure as emergent effective physics.',
   },
   masses: {
-    title: 'Particle Mass Hierarchy Explained - Yukawa Couplings from First Principles | OPH Lab',
+    title: 'Matter-Sector Continuations | OPH Lab',
     description:
-      'Explore the OPH discussion of particle masses, hierarchies, and effective coupling structure.',
+      'Review the current OPH discussion of downstream matter-sector continuations and coupling structure.',
   },
   unification: {
     title: 'Grand Unification Without GUTs - Coupling Constant Convergence | OPH Lab',

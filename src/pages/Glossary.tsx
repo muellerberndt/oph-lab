@@ -65,7 +65,7 @@ export function GlossaryPage() {
             <div className="card" style={{ marginBottom: '14px', borderLeft: '3px solid var(--accent-gold)' }}>
                 <div style={{ fontSize: '0.78em', color: 'var(--text-secondary)' }}>
                     <strong>{GLOSSARY_ENTRIES.length}</strong> concepts indexed across axioms, gauge reconstruction,
-                    Einstein closure, and spectrum pipeline.
+                    the gravity branch, and the spectrum-status ledger.
                 </div>
             </div>
 

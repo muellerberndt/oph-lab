@@ -28,17 +28,17 @@ const AXIOMS: Axiom[] = [
     },
     {
         id: 'A3',
-        name: 'Generalized Entropy / Area Bound',
-        plain: 'The maximum information in a region scales with its boundary area, not its volume. Bigger boundaries = more data, but the limit is set by area.',
-        physics: 'A generalized entropy functional exists: S_gen(C) = A(\u2202C)/(4G) + S_bulk(C), satisfying quantum focusing (monotonicity along null generators).',
-        formal: 'S_gen(C) = Tr(\u03c1 \u00b7 L_C) + S_bulk(C), where L_C = \u03a3_\u03b1 (ln d_\u03b1) P_\u03b1 is the central area operator. Quantum focusing: \u0398 = d\u03b8/d\u03bb + \u03b8\u00b2/(d-2) \u2264 0.',
+        name: 'Local MaxEnt and Refinement Stability',
+        plain: 'At each regulator scale, the realized branch is selected by a finite family of local constraints, and the same branch persists under refinement.',
+        physics: 'The realized low-energy states lie in one common finite-dimensional MaxEnt family built from gauge-invariant local constraints of UV range O(l_UV). Refinement preserves that family, so one follows a refinement-stable branch rather than unrelated states at each cutoff.',
+        formal: 'At regulator scale l_UV, the realized branch maximizes entropy subject to a fixed finite family of local constraints C_lUV = {O_a(x)}. Under refinement, the same finite constraint family is preserved, so the realized low-energy branch is the refinement-stable branch of one common finite-dimensional MaxEnt family.',
     },
     {
         id: 'A4',
-        name: 'Local Markov / Recoverability',
-        plain: 'If you know the data on a "collar" separating two regions, the data on one side tells you almost everything about the other side. Information is locally recoverable.',
-        physics: 'For tripartitions A-B-D across separators, the conditional mutual information is small: I(A:D|B) \u2264 \u03b5. Recovery maps exist with controlled error.',
-        formal: 'I(A:D|B) \u2264 \u03b5 for the approximate Markov condition. By Fawzi-Renner: ||\u03c1_{ABC} \u2212 (id_A \u2297 R)(\u03c1_{AB})||\u2081 \u2264 2\u221a(ln2 \u00b7 \u03b5).',
+        name: 'Recoverable Generalized Entropy',
+        plain: 'Generalized entropy combines the area term with bulk entropy, and local collar regions admit recoverability control that supports the gravity branch.',
+        physics: 'A generalized entropy functional exists, S_gen(C) = Tr(\u03c1 \u00b7 L_C) + S_bulk(C), together with the recoverability/focusing structure used in the collar and null-modular arguments.',
+        formal: 'S_gen(C) = Tr(\u03c1 \u00b7 L_C) + S_bulk(C), with the collar package controlled by recovery theory and conditional-mutual-information bounds on shrinking separators.',
     },
 ];
 
@@ -56,9 +56,9 @@ export function AxiomsPage() {
 
             <p style={{ marginBottom: '24px' }}>
                 In the current extended formulation, OPH is best read as
-                <strong> five axioms: A1-A4 + MAR</strong>, together with explicit technical premises
-                <strong> R0, R1, [z]=0</strong> for gauge reconstruction. MAR is a selection axiom (not a local
-                dynamics equation), but it is still foundational in the extended theory.
+                <strong> five axioms: A1-A4 + MAR</strong>. The current paper surface also uses theorem-local technical
+                premises T1-T6 when specific Lorentz, Einstein, or gauge statements are invoked. MAR is a selection
+                axiom rather than a local dynamics equation, but it is part of the foundational ledger.
             </p>
 
             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
@@ -107,9 +107,9 @@ export function AxiomsPage() {
             ))}
 
             <div className="card" style={{ marginBottom: '16px', borderLeft: '3px solid var(--accent-blue)' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>MAR in the Extended Theory (Axiom 5)</h3>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>MAR in the Current Ledger (Axiom 5)</h3>
                 <div style={{ fontSize: '0.84em', color: 'var(--text-secondary)', marginBottom: '10px' }}>
-                    Extended gauge package: R0 + R1 + [z]=0 + MAR
+                    Gauge-reconstruction surface: R0/R1 + T1 + MAR + T4-T6
                 </div>
                 <div className="math-block" style={{ fontSize: '0.84em', marginTop: 0 }}>
                     C(Sigma) = (chi_faith, N_nonab, N_c, N_g), lexicographic minimum over admissible Sigma
@@ -117,42 +117,43 @@ export function AxiomsPage() {
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8', margin: 0, fontSize: '0.84em' }}>
                     <li><strong>R0:</strong> finite-dimensional regulator premise for local factors.</li>
                     <li><strong>R1:</strong> region observables are fixed points of boundary gauge action.</li>
-                    <li><strong>[z]=0:</strong> loop-coherent gluing / DHR transportability condition.</li>
-                    <li><strong>MAR:</strong> pick lexicographically minimal sector only after admissibility filters are passed.</li>
+                    <li><strong>T1:</strong> vanishing of the relevant transport obstruction when global transportability is invoked: [z]=0 on the central branch, or q<sub>&Sigma;</sub>=0 on the genuinely noncentral branch.</li>
+                    <li><strong>MAR:</strong> pick the lexicographically minimal admissible low-energy sector package.</li>
                 </ul>
                 <p style={{ margin: '10px 0 0 0', fontSize: '0.82em', color: 'var(--text-muted)' }}>
-                    Directly, MAR fixes gauge structure and N_c/N_g. Indirectly, those selections propagate into
-                    beta_EW, Koide phase inputs, texture integers, and much of the downstream spectrum pipeline.
-                    In that sense, MAR functions as <strong>Nature's Occam's razor</strong> over admissible sectors.
+                    Directly, MAR fixes the realized admissible gauge branch. Those selections then propagate into
+                    downstream structural and continuation surfaces, but MAR by itself is not a shortcut around the
+                    later theorem-local premises.
                 </p>
             </div>
 
             <Explainer title="Extended Inputs Beyond Core A1-A4">
-                <p>The paper distinguishes core local axioms (A1-A4) from extended inputs needed for specific derivations:</p>
+                <p>The papers distinguish the five axioms from theorem-local technical premises and branch conditions:</p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li><strong>MAR (Axiom 5)</strong> &mdash; global admissible-branch selector used across Chain 2 derivations</li>
-                    <li><strong>R0, R1, [z]=0</strong> &mdash; technical premises for gauge reconstruction</li>
-                    <li><strong>B</strong> &mdash; MaxEnt selection with local constraints</li>
-                    <li><strong>C</strong> &mdash; refinement-stable local branch carrying quasi-local propagation and endpoint control</li>
-                    <li><strong>D</strong> &mdash; Gauge-as-gluing (gauge symmetry from overlap redundancy)</li>
-                    <li><strong>E</strong> &mdash; Central defect on triple overlaps</li>
-                    <li><strong>F</strong> &mdash; controlled collar refinement / scaling-limit scope</li>
-                    <li><strong>G</strong> &mdash; OPH geometric branch for caps; BW<sub>S&sup2;</sub> fixes the 2&pi; normalization on that branch</li>
+                    <li><strong>MAR (Axiom 5)</strong> &mdash; admissible-branch selector used in the gauge derivation</li>
+                    <li><strong>T1</strong> &mdash; vanishing relevant transport obstruction when global transportability is invoked: [z]=0 on the central branch or q<sub>&Sigma;</sub>=0 on the genuinely noncentral branch</li>
+                    <li><strong>T2</strong> &mdash; Lorentz/null-modular/Einstein statements are scaling-limit claims, not literal fixed-cutoff matrix identities</li>
+                    <li><strong>T3</strong> &mdash; fixed-cap generalized-entropy stationarity for the admissible first-variation class used in the Jacobson branch</li>
+                    <li><strong>T4</strong> &mdash; symmetric braiding in the 3+1D EFT branch</li>
+                    <li><strong>T5</strong> &mdash; bosonic Tannakian fiber functor, or an explicit super-Tannakian fork</li>
+                    <li><strong>T6</strong> &mdash; directed colimit of transportable edge sectors with objectwise finite-dimensional fibers wherever compact gauge reconstruction is invoked</li>
+                    <li><strong>R0/R1</strong> &mdash; regulator and fixed-point premises used in the gauge package</li>
                 </ul>
             </Explainer>
 
             <Explainer title="What these axioms give you">
-                <p>From core A1-A4 (plus the stated scaling-limit and geometric-branch assumptions), you already get:</p>
+                <p>The current paper surface separates structural outputs from branch-conditional ones:</p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li>Lorentz kinematics (Conf&sup;(S&sup2;) = SO&sup;(3,1))</li>
-                    <li>Semiclassical Einstein equations via entanglement equilibrium</li>
-                    <li>Massless photon and graviton (symmetry-protected zeros)</li>
+                    <li>From the screen identity and the explicit BW branch, OPH recovers Lorentz kinematics on the stated scaling-limit surface.</li>
+                    <li>From the null bridge and fixed-cap stationarity, OPH states a conditional Jacobson-type Einstein branch rather than an unconditional A1-A4 theorem.</li>
+                    <li>The half-line generator/null-stress charge identification is internal to the null bridge; bounded-interval transport and UV/BW internalization remain open scaffold items.</li>
+                    <li>Massless photon and graviton remain symmetry-protected structural outputs.</li>
                 </ul>
                 <p>
-                    Adding R0/R1/[z]=0/MAR yields unique gauge-sector selection
+                    Adding R0/R1, T1, MAR, and T4-T6 yields the realized Standard Model gauge branch
                     ([SU(3)&times;SU(2)&times;U(1)]/Z<sub>6</sub>, N<sub>c</sub>=3, N<sub>g</sub>=3).
-                    Adding the rest of the assumptions progressively yields the full Standard Model,
-                    particle masses, dark matter phenomenology, and testable predictions.
+                    Later particle lanes then split into closed calibration sectors, continuation surfaces, compare-only
+                    adapters, and open theorem objects depending on the sector.
                 </p>
             </Explainer>
         </div>

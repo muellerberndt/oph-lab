@@ -212,9 +212,9 @@ export function DeSitterPage() {
                     consistent with the horizon area &mdash; the "heat death" of the universe.
                 </p>
                 <p>
-                    In OPH, this is simply the MaxEnt state (Axiom B) on the screen. The universe evolves toward
-                    the most typical state. There is no mystery about the arrow of time: we started in a low-entropy
-                    state (small initial area = few active pixels) and are evolving toward the MaxEnt state.
+                    In OPH, this is the MaxEnt state on the A3 branch of the screen theory. The universe evolves
+                    toward the most typical state. The arrow of time is framed as evolution from a low-entropy
+                    initial state toward that MaxEnt branch.
                 </p>
             </Explainer>
         </div>

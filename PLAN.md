@@ -62,7 +62,7 @@ A1 (Screen on S²)
             → SU(3)×SU(2)×U(1)/Z₆                         [DEMO: Heat-Kernel Edge Sectors]
             → Anomaly cancellation fixes hypercharges
             → N_c = 3, N_g = 3 from minimality + CP
-              → Yukawa hierarchy: y_f ~ 6^{-n_f}           [DEMO: Mass Spectrum]
+              → matter continuations / deferred public demo
               → Higgs mass from criticality: 125.08 GeV
               → MSSM-like β-shifts without superpartners    [DEMO: Running Couplings]
 
@@ -96,7 +96,7 @@ oph-lab/
       modular-flow.ts               # Modular automorphisms, BW theorem, KMS, Unruh
       gravity.ts                    # Jacobson derivation numerics, entanglement equilibrium
       gauge.ts                      # Edge-sector probabilities, heat kernel, RGE
-      particles.ts                  # Yukawa hierarchy, mass predictions, Koide
+      matterContinuations.ts        # placeholder surface for deferred public matter branches
       cosmology.ts                  # Lambda, MOND scale, rotation curves, GW comb
 
     components/
@@ -160,7 +160,7 @@ oph-lab/
 | 15 | `/error-correction` | Quantum Error Correction | **DEMO: QEC Visualizer** -- 3-bit repetition code: flip bits, see syndrome extraction and correction. Then: spacetime-as-code analogy | A4 → recovery → QEC |
 | 16 | `/gauge-symmetry` | Gauge Symmetry from Gluing | **DEMO: Gauge-as-Gluing** -- drag overlapping patches, see frame rotations on overlaps forming gauge transformations. Loop holonomy as obstruction | D → gauge groups |
 | 17 | `/standard-model` | The Standard Model | **DEMO: Heat-Kernel Edge Sectors** -- slider for diffusion parameter t, dropdown for group (Z₃, Z₅, SU(2), SU(3)). Watch p_R = d_R·exp(-t·C₂(R))/Z change | Edge fusion → SU(3)×SU(2)×U(1)/Z₆ |
-| 18 | `/masses` | Particle Masses | **DEMO: Mass Spectrum** -- log-scale bar chart, toggle "SM arbitrary params" vs "OPH Z₆ pattern" (y_f = 6^{-n_f}). Higgs from criticality | Z₆ defect → Yukawa |
+| 18 | `/masses` | Matter Continuations | Public placeholder noting the withdrawn numerical mass pipeline | Deferred matter branches |
 | 19 | `/unification` | Coupling Unification | **DEMO: Running Couplings** -- 1/α vs log E plot, toggle SM (don't meet) / MSSM (meet with sparticles) / OPH (meet with edge modes, no new particles) | Peter-Weyl → β-shifts |
 | 20 | `/qft-emerges` | QFT Emerges | **DEMO: Derivation Chain Explorer** -- click any node in Chain 2. Shows how fields, Feynman diagrams, renormalization all emerge from the axioms | Synthesis for Chain 2 |
 
@@ -257,11 +257,11 @@ oph-lab/
 - **Shows:** How the SM gauge group emerges from edge-sector fusion rules
 - **Math:** `core/gauge.ts` -- p_R = d_R·exp(-t·C₂(R))/Z
 
-#### Demo 12: Particle Mass Spectrum (page `/masses`)
+#### Demo 12: Matter Continuations Placeholder (page `/masses`)
 - **What:** Log-scale bar chart of SM fermion masses
 - **Interaction:** Toggle "SM view" (arbitrary) vs "OPH view" (y_f = 6^{-n_f} pattern)
 - **Shows:** Mass hierarchy from Z₆ topology, not fine-tuning
-- **Math:** `core/particles.ts` -- Yukawa couplings, mass predictions
+- **Math:** public numerical mass demo withdrawn pending rebuilt derivation chain
 
 ### Tier 3: Polish Demos (Build Last)
 
@@ -448,7 +448,7 @@ Foundation and synthesis pages use `--accent-gold`.
 20. **Demo 7: Bell Experiment**
 21. **Demo 6: Gauge-as-Gluing** (reuses PatchSphere with gauge overlays)
 22. **Demo 11: Heat-Kernel Edge Sectors**
-23. **Demo 12: Particle Mass Spectrum**
+23. **Demo 12: Matter Continuations Placeholder**
 24. **Demo 13: Running Couplings**
 25. Page 20: Chain 2 synthesis with DerivationChain Explorer
 

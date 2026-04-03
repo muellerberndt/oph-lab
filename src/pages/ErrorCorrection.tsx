@@ -125,8 +125,8 @@ export function ErrorCorrectionPage() {
                 bulk spacetime emerges from the screen:
             </p>
             <ul style={{ paddingLeft: '20px', lineHeight: '1.8', marginBottom: '16px' }}>
-                <li><strong>Axiom A4 (Local Markov):</strong> The approximate recoverability condition I(A:D|B) &le; &epsilon; IS the error-correction condition. It says that bulk data in the entanglement wedge of A can be recovered from A alone, up to error &epsilon;.</li>
-                <li><strong>Axiom A3 (Area Bound):</strong> The area bound limits the code rate &mdash; how much bulk data can be encoded per unit of boundary area.</li>
+                <li><strong>Axiom A4 (Recoverable Generalized Entropy):</strong> The collar recoverability condition is the error-correction ingredient. It says that bulk data in the entanglement wedge of A can be recovered from A alone, up to controlled error.</li>
+                <li><strong>Axiom A4 (Generalized entropy side):</strong> The area term limits the code rate &mdash; how much bulk data can be encoded per unit of boundary area.</li>
                 <li><strong>Axiom A1 (Screen Net):</strong> The isotony condition A(P) &sub; A(Q) for P &sub; Q ensures that the code is consistent across scales.</li>
             </ul>
 
@@ -167,7 +167,7 @@ export function ErrorCorrectionPage() {
                     of the stabilizer structure of the holographic code.
                 </p>
                 <p>
-                    In OPH, gauge symmetry arises from patch-gluing redundancy (Assumption D), which is precisely
+                    In OPH, gauge symmetry arises from the gauge-as-gluing route, which is precisely
                     the redundancy of an error-correcting code: the same logical data is encoded in multiple
                     overlapping boundary regions.
                 </p>

@@ -10,15 +10,15 @@ export function QftEmergesPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 This is the <strong>synthesis page for Chain 2</strong>. We have traced the derivation from the
-                extended axioms (A1-A4 + MAR) plus technical premises (R0, R1, [z]=0) to the full Standard Model of particle physics. Quantum field theory &mdash; the
-                framework that unifies quantum mechanics with special relativity &mdash; is not a starting point
-                in OPH. It is an <strong>emergent effective description</strong> that arises from the screen
-                algebra in the appropriate limits.
+                five-axiom OPH ledger plus theorem-local technical premises to the structural Standard Model branch and
+                several downstream matter-sector continuations. Quantum field theory &mdash; the framework that unifies
+                quantum mechanics with special relativity &mdash; is not a starting point in OPH. It is an
+                <strong>emergent effective description</strong> that arises from the screen algebra in the appropriate limits.
             </p>
 
             <div className="math-block" style={{ fontSize: '0.95em', lineHeight: '2.2' }}>
-                A1-A4 + R0 + R1 + [z]=0 + MAR &rarr; QM + Gauge-as-Gluing &rarr;
-                [SU(3)&times;SU(2)&times;U(1)]/Z6, N_c=3, N_g=3 &rarr; Spectrum
+                A1-A4 + R0 + R1 + T1 + MAR + T4-T6 &rarr; QM + Gauge-as-Gluing &rarr;
+                [SU(3)&times;SU(2)&times;U(1)]/Z6, N_c=3, N_g=3 &rarr; Structural SM + Continuation Lanes
             </div>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Complete Chain 2 Derivation</h3>
@@ -39,13 +39,13 @@ export function QftEmergesPage() {
                     {
                         step: '3',
                         title: 'Quantum error correction',
-                        detail: 'Bulk-boundary map = quantum error-correcting code. Axiom A4 (Markov) = error-correction condition. Spacetime is a code.',
+                        detail: 'Bulk-boundary map = quantum error-correcting code. Axiom A4 supplies the recoverability side of that structure. Spacetime is a code.',
                         color: 'var(--accent-blue)',
                     },
                     {
                         step: '4',
                         title: 'Gauge symmetry from patch gluing',
-                        detail: 'Assumption D: transition functions on overlaps \u2192 gauge group. Tannaka-Krein: edge-sector fusion rules \u2192 compact G.',
+                        detail: 'Gauge-as-gluing route: transition functions on overlaps \u2192 gauge group. Tannaka-Krein: edge-sector fusion rules \u2192 compact G.',
                         color: 'var(--accent-cyan)',
                     },
                     {
@@ -56,8 +56,8 @@ export function QftEmergesPage() {
                     },
                     {
                         step: '6',
-                        title: 'Particle spectrum and masses',
-                        detail: 'Heat-kernel edge-sector law p_R ~ d_R exp(-t\u00b7C\u2082). Z\u2086 defect \u2192 Yukawa hierarchy y_f ~ 6^{-n_f}. Higgs mass from criticality.',
+                        title: 'Matter-sector continuations',
+                        detail: 'Quotient-constrained flavor structure and Koide-type relations remain downstream continuation branches rather than part of the recovered-core theorem package.',
                         color: 'var(--accent-gold)',
                     },
                     {
@@ -104,7 +104,7 @@ export function QftEmergesPage() {
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>What Chain 2 Derives</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '24px' }}>
                 <div style={{ padding: '12px', background: 'rgba(122, 184, 212, 0.1)', border: '1px solid rgba(122, 184, 212, 0.3)', fontSize: '0.85em' }}>
-                    <div style={{ color: 'var(--accent-blue)', fontWeight: 600, marginBottom: '4px' }}>Derived from Axioms</div>
+                    <div style={{ color: 'var(--accent-blue)', fontWeight: 600, marginBottom: '4px' }}>Structural outputs</div>
                     <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8' }}>
                         <li>Complex Hilbert space structure</li>
                         <li>Born rule (probability = |amplitude|&sup2;)</li>
@@ -116,33 +116,28 @@ export function QftEmergesPage() {
                         <li>Three generations (N<sub>g</sub> = 3)</li>
                         <li>Three colors (N<sub>c</sub> = 3)</li>
                         <li>Hypercharge quantization</li>
-                        <li>Yukawa hierarchy (y<sub>f</sub> &sim; 6<sup>&minus;n</sup>)</li>
-                        <li>Higgs mass (~125 GeV)</li>
-                        <li>Coupling unification without SUSY</li>
+                        <li>Gauge-calibration and unification surfaces</li>
                         <li>No proton decay</li>
                         <li>Massless photon and graviton</li>
                     </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(201, 169, 110, 0.1)', border: '1px solid rgba(201, 169, 110, 0.3)', fontSize: '0.85em' }}>
-                    <div style={{ color: 'var(--accent-gold)', fontWeight: 600, marginBottom: '4px' }}>Input (Axioms + Assumptions)</div>
+                    <div style={{ color: 'var(--accent-gold)', fontWeight: 600, marginBottom: '4px' }}>Input Ledger</div>
                     <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8' }}>
                         <li>A1: Screen net (patches on S&sup2;)</li>
                         <li>A2: Overlap consistency</li>
-                        <li>A3: Area-entropy bound</li>
-                        <li>A4: Local Markov condition</li>
+                        <li>A3: local MaxEnt and refinement stability</li>
+                        <li>A4: recoverable generalized entropy</li>
                         <li>R0: finite-dimensional regulator premise</li>
                         <li>R1: boundary gauge fixed-point premise</li>
-                        <li>[z]=0: loop-coherent gluing / transportability</li>
+                        <li>T1: vanishing relevant transport obstruction where global transportability is invoked: [z]=0 on the central branch or q<sub>&Sigma;</sub>=0 on the genuinely noncentral branch</li>
                         <li>MAR: minimal admissible realization selection axiom</li>
-                        <li>B: MaxEnt selection</li>
-                        <li>C: refinement-stable local branch</li>
-                        <li>D: Gauge-as-gluing</li>
-                        <li>E: Central defect (Z<sub>6</sub>)</li>
-                        <li>F: collar refinement / scaling-limit scope</li>
-                        <li>G: OPH geometric cap branch</li>
+                        <li>T4: symmetric braiding in the 3+1D EFT branch</li>
+                        <li>T5: bosonic fiber-functor premise, or explicit super-Tannakian fork</li>
+                        <li>T6: directed colimit of transportable edge sectors with objectwise finite-dimensional fibers</li>
                     </ul>
                     <div style={{ marginTop: '12px', padding: '8px', background: 'rgba(0,0,0,0.2)', fontSize: '0.9em' }}>
-                        <strong>Total free parameters: 2</strong>
+                        <strong>External quantitative inputs on the public surface: 2</strong>
                         <div style={{ color: 'var(--text-muted)', marginTop: '4px' }}>
                             a<sub>cell</sub> (pixel area) and log(dim H) (screen capacity)
                         </div>
@@ -188,8 +183,8 @@ export function QftEmergesPage() {
                     axiom-level selector:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li><strong>Chain 1 (GR):</strong> Emphasizes A3 (area bound) and MaxEnt. Uses entanglement equilibrium to derive Einstein's equations. Result: gravity and classical physics.</li>
-                    <li><strong>Chain 2 (QFT):</strong> Emphasizes A2 (overlap consistency), gauge-as-gluing, then R0/R1/[z]=0 with MAR for unique admissible sector selection. Uses Gleason + Tannaka-Krein + MAR to derive the Standard Model.</li>
+                    <li><strong>Chain 1 (GR):</strong> Emphasizes recoverability, generalized entropy, the BW branch, the null bridge, and fixed-cap stationarity. Result: a conditional Lorentz branch and a conditional Jacobson-type Einstein branch.</li>
+                    <li><strong>Chain 2 (QFT):</strong> Emphasizes overlap consistency, gauge-as-gluing, then R0/R1/T1 with MAR and T4-T6 for compact gauge reconstruction. Result: the structural Standard Model branch plus downstream continuation lanes.</li>
                 </ul>
                 <p>
                     The two chains are not independent: they share the same screen and foundational structure. MAR
@@ -206,16 +201,17 @@ export function QftEmergesPage() {
                     under development:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li>Precise neutrino mass predictions</li>
-                    <li>PMNS mixing angles from the Z<sub>6</sub> defect</li>
-                    <li>Dark energy equation of state w(z)</li>
-                    <li>Baryogenesis mechanism</li>
-                    <li>Inflationary dynamics from screen growth</li>
+                    <li>Quarks carry a strict present-premise no-go for full physical closure; the exact next objects are the minimal extension triple <code>H_mass</code>, <code>H_phys</code>, and <code>H_abs</code></li>
+                    <li>Charged-lepton centered-operator promotion and the later affine descent to &mu;<sub>phys</sub>(Y<sub>e</sub>)</li>
+                    <li>Neutrino theorem pair emitted on the weighted-cycle branch; older exact adapters remain diagnostic-only beneath that branch</li>
+                    <li>Higgs/top paper-surface proof packaging beyond the closed forward seed</li>
+                    <li>Hadron backend / compute-bound closure</li>
                 </ul>
                 <p>
-                    These are active areas of research within the OPH framework. The foundation (axioms &rarr; SM
-                    gauge group &rarr; particle content) is established; the detailed phenomenology is being worked
-                    out.
+                    The foundation (axioms &rarr; gauge branch &rarr; particle-structure ledger) is stronger than the
+                    detailed matter continuations. Some bosonic sectors and the weighted-cycle neutrino branch are
+                    closed on their declared surfaces, while the charged and physical-quark lanes remain open at
+                    sharper theorem objects.
                 </p>
             </Explainer>
         </div>

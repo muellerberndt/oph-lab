@@ -9,9 +9,9 @@ export function LorentzPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                One of the most elegant results in OPH: the Lorentz group of special relativity is <strong>not
-                postulated</strong> but <strong>derived</strong>. It emerges as the conformal symmetry group
-                of the holographic screen S&sup2;. Spacetime symmetries are screen symmetries.
+                On the current OPH paper surface, Lorentz kinematics is recovered on an explicit geometric modular
+                branch rather than as a generic fixed-cutoff identity. The mathematical backbone is the conformal
+                symmetry group of the holographic screen S&sup2;.
             </p>
             <p style={{ marginBottom: '24px' }}>
                 The key identity is a classical result in mathematics:
@@ -23,8 +23,8 @@ export function LorentzPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 The group of orientation-preserving conformal transformations of the 2-sphere is isomorphic to the
-                proper orthochronous Lorentz group in 3+1 dimensions. This single equation explains why spacetime
-                has 3+1 dimensions and obeys Lorentz symmetry.
+                proper orthochronous Lorentz group in 3+1 dimensions. In OPH, this is the ambient kinematic group
+                available on the screen and the group recovered on the explicit BW branch.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>M&ouml;bius Transformations</h3>
@@ -90,8 +90,9 @@ export function LorentzPage() {
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>3+1 Dimensions from 2D</h3>
             <p style={{ marginBottom: '16px' }}>
                 This is not just a mathematical curiosity. In OPH, the screen S&sup2; is the fundamental arena
-                (Axiom A1). The <em>only</em> spacetime dimension that arises from the conformal symmetries of a
-                2-sphere is 3+1. The correspondence is:
+                (Axiom A1). The conformal group of that 2-sphere is the connected Lorentz group of 3+1 dimensions,
+                which is why the Lorentz branch is screen-based rather than postulated from bulk spacetime.
+                The correspondence is:
             </p>
 
             <div className="card" style={{ marginBottom: '24px' }}>
@@ -110,9 +111,23 @@ export function LorentzPage() {
             <p style={{ marginBottom: '16px' }}>
                 If the screen were S&sup1; (a circle), the conformal group would be SL(2,ℝ) ≅ SO&#8314;(2,1),
                 giving 2+1D spacetime. If it were S&sup3;, the conformal group would be SO&#8314;(4,1), giving 4+1D.
-                But the screen is S&sup2; &mdash; the minimal sphere that supports complex structure &mdash; and
-                so spacetime is 3+1D.
+                In the OPH setup the screen is S&sup2;, so the recovered Lorentz/conformal kinematics is 3+1D.
             </p>
+
+            <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-gold)' }}>
+                <h4 style={{ margin: '0 0 12px 0', fontSize: '0.9em', color: 'var(--accent-gold)' }}>
+                    Current claim boundary
+                </h4>
+                <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
+                    The screen identity Conf<sup>+</sup>(S&sup2;) ≅ SO<sup>+</sup>(3,1) is exact mathematics. The OPH claim that
+                    local modular flow realizes this geometry is stated on the explicit BW branch of the scaling-limit
+                    cap theory.
+                </p>
+                <p style={{ margin: 0, fontSize: '0.85em', color: 'var(--text-secondary)' }}>
+                    The remaining UV/BW scaffold is the realized scaling-limit cap-pair extraction plus ordered cut-pair
+                    rigidity on that realized limit.
+                </p>
+            </div>
 
             <Explainer title="Spinors from the screen">
                 <p>

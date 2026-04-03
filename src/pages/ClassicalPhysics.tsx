@@ -9,33 +9,33 @@ export function ClassicalPhysicsPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This is the <strong>synthesis page for Chain 1</strong>. We have traced the complete derivation
-                from the core local axioms (A1-A4) to Einstein's equations. But the chain does not stop at general relativity.
-                All of classical physics &mdash; Newton's laws, thermodynamics, geodesic motion, Newtonian gravity
-                &mdash; falls out as limiting cases.
+                This is the <strong>synthesis page for Chain 1</strong>. On the current paper surface, the gravity
+                route is a conditional branch: Lorentz kinematics sits on the explicit BW branch and the Einstein step
+                sits on a Jacobson-type entanglement-equilibrium branch. Classical physics is then discussed as the
+                effective limiting behavior of that branch.
             </p>
             <p style={{ marginBottom: '24px' }}>
                 The derivation chain is:
             </p>
 
             <div className="math-block" style={{ fontSize: '1em', lineHeight: '2.2' }}>
-                A1-A4 (Axioms) &rarr; Entropy &amp; Area Bound &rarr; Conf&#8314;(S&sup2;) = SO&#8314;(3,1) &rarr;
-                Modular Flow = Time &rarr; MaxEnt + &delta;S<sub>gen</sub> = 0 &rarr; G<sub>ab</sub> + &Lambda;g<sub>ab</sub> = 8&pi;G⟨T<sub>ab</sub>⟩
-                &rarr; Classical Physics
+                A1-A4 (Axioms) &rarr; Recoverability + Generalized Entropy &rarr; Conditional Lorentz Branch &rarr;
+                Geometric Modular Flow (BW branch) &rarr; Fixed-cap Stationarity + Null Bridge &rarr;
+                Conditional Einstein Branch &rarr; Classical Limits
             </div>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>From GR to Newton</h3>
             <p style={{ marginBottom: '16px' }}>
-                Newton's law of gravitation is the weak-field, slow-motion limit of Einstein's equations.
-                Starting from G<sub>ab</sub> = 8&pi;G T<sub>ab</sub>, the Newtonian limit gives:
+                On the stated gravity branch, Newton&apos;s law of gravitation is the weak-field, slow-motion limit of
+                the Einstein relation. Starting from G<sub>ab</sub> = 8&pi;G T<sub>ab</sub>, the Newtonian limit gives:
             </p>
             <div className="math-block">
                 &nabla;&sup2;&Phi; = 4&pi;G&rho;
             </div>
             <p style={{ marginBottom: '16px' }}>
                 where &Phi; is the Newtonian potential and &rho; is mass density. The gravitational force
-                F = &minus;m&nabla;&Phi; = &minus;GMm/r&sup2; follows immediately. Newton's law of universal
-                gravitation is a theorem in OPH, not a postulate.
+                F = &minus;m&nabla;&Phi; = &minus;GMm/r&sup2; follows immediately on that branch. The lab presents this
+                as a classical readout of the current conditional gravity surface.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Geodesic Motion</h3>
@@ -48,8 +48,8 @@ export function ClassicalPhysicsPage() {
             </div>
             <p style={{ marginBottom: '16px' }}>
                 In the Newtonian limit, this reduces to Newton's second law: F = ma, where the "force" is the
-                gradient of the gravitational potential. OPH thus derives F = ma &mdash; it is a consequence of
-                geometry, which is a consequence of entanglement equilibrium.
+                gradient of the gravitational potential. In the OPH gravity route, this is the effective classical
+                consequence of the branch-conditional geometry.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Newton's Three Laws</h3>
@@ -66,7 +66,7 @@ export function ClassicalPhysicsPage() {
                 <p style={{ margin: 0, fontSize: '0.85em' }}>
                     Force equals mass times acceleration. In OPH: non-geodesic motion requires a stress-energy
                     source that curves spacetime. The geodesic deviation from "straight" is proportional to the
-                    curvature, which is proportional to the stress-energy (Einstein's equations). F = ma is the
+                    curvature, which is proportional to the stress-energy through the gravity branch. F = ma is the
                     Newtonian limit.
                 </p>
             </div>
@@ -75,8 +75,8 @@ export function ClassicalPhysicsPage() {
                 <p style={{ margin: 0, fontSize: '0.85em' }}>
                     Every action has an equal and opposite reaction. In OPH: this follows from the conservation
                     of stress-energy &nabla;<sub>a</sub>T<sup>ab</sup> = 0, which is a consequence of the Bianchi
-                    identity &nabla;<sub>a</sub>G<sup>ab</sup> = 0 (a geometric identity). Momentum conservation
-                    is geometry.
+                    identity &nabla;<sub>a</sub>G<sup>ab</sup> = 0 on the gravity branch. Momentum conservation
+                    is encoded geometrically in that effective description.
                 </p>
             </div>
 
@@ -119,17 +119,16 @@ export function ClassicalPhysicsPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Complete Picture</h3>
             <p style={{ marginBottom: '16px' }}>
-                Chain 1 achieves something remarkable: starting from core axioms about observer patches on a
-                holographic screen, we derive the entire edifice of classical physics. The ingredients are:
+                Chain 1 packages the classical readout of the gravity branch. The ingredients are:
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '24px' }}>
                 <div style={{ padding: '12px', background: 'rgba(201, 112, 112, 0.1)', border: '1px solid rgba(201, 112, 112, 0.3)', fontSize: '0.85em' }}>
-                    <div style={{ color: 'var(--accent-rose)', fontWeight: 600, marginBottom: '4px' }}>Derived</div>
+                    <div style={{ color: 'var(--accent-rose)', fontWeight: 600, marginBottom: '4px' }}>Current branch outputs</div>
                     <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8' }}>
                         <li>3+1 spacetime dimensions</li>
                         <li>Lorentz invariance</li>
-                        <li>Einstein's field equations</li>
+                        <li>Conditional Einstein branch</li>
                         <li>Cosmological constant &Lambda;</li>
                         <li>Newton's laws of motion</li>
                         <li>Newtonian gravity</li>
@@ -139,13 +138,13 @@ export function ClassicalPhysicsPage() {
                     </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(201, 169, 110, 0.1)', border: '1px solid rgba(201, 169, 110, 0.3)', fontSize: '0.85em' }}>
-                    <div style={{ color: 'var(--accent-gold)', fontWeight: 600, marginBottom: '4px' }}>Input (Axioms)</div>
+                    <div style={{ color: 'var(--accent-gold)', fontWeight: 600, marginBottom: '4px' }}>Input Ledger</div>
                     <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8' }}>
                         <li>A1: Screen net (patches on S&sup2;)</li>
                         <li>A2: Overlap consistency</li>
-                        <li>A3: Area-entropy bound</li>
-                        <li>A4: Local Markov condition</li>
-                        <li>B: MaxEnt selection</li>
+                        <li>A3: local MaxEnt and refinement stability</li>
+                        <li>A4: recoverable generalized entropy</li>
+                        <li>T2/T3 and the null-bridge premises where invoked</li>
                     </ul>
                 </div>
             </div>
@@ -155,7 +154,8 @@ export function ClassicalPhysicsPage() {
                     Electromagnetism and the other gauge forces are not part of Chain 1. They arise from
                     <strong> Chain 2</strong> (Axioms &rarr; QFT) via the gauge-as-gluing mechanism. Chain 1 gives
                     gravity; Chain 2 gives the gauge forces. Both chains share core A1-A4, but Chain 2 additionally
-                    uses MAR (Axiom 5) with technical premises R0/R1/[z]=0 plus different technical assumptions.
+                    uses MAR (Axiom 5) with technical premises R0/R1, T1, and T4-T6 plus different branch-specific
+                    assumptions.
                 </p>
             </Explainer>
 

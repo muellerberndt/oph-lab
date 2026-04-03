@@ -12,31 +12,69 @@ export function ResourcesPage() {
                 Primary sources, supplementary materials, and links for Observer Patch Holography.
             </p>
 
+            <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-cyan)' }}>
+                <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>
+                    Search Entry Pages
+                </h4>
+                <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
+                    For readers arriving via high-intent public queries, OPH has dedicated landing pages for
+                    <strong> theory of everything</strong> and <strong> simulation theory</strong>.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+                    <a
+                        href="https://floatingpragma.io/oph/theory-of-everything/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '0.85em' }}
+                    >
+                        theory of everything &rarr;
+                    </a>
+                    <a
+                        href="https://floatingpragma.io/oph/simulation-theory/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '0.85em' }}
+                    >
+                        simulation theory &rarr;
+                    </a>
+                </div>
+            </div>
+
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Primary Sources</h3>
 
             <div className="card" style={{ marginBottom: '12px', borderLeft: '3px solid var(--accent-gold)' }}>
                 <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-gold)' }}>
-                    The OPH Paper
+                    The OPH Paper Set
                 </h4>
                 <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
-                    <strong>Observer-Patch Holography: A Two-Parameter Framework for Physics</strong>
+                    <strong>Compact SM/GR paper, main paper, and particle-continuation paper</strong>
                     <br />
                     Bernhard Mueller
                 </p>
                 <p style={{ margin: '0 0 8px 0', fontSize: '0.85em', color: 'var(--text-muted)' }}>
-                    The complete technical paper presenting the OPH framework, including core axioms A1-A4,
-                    MAR as the fifth selection axiom in the extended theory, both derivation chains (GR and QFT),
-                    and testable predictions. Contains full mathematical
-                    details and derivations.
+                    The current source of truth is the paper set in the research repo, led by the compact paper on
+                    relativity and Standard Model structure, the main synthesis paper, and the particle-continuation
+                    paper. These sources separate theorem-grade structural results from branch-conditional and
+                    continuation-level claims.
                 </p>
-                <a
-                    href="https://doi.org/10.5281/zenodo.18288114"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontSize: '0.85em' }}
-                >
-                    Zenodo DOI: 10.5281/zenodo.18288114 &rarr;
-                </a>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+                    <a
+                        href="https://github.com/FloatingPragma/observer-patch-holography/tree/main/paper"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '0.85em' }}
+                    >
+                        GitHub paper directory &rarr;
+                    </a>
+                    <a
+                        href="https://doi.org/10.5281/zenodo.18288114"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ fontSize: '0.85em' }}
+                    >
+                        Zenodo record &rarr;
+                    </a>
+                </div>
             </div>
 
             <div className="card" style={{ marginBottom: '12px', borderLeft: '3px solid var(--accent-blue)' }}>
@@ -55,6 +93,24 @@ export function ResourcesPage() {
                     style={{ fontSize: '0.85em' }}
                 >
                     oph-book.floatingpragma.io &rarr;
+                </a>
+            </div>
+
+            <div className="card" style={{ marginBottom: '12px', borderLeft: '3px solid var(--accent-cyan)' }}>
+                <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>
+                    OPH Textbooks
+                </h4>
+                <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
+                    A student-facing study app with guided OPH explanations for readers who want a more structured path
+                    through the material than the landing pages alone.
+                </p>
+                <a
+                    href="https://learn.floatingpragma.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ fontSize: '0.85em' }}
+                >
+                    learn.floatingpragma.io &rarr;
                 </a>
             </div>
 
@@ -99,8 +155,7 @@ export function ResourcesPage() {
                     Overview Site
                 </h4>
                 <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
-                    A high-level overview of OPH for general audiences. Non-technical introduction to the
-                    key ideas and motivation.
+                    A high-level overview of OPH for general audiences, with dedicated entry pages for theory of everything and simulation theory readers.
                 </p>
                 <a
                     href="https://floatingpragma.io/oph/"

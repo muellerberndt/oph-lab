@@ -21,11 +21,13 @@ export function GaugeSymmetryPage() {
             </p>
             <p style={{ marginBottom: '16px' }}>
                 The latest derivation then adds the extended axiom package
-                <strong> R0 + R1 + [z]=0 + MAR</strong>: admissibility defines the candidate class, and MAR chooses
+                <strong> R0 + R1 + T1 + MAR + T4-T6</strong>: admissibility defines the candidate class, with T1 meaning
+                vanishing relevant transport obstruction ([z]=0 on the central branch or q<sub>&Sigma;</sub>=0 on the
+                genuinely noncentral branch), T4-T6 supplying the compact gauge-reconstruction premises, and MAR choosing
                 the lexicographically minimal admissible sector.
             </p>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Gauge-as-Gluing (Assumption D)</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Gauge-as-Gluing Route</h3>
             <p style={{ marginBottom: '16px' }}>
                 Consider two patches P<sub>1</sub> and P<sub>2</sub> with overlap P<sub>1</sub> &cap; P<sub>2</sub>.
                 Each patch has its own algebra A(P<sub>i</sub>) and its own state &rho;<sub>i</sub>. Overlap
@@ -138,7 +140,7 @@ export function GaugeSymmetryPage() {
                     In OPH, the "base manifold" is the screen S&sup2; with its patch cover. The "fibers" are the
                     edge-mode Hilbert spaces at patch boundaries. The gauge connection is the transition map
                     between overlapping patches. The entire fiber bundle structure emerges from the patch
-                    overlap conditions (Axioms A1-A2 + Assumption D).
+                    overlap conditions together with the gauge-as-gluing route.
                 </p>
             </Explainer>
 

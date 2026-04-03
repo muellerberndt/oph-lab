@@ -104,7 +104,13 @@ export function Layout() {
                                 {' \u2022 '}
                                 <a href="https://floatingpragma.io/oph/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>OPH Overview</a>
                                 {' \u2022 '}
+                                <a href="https://floatingpragma.io/oph/theory-of-everything/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Theory of Everything</a>
+                                {' \u2022 '}
+                                <a href="https://floatingpragma.io/oph/simulation-theory/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Simulation Theory</a>
+                                {' \u2022 '}
                                 <a href="https://oph-book.floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Book</a>
+                                {' \u2022 '}
+                                <a href="https://learn.floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Textbooks</a>
                                 {' \u2022 '}
                                 <a href="https://challenge.floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Challenge</a>
                                 {' \u2022 '}

@@ -284,7 +284,7 @@ export function EntanglementGeometryPage() {
                 <p>
                     In OPH, every observer has a finite patch (Axiom A1). They always trace out the complement.
                     Entanglement entropy is therefore unavoidable and universal. It is the entropy that drives
-                    the emergent Einstein equations, as shown on the Gravity page.
+                    the conditional gravity branch discussed on the Gravity page.
                 </p>
             </Explainer>
         </div>

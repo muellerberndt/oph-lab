@@ -67,19 +67,19 @@ export function GravityPage() {
             title: 'Step 3: Entanglement equilibrium condition',
             equation: 'delta(S_gen) = delta(A/4G_eff) + delta(S_bulk)',
             value: `delta(S_gen) = ${derivation.deltaSGen.toFixed(6)}`,
-            concept: 'A3 + MaxEnt stationarity target is zero',
+            concept: 'Fixed-cap stationarity target is zero on the admissible variation class',
         },
         {
-            title: 'Step 4: Null Einstein closure',
+            title: 'Step 4: Rest-frame Einstein relation',
             equation: 'R_kk ?= 8pi G_eff T_kk',
             value: `R_kk = ${derivation.trialRkk.toFixed(6)}, target = ${derivation.einsteinTarget.toFixed(6)}`,
-            concept: 'Geometric response must match stress flux for every null k',
+            concept: 'Null-stress bridge plus stationarity fixes the local scalar relation on the stated branch',
         },
         {
-            title: 'Step 5: Tensor residual (up to Lambda)',
+            title: 'Step 5: Tensor reconstruction (up to Lambda g_ab)',
             equation: 'G_ab + Lambda g_ab - 8pi G_eff<T_ab> = 0',
             value: `Null residual = ${derivation.einsteinResidual.toExponential(3)}`,
-            concept: 'Null data fix tensor equation up to cosmological constant term',
+            concept: 'Null data fix the tensor only up to the null-invisible metric term',
         },
         {
             title: 'Step 6: Global completion',
@@ -97,8 +97,9 @@ export function GravityPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This simulator follows the latest paper logic: local null-strip equilibrium gives Einstein closure,
-                then global screen capacity fixes Lambda. Every symbol below is defined in-page.
+                This simulator visualizes the current conditional gravity branch: local null-modular data and
+                generalized-entropy stationarity yield the rest-frame Einstein relation on the stated BW/null-stress
+                assumptions, and global screen capacity fixes the separate Lambda branch.
             </p>
 
             <div className="demo-container">
@@ -251,7 +252,8 @@ export function GravityPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '28px' }}>Six-Step Derivation Trace</h3>
             <p style={{ marginBottom: '12px', fontSize: '0.86em', color: 'var(--text-muted)' }}>
-                At kappa_R=1 the null closure exactly cancels generalized-entropy variation for any sampled null weight W.
+                At kappa_R=1 this toy normalization saturates the displayed rest-frame relation and cancels the
+                modeled generalized-entropy variation for the sampled null weight W.
             </p>
 
             {stepCards.map((step, index) => (
@@ -280,30 +282,43 @@ export function GravityPage() {
             </div>
 
             <div className="card" style={{ borderLeft: '3px solid var(--accent-gold)', marginBottom: '18px' }}>
-                <h4 style={{ marginTop: 0, fontSize: '0.86em' }}>Assumption Stack Used Here</h4>
+                <h4 style={{ marginTop: 0, fontSize: '0.86em' }}>Premise Stack Used Here</h4>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '8px', fontSize: '0.78em' }}>
-                    <div>A3: generalized entropy + focusing</div>
-                    <div>B: local MaxEnt refinement branch</div>
-                    <div>N1-N3: null modular bridge</div>
-                    <div>G: OPH geometric cap branch; BW fixes the 2pi normalization there</div>
-                    <div>Null ambiguity lemma: tensor closure up to Lambda g_ab</div>
+                    <div>A4: recoverable generalized entropy</div>
+                    <div>A3: local MaxEnt and refinement-stable branch</div>
+                    <div>D4: null modular bridge, with half-line generator/charge identification internalized</div>
+                    <div>D3 + T2: explicit BW branch and scaling-limit scope</div>
+                    <div>T3: fixed-cap generalized-entropy stationarity</div>
+                    <div>Null ambiguity lemma: tensor reconstruction up to Lambda g_ab</div>
                     <div>Global capacity closure for Lambda</div>
                 </div>
             </div>
 
             <Explainer title="What this simulator is proving">
                 <p>
-                    The local part reproduces the Jacobson-style mechanism: stationarity of generalized entropy on
-                    local null strips gives the null Einstein closure. The global part is separate because null data
-                    cannot determine Lambda by itself.
+                    The local part visualizes the Jacobson-type rest-frame relation on the stated gravity branch.
+                    The global part is separate because null data leave a metric ambiguity and cannot determine
+                    Lambda by themselves.
                 </p>
             </Explainer>
 
             <Explainer title="How P and log(dim H) enter">
                 <p>
-                    P changes the effective gravitational and entropy scales in the local closure. The screen capacity
-                    log(dim H_tot) changes only the global Lambda completion. This split is exactly how the current
-                    manuscript frames Einstein-plus-Lambda derivation.
+                    P changes the effective gravitational and entropy scales in this toy readout. The screen capacity
+                    log(dim H_tot) changes only the global Lambda completion. This split matches the current OPH paper
+                    surface, where the local gravity branch and the cosmological-capacity branch are distinct.
+                </p>
+            </Explainer>
+
+            <Explainer title="What remains open">
+                <p>
+                    The half-line generator/null-stress charge identification is internal to the current null bridge.
+                    What remains open downstream is the bounded-interval transport/projective branch and the tensor
+                    reconstruction ambiguity beyond the null-invisible metric term.
+                </p>
+                <p>
+                    Upstream of the BW branch, the broader UV/BW internalization scaffold also remains open at the
+                    realized scaling-limit cap-pair extraction and ordered cut-pair rigidity steps.
                 </p>
             </Explainer>
         </div>

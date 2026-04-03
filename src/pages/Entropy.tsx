@@ -59,8 +59,8 @@ export function EntropyPage() {
             </div>
             <p style={{ marginBottom: '16px' }}>
                 Maximum entropy (H = log<sub>2</sub> n) occurs when all outcomes are equally likely &mdash; the state of
-                maximum ignorance. This is the key insight behind <strong>MaxEnt</strong> (Axiom B): in the absence of
-                constraints, nature selects the maximum-entropy state.
+                maximum ignorance. This is the key insight behind the <strong>local MaxEnt branch</strong> of Axiom A3:
+                given a fixed local constraint family, one selects the entropy-maximizing state on that branch.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Von Neumann Entropy</h3>
@@ -205,15 +205,15 @@ export function EntropyPage() {
 
             <Explainer title="MaxEnt and the typicality argument">
                 <p>
-                    The Maximum Entropy principle (Axiom B) says: given only local constraints, the state that
+                    The Maximum Entropy principle on the A3 branch says: given only local constraints, the state that
                     maximizes von Neumann entropy is selected. This is not a dynamical statement but an epistemic one:
                     MaxEnt states are overwhelmingly typical. Almost all states compatible with the constraints look
                     like the MaxEnt state.
                 </p>
                 <p>
-                    In OPH, MaxEnt combined with the area bound (A3) is the engine that drives the derivation of
-                    Einstein's equations: the geometry of spacetime emerges from the condition that entanglement
-                    entropy is maximized subject to the area constraint.
+                    In OPH, MaxEnt combined with recoverable generalized entropy is one engine that drives the
+                    the conditional gravity branch: the geometry of spacetime is tied to generalized-entropy
+                    stationarity together with the later BW and null-bridge premises.
                 </p>
             </Explainer>
 
