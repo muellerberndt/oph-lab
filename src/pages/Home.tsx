@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { CORE_PARAMETERS, OPH_PAPERS } from '../content/paperSurface';
 
 export function Home() {
     return (
@@ -17,9 +18,9 @@ export function Home() {
                     An interactive guide to OPH&apos;s current theorem surface, conditional branches, and open scaffolds.
                 </p>
                 <p style={{ color: 'var(--text-muted)' }}>
-                    This app walks you through two derivation chains &mdash; one toward Lorentz/gravity on the stated BW and
-                    entanglement-equilibrium branches, the other toward quantum mechanics, gauge structure, and matter-sector
-                    continuation lanes &mdash; with interactive demos at every step.
+                    The lab still walks through the gravity and QFT derivation chains, but it now tracks the broader
+                    five-paper public stack as well: recovered core, synthesis, particle status, consensus, and
+                    observer machinery.
                 </p>
                 <p style={{ color: 'var(--text-muted)', marginTop: '16px', marginBottom: 0 }}>
                     If you arrived here through <a href="https://floatingpragma.io/oph/theory-of-everything/" target="_blank" rel="noopener noreferrer">theory of everything</a> or{' '}
@@ -29,7 +30,7 @@ export function Home() {
                 </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginBottom: '32px' }}>
                 <div className="card chain-gr" style={{ padding: '20px' }}>
                     <div style={{ fontSize: '0.7em', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--accent-rose)', marginBottom: '8px' }}>
                         Chain 1
@@ -50,6 +51,16 @@ export function Home() {
                         unique Standard Model gauge structure, and downstream matter-sector constraints.
                     </p>
                 </div>
+                <div className="card" style={{ padding: '20px', borderLeft: '3px solid var(--accent-purple)' }}>
+                    <div style={{ fontSize: '0.7em', textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--accent-purple)', marginBottom: '8px' }}>
+                        Observer Machinery
+                    </div>
+                    <h3 style={{ fontSize: '1em', margin: '0 0 8px 0' }}>Consensus and Screen Microphysics</h3>
+                    <p style={{ fontSize: '0.85em', margin: 0 }}>
+                        Follow the finite patch-net repair story, record algebra, and the explicit screen-register
+                        architecture that turns observers and synchronization into concrete physics.
+                    </p>
+                </div>
             </div>
 
             <div className="card" style={{ marginBottom: '32px' }}>
@@ -59,10 +70,9 @@ export function Home() {
                     and the requirement that overlapping patches agree on shared data.
                 </p>
                 <p style={{ marginBottom: '12px' }}>
-                    From this single principle &mdash; together with the current five-axiom ledger and explicit technical
-                    premises &mdash; OPH derives a schedule-independent overlap normal form, a conditional Lorentz branch,
-                    a conditional Jacobson-type Einstein branch, a conditional compact-gauge route, and several
-                    downstream matter-sector continuation lanes.
+                    From this starting point, the current paper surface derives a schedule-independent overlap normal
+                    form, a conditional Lorentz branch, a conditional Jacobson-type Einstein branch, the realized
+                    Standard Model quotient chain, and a concrete finite-screen observer architecture.
                 </p>
                 <p style={{ marginBottom: '12px' }}>
                     OPH presents itself publicly both as a <strong>theory-of-everything program</strong> and as a concrete
@@ -71,15 +81,46 @@ export function Home() {
                     surface rather than collapsing all branches into one unconditional claim.
                 </p>
                 <p style={{ marginBottom: '12px' }}>
-                    The simulator-hardware side of that claim is developed in <a href="https://github.com/FloatingPragma/observer-patch-holography/blob/main/paper/screen_microphysics_and_observer_synchronization.pdf" target="_blank" rel="noopener noreferrer">Screen Microphysics and Observer Synchronization</a>,
-                    while the public theory-of-everything closure is the strange-loop hypothesis.
+                    The simulator-facing implementation is now its own first-class surface in <em>Screen Microphysics
+                    and Observer Synchronization</em>, while <em>Reality as a Consensus Protocol</em> gives the fixed-point
+                    and repair spine beneath the rest of the derivation stack.
                 </p>
-                <p style={{ margin: 0 }}>
-                    Two external quantitative inputs recur across the public surface: pixel area
-                    (<span style={{ color: 'var(--accent-cyan)' }}>a<sub>cell</sub> &asymp; 1.63 l<sub>P</sub>&sup2;</span>) and
-                    screen capacity (<span style={{ color: 'var(--accent-cyan)' }}>log dim H &sim; 10<sup>122</sup></span>).
-                    Other outputs depend on the specific branch and premise stack used on each page.
-                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px' }}>
+                    {CORE_PARAMETERS.map((item) => (
+                        <div key={item.label} style={{ padding: '12px', background: 'rgba(0,0,0,0.2)', border: '1px solid var(--border-color)' }}>
+                            <div style={{ fontSize: '0.75em', color: 'var(--accent-gold)', marginBottom: '4px' }}>{item.label}</div>
+                            <div style={{ color: 'var(--accent-cyan)', marginBottom: '8px' }}>{item.value}</div>
+                            <div style={{ fontSize: '0.8em', color: 'var(--text-secondary)' }}>{item.note}</div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className="card" style={{ marginBottom: '32px' }}>
+                <h3 style={{ fontSize: '0.9em', marginBottom: '12px' }}>Current Public Paper Stack</h3>
+                <div style={{ display: 'grid', gap: '12px' }}>
+                    {OPH_PAPERS.map((paper) => (
+                        <a
+                            key={paper.slug}
+                            href={paper.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'block',
+                                padding: '14px',
+                                background: 'rgba(0,0,0,0.18)',
+                                border: '1px solid var(--border-color)',
+                                textDecoration: 'none',
+                            }}
+                        >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', marginBottom: '6px' }}>
+                                <strong style={{ color: 'var(--text-primary)' }}>{paper.title}</strong>
+                                <span style={{ color: 'var(--accent-gold)', fontSize: '0.78em' }}>{paper.surface}</span>
+                            </div>
+                            <div style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>{paper.summary}</div>
+                        </a>
+                    ))}
+                </div>
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>

@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { Explainer } from '../components/Explainer';
+import { GRAVITY_SURFACE } from '../content/paperSurface';
 import {
     PIXEL_REFERENCE,
     deSitterRadiusFromLambda,
@@ -101,6 +102,17 @@ export function GravityPage() {
                 generalized-entropy stationarity yield the rest-frame Einstein relation on the stated BW/null-stress
                 assumptions, and global screen capacity fixes the separate Lambda branch.
             </p>
+
+            <div className="card" style={{ marginBottom: '20px', borderLeft: '3px solid var(--accent-cyan)' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Current gravity audit</h3>
+                <div style={{ display: 'grid', gap: '8px' }}>
+                    {GRAVITY_SURFACE.map((item) => (
+                        <div key={item} style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
+                            {item}
+                        </div>
+                    ))}
+                </div>
+            </div>
 
             <div className="demo-container">
                 <div className="demo-label">Interactive Einstein Derivation (Expanded)</div>
@@ -311,15 +323,13 @@ export function GravityPage() {
             </Explainer>
 
             <Explainer title="What remains open">
-                <p>
-                    The half-line generator/null-stress charge identification is internal to the current null bridge.
-                    What remains open downstream is the bounded-interval transport/projective branch and the tensor
-                    reconstruction ambiguity beyond the null-invisible metric term.
-                </p>
-                <p>
-                    Upstream of the BW branch, the broader UV/BW internalization scaffold also remains open at the
-                    realized scaling-limit cap-pair extraction and ordered cut-pair rigidity steps.
-                </p>
+                <div style={{ display: 'grid', gap: '10px' }}>
+                    {GRAVITY_SURFACE.slice(2).map((item) => (
+                        <p key={item} style={{ margin: 0 }}>
+                            {item}
+                        </p>
+                    ))}
+                </div>
             </Explainer>
         </div>
     );

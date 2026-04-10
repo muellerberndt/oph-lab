@@ -1,4 +1,5 @@
 import { Explainer } from '../components/Explainer';
+import { CORE_PARAMETERS, OPH_PAPERS } from '../content/paperSurface';
 
 export function SynthesisPage() {
     return (
@@ -12,8 +13,10 @@ export function SynthesisPage() {
                 Both chains converge, but they do so at different claim tiers. Chain 1 yields a conditional Lorentz
                 branch, a conditional Jacobson-type Einstein branch, and separate cosmological-capacity consequences.
                 Chain 2 yields the structural Standard Model branch together with several downstream continuation lanes.
-                Both start from the same five-axiom basis on a holographic screen S&sup2;, while specific pages add the
-                theorem-local technical premises needed for Lorentz, gauge, or matter-sector statements.
+                The same paper surface now also includes a dedicated consensus spine and a concrete screen-microphysics
+                architecture. Both start from the same five-axiom basis on a holographic screen S&sup2;, while
+                specific pages add the theorem-local technical premises needed for Lorentz, gauge, particle, or
+                observer-level statements.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Two Parameters, All of Physics</h3>
@@ -21,33 +24,24 @@ export function SynthesisPage() {
                 The entire OPH framework has exactly <strong>two free parameters</strong>:
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
-                <div className="card" style={{ borderLeft: '3px solid var(--accent-cyan)' }}>
-                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>
-                        1. Pixel Area a<sub>cell</sub>
-                    </h4>
-                    <div className="math-block" style={{ fontSize: '1em', margin: '0 0 12px' }}>
-                        a<sub>cell</sub> &asymp; 1.63 l<sub>P</sub>&sup2;
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+                {CORE_PARAMETERS.map((item, index) => (
+                    <div
+                        key={item.label}
+                        className="card"
+                        style={{ borderLeft: `3px solid ${index === 0 ? 'var(--accent-cyan)' : 'var(--accent-gold)'}` }}
+                    >
+                        <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: index === 0 ? 'var(--accent-cyan)' : 'var(--accent-gold)' }}>
+                            {index + 1}. {item.label}
+                        </h4>
+                        <div className="math-block" style={{ fontSize: '1em', margin: '0 0 12px' }}>
+                            {item.value}
+                        </div>
+                        <p style={{ margin: 0, fontSize: '0.85em' }}>
+                            {item.note}
+                        </p>
                     </div>
-                    <p style={{ margin: 0, fontSize: '0.85em' }}>
-                        The area of a single pixel on the holographic screen, in Planck units. This sets
-                        Newton's gravitational constant G, the Planck length l<sub>P</sub>, and the fundamental
-                        discreteness scale of spacetime. It is the "resolution" of reality.
-                    </p>
-                </div>
-                <div className="card" style={{ borderLeft: '3px solid var(--accent-gold)' }}>
-                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-gold)' }}>
-                        2. Screen Capacity log(dim H)
-                    </h4>
-                    <div className="math-block" style={{ fontSize: '1em', margin: '0 0 12px' }}>
-                        log(dim H<sub>tot</sub>) &asymp; 10<sup>122</sup>
-                    </div>
-                    <p style={{ margin: 0, fontSize: '0.85em' }}>
-                        The total information capacity of the screen, measured in nats. This sets the
-                        cosmological constant &Lambda;, the Hubble parameter H, the de Sitter temperature
-                        T<sub>dS</sub>, and the MOND scale a<sub>0</sub>. It is the "size" of reality.
-                    </p>
-                </div>
+                ))}
             </div>
 
             <p style={{ marginBottom: '16px' }}>
@@ -55,6 +49,19 @@ export function SynthesisPage() {
                 same status level. The current OPH paper set separates recovered structural theorems, explicit
                 branch-conditional results, closed calibration sectors, and open continuation lanes.
             </p>
+
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Five Surfaces, One Program</h3>
+            <div style={{ display: 'grid', gap: '12px', marginBottom: '24px' }}>
+                {OPH_PAPERS.map((paper) => (
+                    <div key={paper.slug} className="card" style={{ borderLeft: '3px solid var(--accent-purple)' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', marginBottom: '6px' }}>
+                            <strong>{paper.title}</strong>
+                            <span style={{ color: 'var(--accent-purple)', fontSize: '0.78em' }}>{paper.surface}</span>
+                        </div>
+                        <div style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>{paper.summary}</div>
+                    </div>
+                ))}
+            </div>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Two Chains Unified</h3>
 
@@ -218,7 +225,7 @@ export function SynthesisPage() {
                     <li><strong>It from bit (Wheeler):</strong> Information as the foundation of physics, made precise through von Neumann algebras</li>
                     <li><strong>QBism:</strong> Observer-relative quantum states, grounded in patch structure</li>
                     <li><strong>Tensor networks:</strong> MERA and HaPPY codes, as models of the screen-to-bulk map</li>
-                    <li><strong>MOND:</strong> Milgrom's phenomenology, derived from the Markov defect</li>
+                    <li><strong>Consensus and distributed systems:</strong> fixed points, repair schedules, holonomy obstructions, and stable records as physics-facing objects</li>
                 </ul>
                 <p>
                     OPH unifies these insights into a single coherent framework with a common axiomatic foundation.

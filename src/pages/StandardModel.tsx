@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { Explainer } from '../components/Explainer';
+import { STANDARD_MODEL_SURFACE } from '../content/paperSurface';
 import { useLabSetting, useLabState } from '../state/labState';
 
 type AdmissibilityChecks = {
@@ -193,6 +194,17 @@ export function StandardModelPage() {
                 {' '}<strong>[SU(3) x SU(2) x U(1)] / Z6</strong> with <strong>Nc=3</strong> and <strong>Ng=3</strong>.
             </p>
 
+            <div className="card" style={{ marginBottom: '20px', borderLeft: '3px solid var(--accent-cyan)' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Recovered-core audit</h3>
+                <div style={{ display: 'grid', gap: '8px' }}>
+                    {STANDARD_MODEL_SURFACE.map((item) => (
+                        <div key={item} style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
+                            {item}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
             <div className="demo-container">
                 <div className="demo-label">Admissibility + MAR Eliminator</div>
 
@@ -380,6 +392,18 @@ export function StandardModelPage() {
                     MAR does not pick the absolutely smallest group. It minimizes only after admissibility filters are
                     enforced. This prevents trivial sectors (like pure U(1)) that fail chiral, CP, or Yukawa criteria.
                     Within the admissible class, this is <strong>Nature's Occam's razor</strong>.
+                </p>
+            </Explainer>
+
+            <Explainer title="What this page does not claim">
+                <p>
+                    This page tracks the recovered gauge quotient and counting chain. It does not close the full flavor
+                    program, hadron phenomenology, or every downstream matter-sector theorem object.
+                </p>
+                <p>
+                    On the current public surface, the Standard Model quotient, exact hypercharges, and the
+                    product-group consequence of no gauge-mediated proton decay belong to the recovered core. The
+                    particle pages carry the sharper continuation and compare-only bookkeeping.
                 </p>
             </Explainer>
         </div>

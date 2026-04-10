@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { Explainer } from '../components/Explainer';
+import { STANDARD_MODEL_SURFACE } from '../content/paperSurface';
 import {
     BETA_COEFFICIENTS_MSSM_LIKE,
     BETA_COEFFICIENTS_SM_1LOOP,
@@ -99,9 +100,24 @@ export function UnificationPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This page now mirrors the latest supplement derivation: choose an edge-running model, solve the pixel
+                This page follows the supplement derivation directly: choose an edge-running model, solve the pixel
                 closure for <strong>alpha_U</strong>, then inspect one-loop running at any scale.
             </p>
+
+            <div className="card" style={{ marginBottom: '20px', borderLeft: '3px solid var(--accent-cyan)' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>How the current surface reads</h3>
+                <div style={{ display: 'grid', gap: '8px', marginBottom: '10px' }}>
+                    {STANDARD_MODEL_SURFACE.slice(1).map((item) => (
+                        <div key={item} style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
+                            {item}
+                        </div>
+                    ))}
+                </div>
+                <p style={{ margin: 0, fontSize: '0.82em', color: 'var(--text-secondary)' }}>
+                    This is why the lab now describes the unification lane as geometric and edge-driven. It should not
+                    imply that a simple-group GUT or superpartner spectrum has been derived underneath it.
+                </p>
+            </div>
 
             <div className="demo-container">
                 <div className="demo-label">Interactive Unification Derivation</div>

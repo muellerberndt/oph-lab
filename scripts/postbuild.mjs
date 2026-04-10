@@ -27,6 +27,8 @@ const routes = [
   'masses',
   'unification',
   'qft-emerges',
+  'consensus-protocol',
+  'screen-microphysics',
   'predictions',
   'synthesis',
   'glossary',
@@ -134,15 +136,25 @@ const routeMeta = {
     description:
       'Follow the argument that quantum field theory is an effective layer emerging from deeper screen dynamics.',
   },
-  predictions: {
-    title: 'Testable Predictions of Quantum Gravity - Gravitational Wave Signatures | OPH Lab',
+  'consensus-protocol': {
+    title: 'Reality as a Consensus Protocol - Overlap Repair, Normal Form, and Records | OPH Lab',
     description:
-      'Review the empirical and phenomenological predictions highlighted by the OPH research program.',
+      'Explore the OPH consensus paper: overlap repair, Lyapunov descent, schedule-independent normal form, holonomy obstructions, and record stability.',
+  },
+  'screen-microphysics': {
+    title: 'Screen Microphysics and Observer Synchronization in OPH | OPH Lab',
+    description:
+      'Inspect the finite screen-register architecture used by OPH to model records, measurement, checkpoint/restoration, and observer synchronization.',
+  },
+  predictions: {
+    title: 'Predictions and Pressure Tests - Current OPH Empirical Surface | OPH Lab',
+    description:
+      'Review the current OPH pressure-test surface, separating public quantitative rows from continuation-level signatures and still-open phenomenology.',
   },
   synthesis: {
-    title: 'Two Parameters, All of Physics - The Ultimate Theory of Everything | OPH Lab',
+    title: 'OPH Synthesis - Recovered Core, Particles, Consensus, and Observer Machinery | OPH Lab',
     description:
-      'See how OPH ties the derivation chain together into one synthesis across gravity, quantum mechanics, and particle physics.',
+      'See how OPH ties the derivation chain together across structural theorems, branch-conditional gravity results, particles, consensus, and observer machinery.',
   },
   glossary: {
     title: 'Quantum Gravity & Holography Glossary - Key Terms Explained | OPH Lab',
@@ -150,9 +162,9 @@ const routeMeta = {
       'Use the OPH Lab glossary for concise definitions of the core holography, gravity, and quantum-information terms.',
   },
   resources: {
-    title: 'Further Reading - Quantum Gravity, Holography & Theory of Everything | OPH Lab',
+    title: 'Resources - Current OPH Five-Paper Stack and Study Surfaces | OPH Lab',
     description:
-      'Find the main papers, book, challenge, and supporting reading for deeper study of Observer Patch Holography.',
+      'Find the current five-paper OPH stack, book, study surfaces, challenge, and supporting reading for deeper study of Observer Patch Holography.',
   },
 };
 

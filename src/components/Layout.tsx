@@ -7,6 +7,7 @@ import { WalkthroughNav } from './WalkthroughNav';
 import { installLinkTracking, trackPageView } from '../lib/analytics';
 import { SeoManager } from './SeoManager';
 import { getSeoMeta } from '../seo';
+import { BOOK_URL, CHALLENGE_URL, OVERVIEW_URL, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL } from '../content/paperSurface';
 
 export function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -102,17 +103,17 @@ export function Layout() {
                             <p>
                                 <a href="https://floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Floating Pragma</a>
                                 {' \u2022 '}
-                                <a href="https://floatingpragma.io/oph/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>OPH Overview</a>
+                                <a href={OVERVIEW_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>OPH Overview</a>
                                 {' \u2022 '}
-                                <a href="https://floatingpragma.io/oph/theory-of-everything/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Theory of Everything</a>
+                                <a href={THEORY_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Theory of Everything</a>
                                 {' \u2022 '}
-                                <a href="https://floatingpragma.io/oph/simulation-theory/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Simulation Theory</a>
+                                <a href={SIMULATION_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Simulation Theory</a>
                                 {' \u2022 '}
-                                <a href="https://oph-book.floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Book</a>
+                                <a href={BOOK_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Book</a>
                                 {' \u2022 '}
-                                <a href="https://learn.floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Textbooks</a>
+                                <a href={TEXTBOOKS_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Textbooks</a>
                                 {' \u2022 '}
-                                <a href="https://challenge.floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Challenge</a>
+                                <a href={CHALLENGE_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Challenge</a>
                                 {' \u2022 '}
                                 <a href="https://floatingpragma.io/starklab/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>STARK Lab</a>
                                 {' \u2022 '}
@@ -125,7 +126,7 @@ export function Layout() {
                             <p style={{ marginTop: '8px' }}>
                                 Bernhard Mueller
                                 {' \u2022 '}
-                                <a href="https://github.com/FloatingPragma/observer-patch-holography" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>GitHub</a>
+                                <a href={RESEARCH_REPO_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Research Repo</a>
                                 {' \u2022 '}
                                 <a href="https://zenodo.org/records/18288114" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Paper (Zenodo)</a>
                             </p>

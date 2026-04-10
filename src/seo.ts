@@ -6,9 +6,9 @@ export type SeoMeta = {
 };
 
 const DEFAULT_DESCRIPTION =
-  'Interactive guide to Observer Patch Holography, tracking the current theorem surface across gravity branches, gauge reconstruction, and matter-sector continuations from observer-local information patches.';
+  'Interactive guide to Observer Patch Holography, tracking the current theorem surface across gravity branches, gauge reconstruction, particles, consensus, and screen microphysics.';
 
-const DEFAULT_TITLE = 'OPH Lab — Concrete Simulation Theory and Theory of Everything Guide';
+const DEFAULT_TITLE = 'OPH Lab — Current OPH Paper Surface';
 const SITE_SUFFIX = ' | OPH Lab';
 
 const ROUTE_DESCRIPTIONS: Record<string, string> = {
@@ -33,10 +33,12 @@ const ROUTE_DESCRIPTIONS: Record<string, string> = {
   '/masses': 'Review the current OPH discussion of downstream matter-sector continuations and coupling structure.',
   '/unification': 'Inspect the coupling-unification lesson and the OPH account of apparent grand-unification patterns.',
   '/qft-emerges': 'Follow the argument that quantum field theory is an effective layer emerging from deeper screen dynamics.',
-  '/predictions': 'Review the empirical and phenomenological predictions highlighted by the OPH research program.',
-  '/synthesis': 'See how OPH ties the derivation chain together across structural theorems, branch-conditional gravity results, and open matter-sector lanes.',
+  '/consensus-protocol': 'Explore the OPH consensus paper: overlap repair, Lyapunov descent, schedule-independent normal form, holonomy obstructions, and record stability.',
+  '/screen-microphysics': 'Inspect the finite screen-register architecture used by OPH to model records, measurement, checkpoint/restoration, and observer synchronization.',
+  '/predictions': 'Review the current OPH pressure-test surface, separating public quantitative rows from continuation-level signatures and still-open phenomenology.',
+  '/synthesis': 'See how OPH ties the derivation chain together across structural theorems, branch-conditional gravity results, particles, consensus, and observer machinery.',
   '/glossary': 'Use the OPH Lab glossary for concise definitions of the core holography, gravity, and quantum-information terms.',
-  '/resources': 'Find the main papers, microphysics paper, book, OPH Textbooks study app, challenge, and supporting reading for deeper study of Observer Patch Holography, including simulation theory and theory of everything entry pages.',
+  '/resources': 'Find the current five-paper OPH stack, book, study surfaces, challenge, and supporting reading for deeper study of Observer Patch Holography.',
 };
 
 function normalizePathname(pathname: string): string {

@@ -27,6 +27,8 @@ import { StandardModelPage } from './pages/StandardModel';
 import { MassesPage } from './pages/Masses';
 import { UnificationPage } from './pages/Unification';
 import { QftEmergesPage } from './pages/QftEmerges';
+import { ConsensusProtocolPage } from './pages/ConsensusProtocol';
+import { ScreenMicrophysicsPage } from './pages/ScreenMicrophysics';
 
 // Predictions & Reference
 import { PredictionsPage } from './pages/Predictions';
@@ -62,6 +64,8 @@ function App() {
           <Route path="masses" element={<MassesPage />} />
           <Route path="unification" element={<UnificationPage />} />
           <Route path="qft-emerges" element={<QftEmergesPage />} />
+          <Route path="consensus-protocol" element={<ConsensusProtocolPage />} />
+          <Route path="screen-microphysics" element={<ScreenMicrophysicsPage />} />
 
           <Route path="predictions" element={<PredictionsPage />} />
           <Route path="synthesis" element={<SynthesisPage />} />

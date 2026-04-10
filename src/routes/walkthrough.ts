@@ -18,6 +18,8 @@ import {
     Box,
     Scale,
     Merge,
+    GitBranch,
+    Cpu,
     Target,
     Infinity,
     Search,
@@ -25,7 +27,7 @@ import {
     type LucideIcon,
 } from 'lucide-react';
 
-export type PartId = 'foundation' | 'chain1-gr' | 'chain2-qft' | 'predictions' | 'reference';
+export type PartId = 'foundation' | 'chain1-gr' | 'chain2-qft' | 'observer-machinery' | 'predictions' | 'reference';
 
 export type WalkthroughStep = {
     to: string;
@@ -39,6 +41,7 @@ export const PART_LABELS: Record<PartId, string> = {
     'foundation': 'Foundation',
     'chain1-gr': 'Chain 1: Axioms \u2192 General Relativity',
     'chain2-qft': 'Chain 2: Axioms \u2192 Quantum Field Theory',
+    'observer-machinery': 'Consensus & Observers',
     'predictions': 'Predictions & Synthesis',
     'reference': 'Reference',
 };
@@ -47,6 +50,7 @@ export const PART_COLORS: Record<PartId, string> = {
     'foundation': 'var(--accent-gold)',
     'chain1-gr': 'var(--accent-rose)',
     'chain2-qft': 'var(--accent-blue)',
+    'observer-machinery': 'var(--accent-purple)',
     'predictions': 'var(--accent-green)',
     'reference': 'var(--text-muted)',
 };
@@ -78,6 +82,10 @@ export const WALKTHROUGH_STEPS: WalkthroughStep[] = [
     { to: '/masses/', icon: Scale, label: 'Matter Continuations', part: 'chain2-qft', seoTitle: 'Matter Continuations — Current OPH Sector Status' },
     { to: '/unification/', icon: Merge, label: 'Coupling Unification', part: 'chain2-qft', seoTitle: 'Grand Unification Without GUTs — Coupling Constant Convergence' },
     { to: '/qft-emerges/', icon: Atom, label: 'QFT Emerges', part: 'chain2-qft', seoTitle: 'How Quantum Field Theory Emerges from a Holographic Screen' },
+
+    // Consensus & observer machinery
+    { to: '/consensus-protocol/', icon: GitBranch, label: 'Consensus Protocol', part: 'observer-machinery', seoTitle: 'Reality as a Consensus Protocol — Overlap Repair, Normal Form, and Records' },
+    { to: '/screen-microphysics/', icon: Cpu, label: 'Screen Microphysics', part: 'observer-machinery', seoTitle: 'Screen Microphysics and Observer Synchronization in OPH' },
 
     // Predictions & Synthesis
     { to: '/predictions/', icon: Target, label: 'Testable Predictions', part: 'predictions', seoTitle: 'Testable Predictions of Quantum Gravity — Gravitational Wave Signatures' },

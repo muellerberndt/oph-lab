@@ -58,14 +58,14 @@ export function GlossaryPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                Expanded concept index synced to the latest OPH manuscript structure. Every derivation page now maps
-                directly to terms here.
+                Expanded concept index aligned with the OPH manuscript structure. The glossary now covers the gravity
+                and QFT chains together with the newer consensus and screen-microphysics surfaces.
             </p>
 
             <div className="card" style={{ marginBottom: '14px', borderLeft: '3px solid var(--accent-gold)' }}>
                 <div style={{ fontSize: '0.78em', color: 'var(--text-secondary)' }}>
-                    <strong>{GLOSSARY_ENTRIES.length}</strong> concepts indexed across axioms, gauge reconstruction,
-                    the gravity branch, and the spectrum-status ledger.
+                    <strong>{GLOSSARY_ENTRIES.length}</strong> concepts indexed across axioms, gravity, gauge
+                    reconstruction, particle status, consensus, and observer machinery.
                 </div>
             </div>
 

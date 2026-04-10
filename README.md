@@ -12,6 +12,8 @@ Research status is controlled from the sibling `reverse-engineering-reality/` re
 
 - `paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex`
 - `paper/deriving_the_particle_zoo_from_observer_consistency.tex`
+- `paper/reality_as_consensus_protocol.tex`
+- `paper/screen_microphysics_and_observer_synchronization.tex`
 - `paper/tex_fragments/PAPER.tex`
 - `paper/tex_fragments/TECHNICAL_SUPPLEMENT.tex`
 - `code/particles/RESULTS_STATUS.md`
@@ -44,6 +46,7 @@ This section is the lab-maintainer summary of the current public paper surface.
   `SU(3) x SU(2) x U(1) / Z_6` is part of the recovered structural core.
 - The exact hypercharge lattice and the realized counting chain
   `N_g = 3`, `N_c = 3` are on the current paper-facing structural surface.
+- The sharp exclusion on this surface is `no gauge-mediated proton decay`.
 
 ### Particle branch
 
@@ -61,9 +64,10 @@ This section is the lab-maintainer summary of the current public paper surface.
   - then at the post-promotion affine descent to `mu_phys(Y_e)`
   - with `charged_physical_identity_mode_equalizer` beneath that scalar
 - Quarks:
-  - the present premise set carries a strict no-go for full physical quark closure
-  - the current corpus emits neither the D12 scalar value law, nor a sector-attached same-label left-handed lift to the physical CKM shell, nor a target-free physical-sheet readout `(g_u, g_d)`
-  - the exact next objects are the minimal extension triple:
+  - the maximal theorem-emitted package on the present ledger is the D12 mass ray, the negative selector `sigma_ref`, and the restricted-scope affine mean package
+  - the emitted scales are `g_ch = 0.9231656602589082` on `shared_budget_only` and `(g_u, g_d) = (0.7797392875757557, 0.12172551081512113)` on `current_family_only`
+  - the stronger physical closure objects are absent on that ledger
+  - the exact minimal extension triple above that package is:
     `H_mass : ell_ud = log(c_d / c_u)`,
     `H_phys : s_ud^phys : M_ud^{CR,phys} -> Sigma_ud^phys`,
     `H_abs : A_q^phys : Sigma_ud^phys -> R`
@@ -78,6 +82,25 @@ This section is the lab-maintainer summary of the current public paper surface.
 - Hadrons:
   - still backend-bound / compute-bound
 
+### Consensus branch
+
+- Accepted local repairs lower the touched-overlap inconsistency potential `Phi`.
+- On the finite patch net, that local-fit contract makes `Phi` a Lyapunov functional for accepted repair moves.
+- Under repair completeness and quotient-compatible union-collar gluing, the repair dynamics has a unique schedule-independent normal form.
+- Global consistency is still obstructed by cycle / holonomy defects. Pairwise overlap agreement alone is not enough.
+- Gauge-invariant uniqueness belongs on the quotient, not on raw microscopic representatives.
+
+### Screen microphysics branch
+
+- The lab should treat the finite screen-register architecture as a first-class public surface, not a side note.
+- The current microphysics paper carries:
+  - local gauge registers on a finite screen cellulation
+  - explicit patch and overlap observables
+  - record registers
+  - checkpoint / restoration machinery
+  - observer synchronization as an operational protocol
+- This is a fixed-cutoff reference architecture and simulator target. It is not yet a claim of unique final UV completion.
+
 ## Lab Copy Rules
 
 Use these rules whenever editing explainer text.
@@ -91,6 +114,7 @@ Use these rules whenever editing explainer text.
   - compare-only
   - open scaffold
 - Do not describe compare-only exact-hit sidecars as public theorem rows.
+- Do not describe continuation-level phenomenology templates as recovered-core predictions.
 - Do not use progress-tracking language like “now we have” in public research summaries.
 - Prefer “current paper surface”, “explicit BW branch”, “continuation-only sidecar”, and “compare-only” where applicable.
 
@@ -112,6 +136,10 @@ These are the common places where public copy tends to overstate the current pap
   - keep `W/Z` closed
   - keep Higgs/top as forward-seed public rows plus compare-only inverse sidecar
   - keep charged, quark, neutrino, and hadron lanes labeled as open where appropriate
+  - keep GW comb / discrete Hawking / deep-IR galaxy-response language separated by claim tier
+- Consensus / microphysics pages:
+  - do not demote them to flavor text beneath the gravity and QFT chains
+  - keep the fixed-point, holonomy, record, and synchronization language explicit
 
 ## Development
 

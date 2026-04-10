@@ -1,4 +1,5 @@
 import { Explainer } from '../components/Explainer';
+import { BOSON_PUBLIC_ROWS, PARTICLE_LANE_STATUS, STANDARD_MODEL_SURFACE } from '../content/paperSurface';
 
 export function QftEmergesPage() {
     return (
@@ -19,6 +20,25 @@ export function QftEmergesPage() {
             <div className="math-block" style={{ fontSize: '0.95em', lineHeight: '2.2' }}>
                 A1-A4 + R0 + R1 + T1 + MAR + T4-T6 &rarr; QM + Gauge-as-Gluing &rarr;
                 [SU(3)&times;SU(2)&times;U(1)]/Z6, N_c=3, N_g=3 &rarr; Structural SM + Continuation Lanes
+            </div>
+
+            <div className="card" style={{ marginTop: '24px', marginBottom: '24px', borderLeft: '3px solid var(--accent-cyan)' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Current paper-surface summary</h3>
+                <div style={{ display: 'grid', gap: '8px', marginBottom: '12px' }}>
+                    {STANDARD_MODEL_SURFACE.map((item) => (
+                        <div key={item} style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
+                            {item}
+                        </div>
+                    ))}
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '8px' }}>
+                    {BOSON_PUBLIC_ROWS.map((row) => (
+                        <div key={row.label} style={{ padding: '10px', background: 'rgba(0,0,0,0.18)', border: '1px solid var(--border-color)' }}>
+                            <div style={{ fontSize: '0.78em', color: 'var(--text-muted)' }}>{row.label}</div>
+                            <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{row.value}</div>
+                        </div>
+                    ))}
+                </div>
             </div>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Complete Chain 2 Derivation</h3>
@@ -201,7 +221,7 @@ export function QftEmergesPage() {
                     under development:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li>Quarks carry a strict present-premise no-go for full physical closure; the exact next objects are the minimal extension triple <code>H_mass</code>, <code>H_phys</code>, and <code>H_abs</code></li>
+                    <li>Quarks carry a maximal theorem-emitted package on the present ledger: the D12 mass ray, the negative selector <code>sigma_ref</code>, and a restricted-scope affine mean package; the exact minimal extension above that package is the triple <code>H_mass</code>, <code>H_phys</code>, and <code>H_abs</code></li>
                     <li>Charged-lepton centered-operator promotion and the later affine descent to &mu;<sub>phys</sub>(Y<sub>e</sub>)</li>
                     <li>Neutrino theorem pair emitted on the weighted-cycle branch; older exact adapters remain diagnostic-only beneath that branch</li>
                     <li>Higgs/top paper-surface proof packaging beyond the closed forward seed</li>
@@ -213,6 +233,13 @@ export function QftEmergesPage() {
                     closed on their declared surfaces, while the charged and physical-quark lanes remain open at
                     sharper theorem objects.
                 </p>
+                <div style={{ display: 'grid', gap: '8px', marginTop: '12px' }}>
+                    {PARTICLE_LANE_STATUS.map((lane) => (
+                        <div key={lane.label} style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
+                            <strong>{lane.label}:</strong> {lane.summary}
+                        </div>
+                    ))}
+                </div>
             </Explainer>
         </div>
     );

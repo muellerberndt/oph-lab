@@ -1,3 +1,5 @@
+import { BOSON_PUBLIC_ROWS, CLAIM_TIER_LEGEND, PARTICLE_LANE_STATUS } from '../content/paperSurface';
+
 export function MassesPage() {
     return (
         <div>
@@ -27,7 +29,7 @@ export function MassesPage() {
             <div className="card" style={{ marginBottom: '16px' }}>
                 <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Open matter-sector lanes</h3>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8', margin: 0, color: 'var(--text-secondary)' }}>
-                    <li><strong>Quarks:</strong> the present premise set carries a strict no-go for full physical quark closure: it emits neither the D12 scalar value law, nor a sector-attached same-label left-handed lift to the physical CKM shell, nor a target-free physical-sheet readout <code>(g_u, g_d)</code>. The exact next objects are the minimal extension triple <code>H_mass : ell_ud = log(c_d / c_u)</code>, <code>H_phys : s_ud^phys : M_ud^&#123;CR,phys&#125; -&gt; Sigma_ud^phys</code>, and <code>H_abs : A_q^phys : Sigma_ud^phys -&gt; R</code>.</li>
+                    <li><strong>Quarks:</strong> the maximal theorem-emitted package on the present ledger is the D12 mass ray, the negative selector <code>sigma_ref</code>, and the restricted-scope affine mean package with <code>g_ch = 0.9231656602589082</code> on <code>shared_budget_only</code> and <code>(g_u, g_d) = (0.7797392875757557, 0.12172551081512113)</code> on <code>current_family_only</code>. The exact minimal extension triple above that package is <code>H_mass : ell_ud = log(c_d / c_u)</code>, <code>H_phys : s_ud^phys : M_ud^&#123;CR,phys&#125; -&gt; Sigma_ud^phys</code>, and <code>H_abs : A_q^phys : Sigma_ud^phys -&gt; R</code>.</li>
                     <li><strong>Charged leptons:</strong> centered readback is exact, but the theorem lane stays open first at the promotion of Ĉ<sub>e</sub><sup>cand</sup> and then at the affine descent to &mu;<sub>phys</sub>(Y<sub>e</sub>).</li>
                     <li><strong>Neutrinos:</strong> the weighted-cycle theorem pair emits C<sub>&nu;</sub> = sum_gap<sup>2</sup> prod_qbar solar_response_over_mstar<sup>-1/2</sup>, B<sub>&nu;</sub> = P<sub>&nu;</sub>C<sub>&nu;</sub>, and the absolute neutrino family on the declared weighted-cycle branch. The older exact adapter, bridge corridor, and correction audit remain diagnostic-only.</li>
                     <li><strong>Hadrons:</strong> backend- and compute-bound rather than theorem-closed.</li>
@@ -52,18 +54,41 @@ export function MassesPage() {
                 <p style={{ margin: '0 0 10px 0' }}>
                     The current public bosonic rows are:
                 </p>
-                <div className="math-block" style={{ fontSize: '0.95em' }}>
-                    m<sub>W</sub> = 80.37700001539531 GeV,&nbsp;
-                    m<sub>Z</sub> = 91.18797807794321 GeV
+                <div style={{ display: 'grid', gap: '10px' }}>
+                    {BOSON_PUBLIC_ROWS.map((row) => (
+                        <div key={row.label} className="card" style={{ padding: '12px', background: 'rgba(0,0,0,0.18)' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', marginBottom: '6px' }}>
+                                <strong>{row.label}</strong>
+                                <span style={{ color: 'var(--accent-cyan)' }}>{row.value}</span>
+                            </div>
+                            <div style={{ fontSize: '0.8em', color: 'var(--text-secondary)' }}>{row.note}</div>
+                        </div>
+                    ))}
                 </div>
-                <div className="math-block" style={{ fontSize: '0.95em' }}>
-                    m<sub>H</sub> = 125.218922 GeV,&nbsp;
-                    m<sub>t</sub> = 172.388646 GeV
+            </div>
+
+            <div className="card" style={{ marginBottom: '16px', borderLeft: '3px solid var(--accent-cyan)' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Lane audit</h3>
+                <div style={{ display: 'grid', gap: '10px' }}>
+                    {PARTICLE_LANE_STATUS.map((lane) => (
+                        <div key={lane.label} style={{ fontSize: '0.82em' }}>
+                            <strong style={{ color: 'var(--accent-cyan)' }}>{lane.label}:</strong>{' '}
+                            <span style={{ color: 'var(--text-secondary)' }}>{lane.summary}</span>
+                        </div>
+                    ))}
                 </div>
-                <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
-                    The W/Z pair is closed on D10. The Higgs/top pair is carried by the forward-seed surface, while the
-                    exact inverse pair remains a sidecar validation surface.
-                </p>
+            </div>
+
+            <div className="card" style={{ marginBottom: '16px' }}>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Claim-tier legend</h3>
+                <div style={{ display: 'grid', gap: '8px' }}>
+                    {CLAIM_TIER_LEGEND.map((item) => (
+                        <div key={item.tier} style={{ fontSize: '0.82em' }}>
+                            <strong>{item.label}:</strong>{' '}
+                            <span style={{ color: 'var(--text-secondary)' }}>{item.description}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
