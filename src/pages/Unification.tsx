@@ -105,7 +105,7 @@ export function UnificationPage() {
             </p>
 
             <div className="card" style={{ marginBottom: '20px', borderLeft: '3px solid var(--accent-cyan)' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>How the current surface reads</h3>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>How this surface reads</h3>
                 <div style={{ display: 'grid', gap: '8px', marginBottom: '10px' }}>
                     {STANDARD_MODEL_SURFACE.slice(1).map((item) => (
                         <div key={item} style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
@@ -114,7 +114,7 @@ export function UnificationPage() {
                     ))}
                 </div>
                 <p style={{ margin: 0, fontSize: '0.82em', color: 'var(--text-secondary)' }}>
-                    This is why the lab now describes the unification lane as geometric and edge-driven. It should not
+                    This is why the lab describes the unification lane as geometric and edge-driven. It should not
                     imply that a simple-group GUT or superpartner spectrum has been derived underneath it.
                 </p>
             </div>
