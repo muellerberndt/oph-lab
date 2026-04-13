@@ -2,6 +2,13 @@ const E_PLANCK_GEV = 1.22089e19;
 const LIGHT_SPEED = 2.99792458e8;
 const BETA_EW = 4;
 const MZ_REFERENCE_GEV = 91.1876;
+const D11_KAPPA_HT = 16 / 9;
+const D11_Y_T_CORE_MT = 0.92046435;
+const D11_LAMBDA_CORE_MT = 0.13164915;
+const D11_MT_POLE_CORE_GEV = 170.26125;
+const D11_MH_CORE_GEV = 126.62263;
+const D11_D_MT_POLE_D_Y_T = 184.97;
+const D11_D_MH_D_LAMBDA = 480.0;
 
 export const PIXEL_REFERENCE = 1.63094;
 export const SCREEN_CAPACITY_REFERENCE_LOG10 = 122;
@@ -71,6 +78,32 @@ export type GaugeClosureResult = {
     entropyTotal: number;
     entropyTarget: number;
     pixelResidual: number;
+};
+
+export type TargetFreeElectroweakRepairResult = {
+    alphaY: number;
+    betaEW: number;
+    etaSource: number;
+    lambdaEW: number;
+    tau2TreeExact: number;
+    deltaNTreeExact: number;
+    alpha2Prime: number;
+    alphaYPrime: number;
+    alphaEmInv: number;
+    sin2ThetaW: number;
+    mWGeV: number;
+    mZGeV: number;
+    vGeV: number;
+};
+
+export type HiggsTopForwardSeedResult = {
+    alphaY: number;
+    cos2ThetaW0: number;
+    sigmaD11HT: number;
+    deltaYtMt: number;
+    deltaLambdaMt: number;
+    mHGeV: number;
+    mtPoleGeV: number;
 };
 
 export type TextureMassPrediction = {
@@ -443,6 +476,67 @@ export function solveGaugeClosure(pixelConstant: number, options?: GaugeClosureO
         entropyTotal: solution.entropySU2 + solution.entropySU3,
         entropyTarget: clampedPixel / 4,
         pixelResidual: solution.residual,
+    };
+}
+
+export function deriveTargetFreeElectroweakRepair(
+    closure: Pick<GaugeClosureResult, 'alphaU' | 'alpha1' | 'alpha2' | 'vGeV'>
+): TargetFreeElectroweakRepairResult {
+    const alphaY = (3 / 5) * closure.alpha1;
+    const alpha2 = closure.alpha2;
+    const alphaSum = alpha2 + alphaY;
+    const betaEW = alphaSum > 0 ? (alpha2 - alphaY) / alphaSum : Number.NaN;
+    const etaSource = closure.alphaU * betaEW;
+    const lambdaEW = (etaSource * etaSource) / (4 * betaEW);
+    const tau2TreeExact =
+        -lambdaEW *
+        (1 + (2 / 3) * etaSource + (1 - betaEW / 6) * etaSource * etaSource);
+    const deltaNTreeExact =
+        lambdaEW *
+        (1 + (4 / 3) * etaSource + (2 - betaEW / 6) * etaSource * etaSource);
+    const deltaAlpha2 = alpha2 * tau2TreeExact;
+    const deltaAlphaYParallel =
+        (alphaY * (8 * etaSource * tau2TreeExact * tau2TreeExact - tau2TreeExact)) /
+        (1 + 4 * tau2TreeExact * tau2TreeExact);
+    const deltaAlphaYPerp = alphaSum * deltaNTreeExact;
+    const alpha2Prime = alpha2 + deltaAlpha2;
+    const alphaYPrime = alphaY * (1 - 2 * etaSource) + deltaAlphaYParallel + deltaAlphaYPerp;
+    const alphaSumPrime = alpha2Prime + alphaYPrime;
+
+    return {
+        alphaY,
+        betaEW,
+        etaSource,
+        lambdaEW,
+        tau2TreeExact,
+        deltaNTreeExact,
+        alpha2Prime,
+        alphaYPrime,
+        alphaEmInv: alphaSumPrime / (alphaYPrime * alpha2Prime),
+        sin2ThetaW: alphaYPrime / alphaSumPrime,
+        mWGeV: closure.vGeV * Math.sqrt(Math.PI * alpha2Prime),
+        mZGeV: closure.vGeV * Math.sqrt(Math.PI * alphaSumPrime),
+        vGeV: closure.vGeV,
+    };
+}
+
+export function deriveD11ForwardSeed(
+    closure: Pick<GaugeClosureResult, 'alphaU' | 'alpha1' | 'alpha2'>
+): HiggsTopForwardSeedResult {
+    const alphaY = (3 / 5) * closure.alpha1;
+    const cos2ThetaW0 = (closure.alpha2 - alphaY) / (closure.alpha2 + alphaY);
+    const sigmaD11HT = (closure.alphaU * cos2ThetaW0) / Math.sqrt(Math.PI);
+    const deltaYtMt = sigmaD11HT * D11_Y_T_CORE_MT;
+    const deltaLambdaMt = -D11_KAPPA_HT * sigmaD11HT * D11_LAMBDA_CORE_MT;
+
+    return {
+        alphaY,
+        cos2ThetaW0,
+        sigmaD11HT,
+        deltaYtMt,
+        deltaLambdaMt,
+        mHGeV: D11_MH_CORE_GEV + D11_D_MH_D_LAMBDA * deltaLambdaMt,
+        mtPoleGeV: D11_MT_POLE_CORE_GEV + D11_D_MT_POLE_D_Y_T * deltaYtMt,
     };
 }
 

@@ -144,9 +144,9 @@ export function AxiomsPage() {
             <Explainer title="What these axioms give you">
                 <p>The current paper surface separates structural outputs from branch-conditional ones:</p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li>From the screen identity and the explicit BW branch, OPH recovers Lorentz kinematics on the stated scaling-limit surface.</li>
-                    <li>From the null bridge and fixed-cap stationarity, OPH states a conditional Jacobson-type Einstein branch rather than an unconditional A1-A4 theorem.</li>
-                    <li>The half-line generator/null-stress charge identification is internal to the null bridge; bounded-interval transport and UV/BW internalization remain open scaffold items.</li>
+                    <li>From the screen identity and the explicit BW scaling branch, OPH recovers Lorentz kinematics on the extracted prime geometric subnet.</li>
+                    <li>From the null bridge, the separate bounded-interval projective branch, and fixed-cap stationarity, OPH states a conditional Jacobson-type Einstein branch rather than an unconditional A1-A4 theorem.</li>
+                    <li>The half-line generator/null-stress charge identification is internal to the null bridge; UV/BW cap-pair extraction and ordered cut-pair rigidity remain explicit scaffold items.</li>
                     <li>Massless photon and graviton remain symmetry-protected structural outputs.</li>
                 </ul>
                 <p>

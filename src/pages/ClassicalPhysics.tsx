@@ -11,8 +11,9 @@ export function ClassicalPhysicsPage() {
             <p style={{ marginBottom: '16px' }}>
                 This is the <strong>synthesis page for Chain 1</strong>. On the current paper surface, the gravity
                 route is a conditional branch: Lorentz kinematics sits on the explicit BW branch and the Einstein step
-                sits on a Jacobson-type entanglement-equilibrium branch. Classical physics is then discussed as the
-                effective limiting behavior of that branch.
+                sits on a Jacobson-type entanglement-equilibrium branch with the null bridge, the separate
+                bounded-interval projective branch, and fixed-cap stationarity kept explicit. Classical physics is
+                then discussed as the effective limiting behavior of that branch.
             </p>
             <p style={{ marginBottom: '24px' }}>
                 The derivation chain is:
@@ -20,7 +21,8 @@ export function ClassicalPhysicsPage() {
 
             <div className="math-block" style={{ fontSize: '1em', lineHeight: '2.2' }}>
                 A1-A4 (Axioms) &rarr; Recoverability + Generalized Entropy &rarr; Conditional Lorentz Branch &rarr;
-                Geometric Modular Flow (BW branch) &rarr; Fixed-cap Stationarity + Null Bridge &rarr;
+                Geometric Modular Flow (BW branch) &rarr; Null Bridge + Bounded-Interval Projective Branch +
+                Fixed-cap Stationarity &rarr;
                 Conditional Einstein Branch &rarr; Classical Limits
             </div>
 

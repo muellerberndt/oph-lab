@@ -37,8 +37,9 @@ export function Home() {
                     </div>
                     <h3 style={{ fontSize: '1em', margin: '0 0 8px 0' }}>Axioms &rarr; Lorentz and Gravity Branches</h3>
                     <p style={{ fontSize: '0.85em', margin: 0 }}>
-                        From recoverability, generalized entropy, and modular flow, recover a conditional Lorentz branch,
-                        a conditional Jacobson-type Einstein branch, and the separate cosmological-capacity branch.
+                        From recoverability, generalized entropy, and modular flow, recover a conditional Lorentz branch
+                        and a conditional Jacobson-type Einstein branch. The gravity lane keeps the null bridge, the
+                        separate bounded-interval projective branch, and fixed-cap stationarity explicit.
                     </p>
                 </div>
                 <div className="card chain-qft" style={{ padding: '20px' }}>
@@ -71,8 +72,9 @@ export function Home() {
                 </p>
                 <p style={{ marginBottom: '12px' }}>
                     From this starting point, the current paper surface derives a schedule-independent overlap normal
-                    form, a conditional Lorentz branch, a conditional Jacobson-type Einstein branch, the realized
-                    Standard Model quotient chain, and a concrete finite-screen observer architecture.
+                    form, a conditional Lorentz branch on the BW scaling surface, a conditional Jacobson-type Einstein
+                    branch with its null-bridge / bounded-interval / fixed-cap premise stack, the realized Standard
+                    Model quotient chain, and a concrete finite-screen observer architecture.
                 </p>
                 <p style={{ marginBottom: '12px' }}>
                     OPH presents itself publicly both as a <strong>theory-of-everything program</strong> and as a concrete

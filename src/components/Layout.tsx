@@ -83,12 +83,6 @@ export function Layout() {
 
                 <main className="content-scroll">
                     <div className="content-container">
-                        <aside className="research-disclaimer" role="note" aria-label="Research status disclaimer">
-                            <strong>Research status</strong>
-                            <p>
-                                OPH is an active research program and not yet fully proven. Several derivations remain incomplete, some proofs exist only as sketches, and certain auxiliary assumptions still need to be removed. The framework should therefore be regarded as under active development.
-                            </p>
-                        </aside>
                         <Outlet />
                         <WalkthroughNav />
 

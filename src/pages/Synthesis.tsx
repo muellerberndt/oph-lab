@@ -11,12 +11,13 @@ export function SynthesisPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 Both chains converge, but they do so at different claim tiers. Chain 1 yields a conditional Lorentz
-                branch, a conditional Jacobson-type Einstein branch, and separate cosmological-capacity consequences.
-                Chain 2 yields the structural Standard Model branch together with several downstream continuation lanes.
-                The same paper surface now also includes a dedicated consensus spine and a concrete screen-microphysics
-                architecture. Both start from the same five-axiom basis on a holographic screen S&sup2;, while
-                specific pages add the theorem-local technical premises needed for Lorentz, gauge, particle, or
-                observer-level statements.
+                branch on the BW scaling surface, a conditional Jacobson-type Einstein branch under the null bridge,
+                the separate bounded-interval projective branch, and fixed-cap stationarity, and separate
+                cosmological-capacity consequences. Chain 2 yields the structural Standard Model branch together with
+                several downstream continuation lanes. The same paper surface now also includes a dedicated consensus
+                spine and a concrete screen-microphysics architecture. Both start from the same five-axiom basis on a
+                holographic screen S&sup2;, while specific pages add the theorem-local technical premises needed for
+                Lorentz, gauge, particle, or observer-level statements.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Two Parameters, All of Physics</h3>
@@ -87,7 +88,7 @@ export function SynthesisPage() {
                         <div style={{ padding: '8px 16px', background: 'rgba(201,112,112,0.15)', border: '1px solid var(--accent-rose)', color: 'var(--accent-rose)', fontSize: '0.8em', fontWeight: 600, textAlign: 'center', width: '100%' }}>
                             CHAIN 1: GR
                         </div>
-                        {['Entropy + Recoverability', 'Conditional Lorentz Branch', 'Geometric Modular Flow (BW branch)', 'Fixed-cap Stationarity', 'Conditional Einstein Branch', 'Classical Limits'].map((step, i) => (
+                        {['Entropy + Recoverability', 'Conditional Lorentz Branch', 'Geometric Modular Flow (BW branch)', 'Null Bridge + Projective Branch + Fixed-cap Stationarity', 'Conditional Einstein Branch', 'Classical Limits'].map((step, i) => (
                             <div key={i} style={{ width: '100%' }}>
                                 <div style={{ padding: '6px 12px', background: 'rgba(201,112,112,0.05)', border: '1px solid rgba(201,112,112,0.2)', fontSize: '0.75em', color: 'var(--text-secondary)', textAlign: 'center' }}>
                                     {step}

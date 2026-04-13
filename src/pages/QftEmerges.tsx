@@ -203,7 +203,7 @@ export function QftEmergesPage() {
                     axiom-level selector:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li><strong>Chain 1 (GR):</strong> Emphasizes recoverability, generalized entropy, the BW branch, the null bridge, and fixed-cap stationarity. Result: a conditional Lorentz branch and a conditional Jacobson-type Einstein branch.</li>
+                    <li><strong>Chain 1 (GR):</strong> Emphasizes recoverability, generalized entropy, the explicit BW scaling branch, the null bridge, the separate bounded-interval projective branch, and fixed-cap stationarity. Result: a conditional Lorentz branch and a conditional Jacobson-type Einstein branch.</li>
                     <li><strong>Chain 2 (QFT):</strong> Emphasizes overlap consistency, gauge-as-gluing, then R0/R1/T1 with MAR and T4-T6 for compact gauge reconstruction. Result: the structural Standard Model branch plus downstream continuation lanes.</li>
                 </ul>
                 <p>

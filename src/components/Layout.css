@@ -166,30 +166,6 @@
     margin: 0 auto;
 }
 
-.research-disclaimer {
-    margin-bottom: 24px;
-    padding: 16px 18px;
-    border: 1px solid rgba(201, 169, 110, 0.32);
-    background: linear-gradient(135deg, rgba(201, 169, 110, 0.1), rgba(122, 184, 212, 0.05));
-}
-
-.research-disclaimer strong {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--accent-gold);
-    font-size: 0.72em;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-.research-disclaimer p {
-    margin: 0;
-    color: var(--text-primary);
-    font-size: 0.85em;
-    line-height: 1.7;
-}
-
 .close-btn,
 .menu-btn {
     background: none;

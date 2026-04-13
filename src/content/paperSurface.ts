@@ -168,10 +168,10 @@ export const PARTICLE_LANE_STATUS = [
 ];
 
 export const GRAVITY_SURFACE = [
-    'Lorentz kinematics is recovered on the explicit BW branch from the screen identity Conf+(S^2) = SO+(3,1).',
-    'The Jacobson-type Einstein relation is local and branch-conditional. It uses the null-modular bridge plus fixed-cap generalized-entropy stationarity.',
+    'Lorentz kinematics is recovered on the explicit BW scaling branch from the screen identity Conf+(S^2) = SO+(3,1).',
+    'The Jacobson-type Einstein relation is local and branch-conditional. It uses the null-modular bridge, the separate bounded-interval projective branch, and fixed-cap generalized-entropy stationarity.',
     'Null data fix the tensor only up to the null-invisible metric term. The global screen-capacity branch closes Lambda separately.',
-    'The remaining UV/BW scaffold is the realized cap-pair extraction plus ordered cut-pair rigidity. The bounded-interval projective branch is still separate work.',
+    'The remaining UV/BW scaffold is the realized cap-pair extraction plus ordered cut-pair rigidity on the extracted prime geometric subnet.',
 ];
 
 export const STANDARD_MODEL_SURFACE = [

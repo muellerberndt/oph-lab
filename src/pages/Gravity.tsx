@@ -300,6 +300,7 @@ export function GravityPage() {
                     <div>A3: local MaxEnt and refinement-stable branch</div>
                     <div>D4: null modular bridge, with half-line generator/charge identification internalized</div>
                     <div>D3 + T2: explicit BW branch and scaling-limit scope</div>
+                    <div>D5 input: separate bounded-interval projective branch in the small-ball step</div>
                     <div>T3: fixed-cap generalized-entropy stationarity</div>
                     <div>Null ambiguity lemma: tensor reconstruction up to Lambda g_ab</div>
                     <div>Global capacity closure for Lambda</div>
