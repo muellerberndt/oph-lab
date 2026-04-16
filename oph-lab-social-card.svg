@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">OPH Lab social card</title>
-  <desc id="desc">Configure your own universe in OPH Lab with default values P equals 1.63094 and log10 N scr equals 122.</desc>
+  <desc id="desc">Configure your universe in OPH Lab with default values P equals 1.63094 and log10 N scr equals 122.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0a0a0a"/>
@@ -30,7 +30,7 @@
     OPH LAB
   </text>
   <text x="110" y="212" fill="#ffffff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="60" font-weight="700">
-    Configure Your Own Universe
+    Configure Your Universe
   </text>
   <text x="110" y="268" fill="#d0d0d0" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="28">
     Change P and screen capacity. Watch gravity and particle closures move live.
