@@ -29,35 +29,36 @@
   <text x="110" y="132" fill="#c9a96e" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="24" letter-spacing="4">
     OPH LAB
   </text>
-  <text x="110" y="212" fill="#ffffff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="60" font-weight="700">
+  <text x="110" y="208" fill="#ffffff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="56" font-weight="700">
     Configure Your Universe
   </text>
-  <text x="110" y="268" fill="#d0d0d0" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="28">
-    Change P and screen capacity. Watch gravity and particle closures move live.
+  <text x="110" y="256" fill="#d0d0d0" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="24">
+    <tspan x="110" dy="0">Change P and screen capacity.</tspan>
+    <tspan x="110" dy="34">Watch gravity and particle masses move live.</tspan>
   </text>
 
-  <rect x="110" y="330" width="450" height="150" rx="18" fill="#101010" stroke="#c9a96e" stroke-opacity="0.35"/>
-  <rect x="590" y="330" width="500" height="150" rx="18" fill="#101010" stroke="#4ee7ff" stroke-opacity="0.35"/>
+  <rect x="110" y="346" width="450" height="134" rx="18" fill="#101010" stroke="#c9a96e" stroke-opacity="0.35"/>
+  <rect x="590" y="346" width="500" height="134" rx="18" fill="#101010" stroke="#4ee7ff" stroke-opacity="0.35"/>
 
-  <text x="145" y="382" fill="#c9a96e" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="24" letter-spacing="2">
+  <text x="145" y="392" fill="#c9a96e" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" letter-spacing="2">
     DEFAULT PIXEL CONSTANT
   </text>
-  <text x="145" y="444" fill="#ffffff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="54" font-weight="700">
+  <text x="145" y="451" fill="#ffffff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="52" font-weight="700">
     P = 1.63094
   </text>
 
-  <text x="625" y="382" fill="#4ee7ff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="24" letter-spacing="2">
+  <text x="625" y="392" fill="#4ee7ff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" letter-spacing="2">
     DEFAULT SCREEN CAPACITY
   </text>
-  <text x="625" y="444" fill="#ffffff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="46" font-weight="700">
+  <text x="625" y="451" fill="#ffffff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="44" font-weight="700">
     log10 N_scr = 122
   </text>
 
   <line x1="110" y1="520" x2="1090" y2="520" stroke="url(#accent)" stroke-opacity="0.4"/>
-  <text x="110" y="562" fill="#d0d0d0" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="22">
+  <text x="110" y="558" fill="#d0d0d0" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="20">
     oph-lab.floatingpragma.io
   </text>
-  <text x="1090" y="562" text-anchor="end" fill="#d0d0d0" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="22">
-    1200 x 630 social card
+  <text x="1090" y="558" text-anchor="end" fill="#d0d0d0" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="20">
+    OPH Lab
   </text>
 </svg>
