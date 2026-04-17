@@ -10,10 +10,9 @@ export function QftEmergesPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This is the <strong>synthesis page for Chain 2</strong>. We have traced the derivation from the
+                This is the <strong>synthesis page for Chain 2</strong>. It traces the derivation from the
                 five-axiom OPH ledger plus theorem-local technical premises to the structural Standard Model branch and
-                several downstream matter-sector continuations. Quantum field theory &mdash; the framework that unifies
-                quantum mechanics with special relativity &mdash; is not a starting point in OPH. It is an
+                several downstream matter-sector continuations. Quantum field theory appears here as an
                 <strong>emergent effective description</strong> that arises from the screen algebra in the appropriate limits.
             </p>
 
@@ -23,7 +22,7 @@ export function QftEmergesPage() {
             </div>
 
             <div className="card" style={{ marginTop: '24px', marginBottom: '24px', borderLeft: '3px solid var(--accent-cyan)' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Current paper-surface summary</h3>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Paper-surface summary</h3>
                 <div style={{ display: 'grid', gap: '8px', marginBottom: '12px' }}>
                     {STANDARD_MODEL_SURFACE.map((item) => (
                         <div key={item} style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
@@ -77,7 +76,7 @@ export function QftEmergesPage() {
                     {
                         step: '6',
                         title: 'Matter-sector continuations',
-                        detail: 'Quotient-constrained flavor structure and Koide-type relations remain downstream continuation branches rather than part of the recovered-core theorem package.',
+                        detail: 'Quotient-constrained flavor structure and Koide-type relations sit on downstream continuation branches outside the recovered-core theorem package.',
                         color: 'var(--accent-gold)',
                     },
                     {
@@ -177,7 +176,7 @@ export function QftEmergesPage() {
             <p style={{ marginBottom: '16px' }}>
                 In this limit, the discrete screen algebra smooths out into a local quantum field theory on
                 the emergent 3+1D spacetime. The Wightman axioms (locality, Poincar&eacute; covariance, spectral
-                condition) are satisfied in this limit. QFT is recovered, not assumed.
+                condition) are satisfied in this limit. OPH recovers QFT on this surface.
             </p>
 
             <Explainer title="Why QFT breaks down at the Planck scale">
@@ -215,16 +214,15 @@ export function QftEmergesPage() {
                 </p>
             </Explainer>
 
-            <Explainer title="Open questions in Chain 2">
+            <Explainer title="Matter-Lane Boundaries In Chain 2">
                 <p>
-                    While Chain 2 derives an impressive amount of the Standard Model, some aspects remain
-                    under development:
+                    Chain 2 separates a strong structural core from several matter-sector boundaries:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li>Quarks carry a maximal theorem-emitted package on the present ledger: the D12 mass ray, the negative selector <code>sigma_ref</code>, and a restricted-scope affine mean package; the exact minimal extension above that package is the triple <code>H_mass</code>, <code>H_phys</code>, and <code>H_abs</code></li>
+                    <li>Quarks carry a maximal theorem-emitted package on the declared ledger: the D12 mass ray, the negative selector <code>sigma_ref</code>, and a restricted-scope affine mean package; the exact minimal extension above that package is the triple <code>H_mass</code>, <code>H_phys</code>, and <code>H_abs</code></li>
                     <li>Charged-lepton centered-operator promotion and the later affine descent to &mu;<sub>phys</sub>(Y<sub>e</sub>)</li>
-                    <li>Neutrino theorem pair emitted on the weighted-cycle branch; older exact adapters remain diagnostic-only beneath that branch</li>
-                    <li>Higgs/top paper-surface proof packaging beyond the closed forward seed</li>
+                    <li>Neutrino theorem pair emitted on the weighted-cycle branch; older exact adapters serve as diagnostic-only readouts beneath that branch</li>
+                    <li>Higgs/top proof packaging and scope discipline around the closed D11 source-only split theorem</li>
                     <li>Hadron backend / compute-bound closure</li>
                 </ul>
                 <p>

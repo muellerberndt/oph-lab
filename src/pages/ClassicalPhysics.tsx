@@ -9,7 +9,7 @@ export function ClassicalPhysicsPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This is the <strong>synthesis page for Chain 1</strong>. On the current paper surface, the gravity
+                This is the <strong>synthesis page for Chain 1</strong>. On the declared paper surface, the gravity
                 route is a conditional branch: Lorentz kinematics sits on the explicit BW branch and the Einstein step
                 sits on a Jacobson-type entanglement-equilibrium branch with the null bridge, the separate
                 bounded-interval projective branch, and fixed-cap stationarity kept explicit. Classical physics is
@@ -37,12 +37,12 @@ export function ClassicalPhysicsPage() {
             <p style={{ marginBottom: '16px' }}>
                 where &Phi; is the Newtonian potential and &rho; is mass density. The gravitational force
                 F = &minus;m&nabla;&Phi; = &minus;GMm/r&sup2; follows immediately on that branch. The lab presents this
-                as a classical readout of the current conditional gravity surface.
+                as a classical readout of the declared conditional gravity surface.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Geodesic Motion</h3>
             <p style={{ marginBottom: '16px' }}>
-                In GR, free particles follow geodesics &mdash; the straightest possible paths in curved spacetime.
+                In GR, free particles follow geodesics: the straightest possible paths in curved spacetime.
                 The geodesic equation:
             </p>
             <div className="math-block">
@@ -84,7 +84,7 @@ export function ClassicalPhysicsPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Thermodynamics</h3>
             <p style={{ marginBottom: '16px' }}>
-                The laws of thermodynamics are not separate postulates but consequences of the OPH framework:
+                The laws of thermodynamics appear here as consequences of the OPH framework:
             </p>
             <div className="card" style={{ marginBottom: '12px', borderLeft: '3px solid var(--accent-gold)' }}>
                 <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em' }}>Zeroth Law (Thermal Equilibrium)</h4>
@@ -126,7 +126,7 @@ export function ClassicalPhysicsPage() {
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '24px' }}>
                 <div style={{ padding: '12px', background: 'rgba(201, 112, 112, 0.1)', border: '1px solid rgba(201, 112, 112, 0.3)', fontSize: '0.85em' }}>
-                    <div style={{ color: 'var(--accent-rose)', fontWeight: 600, marginBottom: '4px' }}>Current branch outputs</div>
+                    <div style={{ color: 'var(--accent-rose)', fontWeight: 600, marginBottom: '4px' }}>Declared branch outputs</div>
                     <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8' }}>
                         <li>3+1 spacetime dimensions</li>
                         <li>Lorentz invariance</li>
@@ -163,7 +163,7 @@ export function ClassicalPhysicsPage() {
 
             <Explainer title="The arrow of time">
                 <p>
-                    The second law of thermodynamics implies an arrow of time: entropy increases toward the future.
+                    The second law of thermodynamics implies an arrow of time: entropy increases along the thermodynamic time direction.
                     But the microscopic laws are time-reversal invariant. Where does the arrow come from?
                 </p>
                 <p>
@@ -176,16 +176,16 @@ export function ClassicalPhysicsPage() {
 
             <Explainer title="Is this really a derivation?">
                 <p>
-                    A fair question: are we really deriving classical physics, or just dressing up known physics
-                    in new language? The key test: do the axioms predict anything <em>new</em>?
+                    A derivation earns its keep by producing quantitative consequences that distinguish it from
+                    standard physics. The decisive test is whether the axioms predict anything <em>new</em>.
                 </p>
                 <p>
                     Yes. Chain 1 makes novel predictions:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li>The precise value of a<sub>0</sub> from &Lambda; (not a free parameter)</li>
-                    <li>&Lambda; from screen capacity (not vacuum energy)</li>
-                    <li>No dark matter particles (only Markov defect)</li>
+                    <li>The precise value of a<sub>0</sub> from &Lambda;</li>
+                    <li>&Lambda; from screen capacity</li>
+                    <li>Galaxy-response anomalies from Markov defect</li>
                     <li>Discrete Hawking spectrum (from finite pixel count)</li>
                     <li>Gravitational wave horizon spectroscopy comb</li>
                 </ul>

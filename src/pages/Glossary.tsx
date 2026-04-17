@@ -58,7 +58,7 @@ export function GlossaryPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                Expanded concept index aligned with the OPH manuscript structure. The glossary now covers the gravity
+                Expanded concept index aligned with the OPH manuscript structure. The glossary covers the gravity
                 and QFT chains together with the newer consensus and screen-microphysics surfaces.
             </p>
 

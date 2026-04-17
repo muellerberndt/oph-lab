@@ -71,7 +71,7 @@ export function HintsPage() {
 
             <p style={{ marginBottom: '24px' }}>
                 Over the past century, five experimental discoveries shattered our intuitive picture of reality.
-                Each one is a hint that the conventional framework &mdash; objective reality existing in a spacetime container &mdash; is wrong.
+                Each one is a hint that the conventional framework, objective reality existing in a spacetime container, is wrong.
             </p>
 
             <p style={{ marginBottom: '32px', color: 'var(--text-muted)', fontSize: '0.9em' }}>
@@ -152,7 +152,7 @@ export function HintsPage() {
                 </p>
                 <p>
                     OPH takes these hints seriously and builds a framework where observer patches on a holographic screen
-                    are the starting point &mdash; not spacetime, not particles, not fields.
+                    are the starting point: not spacetime, not particles, not fields.
                 </p>
             </Explainer>
         </div>

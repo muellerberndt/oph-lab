@@ -59,9 +59,9 @@ export function EntanglementPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 Entanglement is the most distinctively quantum phenomenon: two systems can share correlations
-                that have no classical explanation. Bell's theorem proves this rigorously &mdash; no theory of
-                local hidden variables can reproduce quantum predictions. In OPH, entanglement is not an
-                anomaly to be explained; it is the <strong>fundamental glue that binds observer patches together</strong>.
+                that have no classical explanation. Bell's theorem proves this rigorously. Local hidden variable
+                theories cannot reproduce quantum predictions. In OPH, entanglement is the
+                <strong> fundamental glue that binds observer patches together</strong>.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Bell's Theorem</h3>
@@ -107,7 +107,7 @@ export function EntanglementPage() {
             <p style={{ marginBottom: '16px' }}>
                 No quantum system can exceed S = 2&radic;2. This is less than the algebraic maximum S = 4
                 (which would require "super-quantum" correlations). The Tsirelson bound is a deep constraint
-                &mdash; why exactly 2&radic;2?
+                on quantum theory. Why exactly 2&radic;2?
             </p>
             <p style={{ marginBottom: '16px' }}>
                 In OPH, the Tsirelson bound follows from the complex Hilbert space structure (which follows

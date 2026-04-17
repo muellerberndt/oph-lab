@@ -23,9 +23,9 @@ export function PredictionsPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                The current OPH papers do not put every empirical statement on one tier. Some outputs are already
-                public quantitative rows. Some are continuation-level signal templates. Others remain open
-                phenomenology. This page now follows that ledger directly.
+                The OPH papers do not put every empirical statement on one tier. Some outputs are public quantitative
+                rows. Some are continuation-level signal templates. Others are open phenomenology. This page follows
+                that ledger directly.
             </p>
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-blue)' }}>
@@ -44,7 +44,7 @@ export function PredictionsPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>1. Closed Public Quantitative Rows</h3>
             <p style={{ marginBottom: '16px' }}>
-                These are the public numeric rows the lab should treat as live today.
+                These are the public numeric rows the lab treats as live surfaces.
             </p>
 
             <div style={{ display: 'grid', gap: '12px', marginBottom: '24px' }}>
@@ -70,14 +70,14 @@ export function PredictionsPage() {
                     Horizon spectroscopy comb
                 </h4>
                 <p style={{ marginBottom: '8px' }}>
-                    The ringdown template still uses the dimensionless line positions:
+                    The ringdown template uses the dimensionless line positions:
                 </p>
                 <div className="math-block" style={{ fontSize: '1.05em' }}>
                     x<sub>k</sub> = ln(k) / (8&pi;), &nbsp;&nbsp; k = 1, 2, 3, ...
                 </div>
                 <p style={{ marginBottom: '12px', color: 'var(--text-secondary)' }}>
-                    In the current stack this is best read as a continuation-level horizon signature tied to the
-                    quantized area template, not as part of the recovered-core theorem chain.
+                    In the declared stack this is a continuation-level horizon signature tied to the quantized
+                    area template. It sits outside the recovered-core theorem chain.
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '8px', fontSize: '0.8em', textAlign: 'center' }}>
                     {[1, 2, 3, 4, 5, 6].map((k) => (
@@ -105,7 +105,7 @@ export function PredictionsPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>3. Sharp Null Expectations</h3>
             <p style={{ marginBottom: '16px' }}>
-                The present public surface does make some clean exclusions. These are sharper than the older blanket
+                The public surface makes some clean exclusions. These are sharper than the older blanket
                 wording the lab used before.
             </p>
 
@@ -129,25 +129,25 @@ export function PredictionsPage() {
                 </ul>
             </div>
 
-            <Explainer title="Why the page changed">
+            <Explainer title="Why the page is structured this way">
                 <p>
-                    The older lab treated every eye-catching statement as if it sat on the same status tier. That no
-                    longer matches the papers.
+                    The older lab treated every eye-catching statement as if it sat on the same status tier. That
+                    wording does not match the papers.
                 </p>
                 <p>
-                    The public rows for W, Z, Higgs, and top are current outputs on declared calibration surfaces. The
-                    horizon-comb and discrete-Hawking stories are more speculative continuation lanes. The deep-IR
-                    galaxy-response story is still open. Mixing those together obscures the actual state of the work.
+                    The public rows for W, Z, Higgs, and top are outputs on declared calibration surfaces. The
+                    horizon-comb and discrete-Hawking stories sit on continuation lanes. The deep-IR galaxy-response
+                    story is an open lane. Mixing those together obscures the claim tiers.
                 </p>
             </Explainer>
 
             <Explainer title="How to test the horizon-comb template">
                 <p>
-                    The cleanest route remains high-SNR ringdown spectroscopy, especially with next-generation
+                    The cleanest route is high-SNR ringdown spectroscopy, especially with next-generation
                     detectors such as Einstein Telescope, Cosmic Explorer, and LISA.
                 </p>
                 <p>
-                    Stacking analyses may still be useful. But even a clean success or failure here would speak first
+                    Stacking analyses may be useful. But even a clean success or failure here would speak first
                     to a continuation-level signal surface, not by itself to every part of the OPH program.
                 </p>
             </Explainer>

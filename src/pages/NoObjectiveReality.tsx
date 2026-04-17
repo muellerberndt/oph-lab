@@ -62,13 +62,13 @@ const QUESTIONS: Question[] = [
         problem: 'Proton stability',
         conventional: 'Grand Unified Theories predict proton decay. Never observed.',
         hiddenAssumption: 'Forces were unified in a simple group that was then broken.',
-        ophResolution: 'OPH has a product gauge group from the start (from patch gluing), not a simple group. No leptoquark bosons, no proton decay.',
+        ophResolution: 'OPH selects a product gauge group from patch gluing. That structure carries no leptoquark bosons and gives no proton decay.',
     },
     {
         problem: 'The hard problem of consciousness',
         conventional: 'How does subjective experience arise from objective physical processes?',
         hiddenAssumption: 'Objective reality is primary; subjectivity must be derived from it.',
-        ophResolution: 'Subjectivity is the starting point. Every description is already a view from somewhere. The "hard problem" dissolves: there is no objective reality for experience to "arise from."',
+        ophResolution: 'Subjectivity is the starting point. Every description is a view from somewhere. The "hard problem" dissolves because experience does not emerge from an objective physical substrate.',
     },
 ];
 
@@ -183,7 +183,7 @@ export function NoObjectiveRealityPage() {
 
             <Explainer title="The ether move">
                 <p>
-                    Each resolution follows the same pattern &mdash; what Bernhard Mueller calls "the ether move."
+                    Each resolution follows the same pattern: what Bernhard Mueller calls "the ether move."
                     In 1905, Einstein didn't solve the ether problem; he dissolved it by removing a false assumption
                     (absolute space). OPH applies the same move to a dozen problems simultaneously: remove the
                     assumption of objective reality, and the puzzles evaporate.

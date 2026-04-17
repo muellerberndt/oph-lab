@@ -6,21 +6,21 @@ export type SeoMeta = {
 };
 
 const DEFAULT_DESCRIPTION =
-  'Interactive guide to Observer Patch Holography, tracking the current theorem surface across gravity branches, gauge reconstruction, particles, consensus, and screen microphysics.';
+  'Interactive guide to Observer Patch Holography, mapping the declared theorem surfaces across gravity branches, gauge reconstruction, particles, consensus, and screen microphysics.';
 
-const DEFAULT_TITLE = 'OPH Lab — Current OPH Paper Surface';
+const DEFAULT_TITLE = 'OPH Lab | Declared OPH Paper Surface';
 const SITE_SUFFIX = ' | OPH Lab';
 
 const ROUTE_DESCRIPTIONS: Record<string, string> = {
-  '/': 'Interactive guide to Observer Patch Holography, showing the current theorem surface, branch-conditional gravity results, gauge reconstruction, and matter-sector continuation lanes from a five-axiom screen framework.',
+  '/': 'Configure your universe in OPH Lab: change the shared pixel constant P and screen capacity, then watch gravity, de Sitter, electroweak, Higgs/top, and exact-particle surfaces shift live.',
   '/hints': 'Review the experimental and conceptual clues that motivate Observer Patch Holography as a deeper account of physical reality.',
   '/no-objective-reality': 'Explore the argument that physics should be built from observer-local descriptions instead of a single objective frame.',
   '/the-screen': 'Learn how OPH models reality on a holographic screen and uses local patches to recover spacetime structure as part of a concrete simulation-theory architecture.',
-  '/axioms': 'See the five OPH axioms, including MAR as Axiom 5, together with the technical-premise ledger used by the current papers.',
+  '/axioms': 'See the five OPH axioms, including MAR as Axiom 5, together with the technical-premise ledger used by the declared papers.',
   '/entropy': 'Follow the entropy and area-bound intuition that connects finite information capacity to holographic physics.',
   '/entanglement-geometry': 'Understand how entanglement structure gives rise to geometry in the OPH reconstruction program.',
   '/lorentz': 'Study the OPH route from screen-local consistency to Lorentz symmetry and relativistic structure.',
-  '/modular-flow': 'See how modular flow enters the explicit BW branch of the current OPH gravity route.',
+  '/modular-flow': 'See how modular flow enters the explicit BW branch of the declared OPH gravity route.',
   '/gravity': 'Trace the conditional OPH gravity branch from generalized entropy and null-modular data to the Jacobson-type Einstein relation.',
   '/de-sitter': 'Explore the OPH treatment of de Sitter space, cosmological horizons, and the cosmological constant problem.',
   '/dark-matter': 'Review the OPH discussion of dark-matter-style phenomena, galaxy rotation curves, and MOND-like behavior.',
@@ -30,15 +30,16 @@ const ROUTE_DESCRIPTIONS: Record<string, string> = {
   '/error-correction': 'Learn how quantum error correction ideas fit into the OPH account of spacetime and holography.',
   '/gauge-symmetry': 'See how gauge symmetry is framed as a gluing phenomenon in the OPH reconstruction.',
   '/standard-model': 'Review the OPH route toward Standard Model structure as emergent effective physics.',
-  '/masses': 'Review the current OPH discussion of downstream matter-sector continuations and coupling structure.',
+  '/masses': 'Review the OPH discussion of downstream matter-sector continuations and coupling structure.',
+  '/neutrinos': 'Inspect the OPH weighted-cycle neutrino theorem branch: bridge invariant C_nu, absolute attachment lambda_nu, the absolute mass family, central splittings, and the shared-basis Majorana pair.',
   '/unification': 'Inspect the coupling-unification lesson and the OPH account of apparent grand-unification patterns.',
   '/qft-emerges': 'Follow the argument that quantum field theory is an effective layer emerging from deeper screen dynamics.',
   '/consensus-protocol': 'Explore the OPH consensus paper: overlap repair, Lyapunov descent, schedule-independent normal form, holonomy obstructions, and record stability.',
   '/screen-microphysics': 'Inspect the finite screen-register architecture used by OPH to model records, measurement, checkpoint/restoration, and observer synchronization.',
-  '/predictions': 'Review the current OPH pressure-test surface, separating public quantitative rows from continuation-level signatures and still-open phenomenology.',
+  '/predictions': 'Review the OPH pressure-test surface, separating public quantitative rows from continuation-level signatures and open phenomenology.',
   '/synthesis': 'See how OPH ties the derivation chain together across structural theorems, branch-conditional gravity results, particles, consensus, and observer machinery.',
   '/glossary': 'Use the OPH Lab glossary for concise definitions of the core holography, gravity, and quantum-information terms.',
-  '/resources': 'Find the current five-paper OPH stack, book, study surfaces, challenge, and supporting reading for deeper study of Observer Patch Holography.',
+  '/resources': 'Find the five-paper OPH stack, book, study surfaces, challenge, and supporting reading for deeper study of Observer Patch Holography.',
 };
 
 function normalizePathname(pathname: string): string {

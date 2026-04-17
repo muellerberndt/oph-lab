@@ -56,9 +56,9 @@ export function EntanglementGeometryPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 One of the deepest insights of modern theoretical physics: <strong>entanglement creates geometry</strong>.
-                The spatial distance between two regions is determined not by a pre-existing metric but by how much
-                quantum entanglement they share. More entanglement means closer. Less entanglement means farther apart.
-                No entanglement means disconnected.
+                The spatial distance between two regions is encoded by how much quantum entanglement they share.
+                More entanglement means closer. Less entanglement means farther apart. No entanglement means
+                disconnected.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Ryu-Takayanagi Formula</h3>
@@ -75,7 +75,7 @@ export function EntanglementGeometryPage() {
             </p>
             <p style={{ marginBottom: '16px' }}>
                 In OPH, the RT formula is a consequence of Axiom A3 (area bound) combined with the identification
-                of screen entanglement with bulk geometry. The "bulk" spacetime is not fundamental &mdash; it is
+                of screen entanglement with bulk geometry. The "bulk" spacetime is not fundamental. It is
                 reconstructed from boundary entanglement data.
             </p>
 
@@ -88,7 +88,7 @@ export function EntanglementGeometryPage() {
             </p>
             <p style={{ marginBottom: '16px' }}>
                 In MERA, the network has a tree-like structure with "disentanglers" and "isometries" at each
-                scale. The depth of the network corresponds to the radial direction in AdS &mdash; the extra
+                scale. The depth of the network corresponds to the radial direction in AdS, the extra
                 "holographic" dimension. More entanglement bonds means the network is deeper, i.e., the bulk
                 extends further inward. Cut all bonds and the interior collapses.
             </p>
@@ -255,9 +255,9 @@ export function EntanglementGeometryPage() {
                     are connected by a wormhole. Remove the entanglement and the wormhole pinches off.
                 </p>
                 <p>
-                    In OPH, this is not a conjecture but a consequence. The screen patches are connected by
-                    entanglement (Axiom A2: overlap consistency). The emergent bulk geometry is stitched together
-                    by this entanglement. Spatial connectivity just IS entanglement connectivity.
+                    In OPH, the screen patches are connected by entanglement (Axiom A2: overlap consistency). The
+                    emergent bulk geometry is stitched together by this entanglement. Spatial connectivity just IS
+                    entanglement connectivity.
                 </p>
             </Explainer>
 
@@ -278,7 +278,7 @@ export function EntanglementGeometryPage() {
                 <p>
                     Entanglement entropy arises from tracing out degrees of freedom you don't have access to.
                     If you only see patch P, you trace out the complement P&prime;, and the resulting reduced state
-                    has von Neumann entropy S(&rho;<sub>P</sub>). This is purely quantum &mdash; it exists even at
+                    has von Neumann entropy S(&rho;<sub>P</sub>). This is purely quantum. It exists even at
                     zero temperature.
                 </p>
                 <p>

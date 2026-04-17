@@ -12,7 +12,7 @@ export function ModularFlowPage() {
                 Modular flow is the mathematical engine that connects quantum information to spacetime geometry.
                 In the OPH gravity chain, geometric modular flow is fixed on an explicit BW branch of the
                 scaling-limit cap theory. The "time" experienced by an observer near their horizon is modeled by the
-                modular automorphism of their local algebra rather than by a fundamental background clock.
+                modular automorphism of their local algebra.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Tomita-Takesaki Modular Theory</h3>
@@ -45,8 +45,8 @@ export function ModularFlowPage() {
                 &sigma;<sub>t</sub>(A) = &Delta;<sup>it</sup> A &Delta;<sup>&minus;it</sup>, &nbsp;&nbsp; A &isin; A
             </div>
             <p style={{ marginBottom: '16px' }}>
-                This is a "time evolution" intrinsic to the algebra and the state. It doesn't require a pre-existing
-                notion of time. The key theorem: &sigma;<sub>t</sub> maps A to itself (&Delta;<sup>it</sup>A&Delta;<sup>&minus;it</sup> &isin; A).
+                This is a "time evolution" intrinsic to the algebra and the state. It does not require a pre-existing
+                notion of time. Tomita-Takesaki gives &sigma;<sub>t</sub>(A) &isin; A for every A in the algebra.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Bisognano-Wichmann and the OPH BW Branch</h3>
@@ -60,16 +60,16 @@ export function ModularFlowPage() {
             </div>
             <p style={{ marginBottom: '16px' }}>
                 where K<sub>C</sub> = &minus;ln &Delta; is the modular Hamiltonian and B<sub>C</sub> is the Lorentz
-                boost generator that preserves the Rindler wedge. The current OPH theorem surface uses the
+                boost generator that preserves the Rindler wedge. The declared OPH theorem surface uses the
                 automorphism-level statement on the explicit BW branch:
             </p>
             <div className="math-block" style={{ fontSize: '1em' }}>
                 &sigma;<sub>t</sub><sup>&omega;<sub>&infin;</sub><sup>C</sup></sup> = &alpha;<sub>&lambda;<sub>C</sub>(2&pi;t)</sub>
             </div>
             <p style={{ marginBottom: '16px' }}>
-                If the scaling-limit cap algebra remains type I, that branch may be written as K<sub>C</sub> = 2&pi;B<sub>C</sub>.
-                In the generic continuum case, the automorphism identity itself is the theorem statement and the
-                geometric action is outer rather than an inner density-matrix formula.
+                If the scaling-limit cap algebra is type I, that branch may be written as K<sub>C</sub> = 2&pi;B<sub>C</sub>.
+                In the generic continuum case, the theorem statement is the automorphism identity itself and the
+                geometric action appears as an outer automorphism.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Thermal Time Hypothesis</h3>
@@ -108,8 +108,8 @@ export function ModularFlowPage() {
                     T<sub>U</sub> = (1.055 &times; 10<sup>&minus;34</sup> &times; 10<sup>20</sup>) / (2&pi; &times; 3 &times; 10<sup>8</sup> &times; 1.381 &times; 10<sup>&minus;23</sup>) &asymp; 0.4 K
                 </div>
                 <p style={{ fontSize: '0.8em', color: 'var(--text-muted)', margin: 0 }}>
-                    Even at extreme accelerations, the Unruh temperature is tiny. This is why it has not been directly
-                    measured, though indirect evidence exists.
+                    Even at extreme accelerations, the Unruh temperature is tiny. Direct measurement is difficult,
+                    though indirect evidence exists.
                 </p>
             </div>
 
@@ -145,9 +145,9 @@ export function ModularFlowPage() {
                 <p>
                     This linearized modular Hamiltonian involves the stress-energy tensor T<sub>ab</sub> integrated
                     over the entangling surface with a weight proportional to distance from the surface. This is
-                    one route connecting modular flow to the later gravity branch. In the current OPH paper surface,
+                    one route connecting modular flow to the later gravity branch. In the declared OPH paper surface,
                     the half-line generator/null-stress charge identification is internal, while bounded-interval
-                    transport and the broader UV/BW internalization scaffold remain separate open items.
+                    transport and the broader UV/BW internalization scaffold are separate open items.
                 </p>
             </Explainer>
 
@@ -160,7 +160,7 @@ export function ModularFlowPage() {
                     <li><strong>A2 (Overlap Consistency):</strong> Modular flows of overlapping patches must be compatible on the overlap. This constrains the geometry.</li>
                     <li><strong>A3 (Local MaxEnt and Refinement Stability):</strong> The realized branch persists under refinement and supplies the local finite-constraint setting used in later null-modular arguments.</li>
                     <li><strong>A4 (Recoverable Generalized Entropy):</strong> Collar recoverability and generalized entropy provide the entropy side of the gravity branch.</li>
-                    <li><strong>T2 + BW branch hypotheses:</strong> Geometric modular flow is a scaling-limit branch statement rather than a literal fixed-cutoff matrix identity.</li>
+                    <li><strong>T2 + BW branch hypotheses:</strong> Geometric modular flow is stated on a scaling-limit branch. Fixed-cutoff matrix formulas belong to special representations only.</li>
                 </ul>
             </Explainer>
         </div>

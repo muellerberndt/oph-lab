@@ -65,11 +65,11 @@ export function TheScreenPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                In OPH, the fundamental arena is not 3+1 dimensional spacetime but a <strong>two-dimensional sphere S&sup2;</strong> &mdash;
-                the holographic screen. All physical information is encoded on this surface.
+                In OPH, the fundamental arena is a <strong>two-dimensional sphere S&sup2;</strong>, the holographic
+                screen. The emergent 3+1D spacetime is reconstructed from this surface.
             </p>
             <p style={{ marginBottom: '24px' }}>
-                Each observer has access to a <strong>patch</strong> of the screen &mdash; a connected region carrying
+                Each observer has access to a <strong>patch</strong> of the screen, a connected region carrying
                 a local algebra of observables. Where patches overlap, descriptions must agree.
             </p>
 
@@ -197,7 +197,7 @@ export function TheScreenPage() {
                 <p>
                     The S&sup2; screen is motivated by the holographic principle: the maximum information in any region
                     is bounded by its boundary area. A cosmological observer's information boundary is their cosmic
-                    horizon &mdash; a sphere. Black hole horizons are also spheres. The sphere is where information lives.
+                    horizon, a sphere. Black hole horizons are also spheres. The sphere is where information lives.
                 </p>
                 <p>
                     Crucially, the conformal group of S&sup2; turns out to be the Lorentz group:
@@ -210,7 +210,7 @@ export function TheScreenPage() {
                     Bekenstein-Hawking entropy: <strong>S<sub>BH</sub> = A/(4l<sub>P</sub>&sup2;)</strong>
                 </p>
                 <p>
-                    An observer is a tuple: <strong>(P<sub>O</sub>, A(P<sub>O</sub>), &rho;<sub>O</sub>, R<sub>O</sub>)</strong> &mdash;
+                    An observer is a tuple: <strong>(P<sub>O</sub>, A(P<sub>O</sub>), &rho;<sub>O</sub>, R<sub>O</sub>)</strong>,
                     their patch, algebra, local state, and records.
                 </p>
                 <p>

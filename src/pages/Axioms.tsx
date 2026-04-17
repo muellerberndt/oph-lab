@@ -22,7 +22,7 @@ const AXIOMS: Axiom[] = [
     {
         id: 'A2',
         name: 'Overlap Consistency',
-        plain: 'Where two observers\' patches overlap, their descriptions must agree. There is no "view from nowhere" \u2014 reality IS the mutual consistency of perspectives.',
+        plain: 'Where two observers\' patches overlap, their descriptions must agree. A global "view from nowhere" is absent. Reality IS the mutual consistency of perspectives.',
         physics: 'For overlapping patches P\u2081 \u2229 P\u2082 \u2260 \u2205, the restrictions of local states must agree on shared observables: \u03c1\u2081|_{A(\u2229)} = \u03c1\u2082|_{A(\u2229)}.',
         formal: '\u2200 P\u2081, P\u2082 with P\u2081 \u2229 P\u2082 \u2260 \u2205: \u03c1\u2081|_{A(P\u2081 \u2229 P\u2082)} = \u03c1\u2082|_{A(P\u2081 \u2229 P\u2082)}. No global state is assumed.',
     },
@@ -30,7 +30,7 @@ const AXIOMS: Axiom[] = [
         id: 'A3',
         name: 'Local MaxEnt and Refinement Stability',
         plain: 'At each regulator scale, the realized branch is selected by a finite family of local constraints, and the same branch persists under refinement.',
-        physics: 'The realized low-energy states lie in one common finite-dimensional MaxEnt family built from gauge-invariant local constraints of UV range O(l_UV). Refinement preserves that family, so one follows a refinement-stable branch rather than unrelated states at each cutoff.',
+        physics: 'The realized low-energy states lie in one common finite-dimensional MaxEnt family built from gauge-invariant local constraints of UV range O(l_UV). Refinement preserves that family, so one follows one refinement-stable branch across cutoffs.',
         formal: 'At regulator scale l_UV, the realized branch maximizes entropy subject to a fixed finite family of local constraints C_lUV = {O_a(x)}. Under refinement, the same finite constraint family is preserved, so the realized low-energy branch is the refinement-stable branch of one common finite-dimensional MaxEnt family.',
     },
     {
@@ -55,10 +55,10 @@ export function AxiomsPage() {
             </div>
 
             <p style={{ marginBottom: '24px' }}>
-                In the current extended formulation, OPH is best read as
-                <strong> five axioms: A1-A4 + MAR</strong>. The current paper surface also uses theorem-local technical
-                premises T1-T6 when specific Lorentz, Einstein, or gauge statements are invoked. MAR is a selection
-                axiom rather than a local dynamics equation, but it is part of the foundational ledger.
+                The extended formulation presents OPH as <strong>five axioms: A1-A4 + MAR</strong>. The paper
+                surface also uses theorem-local technical premises T1-T6 when specific Lorentz, Einstein, or gauge
+                statements are invoked. MAR is a selection axiom in the foundational ledger. It is distinct from a
+                local dynamics equation.
             </p>
 
             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
@@ -107,7 +107,7 @@ export function AxiomsPage() {
             ))}
 
             <div className="card" style={{ marginBottom: '16px', borderLeft: '3px solid var(--accent-blue)' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>MAR in the Current Ledger (Axiom 5)</h3>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>MAR in Axiom 5</h3>
                 <div style={{ fontSize: '0.84em', color: 'var(--text-secondary)', marginBottom: '10px' }}>
                     Gauge-reconstruction surface: R0/R1 + T1 + MAR + T4-T6
                 </div>
@@ -121,31 +121,30 @@ export function AxiomsPage() {
                     <li><strong>MAR:</strong> pick the lexicographically minimal admissible low-energy sector package.</li>
                 </ul>
                 <p style={{ margin: '10px 0 0 0', fontSize: '0.82em', color: 'var(--text-muted)' }}>
-                    Directly, MAR fixes the realized admissible gauge branch. Those selections then propagate into
-                    downstream structural and continuation surfaces, but MAR by itself is not a shortcut around the
-                    later theorem-local premises.
+                    MAR fixes the realized admissible gauge branch. The downstream structural and continuation
+                    surfaces use the later theorem-local premises.
                 </p>
             </div>
 
             <Explainer title="Extended Inputs Beyond Core A1-A4">
                 <p>The papers distinguish the five axioms from theorem-local technical premises and branch conditions:</p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li><strong>MAR (Axiom 5)</strong> &mdash; admissible-branch selector used in the gauge derivation</li>
-                    <li><strong>T1</strong> &mdash; vanishing relevant transport obstruction when global transportability is invoked: [z]=0 on the central branch or q<sub>&Sigma;</sub>=0 on the genuinely noncentral branch</li>
-                    <li><strong>T2</strong> &mdash; Lorentz/null-modular/Einstein statements are scaling-limit claims, not literal fixed-cutoff matrix identities</li>
-                    <li><strong>T3</strong> &mdash; fixed-cap generalized-entropy stationarity for the admissible first-variation class used in the Jacobson branch</li>
-                    <li><strong>T4</strong> &mdash; symmetric braiding in the 3+1D EFT branch</li>
-                    <li><strong>T5</strong> &mdash; bosonic Tannakian fiber functor, or an explicit super-Tannakian fork</li>
-                    <li><strong>T6</strong> &mdash; directed colimit of transportable edge sectors with objectwise finite-dimensional fibers wherever compact gauge reconstruction is invoked</li>
-                    <li><strong>R0/R1</strong> &mdash; regulator and fixed-point premises used in the gauge package</li>
+                    <li><strong>MAR (Axiom 5)</strong>: admissible-branch selector used in the gauge derivation</li>
+                    <li><strong>T1</strong>: vanishing relevant transport obstruction when global transportability is invoked: [z]=0 on the central branch or q<sub>&Sigma;</sub>=0 on the genuinely noncentral branch</li>
+                    <li><strong>T2</strong>: Lorentz/null-modular/Einstein statements are scaling-limit claims. Literal fixed-cutoff matrix identities appear only in special representations.</li>
+                    <li><strong>T3</strong>: fixed-cap generalized-entropy stationarity for the admissible first-variation class used in the Jacobson branch</li>
+                    <li><strong>T4</strong>: symmetric braiding in the 3+1D EFT branch</li>
+                    <li><strong>T5</strong>: bosonic Tannakian fiber functor, or an explicit super-Tannakian fork</li>
+                    <li><strong>T6</strong>: directed colimit of transportable edge sectors with objectwise finite-dimensional fibers wherever compact gauge reconstruction is invoked</li>
+                    <li><strong>R0/R1</strong>: regulator and fixed-point premises used in the gauge package</li>
                 </ul>
             </Explainer>
 
             <Explainer title="What these axioms give you">
-                <p>The current paper surface separates structural outputs from branch-conditional ones:</p>
+                <p>The paper surface separates structural outputs from branch-conditional ones:</p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
                     <li>From the screen identity and the explicit BW scaling branch, OPH recovers Lorentz kinematics on the extracted prime geometric subnet.</li>
-                    <li>From the null bridge, the separate bounded-interval projective branch, and fixed-cap stationarity, OPH states a conditional Jacobson-type Einstein branch rather than an unconditional A1-A4 theorem.</li>
+                    <li>From the null bridge, the separate bounded-interval projective branch, and fixed-cap stationarity, OPH states a conditional Jacobson-type Einstein branch with those added ingredients kept explicit.</li>
                     <li>The half-line generator/null-stress charge identification is internal to the null bridge; UV/BW cap-pair extraction and ordered cut-pair rigidity remain explicit scaffold items.</li>
                     <li>Massless photon and graviton remain symmetry-protected structural outputs.</li>
                 </ul>

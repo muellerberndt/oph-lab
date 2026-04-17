@@ -181,7 +181,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     {
         term: 'Jacobson-type Einstein Relation',
         symbol: 'R_kk = 8pi G T_kk',
-        definition: 'Legacy explainer shorthand for the local rest-frame relation in the gravity branch; the current paper surface states a Jacobson-type Einstein relation with a later tensor upgrade modulo the metric ambiguity.',
+        definition: 'Legacy explainer shorthand for the local rest-frame relation in the gravity branch; the papers state a Jacobson-type Einstein relation with a tensor upgrade modulo the metric ambiguity.',
         category: 'gravity',
         usedIn: ['Gravity'],
     },
@@ -223,7 +223,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     {
         term: 'Bisognano-Wichmann',
         symbol: 'K = 2pi B',
-        definition: 'Continuum BW template. In the current OPH papers, geometric modular flow is stated on the explicit BW branch at the automorphism level, with K = 2pi B only in the special type-I realization.',
+        definition: 'Continuum BW template. In the OPH papers, geometric modular flow is stated on the explicit BW branch at the automorphism level, with K = 2pi B only in the special type-I realization.',
         category: 'gravity',
         usedIn: ['Modular Flow', 'Gravity'],
     },
@@ -294,7 +294,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     {
         term: 'Selection Axiom MAR',
         symbol: 'C(Sigma)=(chi_faith,N_nonab,N_c,N_g)',
-        definition: 'Minimal Admissible Realization: select lexicographically minimal C(Sigma) only after admissibility filters; a selection rule, not a dynamics law.',
+        definition: 'Minimal Admissible Realization: select lexicographically minimal C(Sigma) only after admissibility filters; a selection rule distinct from a dynamics law.',
         category: 'gauge',
         usedIn: ['Axioms', 'Gauge Symmetry', 'Standard Model', 'QFT Emerges', 'Synthesis'],
         links: [
@@ -416,7 +416,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     {
         term: 'MOND-Scale Relation',
         symbol: 'a0 ~ c^2 sqrt(Lambda)',
-        definition: 'Infrared benchmark scale tied to positive cosmological constant. On the current paper surface this is suggestive numerics, not a fully derived galaxy-response law.',
+        definition: 'Infrared benchmark scale tied to positive cosmological constant. The paper surface presents suggestive numerics and does not derive a full galaxy-response law.',
         category: 'predictions',
         usedIn: ['Dark Matter', 'Predictions'],
     },
@@ -442,7 +442,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     },
     {
         term: 'Intersubjective Reality',
-        definition: 'Reality is the overlap-consistent content of patch descriptions, not an external observer-independent state description.',
+        definition: 'Reality is the overlap-consistent content of patch descriptions, without an external observer-independent state description.',
         category: 'meta',
         usedIn: ['No Objective Reality', 'Synthesis'],
     },
@@ -481,7 +481,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     },
     {
         term: 'Holonomy Obstruction',
-        definition: 'Global cycle defect showing that pairwise-compatible overlap data can still fail to extend to a single globally consistent configuration.',
+        definition: 'Global cycle defect showing that pairwise-compatible overlap data can fail to extend to a single globally consistent configuration.',
         category: 'methods',
         usedIn: ['Consensus Protocol'],
     },

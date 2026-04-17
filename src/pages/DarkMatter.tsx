@@ -97,16 +97,16 @@ export function DarkMatterPage() {
                 a<sub>0</sub> = (15 / 8&pi;&sup2;) &middot; c&sup2; &middot; &radic;(&Lambda;/3) &asymp; 1.03 &times; 10<sup>&minus;10</sup> m/s&sup2;
             </div>
             <p style={{ marginBottom: '16px' }}>
-                The numerical coefficient 15/(8&pi;&sup2;) comes from the Markov defect calculation. The fact that
-                a<sub>0</sub> &sim; cH<sub>0</sub> (the "cosmic coincidence" in MOND) is no coincidence in OPH:
-                both a<sub>0</sub> and H<sub>0</sub> are set by the same screen capacity.
+                The numerical coefficient 15/(8&pi;&sup2;) comes from the Markov defect calculation.
+                a<sub>0</sub> &sim; cH<sub>0</sub> because both a<sub>0</sub> and H<sub>0</sub> are set by the
+                same screen capacity.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Markov Defect Mechanism</h3>
             <p style={{ marginBottom: '16px' }}>
                 Axiom A4 says the conditional mutual information I(A:D|B) &le; &epsilon; for tripartitions A-B-D.
                 When &epsilon; = 0 (exact Markov), information recovery is perfect and gravity is exactly Newtonian.
-                But &epsilon; is not exactly zero &mdash; it is controlled by the ratio a/a<sub>0</sub> where a is
+                But &epsilon; is not exactly zero. It is controlled by the ratio a/a<sub>0</sub> where a is
                 the gravitational acceleration.
             </p>
             <p style={{ marginBottom: '16px' }}>
@@ -255,7 +255,7 @@ export function DarkMatterPage() {
                 <p>
                     In OPH, the "missing mass" is not mass at all. It is missing <em>information</em>. At scales
                     where a &lt; a<sub>0</sub>, the Markov recovery map (Axiom A4) fails to fully reconstruct
-                    the state. The unrecovered information looks, gravitationally, like additional matter &mdash;
+                    the state. The unrecovered information looks, gravitationally, like additional matter,
                     but there are no particles producing it.
                 </p>
                 <p>
@@ -272,7 +272,7 @@ export function DarkMatterPage() {
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
                     <li>Flat rotation curves of spiral galaxies</li>
                     <li>Baryonic Tully-Fisher relation: M &prop; v<sup>4</sup></li>
-                    <li>The a<sub>0</sub> &sim; cH<sub>0</sub> cosmic coincidence (derived, not assumed)</li>
+                    <li>The a<sub>0</sub> &sim; cH<sub>0</sub> cosmic coincidence</li>
                     <li>Freeman limit and Fish law for surface brightness</li>
                 </ul>
                 <p>

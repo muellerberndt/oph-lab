@@ -4,6 +4,8 @@ import { STANDARD_MODEL_SURFACE } from '../content/paperSurface';
 import {
     BETA_COEFFICIENTS_MSSM_LIKE,
     BETA_COEFFICIENTS_SM_1LOOP,
+    PIXEL_UI_MAX,
+    PIXEL_UI_MIN,
     solveGaugeClosure,
 } from '../core/ophMath';
 import { useLabSetting, useLabState } from '../state/labState';
@@ -193,8 +195,8 @@ export function UnificationPage() {
                         </div>
                         <input
                             type="range"
-                            min="1.15"
-                            max="2.15"
+                            min={PIXEL_UI_MIN}
+                            max={PIXEL_UI_MAX}
                             step="0.005"
                             value={pixelConstant}
                             onChange={event => setPixelConstant(Number(event.target.value))}
@@ -374,7 +376,7 @@ export function UnificationPage() {
                 </div>
             </div>
 
-            <Explainer title="How this aligns with the latest derivation notes">
+            <Explainer title="How this aligns with the derivation notes">
                 <p>
                     The supplement decomposes unification into exactly these parts: edge-sector beta shifts,
                     pixel-constraint closure, then one-loop running checks. This simulator keeps each stage visible so

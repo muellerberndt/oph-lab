@@ -9,12 +9,11 @@ export function LorentzPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                On the current OPH paper surface, Lorentz kinematics is recovered on an explicit geometric modular
-                branch rather than as a generic fixed-cutoff identity. The mathematical backbone is the conformal
-                symmetry group of the holographic screen S&sup2;.
+                On the declared OPH paper surface, Lorentz kinematics is recovered on an explicit geometric modular
+                branch. The mathematical backbone is the conformal symmetry group of the holographic screen S&sup2;.
             </p>
             <p style={{ marginBottom: '24px' }}>
-                The key identity is a classical result in mathematics:
+                The governing identity is a classical result in mathematics:
             </p>
 
             <div className="math-block" style={{ fontSize: '1.1em' }}>
@@ -43,10 +42,9 @@ export function LorentzPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Celestial Sphere</h3>
             <p style={{ marginBottom: '16px' }}>
-                Here is the physical picture. An observer at a point in Minkowski spacetime sees light arriving
-                from all directions. These directions form a sphere &mdash; the <strong>celestial sphere</strong>.
-                When the observer boosts (changes velocity), the pattern of light on this sphere transforms by
-                a M&ouml;bius map. This is exactly the aberration of starlight.
+                An observer at a point in Minkowski spacetime sees light arriving from all directions. These
+                directions form the <strong>celestial sphere</strong>. When the observer boosts, the pattern of
+                light on this sphere transforms by a M&ouml;bius map. This is the aberration of starlight.
             </p>
             <p style={{ marginBottom: '16px' }}>
                 Penrose recognized that the celestial sphere IS the Riemann sphere, and Lorentz boosts ARE conformal
@@ -89,10 +87,9 @@ export function LorentzPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>3+1 Dimensions from 2D</h3>
             <p style={{ marginBottom: '16px' }}>
-                This is not just a mathematical curiosity. In OPH, the screen S&sup2; is the fundamental arena
-                (Axiom A1). The conformal group of that 2-sphere is the connected Lorentz group of 3+1 dimensions,
-                which is why the Lorentz branch is screen-based rather than postulated from bulk spacetime.
-                The correspondence is:
+                In OPH, the screen S&sup2; is the fundamental arena (Axiom A1). The conformal group of that
+                2-sphere is the connected Lorentz group of 3+1 dimensions, so the Lorentz branch is read directly
+                from screen geometry. The correspondence is:
             </p>
 
             <div className="card" style={{ marginBottom: '24px' }}>
@@ -116,7 +113,7 @@ export function LorentzPage() {
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-gold)' }}>
                 <h4 style={{ margin: '0 0 12px 0', fontSize: '0.9em', color: 'var(--accent-gold)' }}>
-                    Current claim boundary
+                    Claim boundary
                 </h4>
                 <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
                     The screen identity Conf<sup>+</sup>(S&sup2;) ≅ SO<sup>+</sup>(3,1) is exact mathematics. The OPH claim that
@@ -124,7 +121,7 @@ export function LorentzPage() {
                     cap theory.
                 </p>
                 <p style={{ margin: 0, fontSize: '0.85em', color: 'var(--text-secondary)' }}>
-                    The remaining UV/BW scaffold is the realized scaling-limit cap-pair extraction plus ordered cut-pair
+                    The UV/BW scaffold is the realized scaling-limit cap-pair extraction plus ordered cut-pair
                     rigidity on that realized limit.
                 </p>
             </div>
@@ -136,31 +133,29 @@ export function LorentzPage() {
                     spinorial: they are 2-component complex objects (z<sub>0</sub>, z<sub>1</sub>) with z = z<sub>1</sub>/z<sub>0</sub>.
                 </p>
                 <p>
-                    Spinors are therefore not exotic mathematical objects imposed on spacetime. They are the natural
-                    coordinates of the screen. The fact that fermions are spin-1/2 objects is a direct consequence of
-                    the screen being S&sup2;.
+                    Spinors appear here as the natural coordinates of the screen. The fact that fermions are
+                    spin-1/2 objects follows directly from the screen being S&sup2;.
                 </p>
             </Explainer>
 
             <Explainer title="BMS group and asymptotic symmetries">
                 <p>
-                    At null infinity of an asymptotically flat spacetime, the symmetry group is not just the Lorentz
-                    group but the infinite-dimensional <strong>BMS group</strong>: the semi-direct product of the
-                    Lorentz group with an infinite-dimensional group of supertranslations.
+                    At null infinity of an asymptotically flat spacetime, the symmetry group includes the
+                    infinite-dimensional <strong>BMS group</strong>: the semi-direct product of the Lorentz group
+                    with an infinite-dimensional group of supertranslations.
                 </p>
                 <p>
                     In OPH terms, the BMS group arises from diffeomorphisms of the screen that go beyond conformal
                     maps. These supertranslations are related to soft graviton theorems and gravitational memory
-                    effects &mdash; all of which have a natural screen interpretation.
+                    effects, all of which have a natural screen interpretation.
                 </p>
             </Explainer>
 
-            <Explainer title="Why not higher dimensions?">
+            <Explainer title="Why 3+1 Dimensions">
                 <p>
-                    String theory predicts 10 or 11 spacetime dimensions and must compactify the extras. In OPH, there
-                    is no compactification problem because there are no extra dimensions to begin with. The screen is
-                    S&sup2;, the conformal group is SO&#8314;(3,1), and spacetime is 3+1D. The question "why 3+1?" is
-                    answered: because the screen is a 2-sphere, and that is the simplest surface with complex structure.
+                    The OPH screen is S&sup2;, the conformal group is SO&#8314;(3,1), and spacetime is 3+1D. The
+                    question "why 3+1?" is answered by the screen geometry: a 2-sphere with complex structure carries
+                    the Lorentz group of 3+1 dimensions.
                 </p>
             </Explainer>
         </div>

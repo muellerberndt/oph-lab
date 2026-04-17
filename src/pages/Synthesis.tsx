@@ -14,7 +14,7 @@ export function SynthesisPage() {
                 branch on the BW scaling surface, a conditional Jacobson-type Einstein branch under the null bridge,
                 the separate bounded-interval projective branch, and fixed-cap stationarity, and separate
                 cosmological-capacity consequences. Chain 2 yields the structural Standard Model branch together with
-                several downstream continuation lanes. The same paper surface now also includes a dedicated consensus
+                several downstream continuation lanes. The same paper surface includes a dedicated consensus
                 spine and a concrete screen-microphysics architecture. Both start from the same five-axiom basis on a
                 holographic screen S&sup2;, while specific pages add the theorem-local technical premises needed for
                 Lorentz, gauge, particle, or observer-level statements.
@@ -46,9 +46,9 @@ export function SynthesisPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                These two inputs feed the public quantitative surfaces, but the resulting outputs are not all on the
-                same status level. The current OPH paper set separates recovered structural theorems, explicit
-                branch-conditional results, closed calibration sectors, and open continuation lanes.
+                These two inputs feed the public quantitative surfaces. The OPH paper set separates recovered
+                structural theorems, explicit branch-conditional results, closed calibration sectors, and open
+                continuation lanes.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Five Surfaces, One Program</h3>
@@ -210,7 +210,7 @@ export function SynthesisPage() {
                 </ul>
                 <p>
                     OPH should be evaluated by the same standards as any physical theory: internal consistency,
-                    agreement with existing data, and testable predictions. The current paper surface supports a
+                    agreement with existing data, and testable predictions. The paper stack carries a
                     mixed ledger of structural theorems, branch conditions, closed calibration sectors, and open
                     scaffold items.
                 </p>

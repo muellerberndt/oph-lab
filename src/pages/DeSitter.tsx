@@ -1,34 +1,22 @@
 import { Explainer } from '../components/Explainer';
+import {
+    PIXEL_REFERENCE,
+    deSitterRadiusFromLambda,
+    gibbonsHawkingTemperatureFromHubble,
+    hubbleFromLambda,
+    lambdaFromScreen,
+} from '../core/ophMath';
 import { useLabSetting, useLabState } from '../state/labState';
 
 export function DeSitterPage() {
     const [logDimH, setLogDimH] = useLabSetting('deSitter.logDimH');
     const { resetKeys } = useLabState();
 
-    // Constants
-    const G = 6.674e-11;
-    const hbar = 1.055e-34;
-    const c = 3e8;
-    const kB = 1.381e-23;
-
-    // Lambda from screen capacity
-    const lambda = 3 * Math.PI / (G * Math.pow(10, logDimH));
-
-    // Hubble parameter H = sqrt(Lambda * c^2 / 3)
-    const H = Math.sqrt(lambda * c * c / 3);
-
-    // de Sitter temperature T = hbar * H / (2pi * kB)
-    const TdS = (hbar * H) / (2 * Math.PI * kB);
-
-    // Horizon radius r_H = c/H
-    const rH = c / H;
-
-    // Horizon area
-    const areaH = 4 * Math.PI * rH * rH;
-
-    // Bekenstein-Hawking entropy
-    const lP = Math.sqrt(hbar * G / (c * c * c));
-    const SBH = areaH / (4 * lP * lP);
+    const lambda = lambdaFromScreen(PIXEL_REFERENCE, logDimH);
+    const H = hubbleFromLambda(lambda);
+    const TdS = gibbonsHawkingTemperatureFromHubble(H);
+    const rH = deSitterRadiusFromLambda(lambda);
+    const SBH = Math.pow(10, logDimH);
 
     return (
         <div>
@@ -39,12 +27,12 @@ export function DeSitterPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 Our universe is accelerating in its expansion, approaching a de Sitter phase. In de Sitter space,
-                every observer is surrounded by a <strong>cosmological horizon</strong> &mdash; a sphere beyond which
+                every observer is surrounded by a <strong>cosmological horizon</strong>, a sphere beyond which
                 events can never reach them. This horizon has thermodynamic properties, just like a black hole horizon.
             </p>
             <p style={{ marginBottom: '16px' }}>
-                In OPH, the de Sitter horizon IS the holographic screen. The cosmological constant &Lambda; is not
-                a mysterious vacuum energy but a measure of the screen's <strong>finite information capacity</strong>.
+                In OPH, the de Sitter horizon IS the holographic screen. The cosmological constant &Lambda; measures
+                the screen's <strong>finite information capacity</strong>.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Gibbons-Hawking Temperature</h3>
@@ -63,16 +51,17 @@ export function DeSitterPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>&Lambda; from Screen Capacity</h3>
             <p style={{ marginBottom: '8px' }}>
-                In OPH, the cosmological constant is derived from the total Hilbert space dimension of the screen.
-                If the screen has a total of log(dim H<sub>tot</sub>) nats of capacity, then:
+                In OPH, the cosmological constant is fixed by the total screen capacity after the local gravity
+                branch leaves the separate metric ambiguity. In the lab we hold the reference pixel
+                normalization fixed at P = {PIXEL_REFERENCE.toFixed(5)} and scan the global capacity descendant:
             </p>
             <div className="math-block" style={{ fontSize: '1.1em' }}>
-                &Lambda; = 3&pi; / (G &middot; log dim H<sub>tot</sub>)
+                &Lambda;(N<sub>scr</sub>) &prop; N<sub>scr</sub><sup>&minus;1</sup>
             </div>
             <p style={{ marginBottom: '16px' }}>
                 With log dim H<sub>tot</sub> &asymp; 10<sup>122</sup> (in natural units), this gives the observed
-                value of &Lambda; &asymp; 10<sup>&minus;52</sup> m<sup>&minus;2</sup>. This is not fine-tuning: the
-                screen capacity is a single large number that sets the scale of the cosmological constant.
+                value of &Lambda; &asymp; 10<sup>&minus;52</sup> m<sup>&minus;2</sup>. The screen capacity is a
+                single large number that sets the scale of the cosmological constant.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Why This Solves the Cosmological Constant Problem</h3>
@@ -182,13 +171,12 @@ export function DeSitterPage() {
                 <p>
                     The de Sitter horizon entropy S<sub>dS</sub> = A<sub>H</sub>/(4l<sub>P</sub>&sup2;) &asymp;
                     10<sup>122</sup> is the total number of bits available to a single observer. This is the same
-                    number as log(dim H<sub>tot</sub>) &mdash; not a coincidence. The screen capacity IS the
-                    horizon entropy.
+                    number as log(dim H<sub>tot</sub>). The screen capacity IS the horizon entropy.
                 </p>
                 <p>
                     This gives an entirely different perspective on the "largeness" of the universe. The universe
-                    is large because the screen has &sim;10<sup>122</sup> Planck-area pixels. This is a large
-                    number but it is just one number &mdash; not a fine-tuning problem.
+                    is large because the screen has &sim;10<sup>122</sup> Planck-area pixels. This is one large
+                    number that sets the scale.
                 </p>
             </Explainer>
 
@@ -209,7 +197,7 @@ export function DeSitterPage() {
                 <p>
                     If &Lambda; &gt; 0, the universe approaches de Sitter space at late times. The thermal state
                     at temperature T<sub>dS</sub> &asymp; 10<sup>&minus;30</sup> K is the maximum-entropy state
-                    consistent with the horizon area &mdash; the "heat death" of the universe.
+                    consistent with the horizon area, the "heat death" of the universe.
                 </p>
                 <p>
                     In OPH, this is the MaxEnt state on the A3 branch of the screen theory. The universe evolves

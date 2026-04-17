@@ -49,7 +49,7 @@ export function ResourcesPage() {
             </div>
 
             <p style={{ marginBottom: '24px' }}>
-                Primary sources, mirrors, and entry points for the current OPH public stack.
+                Primary sources, mirrors, and entry points for the OPH public stack.
             </p>
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-cyan)' }}>
@@ -75,7 +75,7 @@ export function ResourcesPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Five-Paper Public Stack</h3>
             <p style={{ marginBottom: '16px', fontSize: '0.85em', color: 'var(--text-muted)' }}>
-                The lab now treats these five papers as the public source of truth. Use the individual paper that
+                The lab treats these five papers as the public source of truth. Use the individual paper that
                 matches the surface you are discussing.
             </p>
 
@@ -147,7 +147,7 @@ export function ResourcesPage() {
                         OPH Challenge
                     </h4>
                     <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
-                        Public objection and review surface for testing the current corpus.
+                        Public objection and review surface for testing the paper corpus.
                     </p>
                     <a href={CHALLENGE_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                         challenge.floatingpragma.io &rarr;
@@ -200,10 +200,10 @@ export function ResourcesPage() {
                 ))}
             </div>
 
-            <Explainer title="How to cite current OPH material">
+            <Explainer title="How to cite OPH material">
                 <p>
-                    Cite the specific paper that matches the claim you are discussing. The current public surface is no
-                    longer a one-paper story.
+                    Cite the specific paper that matches the claim you are discussing. The public OPH surface spans
+                    five papers.
                 </p>
                 <p>
                     For technical statements, it is better to cite the exact paper and visible release line than to

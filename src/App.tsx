@@ -25,6 +25,7 @@ import { ErrorCorrectionPage } from './pages/ErrorCorrection';
 import { GaugeSymmetryPage } from './pages/GaugeSymmetry';
 import { StandardModelPage } from './pages/StandardModel';
 import { MassesPage } from './pages/Masses';
+import { NeutrinosPage } from './pages/Neutrinos';
 import { UnificationPage } from './pages/Unification';
 import { QftEmergesPage } from './pages/QftEmerges';
 import { ConsensusProtocolPage } from './pages/ConsensusProtocol';
@@ -62,6 +63,7 @@ function App() {
           <Route path="gauge-symmetry" element={<GaugeSymmetryPage />} />
           <Route path="standard-model" element={<StandardModelPage />} />
           <Route path="masses" element={<MassesPage />} />
+          <Route path="neutrinos" element={<NeutrinosPage />} />
           <Route path="unification" element={<UnificationPage />} />
           <Route path="qft-emerges" element={<QftEmergesPage />} />
           <Route path="consensus-protocol" element={<ConsensusProtocolPage />} />

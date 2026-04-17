@@ -12,11 +12,12 @@ import { BOOK_URL, CHALLENGE_URL, OVERVIEW_URL, RESEARCH_REPO_URL, SIMULATION_UR
 export function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
+    const normalizedPath = location.pathname.replace(/\/$/, '') || '/';
+    const isLandingSurface = normalizedPath === '/';
 
     useEffect(() => {
-        const path = location.pathname.replace(/\/$/, '') || '/';
-        const title = getSeoMeta(path).title;
-        trackPageView(path, title);
+        const title = getSeoMeta(normalizedPath).title;
+        trackPageView(normalizedPath, title);
     }, [location.pathname]);
 
     useEffect(() => installLinkTracking('oph_lab'), []);
@@ -82,7 +83,7 @@ export function Layout() {
                 </header>
 
                 <main className="content-scroll">
-                    <div className="content-container">
+                    <div className={`content-container ${isLandingSurface ? 'content-container-wide' : ''}`}>
                         <Outlet />
                         <WalkthroughNav />
 

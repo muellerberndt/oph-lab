@@ -9,18 +9,16 @@ export function GaugeSymmetryPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                In the Standard Model, gauge symmetries (U(1), SU(2), SU(3)) are postulated: you declare
-                that the Lagrangian must be invariant under local phase transformations, and force-carrying
-                bosons appear as "connection" fields. But <em>why</em> these particular gauge groups? Why gauge
-                symmetry at all?
+                In OPH, gauge symmetry arises from the redundancy of describing the same physical data on
+                overlapping patches. Gauge transformations are the "coordinate changes" that relate different patch
+                descriptions of the same overlap region.
             </p>
             <p style={{ marginBottom: '24px' }}>
-                In OPH, gauge symmetry is <strong>not postulated but derived</strong>. It arises from the redundancy
-                of describing the same physical data on overlapping patches. Gauge transformations are the
-                "coordinate changes" that relate different patch descriptions of the same overlap region.
+                The derivation identifies the admissible compact groups carried by that overlap structure and then
+                selects the realized sector with the MAR rule.
             </p>
             <p style={{ marginBottom: '16px' }}>
-                The latest derivation then adds the extended axiom package
+                The derivation then adds the extended axiom package
                 <strong> R0 + R1 + T1 + MAR + T4-T6</strong>: admissibility defines the candidate class, with T1 meaning
                 vanishing relevant transport obstruction ([z]=0 on the central branch or q<sub>&Sigma;</sub>=0 on the
                 genuinely noncentral branch), T4-T6 supplying the compact gauge-reconstruction premises, and MAR choosing
@@ -50,7 +48,7 @@ export function GaugeSymmetryPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Edge Sectors and Compact Groups</h3>
             <p style={{ marginBottom: '16px' }}>
-                At the boundary &part;P of a patch, the algebra has <strong>edge modes</strong> &mdash; degrees of
+                At the boundary &part;P of a patch, the algebra has <strong>edge modes</strong>, degrees of
                 freedom that live on the boundary and carry information about how the patch connects to its
                 complement. These edge modes transform under representations of the gauge group.
             </p>
@@ -72,9 +70,8 @@ export function GaugeSymmetryPage() {
                 </div>
             </div>
             <p style={{ marginBottom: '16px' }}>
-                This is why gauge groups are compact (not non-compact like the Lorentz group): edge-sector
-                fusion rules satisfy the axioms of a compact group representation category. The compactness
-                is not assumed; it is derived.
+                This is why gauge groups are compact: edge-sector fusion rules satisfy the axioms of a compact
+                group representation category. Compactness follows from the reconstruction.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Why Product Groups?</h3>
@@ -84,9 +81,9 @@ export function GaugeSymmetryPage() {
                 proton decay, which has never been observed.
             </p>
             <p style={{ marginBottom: '16px' }}>
-                In OPH, the gauge group is a <strong>product group from the start</strong>. Different types of
-                edge modes (corresponding to different boundary structures) give rise to independent gauge factors.
-                There is no GUT, no proton decay, and no need for symmetry breaking from a simple group.
+                In OPH, the gauge group is a <strong>product group</strong>. Different types of edge modes
+                (corresponding to different boundary structures) give rise to independent gauge factors. This
+                structure carries no simple-group proton-decay channel.
             </p>
 
             <div className="card" style={{ marginBottom: '24px' }}>
@@ -144,10 +141,9 @@ export function GaugeSymmetryPage() {
                 </p>
             </Explainer>
 
-            <Explainer title="Why not other gauge groups?">
+            <Explainer title="Why This Gauge Group">
                 <p>
-                    Why SU(3) &times; SU(2) &times; U(1) and not, say, SU(5) or E<sub>8</sub>? In OPH, the
-                    answer comes from admissibility plus MAR:
+                    The selection of SU(3) &times; SU(2) &times; U(1) comes from admissibility plus MAR:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
                     <li><strong>Admissibility:</strong> anomaly-free, chiral-stable, single-Higgs-completable, CP-capable, weak UV-completable, and loop-coherent ([z]=0).</li>
@@ -155,9 +151,9 @@ export function GaugeSymmetryPage() {
                     <li><strong>MAR:</strong> lexicographically minimize C over admissible sectors only (not over all groups).</li>
                 </ul>
                 <p>
-                    This singles out [SU(3)&times;SU(2)&times;U(1)]/Z<sub>6</sub> with N<sub>c</sub>=3, N<sub>g</sub>=3.
-                    The Standard Model gauge structure is not arbitrary; it is the unique MAR-selected admissible solution.
-                    Equivalently, MAR acts as <strong>Nature's Occam's razor</strong> after admissibility.
+                    This singles out [SU(3)&times;SU(2)&times;U(1)]/Z<sub>6</sub> with N<sub>c</sub>=3,
+                    N<sub>g</sub>=3. The Standard Model gauge structure is the unique MAR-selected admissible
+                    solution. Equivalently, MAR acts as <strong>Nature's Occam's razor</strong> after admissibility.
                 </p>
             </Explainer>
 

@@ -4,6 +4,8 @@ import { CLAIM_TIER_LEGEND, PARTICLE_LANE_STATUS } from '../content/paperSurface
 import {
     BETA_COEFFICIENTS_MSSM_LIKE,
     PIXEL_REFERENCE,
+    PIXEL_UI_MAX,
+    PIXEL_UI_MIN,
     deriveD11ForwardSeed,
     deriveTargetFreeElectroweakRepair,
     solveGaugeClosure,
@@ -77,12 +79,12 @@ export function MassesPage() {
     );
 
     const higgsTop = useMemo(
-        () => deriveD11ForwardSeed(gaugeCore),
-        [gaugeCore]
+        () => deriveD11ForwardSeed(electroweakRepair),
+        [electroweakRepair]
     );
     const canonicalHiggsTop = useMemo(
-        () => deriveD11ForwardSeed(canonicalGaugeCore),
-        [canonicalGaugeCore]
+        () => deriveD11ForwardSeed(canonicalElectroweakRepair),
+        [canonicalElectroweakRepair]
     );
 
     const dynamicRows = useMemo<DynamicMassRow[]>(
@@ -113,28 +115,28 @@ export function MassesPage() {
                 valueGeV: electroweakRepair.mWGeV,
                 deltaGeV: electroweakRepair.mWGeV - canonicalElectroweakRepair.mWGeV,
                 tier: 'calibration',
-                note: 'D10 target-free source-only repair theorem readout from the P-driven electroweak source basis.',
+                note: 'Public electroweak repair readout from the P-driven source basis.',
             },
             {
                 label: 'Z',
                 valueGeV: electroweakRepair.mZGeV,
                 deltaGeV: electroweakRepair.mZGeV - canonicalElectroweakRepair.mZGeV,
                 tier: 'calibration',
-                note: 'Closed on the same D10 target-free repair surface. The canonical published row is recovered at the default P.',
+                note: 'Companion public electroweak repair row on the same source basis.',
             },
             {
                 label: 'H',
                 valueGeV: higgsTop.mHGeV,
                 deltaGeV: higgsTop.mHGeV - canonicalHiggsTop.mHGeV,
                 tier: 'calibration',
-                note: 'D11 one-scalar forward-seed branch sourced by the same P-driven D10 gauge core, not by the compare-only inverse adapter.',
+                note: 'Public Higgs row from the source-only Higgs/top split surface fed by the same electroweak source basis.',
             },
             {
                 label: 't',
                 valueGeV: higgsTop.mtPoleGeV,
                 deltaGeV: higgsTop.mtPoleGeV - canonicalHiggsTop.mtPoleGeV,
                 tier: 'calibration',
-                note: 'Top pole row from the same D11 forward seed as the Higgs branch.',
+                note: 'Companion top row from the same source-only Higgs/top split surface.',
             },
         ],
         [canonicalElectroweakRepair.mWGeV, canonicalElectroweakRepair.mZGeV, canonicalHiggsTop.mHGeV, canonicalHiggsTop.mtPoleGeV, electroweakRepair.mWGeV, electroweakRepair.mZGeV, higgsTop.mHGeV, higgsTop.mtPoleGeV]
@@ -148,37 +150,39 @@ export function MassesPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This page summarizes the current OPH matter-sector status instead of presenting the older withdrawn
-                public calculator. The paper surface is split into structural outputs, closed calibration sectors,
-                continuation lanes, compare-only adapters, and open theorem objects.
+                This page summarizes the OPH matter-sector status instead of presenting the withdrawn
+                public calculator. It separates structural outputs, closed public rows, diagnostic
+                checks, and the gaps that sit outside the public surface.
             </p>
 
             <div className="card" style={{ marginBottom: '16px', borderLeft: '3px solid var(--accent-gold)' }}>
                 <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Closed structural and calibration surfaces</h3>
                 <p style={{ margin: '0 0 10px 0' }}>
-                    The structural core still includes the Standard Model gauge quotient, exact hypercharges,
+                    The structural core includes the Standard Model gauge quotient, exact hypercharges,
                     N<sub>c</sub> = 3, N<sub>g</sub> = 3, and symmetry-protected massless photon/graviton zeros.
                 </p>
                 <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
-                    In the bosonic calibration sector, W/Z are closed on the D10 surface. Higgs/top public rows are
-                    carried by a closed one-scalar D11 forward seed, while the exact inverse pair remains compare-only.
+                    In the bosonic calibration sector, W/Z sit on the public electroweak repair
+                    surface. Higgs/top sit on the source-only Higgs/top split surface. The exact
+                    inverse pair is a check surface.
                     The canonical published bosonic surface uses P = {PIXEL_REFERENCE.toFixed(5)}; the interactive
-                    readout below shows how the same D10/D11 formulas respond if you move that one shared pixel input.
+                    readout below shows how the same bosonic formulas respond if you move that one
+                    shared pixel input.
                 </p>
             </div>
 
             <div className="card" style={{ marginBottom: '16px' }}>
                 <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Open matter-sector lanes</h3>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8', margin: 0, color: 'var(--text-secondary)' }}>
-                    <li><strong>Quarks:</strong> the maximal theorem-emitted package on the present ledger is the D12 mass ray, the negative selector <code>sigma_ref</code>, and the restricted-scope affine mean package with <code>g_ch = 0.9231656602589082</code> on <code>shared_budget_only</code> and <code>(g_u, g_d) = (0.7797392875757557, 0.12172551081512113)</code> on <code>current_family_only</code>. The exact minimal extension triple above that package is <code>H_mass : ell_ud = log(c_d / c_u)</code>, <code>H_phys : s_ud^phys : M_ud^&#123;CR,phys&#125; -&gt; Sigma_ud^phys</code>, and <code>H_abs : A_q^phys : Sigma_ud^phys -&gt; R</code>.</li>
-                    <li><strong>Charged leptons:</strong> centered readback is exact, but the theorem lane stays open first at the promotion of Ĉ<sub>e</sub><sup>cand</sup> and then at the affine descent to &mu;<sub>phys</sub>(Y<sub>e</sub>).</li>
-                    <li><strong>Neutrinos:</strong> the weighted-cycle theorem pair emits C<sub>&nu;</sub> = sum_gap<sup>2</sup> prod_qbar solar_response_over_mstar<sup>-1/2</sup>, B<sub>&nu;</sub> = P<sub>&nu;</sub>C<sub>&nu;</sub>, and the absolute neutrino family on the declared weighted-cycle branch. The older exact adapter, bridge corridor, and correction audit remain diagnostic-only.</li>
-                    <li><strong>Hadrons:</strong> backend- and compute-bound rather than theorem-closed.</li>
+                    <li><strong>Quarks:</strong> OPH closes one exact public sextet on one physical frame fixed by P. A full classification of all quark frames is a separate object.</li>
+                    <li><strong>Charged leptons:</strong> the exact same-family readback is explicit. The open step is the source landing that turns the shared geometric data into full physical charged masses.</li>
+                    <li><strong>Neutrinos:</strong> one weighted-cycle branch emits an absolute family, the central splittings, and one physical Majorana pair. The exact fitting adapters are checks and stay off the public surface.</li>
+                    <li><strong>Hadrons:</strong> hadron masses depend on a production backend and large compute budgets instead of a short symbolic surface.</li>
                 </ul>
             </div>
 
             <div className="demo-container">
-                <div className="demo-label">Interactive Bosonic Trunk From P</div>
+                <div className="demo-label">Interactive Bosonic Surface From P</div>
 
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '14px' }}>
                     <button
@@ -191,9 +195,10 @@ export function MassesPage() {
                 </div>
 
                 <p style={{ marginTop: 0, marginBottom: '14px' }}>
-                    Default P = <strong>{PIXEL_REFERENCE.toFixed(5)}</strong> reproduces the current published
-                    bosonic candidate surface. Moving the slider below evaluates the same D10/D11 branch formulas off
-                    that canonical point; it is a branch readout, not a new claim tier.
+                    Default P = <strong>{PIXEL_REFERENCE.toFixed(5)}</strong> reproduces the published
+                    bosonic candidate surface. Moving the slider below evaluates the same bosonic
+                    formulas off that canonical point. It is a branch readout on the same public
+                    surface.
                 </p>
 
                 <div style={{ marginBottom: '18px' }}>
@@ -206,8 +211,8 @@ export function MassesPage() {
                     </div>
                     <input
                         type="range"
-                        min="1.15"
-                        max="2.15"
+                        min={PIXEL_UI_MIN}
+                        max={PIXEL_UI_MAX}
                         step="0.005"
                         value={pixelConstant}
                         onChange={event => setPixelConstant(Number(event.target.value))}
@@ -228,15 +233,21 @@ export function MassesPage() {
                         <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{formatScalar(electroweakRepair.etaSource)}</div>
                     </div>
                     <div className="card" style={{ padding: '14px', background: 'rgba(0,0,0,0.18)' }}>
-                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)', marginBottom: '6px' }}>sigma_D11_HT(P)</div>
-                        <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{formatScalar(higgsTop.sigmaD11HT)}</div>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)', marginBottom: '6px' }}>rho_HT(P)</div>
+                        <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>{formatScalar(higgsTop.rhoHT)}</div>
+                    </div>
+                    <div className="card" style={{ padding: '14px', background: 'rgba(0,0,0,0.18)' }}>
+                        <div style={{ fontSize: '0.72em', color: 'var(--text-muted)', marginBottom: '6px' }}>pi_y(P), pi_lambda(P)</div>
+                        <div style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>
+                            {formatScalar(higgsTop.piY, 5)}, {formatScalar(higgsTop.piLambda, 5)}
+                        </div>
                     </div>
                 </div>
 
                 <div className="math-block" style={{ fontSize: '0.84em' }}>
-                    P -&gt; alpha_U(P), eta_source(P), v(P) -&gt; D10 target-free repair -&gt; (W, Z)
+                    P -&gt; alpha_U(P), eta_source(P), v(P) -&gt; electroweak repair -&gt; (W, Z)
                     <br />
-                    sigma_D11,HT(P) = alpha_U(P) cos(2 theta_W0(P)) / sqrt(pi) -&gt; (H, t)
+                    rho_HT(P) = log(1 + tau2_tree_exact(P)) -&gt; (pi_y(P), pi_lambda(P)) -&gt; Higgs/top split -&gt; (H, t)
                 </div>
 
                 <div style={{ display: 'grid', gap: '10px' }}>
@@ -252,7 +263,7 @@ export function MassesPage() {
                             </div>
                             <div style={{ fontSize: '0.76em', color: 'var(--text-muted)', marginBottom: '6px' }}>
                                 {row.tier === 'structural'
-                                    ? 'Invariant under P on the current structural lane.'
+                                    ? 'Invariant under P on the structural lane.'
                                     : `Delta from canonical P = ${PIXEL_REFERENCE.toFixed(5)}: ${formatSignedMass(row.deltaGeV)}`}
                             </div>
                             <div style={{ fontSize: '0.8em', color: 'var(--text-secondary)' }}>{row.note}</div>
@@ -270,7 +281,7 @@ export function MassesPage() {
                     <li><strong>Closed:</strong> theorem-grade or calibration-grade public result.</li>
                     <li><strong>Continuation-only:</strong> an internal or same-family sidecar that sharpens the open object without replacing the public theorem frontier.</li>
                     <li><strong>Compare-only:</strong> a fit or diagnostic adapter that is numerically useful but not promoted as the theorem object.</li>
-                    <li><strong>Open:</strong> a remaining exact theorem object has not yet been emitted on the current corpus.</li>
+                    <li><strong>Open:</strong> an exact theorem object is open on the declared corpus.</li>
                 </ul>
             </div>
 
@@ -301,13 +312,15 @@ export function MassesPage() {
             <Explainer title="Why only some rows move with P">
                 <p>
                     The particle paper makes a sharp split. Photon, gluons, and graviton are structural zeros on the
-                    realized gauge/gravity branch, so their masses stay exactly zero. W and Z sit on the closed D10
-                    calibration lane, and Higgs/top sit on the downstream D11 forward seed fed by the same gauge core.
+                    realized gauge/gravity branch, so their masses stay exactly zero. W and Z sit
+                    on the closed electroweak repair surface, and Higgs/top sit on the downstream
+                    source-only Higgs/top split surface fed by the same gauge core.
                 </p>
                 <p>
-                    That is why changing P should move the D10/D11 bosonic rows but not the massless structural rows.
-                    It does not say the entire matter sector is closed from P today; charged leptons, physical quark
-                    closure, and hadrons still have explicit remaining blockers on the current corpus.
+                    That is why changing P moves the bosonic rows but not the massless structural
+                    rows. It does not say the entire matter sector closes from P on the declared
+                    surface. Charged leptons, the full quark story away from the public frame, and
+                    hadrons sit on separate surfaces.
                 </p>
             </Explainer>
         </div>

@@ -31,7 +31,7 @@ const ADMISSIBILITY_LABELS: Array<{ key: CheckKey; label: string; details: strin
     { key: 'chiralStable', label: 'Refinement-stable chiral matter', details: 'No unprotected relevant vector-like masses at UV' },
     { key: 'singleHiggs', label: 'Single-Higgs Yukawa complete', details: 'Mass generation with one (1,2,1/2) scalar doublet' },
     { key: 'cpCapable', label: 'Intrinsic CP-capable', details: 'Physical CKM-like CP phases exist' },
-    { key: 'weakUvComplete', label: 'Weak sector UV-completable', details: 'One-loop weak-sector behavior remains UV admissible' },
+    { key: 'weakUvComplete', label: 'Weak sector UV-completable', details: 'One-loop weak-sector behavior is UV admissible' },
 ];
 
 const CANDIDATES: GaugeCandidate[] = [
@@ -189,8 +189,8 @@ export function StandardModelPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This page follows the newest manuscript derivation: the admissible compact sector class is reduced by
-                MAR lexicographic minimality to the unique global quotient
+                This page follows the declared manuscript derivation: the admissible compact sector class is reduced
+                by MAR lexicographic minimality to the unique global quotient
                 {' '}<strong>[SU(3) x SU(2) x U(1)] / Z6</strong> with <strong>Nc=3</strong> and <strong>Ng=3</strong>.
             </p>
 
@@ -314,7 +314,7 @@ export function StandardModelPage() {
                 </div>
 
                 <div style={{ marginTop: '10px', fontSize: '0.78em', color: 'var(--text-secondary)' }}>
-                    Survivors at current stage: <strong style={{ color: 'var(--accent-cyan)' }}>{elimination.length}</strong>
+                    Survivors in this stage: <strong style={{ color: 'var(--accent-cyan)' }}>{elimination.length}</strong>
                 </div>
             </div>
 
@@ -382,8 +382,8 @@ export function StandardModelPage() {
             <Explainer title="Why a product group is selected">
                 <p>
                     The minimal faithful carrier that simultaneously supports pseudoreal weak doublets and complex
-                    color triplets is C^3 tensor C^2. Commuting actions on this carrier force product-group structure
-                    rather than a simple unification group.
+                    color triplets is C^3 tensor C^2. Commuting actions on this carrier yield product-group
+                    structure.
                 </p>
             </Explainer>
 
@@ -395,13 +395,13 @@ export function StandardModelPage() {
                 </p>
             </Explainer>
 
-            <Explainer title="What this page does not claim">
+            <Explainer title="Page Scope">
                 <p>
-                    This page tracks the recovered gauge quotient and counting chain. It does not close the full flavor
-                    program, hadron phenomenology, or every downstream matter-sector theorem object.
+                    This page tracks the recovered gauge quotient and counting chain. Full flavor closure, hadron
+                    phenomenology, and downstream matter-sector theorem objects sit on separate pages.
                 </p>
                 <p>
-                    On the current public surface, the Standard Model quotient, exact hypercharges, and the
+                    On the declared public surface, the Standard Model quotient, exact hypercharges, and the
                     product-group consequence of no gauge-mediated proton decay belong to the recovered core. The
                     particle pages carry the sharper continuation and compare-only bookkeeping.
                 </p>

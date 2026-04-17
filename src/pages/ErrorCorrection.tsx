@@ -11,8 +11,8 @@ export function ErrorCorrectionPage() {
             <p style={{ marginBottom: '16px' }}>
                 One of the most surprising discoveries in theoretical physics: the holographic correspondence
                 between boundary and bulk has the structure of a <strong>quantum error-correcting code</strong>.
-                Spacetime is not just built from entanglement &mdash; it is <em>protected</em> by error correction.
-                The bulk (spacetime) is a logical code space encoded redundantly in the boundary (screen).
+                Spacetime is built from entanglement and <em>protected</em> by error correction. The bulk
+                (spacetime) is a logical code space encoded redundantly in the boundary (screen).
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Classical Error Correction</h3>
@@ -45,8 +45,8 @@ export function ErrorCorrectionPage() {
                 code: it encodes 1 logical qubit into 9 physical qubits and can correct any single-qubit error.
             </p>
             <p style={{ marginBottom: '8px' }}>
-                The key idea: encode the logical qubit |&psi;⟩ = &alpha;|0<sub>L</sub>⟩ + &beta;|1<sub>L</sub>⟩
-                into a code subspace C &sub; H<sup>&otimes;n</sup>:
+                Encode the logical qubit |&psi;⟩ = &alpha;|0<sub>L</sub>⟩ + &beta;|1<sub>L</sub>⟩ into a code
+                subspace C &sub; H<sup>&otimes;n</sup>:
             </p>
             <div className="math-block" style={{ fontSize: '0.9em', lineHeight: '1.8' }}>
                 |0<sub>L</sub>⟩ = (|000⟩ + |111⟩)(|000⟩ + |111⟩)(|000⟩ + |111⟩) / 2&radic;2
@@ -80,7 +80,7 @@ export function ErrorCorrectionPage() {
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The HaPPY Code</h3>
             <p style={{ marginBottom: '16px' }}>
                 Pastawski, Yoshida, Harlow, and Preskill (2015) constructed an explicit holographic error-correcting
-                code using perfect tensors arranged in a hyperbolic tiling &mdash; the <strong>HaPPY code</strong>.
+                code using perfect tensors arranged in a hyperbolic tiling, the <strong>HaPPY code</strong>.
             </p>
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-blue)' }}>
@@ -121,12 +121,12 @@ export function ErrorCorrectionPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Connection to OPH</h3>
             <p style={{ marginBottom: '16px' }}>
-                In OPH, quantum error correction is not an analogy &mdash; it is the mechanism by which the
-                bulk spacetime emerges from the screen:
+                In OPH, quantum error correction is the mechanism by which the bulk spacetime emerges from the
+                screen:
             </p>
             <ul style={{ paddingLeft: '20px', lineHeight: '1.8', marginBottom: '16px' }}>
                 <li><strong>Axiom A4 (Recoverable Generalized Entropy):</strong> The collar recoverability condition is the error-correction ingredient. It says that bulk data in the entanglement wedge of A can be recovered from A alone, up to controlled error.</li>
-                <li><strong>Axiom A4 (Generalized entropy side):</strong> The area term limits the code rate &mdash; how much bulk data can be encoded per unit of boundary area.</li>
+                <li><strong>Axiom A4 (Generalized entropy side):</strong> The area term limits the code rate: how much bulk data can be encoded per unit of boundary area.</li>
                 <li><strong>Axiom A1 (Screen Net):</strong> The isotony condition A(P) &sub; A(Q) for P &sub; Q ensures that the code is consistent across scales.</li>
             </ul>
 

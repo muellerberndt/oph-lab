@@ -29,9 +29,9 @@ export function SeoManager() {
     setMetaContent('meta[property="og:title"]', seo.title);
     setMetaContent('meta[property="og:description"]', seo.description);
     setMetaContent('meta[property="og:url"]', canonical);
-    setMetaContent('meta[property="twitter:title"]', seo.title);
-    setMetaContent('meta[property="twitter:description"]', seo.description);
-    setMetaContent('meta[property="twitter:url"]', canonical);
+    setMetaContent('meta[name="twitter:title"]', seo.title);
+    setMetaContent('meta[name="twitter:description"]', seo.description);
+    setMetaContent('meta[name="twitter:url"]', canonical);
     setCanonicalHref(canonical);
   }, [location.pathname]);
 

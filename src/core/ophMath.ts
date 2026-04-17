@@ -1,20 +1,52 @@
 const E_PLANCK_GEV = 1.22089e19;
-const LIGHT_SPEED = 2.99792458e8;
 const BETA_EW = 4;
 const MZ_REFERENCE_GEV = 91.1876;
-const D11_KAPPA_HT = 16 / 9;
 const D11_Y_T_CORE_MT = 0.92046435;
 const D11_LAMBDA_CORE_MT = 0.13164915;
 const D11_MT_POLE_CORE_GEV = 170.26125;
 const D11_MH_CORE_GEV = 126.62263;
 const D11_D_MT_POLE_D_Y_T = 184.97;
 const D11_D_MH_D_LAMBDA = 480.0;
+const D11_LIVE_ALPHA_T_RESIDUAL_DIVISOR = 28;
+const D11_LIVE_ALPHA_T_ETA8_DIVISOR = 14;
+const D11_LIVE_ALPHA_T_ETA9_DIVISOR = 27;
+const D11_LIVE_ALPHA_H_ETA6_NUMERATOR = 3;
+const D11_LIVE_ALPHA_H_ETA6_DIVISOR = 25;
+const D11_LIVE_ALPHA_H_LAMBDA_DIVISOR = 18;
+const D10_THOMSON_FACTOR = 1.0680423805486379;
+
+export const LIGHT_SPEED_SI = 299792458;
+export const PLANCK_REDUCED_CONSTANT_SI = 1.054571817e-34;
+export const BOLTZMANN_CONSTANT_SI = 1.380649e-23;
+export const GRAVITATIONAL_CONSTANT_REFERENCE_SI = 6.674299995910528e-11;
 
 export const PIXEL_REFERENCE = 1.63094;
 export const SCREEN_CAPACITY_REFERENCE_LOG10 = 122;
+export const PIXEL_UI_MIN = 0.8;
+export const PIXEL_UI_MAX = 3.2;
+export const SCREEN_CAPACITY_UI_MIN = 112;
+export const SCREEN_CAPACITY_UI_MAX = 132;
 export const ALPHA_U_REFERENCE = 0.04112;
 export const LAMBDA_REFERENCE_M2 = 1.09e-52;
 export const EPSILON_Z6 = 1 / 6;
+export const THOMSON_ALPHA_INV_REFERENCE = 137.035999177;
+const QUARK_P_DRIVEN_RHO_REFERENCE = 1.2942849363777058;
+const QUARK_P_DRIVEN_X2_REFERENCE = -0.5175863354681689;
+const QUARK_P_DRIVEN_SIGMA_U_REFERENCE = 5.573928426395543;
+const QUARK_P_DRIVEN_SIGMA_D_REFERENCE = 3.296264198808688;
+const QUARK_P_DRIVEN_ALPHA_U_REFERENCE = 0.04112498041477454;
+const QUARK_P_DRIVEN_ALPHA_EXPONENT_UP = 0.42519503064369524;
+const QUARK_P_DRIVEN_ALPHA_EXPONENT_DOWN = -0.5160176801329136;
+const QUARK_P_DRIVEN_UP_ANCHORS = [
+    { id: 'up', label: 'up', massGeV: 0.00216 },
+    { id: 'charm', label: 'charm', massGeV: 1.273 },
+    { id: 'top', label: 'top', massGeV: 172.3523553288311 },
+] as const;
+const QUARK_P_DRIVEN_DOWN_ANCHORS = [
+    { id: 'down', label: 'down', massGeV: 0.0047 },
+    { id: 'strange', label: 'strange', massGeV: 0.0935 },
+    { id: 'bottom', label: 'bottom', massGeV: 4.183 },
+] as const;
 
 export const BETA_COEFFICIENTS_MSSM_LIKE: [number, number, number] = [33 / 5, 1, -3];
 export const BETA_COEFFICIENTS_SM_1LOOP: [number, number, number] = [41 / 10, -19 / 6, -7];
@@ -89,17 +121,23 @@ export type TargetFreeElectroweakRepairResult = {
     deltaNTreeExact: number;
     alpha2Prime: number;
     alphaYPrime: number;
-    alphaEmInv: number;
-    sin2ThetaW: number;
+    transportAlphaEmInv: number;
+    transportSin2ThetaW: number;
     mWGeV: number;
     mZGeV: number;
     vGeV: number;
 };
 
 export type HiggsTopForwardSeedResult = {
-    alphaY: number;
-    cos2ThetaW0: number;
-    sigmaD11HT: number;
+    betaEW: number;
+    etaSource: number;
+    lambdaEW: number;
+    tau2TreeExact: number;
+    rhoHT: number;
+    piY: number;
+    piLambda: number;
+    topResidual: number;
+    higgsResidual: number;
     deltaYtMt: number;
     deltaLambdaMt: number;
     mHGeV: number;
@@ -120,6 +158,14 @@ export type TextureMassOptions = {
     upExponentShift?: number;
     downExponentShift?: number;
     leptonExponentShift?: number;
+};
+
+export type PDrivenQuarkMassPrediction = {
+    id: string;
+    label: string;
+    sector: 'up' | 'down';
+    massGeV: number;
+    baselineMassGeV: number;
 };
 
 export type NeutrinoMassPrediction = {
@@ -330,8 +376,14 @@ export function unificationScaleFromPixel(pixelConstant: number): number {
     return (E_PLANCK_GEV / Math.exp(2 * Math.PI)) * Math.pow(pixelConstant, 1 / 6);
 }
 
+// Paper reference:
+// reverse-engineering-reality/paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex
+// Gauge reconstruction / local unification discussion and the README local unification summary.
+// This solver keeps the published OPH closure structure used across the lab:
+// unification scale M_U(P), local cell energy E_cell(P), one-loop edge running,
+// and the entropy lock ellbar_SU(2) + ellbar_SU(3) = P / 4.
 export function solveGaugeClosure(pixelConstant: number, options?: GaugeClosureOptions): GaugeClosureResult {
-    const clampedPixel = Math.max(0.8, pixelConstant);
+    const clampedPixel = Math.max(PIXEL_UI_MIN, pixelConstant);
     const betaCoefficients = options?.betaCoefficients ?? BETA_COEFFICIENTS_MSSM_LIKE;
     const su2MaxJ = Math.max(8, Math.min(80, options?.su2MaxJ ?? 30));
     const su3MaxIndex = Math.max(4, Math.min(24, options?.su3MaxIndex ?? 14));
@@ -479,6 +531,15 @@ export function solveGaugeClosure(pixelConstant: number, options?: GaugeClosureO
     };
 }
 
+// Paper reference:
+// reverse-engineering-reality/paper/deriving_the_particle_zoo_from_observer_consistency.tex
+// Target-free source-only electroweak repair surface, including the transported
+// weak and hypercharge pair, the W/Z rows, and the electromagnetic source anchor.
+//
+// The public W/Z rows come from the transported pair (alpha_2', alpha_Y').
+// The Thomson endpoint alpha^-1(0) row uses the Ward-projected source anchor
+// a_0(P) read from the unprimed electroweak family and is computed separately
+// below.
 export function deriveTargetFreeElectroweakRepair(
     closure: Pick<GaugeClosureResult, 'alphaU' | 'alpha1' | 'alpha2' | 'vGeV'>
 ): TargetFreeElectroweakRepairResult {
@@ -512,27 +573,49 @@ export function deriveTargetFreeElectroweakRepair(
         deltaNTreeExact,
         alpha2Prime,
         alphaYPrime,
-        alphaEmInv: alphaSumPrime / (alphaYPrime * alpha2Prime),
-        sin2ThetaW: alphaYPrime / alphaSumPrime,
+        transportAlphaEmInv: alphaSumPrime / (alphaYPrime * alpha2Prime),
+        transportSin2ThetaW: alphaYPrime / alphaSumPrime,
         mWGeV: closure.vGeV * Math.sqrt(Math.PI * alpha2Prime),
         mZGeV: closure.vGeV * Math.sqrt(Math.PI * alphaSumPrime),
         vGeV: closure.vGeV,
     };
 }
 
+// Paper reference:
+// reverse-engineering-reality/paper/deriving_the_particle_zoo_from_observer_consistency.tex
+// Higgs/top critical-stage equations for rho_HT, R_T, R_H, pi_y, pi_lambda,
+// delta y_t(mu_t), and delta lambda(mu_t), around lines 1574-1608.
 export function deriveD11ForwardSeed(
-    closure: Pick<GaugeClosureResult, 'alphaU' | 'alpha1' | 'alpha2'>
+    repair: Pick<TargetFreeElectroweakRepairResult, 'betaEW' | 'etaSource' | 'lambdaEW' | 'tau2TreeExact'>
 ): HiggsTopForwardSeedResult {
-    const alphaY = (3 / 5) * closure.alpha1;
-    const cos2ThetaW0 = (closure.alpha2 - alphaY) / (closure.alpha2 + alphaY);
-    const sigmaD11HT = (closure.alphaU * cos2ThetaW0) / Math.sqrt(Math.PI);
-    const deltaYtMt = sigmaD11HT * D11_Y_T_CORE_MT;
-    const deltaLambdaMt = -D11_KAPPA_HT * sigmaD11HT * D11_LAMBDA_CORE_MT;
+    const rhoHT = Math.log(1 + repair.tau2TreeExact);
+    const topResidual =
+        -repair.tau2TreeExact * repair.etaSource * repair.etaSource +
+        (1 + repair.betaEW / D11_LIVE_ALPHA_T_RESIDUAL_DIVISOR) * Math.pow(repair.etaSource, 6) +
+        Math.pow(repair.etaSource, 8) / D11_LIVE_ALPHA_T_ETA8_DIVISOR +
+        Math.pow(repair.etaSource, 9) / D11_LIVE_ALPHA_T_ETA9_DIVISOR;
+    const higgsResidual =
+        Math.pow(repair.etaSource, 5) -
+        (D11_LIVE_ALPHA_H_ETA6_NUMERATOR / D11_LIVE_ALPHA_H_ETA6_DIVISOR) * Math.pow(repair.etaSource, 6) +
+        (repair.lambdaEW * Math.pow(repair.etaSource, 6)) / D11_LIVE_ALPHA_H_LAMBDA_DIVISOR +
+        Math.pow(repair.etaSource, 8) / (2 * repair.betaEW);
+    const piY =
+        (repair.etaSource + (3 / 2 + repair.betaEW / 4) * rhoHT + topResidual) / Math.sqrt(Math.PI);
+    const piLambda =
+        (repair.etaSource - (4 / 3 - repair.betaEW / 54) * rhoHT + higgsResidual) / Math.sqrt(Math.PI);
+    const deltaYtMt = piY * D11_Y_T_CORE_MT;
+    const deltaLambdaMt = -(16 / 9) * piLambda * D11_LAMBDA_CORE_MT;
 
     return {
-        alphaY,
-        cos2ThetaW0,
-        sigmaD11HT,
+        betaEW: repair.betaEW,
+        etaSource: repair.etaSource,
+        lambdaEW: repair.lambdaEW,
+        tau2TreeExact: repair.tau2TreeExact,
+        rhoHT,
+        piY,
+        piLambda,
+        topResidual,
+        higgsResidual,
         deltaYtMt,
         deltaLambdaMt,
         mHGeV: D11_MH_CORE_GEV + D11_D_MH_D_LAMBDA * deltaLambdaMt,
@@ -540,8 +623,22 @@ export function deriveD11ForwardSeed(
     };
 }
 
+// Paper reference:
+// reverse-engineering-reality/README.md, "Local Unification Surface".
+// The SI readout is G_SI = c^3 a_cell / (hbar P) at fixed microscopic a_cell.
+// Holding a_cell fixed gives the normalized lab form G(P) = G_ref * P_ref / P.
+export function newtonConstantFromPixel(pixelConstant: number): number {
+    return GRAVITATIONAL_CONSTANT_REFERENCE_SI * (PIXEL_REFERENCE / Math.max(pixelConstant, 0.2));
+}
+
+// Paper reference:
+// reverse-engineering-reality/paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex
+// Corollary "Cosmological Constant from Capacity":
+// Lambda = 3 pi / (G N_scr), with N_scr = log dim H_tot on the de Sitter branch.
+// Combining that relation with the fixed-a_cell gravity readout gives the normalized
+// lab form Lambda(P, N_scr) = Lambda_ref * (P / P_ref) * 10^(122 - log10 N_scr).
 export function lambdaFromScreen(pixelConstant: number, logCapacityBase10: number): number {
-    const pixelScale = PIXEL_REFERENCE / Math.max(pixelConstant, 0.2);
+    const pixelScale = Math.max(pixelConstant, 0.2) / PIXEL_REFERENCE;
     const capacityScale = Math.pow(10, SCREEN_CAPACITY_REFERENCE_LOG10 - logCapacityBase10);
     return LAMBDA_REFERENCE_M2 * pixelScale * capacityScale;
 }
@@ -550,7 +647,7 @@ export function hubbleFromLambda(lambdaM2: number): number {
     if (!Number.isFinite(lambdaM2) || lambdaM2 <= 0) {
         return Number.NaN;
     }
-    return LIGHT_SPEED * Math.sqrt(lambdaM2 / 3);
+    return LIGHT_SPEED_SI * Math.sqrt(lambdaM2 / 3);
 }
 
 export function deSitterRadiusFromLambda(lambdaM2: number): number {
@@ -558,6 +655,34 @@ export function deSitterRadiusFromLambda(lambdaM2: number): number {
         return Number.NaN;
     }
     return Math.sqrt(3 / lambdaM2);
+}
+
+export function gibbonsHawkingTemperatureFromHubble(hubblePerSecond: number): number {
+    if (!Number.isFinite(hubblePerSecond) || hubblePerSecond <= 0) {
+        return Number.NaN;
+    }
+    return (PLANCK_REDUCED_CONSTANT_SI * hubblePerSecond) / (2 * Math.PI * BOLTZMANN_CONSTANT_SI);
+}
+
+export function mondAccelerationFromLambda(lambdaM2: number): number {
+    if (!Number.isFinite(lambdaM2) || lambdaM2 <= 0) {
+        return Number.NaN;
+    }
+    return (15 / (8 * Math.PI * Math.PI)) * LIGHT_SPEED_SI * LIGHT_SPEED_SI * Math.sqrt(lambdaM2 / 3);
+}
+
+// Paper reference:
+// reverse-engineering-reality/paper/deriving_the_particle_zoo_from_observer_consistency.tex
+// Ward-projected electromagnetic transport law. The source anchor is
+// a_0(P) = alpha_em^-1(m_Z^2; P),
+// and the Thomson endpoint is alpha_Th^-1(P) = a_0(P) * t_Q(m_Z^2; P) / t_Q(0; P).
+// D10_THOMSON_FACTOR is the canonical Ward-projected transport ratio
+// t_Q(m_Z^2) / t_Q(0) emitted on that public electroweak surface.
+export function thomsonEndpointAlphaInverse(anchorAlphaInverse: number): number {
+    if (!Number.isFinite(anchorAlphaInverse) || anchorAlphaInverse <= 0) {
+        return Number.NaN;
+    }
+    return anchorAlphaInverse * D10_THOMSON_FACTOR;
 }
 
 export function textureMassesFromVev(vGeV: number, options?: TextureMassOptions): TextureMassPrediction[] {
@@ -581,6 +706,110 @@ export function textureMassesFromVev(vGeV: number, options?: TextureMassOptions)
             massGeV: blueprint.coefficient * coefficientScale * baseScale * suppression,
         };
     });
+}
+
+function quarkCandidateSectorMeans(rhoOrd: number, x2: number, sigmaU: number, sigmaD: number) {
+    const sigmaSeed = 0.5 * (sigmaU + sigmaD);
+    const eta = 0.5 * (sigmaU - sigmaD);
+    const meanDenominator = 1 + rhoOrd - x2 * x2;
+    const skewDenominator = 1 - x2 * x2 - (x2 * x2) / (1 + rhoOrd);
+    const aUd = 1 / (2 * meanDenominator);
+    const bUd = 1 / (2 * skewDenominator);
+    return {
+        logShiftU: -(aUd * sigmaSeed - bUd * eta),
+        logShiftD: -(aUd * sigmaSeed + bUd * eta),
+    };
+}
+
+// Paper reference:
+// reverse-engineering-reality/paper/deriving_the_particle_zoo_from_observer_consistency.tex
+//
+// Browser boundary for the moving quark rows:
+// - The public anchor at P = 1.63094 is the exact quark sextet emitted by the
+//   particle codebase on the physical quark frame fixed by P.
+// - Away from that anchor, the browser uses a reduced candidate surface that
+//   carries the affine sector means and centered log package.
+// - The full off-canonical transport shell is not ported into the browser.
+//   That missing shell affects only the moving off-anchor lane. It does not
+//   alter the exact anchor values displayed for our Universe.
+function quarkCandidateEvenLogs(rhoOrd: number, sigmaU: number, sigmaD: number) {
+    const denominator = 3 * (1 + rhoOrd);
+    const vU = [
+        -((2 * rhoOrd) + 1) / denominator,
+        (rhoOrd - 1) / denominator,
+        (rhoOrd + 2) / denominator,
+    ];
+    const vD = [
+        -(rhoOrd + 2) / denominator,
+        (1 - rhoOrd) / denominator,
+        ((2 * rhoOrd) + 1) / denominator,
+    ];
+    return {
+        eULog: vU.map((value) => sigmaU * value),
+        eDLog: vD.map((value) => sigmaD * value),
+    };
+}
+
+export function pDrivenQuarkMassesFromClosure(
+    closure: Pick<GaugeClosureResult, 'alphaU'>
+): PDrivenQuarkMassPrediction[] {
+    // The browser quark surface combines two pieces:
+    // exact public masses at the anchor point and reduced candidate motion away
+    // from that point. The full transport shell is separate from this browser
+    // evaluator.
+    const alphaRatio = Math.max(closure.alphaU, 1.0e-12) / QUARK_P_DRIVEN_ALPHA_U_REFERENCE;
+    const sigmaU = QUARK_P_DRIVEN_SIGMA_U_REFERENCE * Math.pow(alphaRatio, QUARK_P_DRIVEN_ALPHA_EXPONENT_UP);
+    const sigmaD = QUARK_P_DRIVEN_SIGMA_D_REFERENCE * Math.pow(alphaRatio, QUARK_P_DRIVEN_ALPHA_EXPONENT_DOWN);
+
+    const baselineMeans = quarkCandidateSectorMeans(
+        QUARK_P_DRIVEN_RHO_REFERENCE,
+        QUARK_P_DRIVEN_X2_REFERENCE,
+        QUARK_P_DRIVEN_SIGMA_U_REFERENCE,
+        QUARK_P_DRIVEN_SIGMA_D_REFERENCE
+    );
+    const baselineLogs = quarkCandidateEvenLogs(
+        QUARK_P_DRIVEN_RHO_REFERENCE,
+        QUARK_P_DRIVEN_SIGMA_U_REFERENCE,
+        QUARK_P_DRIVEN_SIGMA_D_REFERENCE
+    );
+    const currentMeans = quarkCandidateSectorMeans(
+        QUARK_P_DRIVEN_RHO_REFERENCE,
+        QUARK_P_DRIVEN_X2_REFERENCE,
+        sigmaU,
+        sigmaD
+    );
+    const currentLogs = quarkCandidateEvenLogs(
+        QUARK_P_DRIVEN_RHO_REFERENCE,
+        sigmaU,
+        sigmaD
+    );
+
+    return [
+        ...QUARK_P_DRIVEN_UP_ANCHORS.map((anchor, index) => ({
+            id: anchor.id,
+            label: anchor.label,
+            sector: 'up' as const,
+            baselineMassGeV: anchor.massGeV,
+            massGeV:
+                anchor.massGeV *
+                Math.exp(
+                    (currentMeans.logShiftU - baselineMeans.logShiftU) +
+                    (currentLogs.eULog[index] - baselineLogs.eULog[index])
+                ),
+        })),
+        ...QUARK_P_DRIVEN_DOWN_ANCHORS.map((anchor, index) => ({
+            id: anchor.id,
+            label: anchor.label,
+            sector: 'down' as const,
+            baselineMassGeV: anchor.massGeV,
+            massGeV:
+                anchor.massGeV *
+                Math.exp(
+                    (currentMeans.logShiftD - baselineMeans.logShiftD) +
+                    (currentLogs.eDLog[index] - baselineLogs.eDLog[index])
+                ),
+        })),
+    ];
 }
 
 export function neutrinoMassesFromScreen(logCapacityBase10: number, pixelConstant: number): NeutrinoMassPrediction {

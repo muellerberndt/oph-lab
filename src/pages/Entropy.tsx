@@ -39,14 +39,13 @@ export function EntropyPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 Entropy is the central concept in OPH. It measures <strong>how much an observer doesn't know</strong> about
-                a system given what they do know. It is not a property of the system itself, but of an observer's
-                relationship to the system. This observer-relative character is exactly what OPH elevates to a foundational
-                principle.
+                a system given what they do know. It belongs to an observer's relationship to the system. This
+                observer-relative character is exactly what OPH elevates to a foundational principle.
             </p>
             <p style={{ marginBottom: '16px' }}>
                 Three notions of entropy converge in OPH: Shannon entropy (information theory), von Neumann entropy
-                (quantum mechanics), and Bekenstein-Hawking entropy (black holes). Their deep unity is not a coincidence
-                &mdash; it is a consequence of reality being fundamentally informational.
+                (quantum mechanics), and Bekenstein-Hawking entropy (black holes). Their unity follows from a
+                fundamentally informational description of reality.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Shannon Entropy</h3>
@@ -58,7 +57,7 @@ export function EntropyPage() {
                 H = &minus;&sum;<sub>i</sub> p<sub>i</sub> log<sub>2</sub> p<sub>i</sub>
             </div>
             <p style={{ marginBottom: '16px' }}>
-                Maximum entropy (H = log<sub>2</sub> n) occurs when all outcomes are equally likely &mdash; the state of
+                Maximum entropy (H = log<sub>2</sub> n) occurs when all outcomes are equally likely, the state of
                 maximum ignorance. This is the key insight behind the <strong>local MaxEnt branch</strong> of Axiom A3:
                 given a fixed local constraint family, one selects the entropy-maximizing state on that branch.
             </p>
@@ -73,7 +72,7 @@ export function EntropyPage() {
             <p style={{ marginBottom: '16px' }}>
                 For a pure state, S = 0 (no ignorance). For a maximally mixed state on a d-dimensional Hilbert space,
                 S = ln d. Crucially, for a bipartite pure state |&psi;⟩<sub>AB</sub>, the reduced states &rho;<sub>A</sub> and
-                &rho;<sub>B</sub> have equal von Neumann entropy &mdash; this is <strong>entanglement entropy</strong>, and
+                &rho;<sub>B</sub> have equal von Neumann entropy. This is <strong>entanglement entropy</strong>, and
                 it is the bridge between quantum information and geometry.
             </p>
 
@@ -90,9 +89,8 @@ export function EntropyPage() {
                 is the Planck length. This says a black hole of area A can store at most A/(4l<sub>P</sub>&sup2;) nats of information.
             </p>
             <p style={{ marginBottom: '24px' }}>
-                In OPH, this is not a quirky fact about black holes. It is <strong>Axiom A3</strong>: the information
-                capacity of any region is bounded by its boundary area in Planck units. The universe is a hologram.
-                Area, not volume, sets the information budget.
+                In OPH, this is <strong>Axiom A3</strong>: the information capacity of any region is bounded by its
+                boundary area in Planck units. The universe is a hologram. Area sets the information budget.
             </p>
 
             <div className="demo-container">
@@ -193,22 +191,22 @@ export function EntropyPage() {
                 </p>
                 <p>
                     It means that the number of fundamental degrees of freedom in a region of space is not
-                    proportional to the volume but to the surface area. The "bulk" &mdash; the interior spacetime
-                    &mdash; is an effective description, not fundamental. The fundamental description lives on the
+                    proportional to the volume but to the surface area. The "bulk", the interior spacetime,
+                    is an effective description, not fundamental. The fundamental description lives on the
                     boundary.
                 </p>
                 <p>
-                    In OPH, this is not a surprise. The screen S&sup2; <em>is</em> the fundamental arena. Everything
-                    "inside" is emergent. Area scaling is the starting point, not a result to be derived.
+                    In OPH, the screen S&sup2; <em>is</em> the fundamental arena. Everything "inside" is emergent.
+                    Area scaling belongs to the starting axioms.
                 </p>
             </Explainer>
 
             <Explainer title="MaxEnt and the typicality argument">
                 <p>
                     The Maximum Entropy principle on the A3 branch says: given only local constraints, the state that
-                    maximizes von Neumann entropy is selected. This is not a dynamical statement but an epistemic one:
-                    MaxEnt states are overwhelmingly typical. Almost all states compatible with the constraints look
-                    like the MaxEnt state.
+                    maximizes von Neumann entropy is selected. This is an epistemic statement: MaxEnt states are
+                    overwhelmingly typical. Almost all states compatible with the constraints look like the MaxEnt
+                    state.
                 </p>
                 <p>
                     In OPH, MaxEnt combined with recoverable generalized entropy is one engine that drives the

@@ -3,6 +3,10 @@ import { Explainer } from '../components/Explainer';
 import { GRAVITY_SURFACE } from '../content/paperSurface';
 import {
     PIXEL_REFERENCE,
+    PIXEL_UI_MAX,
+    PIXEL_UI_MIN,
+    SCREEN_CAPACITY_UI_MAX,
+    SCREEN_CAPACITY_UI_MIN,
     deSitterRadiusFromLambda,
     lambdaFromScreen,
 } from '../core/ophMath';
@@ -25,7 +29,7 @@ export function GravityPage() {
     const { resetKeys } = useLabState();
 
     const derivation = useMemo(() => {
-        const gRatio = pixelConstant / PIXEL_REFERENCE;
+        const gRatio = PIXEL_REFERENCE / pixelConstant;
         const lambda = lambdaFromScreen(pixelConstant, logCapacity);
         const deSitterRadius = deSitterRadiusFromLambda(lambda);
 
@@ -98,7 +102,7 @@ export function GravityPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This simulator visualizes the current conditional gravity branch: local null-modular data and
+                This simulator visualizes the declared conditional gravity branch: local null-modular data and
                 generalized-entropy stationarity yield the rest-frame Einstein relation on the stated BW/null-stress
                 assumptions, and global screen capacity fixes the separate Lambda branch.
             </p>
@@ -125,8 +129,8 @@ export function GravityPage() {
                         </div>
                         <input
                             type="range"
-                            min="1.1"
-                            max="2.2"
+                            min={PIXEL_UI_MIN}
+                            max={PIXEL_UI_MAX}
                             step="0.01"
                             value={pixelConstant}
                             onChange={event => setPixelConstant(Number(event.target.value))}
@@ -140,8 +144,8 @@ export function GravityPage() {
                         </div>
                         <input
                             type="range"
-                            min="118"
-                            max="126"
+                            min={SCREEN_CAPACITY_UI_MIN}
+                            max={SCREEN_CAPACITY_UI_MAX}
                             step="0.1"
                             value={logCapacity}
                             onChange={event => setLogCapacity(Number(event.target.value))}
@@ -318,12 +322,12 @@ export function GravityPage() {
             <Explainer title="How P and log(dim H) enter">
                 <p>
                     P changes the effective gravitational and entropy scales in this toy readout. The screen capacity
-                    log(dim H_tot) changes only the global Lambda completion. This split matches the current OPH paper
+                    log(dim H_tot) changes only the global Lambda completion. This split matches the declared OPH paper
                     surface, where the local gravity branch and the cosmological-capacity branch are distinct.
                 </p>
             </Explainer>
 
-            <Explainer title="What remains open">
+            <Explainer title="What is open">
                 <div style={{ display: 'grid', gap: '10px' }}>
                     {GRAVITY_SURFACE.slice(2).map((item) => (
                         <p key={item} style={{ margin: 0 }}>

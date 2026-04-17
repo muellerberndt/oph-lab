@@ -21,8 +21,8 @@ export function ConsensusProtocolPage() {
 
             <p style={{ marginBottom: '24px' }}>
                 On the fixed-cutoff collar branch, OPH turns that statement into a finite patch-net theorem package.
-                The repair step is not an abstract rewrite rule. It is read from exact Markov splice or a declared
-                recoverability channel and then accepted only when it improves overlap fit on the touched interfaces.
+                The repair step is read from exact Markov splice or a declared recoverability channel and then
+                accepted only when it improves overlap fit on the touched interfaces.
             </p>
 
             <div style={{ display: 'grid', gap: '12px', marginBottom: '24px' }}>
@@ -54,8 +54,8 @@ export function ConsensusProtocolPage() {
                 <div className="card" style={{ borderLeft: '3px solid var(--accent-gold)' }}>
                     <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-gold)' }}>Holonomy obstruction</h4>
                     <p style={{ margin: 0, fontSize: '0.82em', color: 'var(--text-secondary)' }}>
-                        Pairwise agreement is not enough. A cycle can still carry a global inconsistency, which the
-                        paper packages as an abelian or higher-gauge holonomy defect.
+                        Pairwise agreement can leave a global inconsistency around a cycle, which the paper
+                        packages as an abelian or higher-gauge holonomy defect.
                     </p>
                 </div>
             </div>
@@ -68,18 +68,18 @@ export function ConsensusProtocolPage() {
                 </p>
                 <p>
                     This is also where stable records enter the formal story. The paper makes those records explicit on
-                    a fixed-cutoff algebra rather than leaving them as philosophical placeholders.
+                    a fixed-cutoff algebra.
                 </p>
             </Explainer>
 
-            <Explainer title="What the paper does not claim">
+            <Explainer title="Scope">
                 <p>
-                    It does not claim that the final microscopic repair law is already unique on every branch. Repair
-                    completeness is still a declared input for the main convergence theorem.
+                    Repair completeness is a declared input for the main convergence theorem. The paper does not
+                    single out one microscopic repair law on every branch.
                 </p>
                 <p>
-                    It also keeps law-space selection in a meta-model box. The paper is not asking readers to accept a
-                    literal cosmological Darwinism story in place of the finite patch-net theorem package.
+                    Law-space selection stays in a meta-model box. The finite patch-net theorem package carries the
+                    main claim.
                 </p>
             </Explainer>
         </div>

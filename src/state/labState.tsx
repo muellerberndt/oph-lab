@@ -7,9 +7,11 @@ import {
     deSitterRadiusFromLambda,
     estimateHadronMassesFromQcdScale,
     estimateQcdScaleGeV,
+    gibbonsHawkingTemperatureFromHubble,
     hubbleFromLambda,
     lambdaFromScreen,
     neutrinoMassesFromScreen,
+    newtonConstantFromPixel,
     solveGaugeClosure,
     textureMassesFromVev,
 } from '../core/ophMath';
@@ -79,6 +81,9 @@ export type LabSettingMap = {
     'entanglement.numTrials': number;
     'entanglementGeometry.bonds': EntanglementBond[];
 
+    'landing.pixelConstant': number;
+    'landing.logCapacity': number;
+
     'deSitter.logDimH': number;
     'darkMatter.logMass': number;
     'darkMatter.a0Multiplier': number;
@@ -127,6 +132,9 @@ export const LAB_DEFAULT_SETTINGS: LabSettingMap = {
     'entropy.probs': [0.25, 0.25, 0.25, 0.25],
     'entanglement.numTrials': 100,
     'entanglementGeometry.bonds': DEFAULT_BONDS.map(bond => ({ ...bond })),
+
+    'landing.pixelConstant': PIXEL_REFERENCE,
+    'landing.logCapacity': SCREEN_CAPACITY_REFERENCE_LOG10,
 
     'deSitter.logDimH': 122,
     'darkMatter.logMass': 11,
@@ -256,14 +264,10 @@ function toLabExport(settings: LabSettingMap): LabExportPayload {
     });
 
     const deSitterLogDimH = settings['deSitter.logDimH'];
-    const G = 6.674e-11;
-    const c = 3e8;
-    const hbar = 1.055e-34;
-    const kB = 1.381e-23;
-    const deSitterLambda = 3 * Math.PI / (G * Math.pow(10, deSitterLogDimH));
-    const deSitterH = Math.sqrt(deSitterLambda * c * c / 3);
-    const deSitterT = (hbar * deSitterH) / (2 * Math.PI * kB);
-    const deSitterRadius = c / deSitterH;
+    const deSitterLambda = lambdaFromScreen(PIXEL_REFERENCE, deSitterLogDimH);
+    const deSitterH = hubbleFromLambda(deSitterLambda);
+    const deSitterT = gibbonsHawkingTemperatureFromHubble(deSitterH);
+    const deSitterRadius = deSitterRadiusFromLambda(deSitterLambda);
 
     const darkMatterA0 = 1.03e-10 * settings['darkMatter.a0Multiplier'];
     const entropyProbs = settings['entropy.probs'];
@@ -283,7 +287,8 @@ function toLabExport(settings: LabSettingMap): LabExportPayload {
             lambda: gravityLambda,
             deSitterRadius: gravityDeSitterRadius,
             hubble: gravityHubble,
-            gRatio: gravityPixel / PIXEL_REFERENCE,
+            gSi: newtonConstantFromPixel(gravityPixel),
+            gRatio: PIXEL_REFERENCE / gravityPixel,
         },
         masses: {
             alphaU: massesClosure.alphaU,
