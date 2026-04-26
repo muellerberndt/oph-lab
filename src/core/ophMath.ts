@@ -13,7 +13,6 @@ const D11_LIVE_ALPHA_T_ETA9_DIVISOR = 27;
 const D11_LIVE_ALPHA_H_ETA6_NUMERATOR = 3;
 const D11_LIVE_ALPHA_H_ETA6_DIVISOR = 25;
 const D11_LIVE_ALPHA_H_LAMBDA_DIVISOR = 18;
-const D10_THOMSON_FACTOR = 1.0680423805486379;
 
 export const LIGHT_SPEED_SI = 299792458;
 export const PLANCK_REDUCED_CONSTANT_SI = 1.054571817e-34;
@@ -29,7 +28,6 @@ export const SCREEN_CAPACITY_UI_MAX = 132;
 export const ALPHA_U_REFERENCE = 0.04112;
 export const LAMBDA_REFERENCE_M2 = 1.09e-52;
 export const EPSILON_Z6 = 1 / 6;
-export const THOMSON_ALPHA_INV_REFERENCE = 137.035999177;
 const QUARK_P_DRIVEN_RHO_REFERENCE = 1.2942849363777058;
 const QUARK_P_DRIVEN_X2_REFERENCE = -0.5175863354681689;
 const QUARK_P_DRIVEN_SIGMA_U_REFERENCE = 5.573928426395543;
@@ -537,9 +535,8 @@ export function solveGaugeClosure(pixelConstant: number, options?: GaugeClosureO
 // weak and hypercharge pair, the W/Z rows, and the electromagnetic source anchor.
 //
 // The public W/Z rows come from the transported pair (alpha_2', alpha_Y').
-// The Thomson endpoint alpha^-1(0) row uses the Ward-projected source anchor
-// a_0(P) read from the unprimed electroweak family and is computed separately
-// below.
+// The Thomson endpoint alpha^-1(0) row is intentionally not emitted here until
+// the zero-momentum source-transport factor is closed on the app surface.
 export function deriveTargetFreeElectroweakRepair(
     closure: Pick<GaugeClosureResult, 'alphaU' | 'alpha1' | 'alpha2' | 'vGeV'>
 ): TargetFreeElectroweakRepairResult {
@@ -676,13 +673,12 @@ export function mondAccelerationFromLambda(lambdaM2: number): number {
 // Ward-projected electromagnetic transport law. The source anchor is
 // a_0(P) = alpha_em^-1(m_Z^2; P),
 // and the Thomson endpoint is alpha_Th^-1(P) = a_0(P) * t_Q(m_Z^2; P) / t_Q(0; P).
-// D10_THOMSON_FACTOR is the canonical Ward-projected transport ratio
-// t_Q(m_Z^2) / t_Q(0) emitted on that public electroweak surface.
+// The zero-momentum transport factor is not yet emitted on this app surface.
 export function thomsonEndpointAlphaInverse(anchorAlphaInverse: number): number {
     if (!Number.isFinite(anchorAlphaInverse) || anchorAlphaInverse <= 0) {
         return Number.NaN;
     }
-    return anchorAlphaInverse * D10_THOMSON_FACTOR;
+    return Number.NaN;
 }
 
 export function textureMassesFromVev(vGeV: number, options?: TextureMassOptions): TextureMassPrediction[] {

@@ -9,7 +9,6 @@ import {
     SCREEN_CAPACITY_REFERENCE_LOG10,
     SCREEN_CAPACITY_UI_MAX,
     SCREEN_CAPACITY_UI_MIN,
-    THOMSON_ALPHA_INV_REFERENCE,
     deriveD11ForwardSeed,
     deriveTargetFreeElectroweakRepair,
     hubbleFromLambda,
@@ -109,8 +108,8 @@ export function Home() {
 
     const liveSurface = useMemo(() => {
         // Paper references:
-        // - particle paper: electroweak repair, Ward-projected Thomson endpoint,
-        //   and source-only Higgs split.
+        // - particle paper: electroweak repair, pending Ward-projected Thomson
+        //   endpoint, and source-only Higgs split.
         // - compact paper + README local unification surface: G(P) and Lambda = 3 pi / (G N_scr).
         const closure = solveGaugeClosure(pixelConstant, CANONICAL_GAUGE_OPTIONS);
         const electroweakRepair = deriveTargetFreeElectroweakRepair(closure);
@@ -129,7 +128,7 @@ export function Home() {
             newtonConstant,
             lambda,
             hubble,
-            thomsonAlphaInv: Math.abs(pixelConstant - PIXEL_REFERENCE) < 1e-12 ? THOMSON_ALPHA_INV_REFERENCE : thomsonAlphaInv,
+            thomsonAlphaInv,
         };
     }, [logCapacity, pixelConstant]);
 
@@ -140,6 +139,9 @@ export function Home() {
         const newtonConstant = newtonConstantFromPixel(PIXEL_REFERENCE);
         const lambda = lambdaFromScreen(PIXEL_REFERENCE, SCREEN_CAPACITY_REFERENCE_LOG10);
         const hubble = hubbleFromLambda(lambda);
+        const thomsonAlphaInv = Number.isFinite(closure.alphaEm) && closure.alphaEm > 0
+            ? thomsonEndpointAlphaInverse(1 / closure.alphaEm)
+            : Number.NaN;
 
         return {
             closure,
@@ -148,7 +150,7 @@ export function Home() {
             newtonConstant,
             lambda,
             hubble,
-            thomsonAlphaInv: THOMSON_ALPHA_INV_REFERENCE,
+            thomsonAlphaInv,
         };
     }, []);
 
@@ -185,7 +187,7 @@ export function Home() {
             value: liveSurface.thomsonAlphaInv,
             baseline: canonicalSurface.thomsonAlphaInv,
             unit: '',
-            note: 'Ward-projected U(1)_Q transport readout at the Thomson endpoint.',
+            note: 'Thomson endpoint pending source transport; external metrology remains compare-only. A pending hardware note reports a corroborating optical-cavity check.',
             format: (value) => formatFixed(value, 9),
         },
         {
@@ -359,7 +361,7 @@ export function Home() {
             {renderCompactSurfaceBoard(surfaceBoardRows)}
             <p className="landing-surface-note">
                 This board combines the local unification readouts <strong>G(P)</strong> and <strong>Lambda = 3pi / (G N_scr)</strong>,
-                the electroweak repair, the Ward-projected Thomson endpoint, the Higgs split, and the
+                the electroweak repair, the pending Ward-projected Thomson endpoint, the Higgs split, and the
                 quark mass surface used in the lab runtime.
             </p>
             <section className="card landing-links-card">
