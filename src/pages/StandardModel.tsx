@@ -397,7 +397,8 @@ export function StandardModelPage() {
 
             <Explainer title="Page Scope">
                 <p>
-                    This page tracks the recovered gauge quotient and counting chain. Full flavor closure, hadron
+                    This page tracks the recovered gauge quotient, exact hypercharges, realized color triplet, and
+                    generation count. Full flavor closure, hadron
                     phenomenology, and downstream matter-sector theorem objects sit on separate pages.
                 </p>
                 <p>

@@ -44,8 +44,8 @@ This section is the lab-maintainer summary of the current public paper surface.
 
 - The compact gauge route to the realized Standard Model quotient
   `SU(3) x SU(2) x U(1) / Z_6` is part of the recovered structural core.
-- The exact hypercharge lattice and the realized counting chain
-  `N_g = 3`, `N_c = 3` are on the current paper-facing structural surface.
+- The exact hypercharge lattice, realized color triplet `N_c = 3`, and
+  generation count `N_g = 3` are on the paper-facing structural surface.
 - The sharp exclusion on this surface is `no gauge-mediated proton decay`.
 
 ### Particle branch
