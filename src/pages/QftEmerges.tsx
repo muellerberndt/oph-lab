@@ -10,14 +10,14 @@ export function QftEmergesPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This is the <strong>synthesis page for Chain 2</strong>. It traces the derivation from the
-                five-axiom OPH ledger plus theorem-local technical premises to the structural Standard Model branch and
+                This is the <strong>synthesis page for Chain 2</strong>. It traces the reconstruction from the
+                quantum-algebraic OPH ledger plus theorem-local technical premises to the structural Standard Model branch and
                 several downstream matter-sector continuations. Quantum field theory appears here as an
                 <strong>emergent effective description</strong> that arises from the screen algebra in the appropriate limits.
             </p>
 
             <div className="math-block" style={{ fontSize: '0.95em', lineHeight: '2.2' }}>
-                A1-A4 + R0 + R1 + T1 + MAR + T4-T6 &rarr; QM + Gauge-as-Gluing &rarr;
+                quantum-algebraic screen + A1-A4 + R0 + R1 + T1 + MAR + T4-T6 &rarr; Gauge-as-Gluing &rarr;
                 [SU(3)&times;SU(2)&times;U(1)]/Z6, N_c=3, N_g=3 &rarr; Structural SM + Continuation Lanes
             </div>
 
@@ -45,14 +45,14 @@ export function QftEmergesPage() {
                 {[
                     {
                         step: '1',
-                        title: 'Quantum mechanics from overlap consistency',
-                        detail: 'Axiom A2 + Gleason\'s theorem \u2192 Born rule. Complex Hilbert spaces from Conf\u207a(S\u00b2). "Collapse" = belief updating.',
+                        title: 'Quantum mechanics as effective algebraic description',
+                        detail: 'Patch algebras, states, trace/Born event probabilities, and record updating belong to the current OPH working basis.',
                         color: 'var(--accent-blue)',
                     },
                     {
                         step: '2',
                         title: 'Entanglement structure',
-                        detail: 'Bell inequality violation, Tsirelson bound 2\u221a2, monogamy of entanglement. All derived from complex Hilbert space structure.',
+                        detail: 'Bell inequality violation, Tsirelson bound 2\u221a2, and monogamy of entanglement hold within the supplied complex Hilbert-space setting.',
                         color: 'var(--accent-blue)',
                     },
                     {
@@ -120,14 +120,14 @@ export function QftEmergesPage() {
                 ))}
             </div>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>What Chain 2 Derives</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>What Chain 2 Uses and Derives</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '24px' }}>
                 <div style={{ padding: '12px', background: 'rgba(122, 184, 212, 0.1)', border: '1px solid rgba(122, 184, 212, 0.3)', fontSize: '0.85em' }}>
                     <div style={{ color: 'var(--accent-blue)', fontWeight: 600, marginBottom: '4px' }}>Structural outputs</div>
                     <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8' }}>
-                        <li>Complex Hilbert space structure</li>
-                        <li>Born rule (probability = |amplitude|&sup2;)</li>
-                        <li>Measurement as belief updating</li>
+                        <li>Patch operator algebras and states as the starting language</li>
+                        <li>Born/trace event probabilities on declared record algebras</li>
+                        <li>Measurement as local record updating</li>
                         <li>Bell inequality violation</li>
                         <li>Tsirelson bound (2&radic;2)</li>
                         <li>Compact gauge groups</li>
@@ -166,7 +166,7 @@ export function QftEmergesPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>QFT as Continuum Limit</h3>
             <p style={{ marginBottom: '16px' }}>
-                Quantum field theory is the <strong>continuum limit</strong> of the screen algebra when:
+                Quantum field theory is an <strong>effective continuum limit</strong> of the screen algebra when:
             </p>
             <ul style={{ paddingLeft: '20px', lineHeight: '1.8', marginBottom: '16px' }}>
                 <li>The number of pixels is large (N &sim; 10<sup>122</sup>)</li>
@@ -174,7 +174,7 @@ export function QftEmergesPage() {
                 <li>The observables are "coarse-grained" over many pixels</li>
             </ul>
             <p style={{ marginBottom: '16px' }}>
-                In this limit, the discrete screen algebra smooths out into a local quantum field theory on
+                In this limit, the screen algebra is modeled by a local quantum field theory on
                 the emergent 3+1D spacetime. The Wightman axioms (locality, Poincar&eacute; covariance, spectral
                 condition) are satisfied in this limit. OPH recovers QFT on this surface.
             </p>

@@ -97,9 +97,9 @@ const routeMeta = {
       'Follow how classical physics emerges as an effective description of deeper observer-patch dynamics.',
   },
   'quantum-mechanics': {
-    title: 'Why Quantum Mechanics? Deriving the Born Rule from First Principles | OPH Lab',
+    title: 'Quantum Mechanics in OPH | Algebraic Boundary and Record Probabilities | OPH Lab',
     description:
-      'Inspect the OPH argument that quantum mechanics arises from overlap consistency across observers.',
+      'Inspect the OPH claim boundary: quantum mechanics is treated as an effective algebraic description, not as a completed pre-quantum derivation.',
   },
   entanglement: {
     title: 'Bell\'s Theorem & Quantum Entanglement - Interactive Simulator | OPH Lab',

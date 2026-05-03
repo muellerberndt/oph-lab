@@ -74,7 +74,7 @@ export const WALKTHROUGH_STEPS: WalkthroughStep[] = [
     { to: '/classical-physics/', icon: Orbit, label: 'Classical Physics Emerges', part: 'chain1-gr', seoTitle: 'How Classical Physics Emerges from Quantum Gravity' },
 
     // Chain 2: Axioms -> QFT
-    { to: '/quantum-mechanics/', icon: Atom, label: 'QM from Consistency', part: 'chain2-qft', seoTitle: 'Why Quantum Mechanics? Deriving the Born Rule from First Principles' },
+    { to: '/quantum-mechanics/', icon: Atom, label: 'QM in OPH', part: 'chain2-qft', seoTitle: 'Quantum Mechanics in OPH | Algebraic Boundary and Record Probabilities' },
     { to: '/entanglement/', icon: Zap, label: 'Bell & Entanglement', part: 'chain2-qft', seoTitle: 'Bell\u2019s Theorem & Quantum Entanglement | Interactive Simulator' },
     { to: '/error-correction/', icon: Lock, label: 'Quantum Error Correction', part: 'chain2-qft', seoTitle: 'Spacetime as Quantum Error Correcting Code | HaPPY Code Explained' },
     { to: '/gauge-symmetry/', icon: Layers, label: 'Gauge from Gluing', part: 'chain2-qft', seoTitle: 'Origin of Gauge Symmetry | Why SU(3)\u00d7SU(2)\u00d7U(1)?' },

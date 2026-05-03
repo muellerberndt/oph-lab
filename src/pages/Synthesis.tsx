@@ -132,8 +132,9 @@ export function SynthesisPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>What OPH Unifies</h3>
             <p style={{ marginBottom: '16px' }}>
-                The deepest achievement of OPH is the <strong>unification of gravity and quantum mechanics</strong>.
-                In the standard picture, these are separate theories with incompatible foundations:
+                The deepest achievement of OPH is a shared quantum-algebraic observer-patch architecture for
+                gravity, gauge structure, and the effective quantum description. In the standard picture, these
+                are separate theories with incompatible foundations:
             </p>
 
             <div className="card" style={{ marginBottom: '24px' }}>
@@ -142,7 +143,7 @@ export function SynthesisPage() {
                         <div style={{ color: 'var(--accent-rose)', fontWeight: 600, marginBottom: '4px' }}>Standard Picture</div>
                         <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8', color: 'var(--text-secondary)' }}>
                             <li>GR = smooth geometry</li>
-                            <li>QM = Hilbert space</li>
+                            <li>QM = Hilbert-space formalism</li>
                             <li>Incompatible at Planck scale</li>
                             <li>25+ free parameters</li>
                         </ul>

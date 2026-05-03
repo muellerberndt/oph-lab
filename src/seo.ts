@@ -25,7 +25,7 @@ const ROUTE_DESCRIPTIONS: Record<string, string> = {
   '/de-sitter': 'Explore the OPH treatment of de Sitter space, cosmological horizons, and the cosmological constant problem.',
   '/dark-matter': 'Review the OPH discussion of dark-matter-style phenomena, galaxy rotation curves, and MOND-like behavior.',
   '/classical-physics': 'Follow how classical physics emerges as an effective description of deeper observer-patch dynamics.',
-  '/quantum-mechanics': 'Inspect the OPH argument that quantum mechanics arises from overlap consistency across observers.',
+  '/quantum-mechanics': 'Inspect the OPH claim boundary: quantum mechanics is treated as an effective algebraic description, not as a completed pre-quantum derivation.',
   '/entanglement': 'Use the entanglement lesson to connect Bell-style correlations and OPH’s observer-consistency story.',
   '/error-correction': 'Learn how quantum error correction ideas fit into the OPH account of spacetime and holography.',
   '/gauge-symmetry': 'See how gauge symmetry is framed as a gluing phenomenon in the OPH reconstruction.',

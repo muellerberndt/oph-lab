@@ -5,32 +5,34 @@ export function QuantumMechanicsPage() {
         <div>
             <div className="section-header">
                 <span className="section-tag qft">Chain 2: QFT</span>
-                <h1 style={{ fontSize: '1.5rem', margin: 0 }}>Quantum Mechanics Emerges</h1>
+                <h1 style={{ fontSize: '1.5rem', margin: 0 }}>Quantum Mechanics in OPH</h1>
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This is the <strong>key page of Chain 2</strong>. Quantum mechanics <em>emerges</em> from the
-                requirement that overlapping observer patches give consistent descriptions. The Hilbert space
-                structure, Born rule, and "collapse" are derived from that requirement.
+                This page states the current claim boundary for Chain 2. OPH does not claim to derive
+                quantum mechanics from pre-quantum primitives. The present ledger starts from a
+                quantum-algebraic screen: patch algebras, states, trace/Born event probabilities on
+                declared record surfaces, and generalized entropy.
             </p>
             <p style={{ marginBottom: '24px' }}>
-                The punchline: <strong>quantum mechanics is the unique probability theory compatible with
-                observer patch consistency</strong>.
+                The punchline: <strong>quantum mechanics is one effective algebraic description carried by
+                a deeper observer-patch architecture</strong>.
             </p>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Step 1: Why Complex Hilbert Spaces?</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Step 1: The Quantum-Algebraic Starting Point</h3>
             <p style={{ marginBottom: '16px' }}>
                 Axiom A1 assigns a von Neumann algebra A(P) to each patch P. Von Neumann algebras act on
-                Hilbert spaces over ℂ (the complex numbers). But why complex, not real or quaternionic?
+                Hilbert spaces, and the current OPH papers use that algebraic operator language as part of
+                the formalism.
             </p>
             <p style={{ marginBottom: '16px' }}>
-                The answer comes from the screen S&sup2; and its conformal structure. The sphere S&sup2; = ℂP&sup1;
-                is a complex manifold. The group PSL(2,ℂ) acts by M&ouml;bius transformations. The natural
-                representation theory of this group requires complex Hilbert spaces. Real Hilbert spaces would
-                not support the conformal structure of the screen; quaternionic spaces would over-constrain it.
+                The screen S&sup2; and its conformal structure explain why the complex operator language is
+                natural for the OPH reconstruction. They do not, by themselves, complete a derivation of
+                Hilbert, C*- or von Neumann algebra structure from non-quantum records. That stronger target
+                belongs to a separate OPH-QM program.
             </p>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Step 2: The Born Rule from Uniqueness</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Step 2: Born Probabilities on the Record Surface</h3>
             <p style={{ marginBottom: '8px' }}>
                 Given a quantum state &rho; and an observable A, the Born rule says the expectation value is:
             </p>
@@ -38,8 +40,9 @@ export function QuantumMechanicsPage() {
                 ⟨A⟩ = Tr(&rho; A)
             </div>
             <p style={{ marginBottom: '16px' }}>
-                The OPH paper surface derives this rule through Gleason's theorem (1957): if the probability
-                assignment p: (projections) &rarr; [0,1] is
+                The OPH paper surface uses this rule on declared finite operator and record algebras. Gleason's
+                theorem (1957) explains why, once the projection structure is supplied, a probability
+                assignment p: (projections) &rarr; [0,1] with these properties is forced into trace form:
             </p>
             <ul style={{ paddingLeft: '20px', lineHeight: '1.8', marginBottom: '16px' }}>
                 <li><strong>Non-contextual</strong>: the probability of an outcome does not depend on which other observables are measured simultaneously</li>
@@ -48,14 +51,13 @@ export function QuantumMechanicsPage() {
             </ul>
             <p style={{ marginBottom: '16px' }}>
                 then the only consistent assignment is p(P) = Tr(&rho;P) for some density matrix &rho;. The Born
-                rule is the unique probability rule compatible with the algebraic structure.
+                rule is the unique probability rule compatible with that supplied algebraic structure.
             </p>
             <p style={{ marginBottom: '16px' }}>
-                In OPH, non-contextuality follows from overlap consistency (Axiom A2): the probability of an
-                outcome on the overlap P<sub>1</sub> &cap; P<sub>2</sub> must be the same whether computed from
-                patch 1 or patch 2. Additivity follows from the algebra structure. And dimension &ge; 3 is
-                guaranteed because the screen patches carry infinite-dimensional algebras (type III von Neumann
-                algebras in the continuum limit).
+                In OPH, overlap consistency supplies the compatibility demand on shared event algebras: the
+                probability of an outcome on P<sub>1</sub> &cap; P<sub>2</sub> must agree across the two patches.
+                Additivity and the dimension condition belong to the supplied algebraic setting. This supports
+                the quantum event law inside OPH, but it is not a pre-quantum reconstruction of the setting itself.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Step 3: "Collapse" = Belief Updating</h3>
@@ -84,7 +86,7 @@ export function QuantumMechanicsPage() {
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-blue)' }}>
                 <h4 style={{ margin: '0 0 12px 0', fontSize: '0.9em', color: 'var(--accent-blue)' }}>
-                    The Measurement "Problem" Dissolved
+                    Measurement in the Patch Description
                 </h4>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', fontSize: '0.85em' }}>
                     <div>
@@ -119,7 +121,7 @@ export function QuantumMechanicsPage() {
             </p>
 
             <div className="math-block" style={{ fontSize: '0.9em', lineHeight: '2' }}>
-                Observer patches + Overlap consistency + Gleason &rArr; Born rule &rArr; Quantum mechanics
+                Quantum-algebraic patch states + record projectors &rArr; Born/L&uuml;ders event law &rArr; effective quantum description
             </div>
 
             <Explainer title="Connection to QBism">
@@ -129,8 +131,8 @@ export function QuantumMechanicsPage() {
                 </p>
                 <p>
                     The difference: QBism takes the Born rule as a normative constraint on rational agents.
-                    OPH <em>derives</em> the Born rule from the patch structure. QBism is a philosophical
-                    interpretation; OPH is a physical theory with testable predictions.
+                    OPH places the Born/L&uuml;ders law on a physical patch-record surface inside a broader
+                    reconstruction program with testable predictions.
                 </p>
             </Explainer>
 
@@ -144,8 +146,8 @@ export function QuantumMechanicsPage() {
                 <p>
                     Interference arises because the Born rule involves Tr(&rho;P), which for pure states gives
                     |⟨&psi;|&phi;⟩|&sup2;. The cross-terms in this expression are interference terms.
-                    They are a consequence of the complex Hilbert space structure, which is itself a consequence
-                    of the screen being S&sup2; = ℂP&sup1;.
+                    They are a consequence of the complex Hilbert space structure used by the quantum-algebraic
+                    OPH screen formalism.
                 </p>
             </Explainer>
 
