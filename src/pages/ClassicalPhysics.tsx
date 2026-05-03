@@ -121,7 +121,7 @@ export function ClassicalPhysicsPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Complete Picture</h3>
             <p style={{ marginBottom: '16px' }}>
-                Chain 1 packages the classical readout of the gravity branch. The ingredients are:
+                Chain 1 collects the classical readout of the gravity branch. The ingredients are:
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '24px' }}>

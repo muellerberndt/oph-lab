@@ -368,7 +368,7 @@ type OPHState = {
 ```html
 <title>Observer Patch Holography -- Interactive Learning | Floating Pragma</title>
 <meta name="description" content="Learn Observer Patch Holography interactively.
-From the OPH quantum-algebraic axiom package on a holographic screen, recover
+From the OPH quantum-algebraic observer-consistency basis on a holographic screen, recover
 general relativity, the Standard Model, and effective quantum descriptions. By Bernhard Mueller." />
 <meta name="keywords" content="observer patch holography, theory of everything,
 emergent spacetime, quantum gravity, holographic principle, emergent gravity,

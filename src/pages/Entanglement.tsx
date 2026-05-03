@@ -113,8 +113,8 @@ export function EntanglementPage() {
                 On the current OPH quantum-algebraic surface, the Tsirelson bound is the standard
                 complex-Hilbert-space bound. The bound 2&radic;2 is the maximum value of 2&radic;2
                 &middot; sin(&theta;) for the optimal angle &theta; = &pi;/4, a consequence of the geometry
-                of complex projective space. A derivation of Hilbert-space structure from pre-quantum records
-                is outside the current ledger.
+                of complex projective space. A derivation of Hilbert-space structure from operational records
+                alone is a separate question, not a prerequisite for the OPH reconstruction program.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Monogamy of Entanglement</h3>

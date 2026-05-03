@@ -220,7 +220,7 @@ export function Home() {
         // Paper references:
         // - particle paper quark mass law on the public quark frame fixed by P
         // - browser runtime port in ophMath.ts, which carries the moving quark
-        //   surface through the affine sector means and centered log package
+        //   surface through the affine sector means and centered log structure
         // Caveat:
         // - "Our Universe" is the exact public anchor from the particle codebase.
         // - "Configured" away from that anchor is the reduced candidate surface

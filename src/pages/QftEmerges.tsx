@@ -76,7 +76,7 @@ export function QftEmergesPage() {
                     {
                         step: '6',
                         title: 'Matter-sector continuations',
-                        detail: 'Quotient-constrained flavor structure and Koide-type relations sit on downstream continuation branches outside the recovered-core theorem package.',
+                        detail: 'Quotient-constrained flavor structure and Koide-type relations sit on downstream continuation branches outside the recovered-core theorem stack.',
                         color: 'var(--accent-gold)',
                     },
                     {
@@ -219,10 +219,10 @@ export function QftEmergesPage() {
                     Chain 2 separates a strong structural core from several matter-sector boundaries:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li>Quarks carry a maximal theorem-emitted package on the declared ledger: the D12 mass ray, the negative selector <code>sigma_ref</code>, and a restricted-scope affine mean package; the exact minimal extension above that package is the triple <code>H_mass</code>, <code>H_phys</code>, and <code>H_abs</code></li>
+                    <li>Quarks carry a maximal theorem-emitted structure on the declared ledger: the D12 mass ray, the negative selector <code>sigma_ref</code>, and a restricted-scope affine mean structure; the exact minimal extension above that structure is the triple <code>H_mass</code>, <code>H_phys</code>, and <code>H_abs</code></li>
                     <li>Charged-lepton centered-operator promotion and the later affine descent to &mu;<sub>phys</sub>(Y<sub>e</sub>)</li>
                     <li>Neutrino theorem pair emitted on the weighted-cycle branch; older exact adapters serve as diagnostic-only readouts beneath that branch</li>
-                    <li>Higgs/top proof packaging and scope discipline around the closed D11 source-only split theorem</li>
+                    <li>Higgs/top proof structure and scope discipline around the closed D11 source-only split theorem</li>
                     <li>Hadron backend / compute-bound closure</li>
                 </ul>
                 <p>

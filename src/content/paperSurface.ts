@@ -43,7 +43,7 @@ export const OPH_PAPERS: PaperSummary[] = [
     },
     {
         slug: 'compact',
-        title: 'Recovering Relativity and the Standard Model from the OPH Package Rooted in Observer Consistency',
+        title: 'Recovering Relativity and the Standard Model from Observer Overlap Consistency',
         href: `${GITHUB_PDF_BASE}/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.pdf`,
         surface: 'Recovered Core',
         summary: 'The compact SM/GR derivation paper. It carries the conditional gravity branch, the Standard Model quotient chain, and the visible claim ledger.',
@@ -183,7 +183,7 @@ export const STANDARD_MODEL_SURFACE = [
 export const CONSENSUS_HIGHLIGHTS = [
     'Accepted local repairs strictly lower the inconsistency potential Phi on the overlaps they touch.',
     'On the finite patch net, that local-fit contract makes Phi a Lyapunov functional for the repair dynamics.',
-    'The fixed-cutoff union-collar gluing package makes overlapping accepted repairs quotient-locally compatible.',
+    'The fixed-cutoff union-collar gluing theorem makes overlapping accepted repairs quotient-locally compatible.',
     'Under repair completeness, the patch net has a unique schedule-independent normal form.',
     'Global inconsistency is a holonomy problem. Pairwise agreement can leave a nontrivial cycle obstruction.',
     'Stable records live on the fixed-cutoff record algebra, with exact central projectors or explicitly controlled approximately commuting surrogates.',

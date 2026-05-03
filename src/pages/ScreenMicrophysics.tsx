@@ -57,7 +57,7 @@ export function ScreenMicrophysicsPage() {
 
             <Explainer title="What is inside the paper">
                 <p>
-                    The paper packages measurement, stable records, checkpoint/restoration, and synchronization on a
+                    The paper places measurement, stable records, checkpoint/restoration, and synchronization on a
                     finite screen architecture. It is a concrete part of the OPH suite.
                 </p>
                 <p>

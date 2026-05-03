@@ -99,7 +99,7 @@ const routeMeta = {
   'quantum-mechanics': {
     title: 'Quantum Mechanics in OPH | Algebraic Boundary and Record Probabilities | OPH Lab',
     description:
-      'Inspect the OPH claim boundary: quantum mechanics is treated as an effective algebraic description, not as a completed pre-quantum derivation.',
+      'Inspect the OPH quantum-algebraic basis: quantum mechanics is the algebraic information language used by the reconstruction program.',
   },
   entanglement: {
     title: 'Bell\'s Theorem & Quantum Entanglement - Interactive Simulator | OPH Lab',

@@ -38,7 +38,7 @@ const AXIOMS: Axiom[] = [
         name: 'Recoverable Generalized Entropy',
         plain: 'Generalized entropy combines the area term with bulk entropy, and local collar regions admit recoverability control that supports the gravity branch.',
         physics: 'A generalized entropy functional exists, S_gen(C) = Tr(\u03c1 \u00b7 L_C) + S_bulk(C), together with the recoverability/focusing structure used in the collar and null-modular arguments.',
-        formal: 'S_gen(C) = Tr(\u03c1 \u00b7 L_C) + S_bulk(C), with the collar package controlled by recovery theory and conditional-mutual-information bounds on shrinking separators.',
+        formal: 'S_gen(C) = Tr(\u03c1 \u00b7 L_C) + S_bulk(C), with the collar structure controlled by recovery theory and conditional-mutual-information bounds on shrinking separators.',
     },
 ];
 
@@ -118,7 +118,7 @@ export function AxiomsPage() {
                     <li><strong>R0:</strong> finite-dimensional regulator premise for local factors.</li>
                     <li><strong>R1:</strong> region observables are fixed points of boundary gauge action.</li>
                     <li><strong>T1:</strong> vanishing of the relevant transport obstruction when global transportability is invoked: [z]=0 on the central branch, or q<sub>&Sigma;</sub>=0 on the genuinely noncentral branch.</li>
-                    <li><strong>MAR:</strong> pick the lexicographically minimal admissible low-energy sector package.</li>
+                    <li><strong>MAR:</strong> pick the lexicographically minimal admissible low-energy sector.</li>
                 </ul>
                 <p style={{ margin: '10px 0 0 0', fontSize: '0.82em', color: 'var(--text-muted)' }}>
                     MAR fixes the realized admissible gauge branch. The downstream structural and continuation
@@ -136,7 +136,7 @@ export function AxiomsPage() {
                     <li><strong>T4</strong>: symmetric braiding in the 3+1D EFT branch</li>
                     <li><strong>T5</strong>: bosonic Tannakian fiber functor, or an explicit super-Tannakian fork</li>
                     <li><strong>T6</strong>: directed colimit of transportable edge sectors with objectwise finite-dimensional fibers wherever compact gauge reconstruction is invoked</li>
-                    <li><strong>R0/R1</strong>: regulator and fixed-point premises used in the gauge package</li>
+                    <li><strong>R0/R1</strong>: regulator and fixed-point premises used in the gauge reconstruction</li>
                 </ul>
             </Explainer>
 

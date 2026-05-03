@@ -18,7 +18,7 @@ export function GaugeSymmetryPage() {
                 selects the realized sector with the MAR rule.
             </p>
             <p style={{ marginBottom: '16px' }}>
-                The derivation then adds the extended axiom package
+                The derivation then adds the extended axiom and premise set
                 <strong> R0 + R1 + T1 + MAR + T4-T6</strong>: admissibility defines the candidate class, with T1 meaning
                 vanishing relevant transport obstruction ([z]=0 on the central branch or q<sub>&Sigma;</sub>=0 on the
                 genuinely noncentral branch), T4-T6 supplying the compact gauge-reconstruction premises, and MAR choosing

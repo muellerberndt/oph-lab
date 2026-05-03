@@ -20,7 +20,7 @@ export function ConsensusProtocolPage() {
             </div>
 
             <p style={{ marginBottom: '24px' }}>
-                On the fixed-cutoff collar branch, OPH turns that statement into a finite patch-net theorem package.
+                On the fixed-cutoff collar branch, OPH turns that statement into a finite patch-net theorem stack.
                 The repair step is read from exact Markov splice or a declared recoverability channel and then
                 accepted only when it improves overlap fit on the touched interfaces.
             </p>
@@ -55,7 +55,7 @@ export function ConsensusProtocolPage() {
                     <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-gold)' }}>Holonomy obstruction</h4>
                     <p style={{ margin: 0, fontSize: '0.82em', color: 'var(--text-secondary)' }}>
                         Pairwise agreement can leave a global inconsistency around a cycle, which the paper
-                        packages as an abelian or higher-gauge holonomy defect.
+                        represents as an abelian or higher-gauge holonomy defect.
                     </p>
                 </div>
             </div>
@@ -78,7 +78,7 @@ export function ConsensusProtocolPage() {
                     single out one microscopic repair law on every branch.
                 </p>
                 <p>
-                    Law-space selection stays in a meta-model box. The finite patch-net theorem package carries the
+                    Law-space selection stays in a meta-model box. The finite patch-net theorem stack carries the
                     main claim.
                 </p>
             </Explainer>

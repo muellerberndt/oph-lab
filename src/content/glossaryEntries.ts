@@ -92,7 +92,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     },
     {
         term: 'Axiom A5 / MAR',
-        definition: 'Minimal Admissible Realization: lexicographic selector on admissible gauge-sector packages.',
+        definition: 'Minimal Admissible Realization: lexicographic selector on admissible gauge sectors.',
         category: 'axioms',
         usedIn: ['Axioms', 'Standard Model'],
     },
@@ -493,7 +493,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     },
     {
         term: 'Checkpoint / Restoration',
-        definition: 'Microphysical backup-and-recovery package used to stabilize records and observer-level state across local repair and synchronization events.',
+        definition: 'Microphysical backup-and-recovery mechanism used to stabilize records and observer-level state across local repair and synchronization events.',
         category: 'methods',
         usedIn: ['Screen Microphysics'],
     },

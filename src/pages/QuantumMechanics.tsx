@@ -9,14 +9,14 @@ export function QuantumMechanicsPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This page states the current claim boundary for Chain 2. OPH does not claim to derive
-                quantum mechanics from pre-quantum primitives. The present ledger starts from a
-                quantum-algebraic screen: patch algebras, states, trace/Born event probabilities on
-                declared record surfaces, and generalized entropy.
+                This page states the OPH starting point for Chain 2. OPH uses a quantum-algebraic
+                screen: patch algebras, states, trace/Born event probabilities on declared record
+                surfaces, and generalized entropy. This is a deliberate algebraic-information basis,
+                not a demand to derive every mathematical ingredient from a blank starting point.
             </p>
             <p style={{ marginBottom: '24px' }}>
-                The punchline: <strong>quantum mechanics is one effective algebraic description carried by
-                a deeper observer-patch architecture</strong>.
+                The punchline: <strong>quantum mechanics is the algebraic information language carried by
+                the observer-patch architecture</strong>.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Step 1: The Quantum-Algebraic Starting Point</h3>
@@ -27,9 +27,9 @@ export function QuantumMechanicsPage() {
             </p>
             <p style={{ marginBottom: '16px' }}>
                 The screen S&sup2; and its conformal structure explain why the complex operator language is
-                natural for the OPH reconstruction. They do not, by themselves, complete a derivation of
-                Hilbert, C*- or von Neumann algebra structure from non-quantum records. That stronger target
-                belongs to a separate OPH-QM program.
+                natural for the OPH reconstruction. A reconstruction of Hilbert, C*- or von Neumann
+                algebra structure from operational records alone can be studied separately, but it is not
+                the gatekeeper for the theory-of-everything program.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Step 2: Born Probabilities on the Record Surface</h3>
@@ -57,7 +57,8 @@ export function QuantumMechanicsPage() {
                 In OPH, overlap consistency supplies the compatibility demand on shared event algebras: the
                 probability of an outcome on P<sub>1</sub> &cap; P<sub>2</sub> must agree across the two patches.
                 Additivity and the dimension condition belong to the supplied algebraic setting. This supports
-                the quantum event law inside OPH, but it is not a pre-quantum reconstruction of the setting itself.
+                the quantum event law inside OPH as part of the declared algebraic setting rather than a
+                preliminary derivation that must come before the rest of the reconstruction.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Step 3: "Collapse" = Belief Updating</h3>

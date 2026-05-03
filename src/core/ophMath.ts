@@ -724,7 +724,7 @@ function quarkCandidateSectorMeans(rhoOrd: number, x2: number, sigmaU: number, s
 // - The public anchor at P = 1.63094 is the exact quark sextet emitted by the
 //   particle codebase on the physical quark frame fixed by P.
 // - Away from that anchor, the browser uses a reduced candidate surface that
-//   carries the affine sector means and centered log package.
+//   carries the affine sector means and centered log structure.
 // - The full off-canonical transport shell is not ported into the browser.
 //   That missing shell affects only the moving off-anchor lane. It does not
 //   alter the exact anchor values displayed for our Universe.
