@@ -288,9 +288,10 @@ export function Home() {
                     </div>
                 </div>
                 <p className="landing-controls-intro">
-                    The simulation screen we inhabit is configured with <strong>P = {PIXEL_REFERENCE.toFixed(5)}</strong> and
-                    <strong> log10 N_scr = {SCREEN_CAPACITY_REFERENCE_LOG10}</strong>. Adjust either constant to evaluate the
-                    OPH formulas on a different screen.
+                    OPH models reality as observer-based fixed-point consensus: finite patches compare overlap-visible
+                    records, repair mismatch, and stabilize public physics. The screen we inhabit is configured with
+                    <strong> P = {PIXEL_REFERENCE.toFixed(5)}</strong> and <strong> log10 N_scr = {SCREEN_CAPACITY_REFERENCE_LOG10}</strong>.
+                    Adjust either constant to evaluate the OPH formulas on a different screen.
                 </p>
 
                 <div className="landing-controls-grid">

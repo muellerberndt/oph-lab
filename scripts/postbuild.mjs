@@ -49,7 +49,7 @@ const routeMeta = {
   'the-screen': {
     title: 'The Holographic Screen - How a 2D Sphere Creates 3D Spacetime | OPH Lab',
     description:
-      'Learn how OPH models reality on a holographic screen and uses local patches to recover spacetime structure.',
+      'Learn how OPH models reality as observer-based fixed-point consensus on a holographic screen and uses local patches to recover spacetime structure.',
   },
   axioms: {
     title: 'Core Axioms and MAR (Axiom 5) for a Theory of Everything - Observer Patch Holography | OPH Lab',
@@ -139,7 +139,7 @@ const routeMeta = {
   'consensus-protocol': {
     title: 'Reality as a Consensus Protocol - Overlap Repair, Normal Form, and Records | OPH Lab',
     description:
-      'Explore the OPH consensus paper: overlap repair, Lyapunov descent, schedule-independent normal form, holonomy obstructions, and record stability.',
+      'Explore OPH as observer-based fixed-point consensus: overlap repair, Lyapunov descent, schedule-independent normal form, holonomy obstructions, and record stability.',
   },
   'screen-microphysics': {
     title: 'Screen Microphysics and Observer Synchronization in OPH | OPH Lab',

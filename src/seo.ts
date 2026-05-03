@@ -6,13 +6,13 @@ export type SeoMeta = {
 };
 
 const DEFAULT_DESCRIPTION =
-  'Interactive guide to Observer Patch Holography, mapping the declared theorem surfaces across gravity branches, gauge reconstruction, particles, consensus, and screen microphysics.';
+  'Interactive guide to OPH as observer-based fixed-point consensus, mapping the declared theorem surfaces across gravity branches, gauge reconstruction, particles, records, and screen microphysics.';
 
 const DEFAULT_TITLE = 'OPH Lab | Declared OPH Paper Surface';
 const SITE_SUFFIX = ' | OPH Lab';
 
 const ROUTE_DESCRIPTIONS: Record<string, string> = {
-  '/': 'Configure your universe in OPH Lab: change the shared pixel constant P and screen capacity, then watch gravity, de Sitter, electroweak, Higgs/top, and exact-particle surfaces shift live.',
+  '/': 'Configure the OPH fixed-point consensus surface: change the shared pixel constant P and screen capacity, then watch gravity, de Sitter, electroweak, Higgs/top, and exact-particle surfaces shift live.',
   '/hints': 'Review the experimental and conceptual clues that motivate Observer Patch Holography as a deeper account of physical reality.',
   '/no-objective-reality': 'Explore the argument that physics should be built from observer-local descriptions instead of a single objective frame.',
   '/the-screen': 'Learn how OPH models reality on a holographic screen and uses local patches to recover spacetime structure as part of a concrete simulation-theory architecture.',
@@ -34,7 +34,7 @@ const ROUTE_DESCRIPTIONS: Record<string, string> = {
   '/neutrinos': 'Inspect the OPH weighted-cycle neutrino theorem branch: bridge invariant C_nu, absolute attachment lambda_nu, the absolute mass family, central splittings, and the shared-basis Majorana pair.',
   '/unification': 'Inspect the coupling-unification lesson and the OPH account of apparent grand-unification patterns.',
   '/qft-emerges': 'Follow the argument that quantum field theory is an effective layer emerging from deeper screen dynamics.',
-  '/consensus-protocol': 'Explore the OPH consensus paper: overlap repair, Lyapunov descent, schedule-independent normal form, holonomy obstructions, and record stability.',
+  '/consensus-protocol': 'Explore OPH as observer-based fixed-point consensus: overlap repair, Lyapunov descent, schedule-independent normal form, holonomy obstructions, and record stability.',
   '/screen-microphysics': 'Inspect the finite screen-register architecture used by OPH to model records, measurement, checkpoint/restoration, and observer synchronization.',
   '/predictions': 'Review the OPH pressure-test surface, separating public quantitative rows from continuation-level signatures and open phenomenology.',
   '/synthesis': 'See how OPH ties the derivation chain together across structural theorems, branch-conditional gravity results, particles, consensus, and observer machinery.',
