@@ -163,7 +163,7 @@ export const PARTICLE_LANE_STATUS = [
     },
     {
         label: 'Hadrons',
-        summary: 'Hadron masses depend on a production backend and large compute budgets instead of a short symbolic surface.',
+        summary: 'Issues #153/#157 are closed out-of-scope, not solved; hadron masses wait on a working OPH backend and production systematics.',
     },
 ];
 

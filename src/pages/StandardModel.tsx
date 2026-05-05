@@ -398,8 +398,9 @@ export function StandardModelPage() {
             <Explainer title="Page Scope">
                 <p>
                     This page tracks the recovered gauge quotient, exact hypercharges, realized color triplet, and
-                    generation count. Full flavor closure, hadron
-                    phenomenology, and downstream matter-sector theorem objects sit on separate pages.
+                    generation count. Full flavor closure, hadron phenomenology, and downstream
+                    matter-sector theorem objects sit on separate pages; hadron backend issues
+                    #153/#157 are closed out-of-scope until production OPH backend output exists.
                 </p>
                 <p>
                     On the declared public surface, the Standard Model quotient, exact hypercharges, and the

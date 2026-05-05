@@ -177,7 +177,7 @@ export function MassesPage() {
                     <li><strong>Quarks:</strong> OPH closes one exact public sextet on one physical frame fixed by P. A full classification of all quark frames is a separate object.</li>
                     <li><strong>Charged leptons:</strong> the exact same-family readback is explicit. The open step is the source landing that turns the shared geometric data into full physical charged masses.</li>
                     <li><strong>Neutrinos:</strong> one weighted-cycle branch emits an absolute family, the central splittings, and one physical Majorana pair. The exact fitting adapters are checks and stay off the public surface.</li>
-                    <li><strong>Hadrons:</strong> hadron masses depend on a production backend and large compute budgets instead of a short symbolic surface.</li>
+                    <li><strong>Hadrons:</strong> issues #153/#157 are closed out-of-scope, not solved; production masses wait on a working OPH hadron backend and systematics.</li>
                 </ul>
             </div>
 
@@ -319,8 +319,9 @@ export function MassesPage() {
                 <p>
                     That is why changing P moves the bosonic rows but not the massless structural
                     rows. It does not say the entire matter sector closes from P on the declared
-                    surface. Charged leptons, the full quark story away from the public frame, and
-                    hadrons sit on separate surfaces.
+                    surface. Charged leptons and the full quark story away from the public frame
+                    sit on separate surfaces; hadrons are closed out-of-scope until an OPH
+                    hadron backend exists.
                 </p>
             </Explainer>
         </div>

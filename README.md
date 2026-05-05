@@ -81,8 +81,9 @@ This section is the lab-maintainer summary of the current public paper surface.
   - the absolute weighted-cycle neutrino family is emitted on that branch
   - the older exact adapter, bridge corridor, and correction audit are diagnostic-only sidecars
 - Hadrons:
-  - hardware-gated out of scope until a working OPH hadron backend such as
-    GLORB/Echosahedron emits the Ward-projected spectral measure and systematics
+  - closed out-of-scope / computationally blocked in issues #153/#157, not solved
+  - reopen only when a working OPH hadron backend such as GLORB/Echosahedron
+    emits the Ward-projected spectral measure and systematics
 
 ### Consensus branch
 
@@ -137,7 +138,8 @@ These are the common places where public copy tends to overstate the current pap
 - Particle / masses / predictions pages:
   - keep `W/Z` compare-only until the endpoint and matching gates close
   - keep Higgs/top on the declared D10/D11 surface plus compare-only inverse sidecar
-  - keep charged, quark, neutrino, and hadron lanes labeled as open where appropriate
+  - keep charged, quark, and neutrino lanes labeled by their current claim tiers
+  - keep hadrons labeled closed out-of-scope / computationally blocked, not solved
   - keep GW comb / discrete Hawking / deep-IR galaxy-response language separated by claim tier
 - Consensus / microphysics pages:
   - do not demote them to flavor text beneath the gravity and QFT chains
