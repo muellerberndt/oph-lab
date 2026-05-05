@@ -55,9 +55,10 @@ This section is the lab-maintainer summary of the current public paper surface.
   - gluons
   - graviton
 - Electroweak:
-  - `W/Z` are closed on the D10 theorem surface.
+  - `W/Z` are compare-only frozen-adapter rows until the candidate `P` root,
+    Ward-projected Thomson endpoint, and RG/matching certificates close.
 - Higgs/top:
-  - public rows are carried by a closed one-scalar D11 forward seed
+  - public rows are carried on the declared D10/D11 surface
   - the exact inverse pair is compare-only
 - Charged leptons:
   - still open at `C_hat_e^{cand}`
@@ -80,7 +81,8 @@ This section is the lab-maintainer summary of the current public paper surface.
   - the absolute weighted-cycle neutrino family is emitted on that branch
   - the older exact adapter, bridge corridor, and correction audit are diagnostic-only sidecars
 - Hadrons:
-  - still backend-bound / compute-bound
+  - hardware-gated out of scope until a working OPH hadron backend such as
+    GLORB/Echosahedron emits the Ward-projected spectral measure and systematics
 
 ### Consensus branch
 
@@ -133,8 +135,8 @@ These are the common places where public copy tends to overstate the current pap
 - Axioms / synthesis pages:
   - separate local axioms from bridge assumptions and open scaffold objects
 - Particle / masses / predictions pages:
-  - keep `W/Z` closed
-  - keep Higgs/top as forward-seed public rows plus compare-only inverse sidecar
+  - keep `W/Z` compare-only until the endpoint and matching gates close
+  - keep Higgs/top on the declared D10/D11 surface plus compare-only inverse sidecar
   - keep charged, quark, neutrino, and hadron lanes labeled as open where appropriate
   - keep GW comb / discrete Hawking / deep-IR galaxy-response language separated by claim tier
 - Consensus / microphysics pages:
