@@ -8,6 +8,7 @@ import {
     PIXEL_UI_MIN,
     deriveD11ForwardSeed,
     deriveTargetFreeElectroweakRepair,
+    formatPixelConstant,
     solveGaugeClosure,
 } from '../core/ophMath';
 import { useLabSetting, useLabState } from '../state/labState';
@@ -165,7 +166,7 @@ export function MassesPage() {
                     In the bosonic calibration sector, W/Z sit on the public electroweak repair
                     surface. Higgs/top sit on the source-only Higgs/top split surface. The exact
                     inverse pair is a check surface.
-                    The canonical published bosonic surface uses P = {PIXEL_REFERENCE.toFixed(5)}; the interactive
+                    The canonical published bosonic surface uses P = {formatPixelConstant(PIXEL_REFERENCE)}; the interactive
                     readout below shows how the same bosonic formulas respond if you move that one
                     shared pixel input.
                 </p>
@@ -195,7 +196,7 @@ export function MassesPage() {
                 </div>
 
                 <p style={{ marginTop: 0, marginBottom: '14px' }}>
-                    Default P = <strong>{PIXEL_REFERENCE.toFixed(5)}</strong> reproduces the published
+                    Default P = <strong>{formatPixelConstant(PIXEL_REFERENCE)}</strong> reproduces the published
                     bosonic candidate surface. Moving the slider below evaluates the same bosonic
                     formulas off that canonical point. It is a branch readout on the same public
                     surface.
@@ -205,8 +206,8 @@ export function MassesPage() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
                         <span style={{ color: 'var(--accent-gold)' }}>Pixel constant P = a_cell / l_P^2</span>
                         <span style={{ color: 'var(--accent-cyan)' }}>
-                            {pixelConstant.toFixed(5)} ({pixelConstant >= PIXEL_REFERENCE ? '+' : ''}
-                            {(pixelConstant - PIXEL_REFERENCE).toFixed(5)} vs canonical)
+                            {formatPixelConstant(pixelConstant)} ({pixelConstant >= PIXEL_REFERENCE ? '+' : ''}
+                            {formatPixelConstant(pixelConstant - PIXEL_REFERENCE)} vs canonical)
                         </span>
                     </div>
                     <input
@@ -264,7 +265,7 @@ export function MassesPage() {
                             <div style={{ fontSize: '0.76em', color: 'var(--text-muted)', marginBottom: '6px' }}>
                                 {row.tier === 'structural'
                                     ? 'Invariant under P on the structural lane.'
-                                    : `Delta from canonical P = ${PIXEL_REFERENCE.toFixed(5)}: ${formatSignedMass(row.deltaGeV)}`}
+                                    : `Delta from canonical P = ${formatPixelConstant(PIXEL_REFERENCE)}: ${formatSignedMass(row.deltaGeV)}`}
                             </div>
                             <div style={{ fontSize: '0.8em', color: 'var(--text-secondary)' }}>{row.note}</div>
                         </div>

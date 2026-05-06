@@ -2,6 +2,7 @@ import { Explainer } from '../components/Explainer';
 import {
     PIXEL_REFERENCE,
     deSitterRadiusFromLambda,
+    formatPixelConstant,
     gibbonsHawkingTemperatureFromHubble,
     hubbleFromLambda,
     lambdaFromScreen,
@@ -53,7 +54,7 @@ export function DeSitterPage() {
             <p style={{ marginBottom: '8px' }}>
                 In OPH, the cosmological constant is fixed by the total screen capacity after the local gravity
                 branch leaves the separate metric ambiguity. In the lab we hold the reference pixel
-                normalization fixed at P = {PIXEL_REFERENCE.toFixed(5)} and scan the global capacity descendant:
+                normalization fixed at P = {formatPixelConstant(PIXEL_REFERENCE)} and scan the global capacity descendant:
             </p>
             <div className="math-block" style={{ fontSize: '1.1em' }}>
                 &Lambda;(N<sub>scr</sub>) &prop; N<sub>scr</sub><sup>&minus;1</sup>

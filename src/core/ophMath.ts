@@ -21,7 +21,8 @@ export const PLANCK_REDUCED_CONSTANT_SI = 1.054571817e-34;
 export const BOLTZMANN_CONSTANT_SI = 1.380649e-23;
 export const GRAVITATIONAL_CONSTANT_REFERENCE_SI = 6.674299995910528e-11;
 
-export const PIXEL_REFERENCE = 1.63094;
+export const PIXEL_REFERENCE = 1.630968209403959;
+export const PIXEL_DISPLAY_DIGITS = 6;
 export const SCREEN_CAPACITY_REFERENCE_LOG10 = 122;
 export const PIXEL_UI_MIN = 0.8;
 export const PIXEL_UI_MAX = 3.2;
@@ -40,6 +41,13 @@ const QUARK_P_DRIVEN_ALPHA_EXPONENT_UP = QUARK_P_DRIVEN_CONSTANTS.alpha_exponent
 const QUARK_P_DRIVEN_ALPHA_EXPONENT_DOWN = QUARK_P_DRIVEN_CONSTANTS.alpha_exponent_down;
 const QUARK_P_DRIVEN_UP_ANCHORS = QUARK_P_DRIVEN_CONSTANTS.up_anchors;
 const QUARK_P_DRIVEN_DOWN_ANCHORS = QUARK_P_DRIVEN_CONSTANTS.down_anchors;
+
+export function formatPixelConstant(value: number): string {
+    if (!Number.isFinite(value)) {
+        return 'n/a';
+    }
+    return value.toFixed(PIXEL_DISPLAY_DIGITS);
+}
 
 export const BETA_COEFFICIENTS_MSSM_LIKE: [number, number, number] = [33 / 5, 1, -3];
 export const BETA_COEFFICIENTS_SM_1LOOP: [number, number, number] = [41 / 10, -19 / 6, -7];
@@ -668,7 +676,7 @@ export function mondAccelerationFromLambda(lambdaM2: number): number {
 // Ward-projected electromagnetic transport law. The source anchor is
 // a_0(P) = alpha_em^-1(m_Z^2; P),
 // and the Thomson endpoint is alpha_Th^-1(P) = a_0(P) * t_Q(m_Z^2; P) / t_Q(0; P).
-// The zero-momentum transport factor is not yet emitted on this app surface.
+// The zero-momentum transport factor is absent from this app surface.
 export function thomsonEndpointAlphaInverse(anchorAlphaInverse: number): number {
     if (!Number.isFinite(anchorAlphaInverse) || anchorAlphaInverse <= 0) {
         return Number.NaN;
@@ -716,7 +724,7 @@ function quarkCandidateSectorMeans(rhoOrd: number, x2: number, sigmaU: number, s
 // reverse-engineering-reality/paper/deriving_the_particle_zoo_from_observer_consistency.tex
 //
 // Browser boundary for the moving quark rows:
-// - The public anchor at P = 1.63094 is the exact quark sextet emitted by the
+// - The public anchor at P = 1.630968 is the exact quark sextet emitted by the
 //   particle codebase on the physical quark frame fixed by P.
 // - Away from that anchor, the browser consumes the shared candidate evaluator
 //   contract emitted by the particle runtime.

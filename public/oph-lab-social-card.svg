@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">OPH Lab social card</title>
-  <desc id="desc">Configure your universe in OPH Lab with default values P equals 1.63094 and log10 N scr equals 122.</desc>
+  <desc id="desc">Configure your universe in OPH Lab with default values P equals 1.630968 and log10 N scr equals 122.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0a0a0a"/>
@@ -44,7 +44,7 @@
     DEFAULT PIXEL CONSTANT
   </text>
   <text x="145" y="451" fill="#ffffff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="52" font-weight="700">
-    P = 1.63094
+    P = 1.630968
   </text>
 
   <text x="625" y="392" fill="#4ee7ff" font-family="JetBrains Mono, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" letter-spacing="2">

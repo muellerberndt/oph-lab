@@ -6,6 +6,7 @@ import {
     BETA_COEFFICIENTS_SM_1LOOP,
     PIXEL_UI_MAX,
     PIXEL_UI_MIN,
+    formatPixelConstant,
     solveGaugeClosure,
 } from '../core/ophMath';
 import { useLabSetting, useLabState } from '../state/labState';
@@ -191,7 +192,7 @@ export function UnificationPage() {
                     <div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
                             <span style={{ color: 'var(--accent-gold)' }}>Pixel constant P = a_cell / l_P^2</span>
-                            <span style={{ color: 'var(--accent-cyan)' }}>{pixelConstant.toFixed(5)}</span>
+                            <span style={{ color: 'var(--accent-cyan)' }}>{formatPixelConstant(pixelConstant)}</span>
                         </div>
                         <input
                             type="range"
@@ -313,7 +314,7 @@ export function UnificationPage() {
                     M_U = (E_P / e^(2pi)) * P^(1/6)
                 </div>
                 <div style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
-                    M_U = {formatNumber(closure.unificationScaleGeV, 3)} GeV from P = {pixelConstant.toFixed(5)}
+                    M_U = {formatNumber(closure.unificationScaleGeV, 3)} GeV from P = {formatPixelConstant(pixelConstant)}
                 </div>
             </div>
 

@@ -11,6 +11,7 @@ import {
     SCREEN_CAPACITY_UI_MIN,
     deriveD11ForwardSeed,
     deriveTargetFreeElectroweakRepair,
+    formatPixelConstant,
     hubbleFromLambda,
     lambdaFromScreen,
     newtonConstantFromPixel,
@@ -290,7 +291,7 @@ export function Home() {
                 <p className="landing-controls-intro">
                     OPH models reality as observer-based fixed-point consensus: finite patches compare overlap-visible
                     records, repair mismatch, and stabilize public physics. The screen we inhabit is configured with
-                    <strong> P = {PIXEL_REFERENCE.toFixed(5)}</strong> and <strong> log10 N_scr = {SCREEN_CAPACITY_REFERENCE_LOG10}</strong>.
+                    <strong> P = {formatPixelConstant(PIXEL_REFERENCE)}</strong> and <strong> log10 N_scr = {SCREEN_CAPACITY_REFERENCE_LOG10}</strong>.
                     Adjust either constant to evaluate the OPH formulas on a different screen.
                 </p>
 
@@ -299,9 +300,9 @@ export function Home() {
                         <div className="input-control-header">
                             <div>
                                 <div className="input-control-label">Pixel constant P</div>
-                                <div className="input-control-value">{pixelConstant.toFixed(5)}</div>
+                                <div className="input-control-value">{formatPixelConstant(pixelConstant)}</div>
                             </div>
-                            <div className="input-control-release">our Universe {PIXEL_REFERENCE.toFixed(5)}</div>
+                            <div className="input-control-release">our Universe {formatPixelConstant(PIXEL_REFERENCE)}</div>
                         </div>
                         <div className="input-control-caption">P = a_cell / l_P^2</div>
                         <input
