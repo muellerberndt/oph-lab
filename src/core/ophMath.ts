@@ -1,3 +1,5 @@
+import { QUARK_P_DRIVEN_EVALUATOR_CONTRACT } from '../content/quarkPDrivenEvaluator';
+
 const E_PLANCK_GEV = 1.22089e19;
 const BETA_EW = 4;
 const MZ_REFERENCE_GEV = 91.1876;
@@ -28,23 +30,16 @@ export const SCREEN_CAPACITY_UI_MAX = 132;
 export const ALPHA_U_REFERENCE = 0.04112;
 export const LAMBDA_REFERENCE_M2 = 1.09e-52;
 export const EPSILON_Z6 = 1 / 6;
-const QUARK_P_DRIVEN_RHO_REFERENCE = 1.2942849363777058;
-const QUARK_P_DRIVEN_X2_REFERENCE = -0.5175863354681689;
-const QUARK_P_DRIVEN_SIGMA_U_REFERENCE = 5.573928426395543;
-const QUARK_P_DRIVEN_SIGMA_D_REFERENCE = 3.296264198808688;
-const QUARK_P_DRIVEN_ALPHA_U_REFERENCE = 0.04112498041477454;
-const QUARK_P_DRIVEN_ALPHA_EXPONENT_UP = 0.42519503064369524;
-const QUARK_P_DRIVEN_ALPHA_EXPONENT_DOWN = -0.5160176801329136;
-const QUARK_P_DRIVEN_UP_ANCHORS = [
-    { id: 'up', label: 'up', massGeV: 0.00216 },
-    { id: 'charm', label: 'charm', massGeV: 1.273 },
-    { id: 'top', label: 'top', massGeV: 172.3523553288311 },
-] as const;
-const QUARK_P_DRIVEN_DOWN_ANCHORS = [
-    { id: 'down', label: 'down', massGeV: 0.0047 },
-    { id: 'strange', label: 'strange', massGeV: 0.0935 },
-    { id: 'bottom', label: 'bottom', massGeV: 4.183 },
-] as const;
+const QUARK_P_DRIVEN_CONSTANTS = QUARK_P_DRIVEN_EVALUATOR_CONTRACT.evaluator_constants;
+const QUARK_P_DRIVEN_RHO_REFERENCE = QUARK_P_DRIVEN_CONSTANTS.rho_ord;
+const QUARK_P_DRIVEN_X2_REFERENCE = QUARK_P_DRIVEN_CONSTANTS.x2;
+const QUARK_P_DRIVEN_SIGMA_U_REFERENCE = QUARK_P_DRIVEN_CONSTANTS.sigma_u_reference;
+const QUARK_P_DRIVEN_SIGMA_D_REFERENCE = QUARK_P_DRIVEN_CONSTANTS.sigma_d_reference;
+const QUARK_P_DRIVEN_ALPHA_U_REFERENCE = QUARK_P_DRIVEN_CONSTANTS.alpha_u_reference;
+const QUARK_P_DRIVEN_ALPHA_EXPONENT_UP = QUARK_P_DRIVEN_CONSTANTS.alpha_exponent_up;
+const QUARK_P_DRIVEN_ALPHA_EXPONENT_DOWN = QUARK_P_DRIVEN_CONSTANTS.alpha_exponent_down;
+const QUARK_P_DRIVEN_UP_ANCHORS = QUARK_P_DRIVEN_CONSTANTS.up_anchors;
+const QUARK_P_DRIVEN_DOWN_ANCHORS = QUARK_P_DRIVEN_CONSTANTS.down_anchors;
 
 export const BETA_COEFFICIENTS_MSSM_LIKE: [number, number, number] = [33 / 5, 1, -3];
 export const BETA_COEFFICIENTS_SM_1LOOP: [number, number, number] = [41 / 10, -19 / 6, -7];
@@ -723,11 +718,10 @@ function quarkCandidateSectorMeans(rhoOrd: number, x2: number, sigmaU: number, s
 // Browser boundary for the moving quark rows:
 // - The public anchor at P = 1.63094 is the exact quark sextet emitted by the
 //   particle codebase on the physical quark frame fixed by P.
-// - Away from that anchor, the browser uses a reduced candidate surface that
-//   carries the affine sector means and centered log structure.
-// - The full off-canonical transport shell is not ported into the browser.
-//   That missing shell affects only the moving off-anchor lane. It does not
-//   alter the exact anchor values displayed for our Universe.
+// - Away from that anchor, the browser consumes the shared candidate evaluator
+//   contract emitted by the particle runtime.
+// - The contract is candidate-only until the off-canonical transport shell,
+//   odd response, and pure-B source payload are theorem-closed.
 function quarkCandidateEvenLogs(rhoOrd: number, sigmaU: number, sigmaD: number) {
     const denominator = 3 * (1 + rhoOrd);
     const vU = [
@@ -749,10 +743,8 @@ function quarkCandidateEvenLogs(rhoOrd: number, sigmaU: number, sigmaD: number) 
 export function pDrivenQuarkMassesFromClosure(
     closure: Pick<GaugeClosureResult, 'alphaU'>
 ): PDrivenQuarkMassPrediction[] {
-    // The browser quark surface combines two pieces:
-    // exact public masses at the anchor point and reduced candidate motion away
-    // from that point. The full transport shell is separate from this browser
-    // evaluator.
+    // The checked-in contract keeps browser and runtime constants synchronized
+    // without promoting this candidate lane to theorem-grade closure.
     const alphaRatio = Math.max(closure.alphaU, 1.0e-12) / QUARK_P_DRIVEN_ALPHA_U_REFERENCE;
     const sigmaU = QUARK_P_DRIVEN_SIGMA_U_REFERENCE * Math.pow(alphaRatio, QUARK_P_DRIVEN_ALPHA_EXPONENT_UP);
     const sigmaD = QUARK_P_DRIVEN_SIGMA_D_REFERENCE * Math.pow(alphaRatio, QUARK_P_DRIVEN_ALPHA_EXPONENT_DOWN);
@@ -785,9 +777,9 @@ export function pDrivenQuarkMassesFromClosure(
             id: anchor.id,
             label: anchor.label,
             sector: 'up' as const,
-            baselineMassGeV: anchor.massGeV,
+            baselineMassGeV: anchor.mass_gev,
             massGeV:
-                anchor.massGeV *
+                anchor.mass_gev *
                 Math.exp(
                     (currentMeans.logShiftU - baselineMeans.logShiftU) +
                     (currentLogs.eULog[index] - baselineLogs.eULog[index])
@@ -797,9 +789,9 @@ export function pDrivenQuarkMassesFromClosure(
             id: anchor.id,
             label: anchor.label,
             sector: 'down' as const,
-            baselineMassGeV: anchor.massGeV,
+            baselineMassGeV: anchor.mass_gev,
             massGeV:
-                anchor.massGeV *
+                anchor.mass_gev *
                 Math.exp(
                     (currentMeans.logShiftD - baselineMeans.logShiftD) +
                     (currentLogs.eDLog[index] - baselineLogs.eDLog[index])

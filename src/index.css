@@ -475,6 +475,10 @@ code {
   color: var(--accent-green);
 }
 
+.compact-live-family-candidate {
+  color: var(--accent-gold);
+}
+
 .compact-live-value {
   color: var(--accent-cyan);
   font-size: 0.92rem;

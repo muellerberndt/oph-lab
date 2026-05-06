@@ -32,7 +32,7 @@ type LiveRow = {
 type SurfaceBoardRow = {
     label: string;
     family: string;
-    familyClass: 'gr' | 'qft' | 'exact';
+    familyClass: 'gr' | 'qft' | 'exact' | 'candidate';
     primaryLabel: string;
     primaryValue: string;
     secondaryLabel: string;
@@ -239,8 +239,8 @@ export function Home() {
             .map((row) => ({
                 label: labelMap[row.id] ?? row.label,
                 family: 'QUARKS',
-                familyClass: 'exact' as const,
-                primaryLabel: 'Configured',
+                familyClass: 'candidate' as const,
+                primaryLabel: 'Candidate',
                 primaryValue: `${formatFixed(row.massGeV, 9)} GeV`,
                 secondaryLabel: 'Our Universe',
                 secondaryValue: `${formatFixed(row.baselineMassGeV, 9)} GeV`,
@@ -363,7 +363,7 @@ export function Home() {
             <p className="landing-surface-note">
                 This board combines the local unification readouts <strong>G(P)</strong> and <strong>Lambda = 3pi / (G N_scr)</strong>,
                 the electroweak repair, the pending Ward-projected Thomson endpoint, the Higgs split, and the
-                quark mass surface used in the lab runtime.
+                candidate quark mass surface used in the lab runtime.
             </p>
             <section className="card landing-links-card">
                 <div className="landing-links-header">
