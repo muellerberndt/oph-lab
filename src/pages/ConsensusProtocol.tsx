@@ -13,17 +13,18 @@ export function ConsensusProtocolPage() {
                 This page covers the dedicated consensus paper, the place where OPH says most directly what reality
                 is doing: observer-based fixed-point consensus. It asks a narrower question than the gravity and
                 gauge pages: if observer patches repair disagreements locally, do different repair orders lead to
-                different worlds?
+                different worlds, and does that result survive controlled coarse-graining?
             </p>
 
             <div className="math-block" style={{ fontSize: '1em', marginBottom: '16px' }}>
-                local repair + local-fit contract + quotient-compatible gluing =&gt; schedule-independent normal form
+                local repair + local-fit contract + quotient-compatible gluing =&gt; stable macroscopic normal form
             </div>
 
             <p style={{ marginBottom: '24px' }}>
                 On the fixed-cutoff collar branch, OPH turns that statement into a finite patch-net theorem stack.
                 The repair step is read from exact Markov splice or a declared recoverability channel and then
-                accepted only when it improves overlap fit on the touched interfaces.
+                accepted only when it improves overlap fit on the touched interfaces. The refinement bridge then
+                tracks normal-form and holonomy data through coarse-graining when the comparison defects are bounded.
             </p>
 
             <div style={{ display: 'grid', gap: '12px', marginBottom: '24px' }}>

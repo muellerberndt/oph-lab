@@ -139,7 +139,7 @@ const routeMeta = {
   'consensus-protocol': {
     title: 'Reality as a Consensus Protocol - Overlap Repair, Normal Form, and Records | OPH Lab',
     description:
-      'Explore OPH as observer-based fixed-point consensus: overlap repair, Lyapunov descent, schedule-independent normal form, holonomy obstructions, and record stability.',
+      'Explore OPH as observer-based fixed-point consensus: overlap repair, Lyapunov descent, schedule-independent normal form, controlled coarse-graining, holonomy obstructions, and record stability.',
   },
   'screen-microphysics': {
     title: 'Screen Microphysics and Observer Synchronization in OPH | OPH Lab',

@@ -60,7 +60,7 @@ export const OPH_PAPERS: PaperSummary[] = [
         title: 'Reality as a Consensus Protocol',
         href: `${GITHUB_PDF_BASE}/reality_as_consensus_protocol.pdf`,
         surface: 'Consensus',
-        summary: 'The fixed-point and repair paper. It formalizes overlap reconciliation, schedule-independent normal form, gauge-quotient uniqueness, and stable records.',
+        summary: 'The fixed-point and repair paper. It formalizes overlap reconciliation, schedule-independent normal form, refinement/coarse-graining compatibility, gauge-quotient uniqueness, and stable records.',
     },
     {
         slug: 'microphysics',
@@ -186,6 +186,7 @@ export const CONSENSUS_HIGHLIGHTS = [
     'The fixed-cutoff union-collar gluing theorem makes overlapping accepted repairs quotient-locally compatible.',
     'Under repair completeness, the patch net has a unique schedule-independent normal form.',
     'Global inconsistency is a holonomy problem. Pairwise agreement can leave a nontrivial cycle obstruction.',
+    'Separated refinement systems carry normal-form and holonomy classes through coarse-graining when the square defects are controlled.',
     'Stable records live on the fixed-cutoff record algebra, with exact central projectors or explicitly controlled approximately commuting surrogates.',
     'Law-space selection is presented as a meta-model over reconciliation laws. The stated claim is narrower than a literal cosmological evolution story.',
 ];
