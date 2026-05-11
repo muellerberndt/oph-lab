@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { BookOpen, GraduationCap, Menu, X } from 'lucide-react';
 import './Layout.css';
 import { WALKTHROUGH_STEPS, PART_LABELS, PART_COLORS, type PartId } from '../routes/walkthrough';
 import { WalkthroughNav } from './WalkthroughNav';
@@ -83,6 +83,24 @@ export function Layout() {
                 </header>
 
                 <main className="content-scroll">
+                    <div className="global-resource-bar" aria-label="Best OPH starting points">
+                        <span className="global-resource-label">Best starting points</span>
+                        <a className="global-resource-link" href={TEXTBOOKS_URL}>
+                            <GraduationCap size={18} />
+                            <span>
+                                <strong>OPH Textbooks</strong>
+                                <small>Guided study path through the derivations.</small>
+                            </span>
+                        </a>
+                        <a className="global-resource-link" href={BOOK_URL}>
+                            <BookOpen size={18} />
+                            <span>
+                                <strong>Reverse Engineering Reality</strong>
+                                <small>The book-length route into the framework.</small>
+                            </span>
+                        </a>
+                    </div>
+
                     <div className={`content-container ${isLandingSurface ? 'content-container-wide' : ''}`}>
                         <Outlet />
                         <WalkthroughNav />

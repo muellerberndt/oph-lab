@@ -161,6 +161,72 @@
     padding: 32px;
 }
 
+.global-resource-bar {
+    max-width: 1280px;
+    margin: 0 auto 24px;
+    display: grid;
+    grid-template-columns: auto repeat(2, minmax(220px, 1fr));
+    gap: 12px;
+    align-items: stretch;
+    padding: 12px;
+    border: 1px solid rgba(201, 169, 110, 0.28);
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.11), rgba(78, 231, 255, 0.045));
+}
+
+.global-resource-label {
+    align-self: center;
+    color: var(--accent-gold);
+    font-size: 0.66em;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.global-resource-link {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.global-resource-link:hover {
+    transform: translateY(-1px);
+    border-color: rgba(78, 231, 255, 0.35);
+    color: var(--text-primary);
+}
+
+.global-resource-link svg {
+    flex: 0 0 auto;
+    color: var(--accent-gold);
+}
+
+.global-resource-link span,
+.global-resource-link strong,
+.global-resource-link small {
+    display: block;
+}
+
+.global-resource-link strong {
+    font-size: 0.82em;
+    line-height: 1.35;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.global-resource-link small {
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 0.72em;
+    line-height: 1.45;
+}
+
 .content-container {
     max-width: 900px;
     margin: 0 auto;
@@ -206,5 +272,13 @@
 
     .content-scroll {
         padding: 20px;
+    }
+
+    .global-resource-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .global-resource-label {
+        white-space: normal;
     }
 }
