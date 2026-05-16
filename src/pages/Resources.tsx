@@ -10,6 +10,7 @@ import {
     RESEARCH_REPO_URL,
     SIMULATION_URL,
     TEXTBOOKS_URL,
+    THREE_BODY_DEMO_URL,
     THEORY_URL,
 } from '../content/paperSurface';
 
@@ -139,6 +140,18 @@ export function ResourcesPage() {
                     </p>
                     <a href={TEXTBOOKS_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                         learn.floatingpragma.io &rarr;
+                    </a>
+                </div>
+
+                <div className="card" style={{ borderLeft: '3px solid var(--accent-gold)' }}>
+                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-gold)' }}>
+                        Three-Body Problem OPH Demo
+                    </h4>
+                    <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
+                        Extra simulator and proof walk-through for the OPH three-body problem solution, framed as a loop holonomy gluing example.
+                    </p>
+                    <a href={THREE_BODY_DEMO_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
+                        3body.floatingpragma.io &rarr;
                     </a>
                 </div>
 

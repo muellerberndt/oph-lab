@@ -164,7 +164,7 @@ const routeMeta = {
   resources: {
     title: 'Resources - Current OPH Five-Paper Stack and Study Surfaces | OPH Lab',
     description:
-      'Find the current five-paper OPH stack, book, study surfaces, challenge, and supporting reading for deeper study of Observer Patch Holography.',
+      'Find the current five-paper OPH stack, book, study surfaces, extra demos, challenge, and supporting reading for deeper study of Observer Patch Holography.',
   },
 };
 
