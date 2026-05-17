@@ -6,17 +6,17 @@ export function ScreenMicrophysicsPage() {
         <div>
             <div className="section-header">
                 <span className="section-tag foundation" style={{ color: 'var(--accent-purple)', borderColor: 'var(--accent-purple)' }}>Microphysics</span>
-                <h1 style={{ fontSize: '1.5rem', margin: 0 }}>Screen Microphysics And Observer Synchronization</h1>
+                <h1 style={{ fontSize: '1.5rem', margin: 0 }}>Federated Echosahedral Screen Microphysics</h1>
             </div>
 
             <p style={{ marginBottom: '16px' }}>
                 This is the concrete implementation surface of OPH. The microphysics paper writes abstract patches
-                and overlaps into one finite screen model with local registers, record qubits, repair instruments,
-                and synchronization rules.
+                and overlaps into a federated patch-carrier model with echosahedral interfaces, recurrent toroidal
+                subchannels, record algebras, repair instruments, and synchronization rules.
             </p>
 
             <div className="math-block" style={{ fontSize: '1em', marginBottom: '24px' }}>
-                finite screen cellulation + gauge registers + record layer + repair dynamics =&gt; simulator-facing OPH architecture
+                federated patches + echosahedral ports + record layer + repair dynamics =&gt; observer-facing OPH architecture
             </div>
 
             <div style={{ display: 'grid', gap: '12px', marginBottom: '24px' }}>
@@ -30,11 +30,11 @@ export function ScreenMicrophysicsPage() {
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Reference Architecture</h3>
             <div style={{ display: 'grid', gap: '12px', marginBottom: '24px' }}>
                 <div className="card" style={{ borderLeft: '3px solid var(--accent-purple)' }}>
-                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-purple)' }}>Local screen registers</h4>
+                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-purple)' }}>Federated patch carriers</h4>
                     <p style={{ margin: 0, fontSize: '0.82em', color: 'var(--text-secondary)' }}>
-                        A finite cellulation of S^2 carries local gauge registers on links. Selected vertices or coarse
-                        cells also carry record registers so the same microscopic system can host both dynamics and
-                        memory.
+                        The screen is a regulator geometry chart for observer-facing cuts, not a literal spherical
+                        quantum computer. The implementation surface is a federation of finite patches with exposed
+                        ports and records.
                     </p>
                 </div>
 
@@ -58,11 +58,11 @@ export function ScreenMicrophysicsPage() {
             <Explainer title="What is inside the paper">
                 <p>
                     The paper places measurement, stable records, checkpoint/restoration, and synchronization on a
-                    finite screen architecture. It is a concrete part of the OPH suite.
+                    federated finite-patch architecture. It is a concrete part of the OPH suite.
                 </p>
                 <p>
-                    This is also the natural simulator target for small digital and tensor-network tests of gauge
-                    invariance, collar conditional mutual information, and repair stability.
+                    The octahedral Z2/S3 simulator is a digital calibration note. Hardware claims require
+                    public evidence bundles with stable hashes, calibration records, controls, and verifier receipts.
                 </p>
             </Explainer>
 

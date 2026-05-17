@@ -220,7 +220,7 @@ export function ResourcesPage() {
                 </p>
                 <p>
                     For technical statements, it is better to cite the exact paper and visible release line than to
-                    cite the lab or an older bundled summary.
+                    cite the lab or a bundled summary.
                 </p>
             </Explainer>
 

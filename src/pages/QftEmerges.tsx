@@ -46,7 +46,7 @@ export function QftEmergesPage() {
                     {
                         step: '1',
                         title: 'Quantum mechanics as effective algebraic description',
-                        detail: 'Patch algebras, states, trace/Born event probabilities, and record updating belong to the current OPH working basis.',
+                        detail: 'Patch algebras, states, trace/Born event probabilities, and record updating belong to the OPH working basis.',
                         color: 'var(--accent-blue)',
                     },
                     {
@@ -192,7 +192,7 @@ export function QftEmergesPage() {
                 <p>
                     This explains why quantizing gravity as a QFT fails: GR + QFT is non-renormalizable because
                     QFT assumes a smooth background, but at the Planck scale the background IS the dynamical
-                    variable (the screen). OPH replaces QFT with the screen algebra at the fundamental level.
+                    variable (the screen). OPH uses the screen algebra at the fundamental level.
                 </p>
             </Explainer>
 
@@ -221,7 +221,7 @@ export function QftEmergesPage() {
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
                     <li>Quarks carry a maximal theorem-emitted structure on the declared ledger: the D12 mass ray, the negative selector <code>sigma_ref</code>, and a restricted-scope affine mean structure; the exact minimal extension above that structure is the triple <code>H_mass</code>, <code>H_phys</code>, and <code>H_abs</code></li>
                     <li>Charged-lepton centered-operator promotion and the later affine descent to &mu;<sub>phys</sub>(Y<sub>e</sub>)</li>
-                    <li>Neutrino theorem pair emitted on the weighted-cycle branch; older exact adapters serve as diagnostic-only readouts beneath that branch</li>
+                    <li>Neutrino theorem pair emitted on the weighted-cycle branch; exact adapters serve as diagnostic-only readouts beneath that branch</li>
                     <li>Higgs/top proof structure and scope discipline around the closed D11 source-only split theorem</li>
                     <li>Hadron backend / compute-bound closure</li>
                 </ul>

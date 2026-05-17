@@ -142,9 +142,9 @@ const routeMeta = {
       'Explore OPH as observer-based fixed-point consensus: overlap repair, Lyapunov descent, schedule-independent normal form, controlled coarse-graining, holonomy obstructions, and record stability.',
   },
   'screen-microphysics': {
-    title: 'Screen Microphysics and Observer Synchronization in OPH | OPH Lab',
+    title: 'Federated Echosahedral Screen Microphysics in OPH | OPH Lab',
     description:
-      'Inspect the finite screen-register architecture used by OPH to model records, measurement, checkpoint/restoration, and observer synchronization.',
+      'Inspect the federated patch-carrier architecture used by OPH to model records, measurement, checkpoint/restoration, public hardware evidence, and observer synchronization.',
   },
   predictions: {
     title: 'Predictions and Pressure Tests - Current OPH Empirical Surface | OPH Lab',

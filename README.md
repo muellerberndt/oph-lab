@@ -4,7 +4,7 @@ Interactive explainer app for Observer Patch Holography.
 
 Production URL: `https://oph-lab.floatingpragma.io/`
 
-The lab is a reader-facing guide to the OPH paper stack. Its job is to explain the derivation routes, show where the recovered core stops, and keep public copy aligned with the current paper surface. It is not a substitute for the papers, and it should not silently upgrade conditional or continuation results into unconditional theorem claims.
+The lab is a reader-facing guide to the OPH paper stack. Its job is to explain the derivation routes, show where the recovered core stops, and keep public copy aligned with the paper surface. It is not a substitute for the papers, and it should not silently upgrade conditional or continuation results into unconditional theorem claims.
 
 ## Source Of Truth
 
@@ -21,9 +21,9 @@ Research status is controlled from the sibling `reverse-engineering-reality/` re
 
 When the paper status changes, update those sources first, then sync the OPH Lab copy.
 
-## Current Research Status
+## Research Status
 
-This section is the lab-maintainer summary of the current public paper surface.
+This section is the lab-maintainer summary of the public paper surface.
 
 ### Gravity / Lorentz branch
 
@@ -79,7 +79,7 @@ This section is the lab-maintainer summary of the current public paper surface.
   - `P_nu = 6.699825740519345`
   - `B_nu = P_nu * C_nu = 6.696004159297337`
   - the absolute weighted-cycle neutrino family is emitted on that branch
-  - the older exact adapter, bridge corridor, and correction audit are diagnostic-only sidecars
+  - the exact adapter, bridge corridor, and correction audit are diagnostic-only sidecars
 - Hadrons:
   - closed out-of-scope / computationally blocked in issues #153/#157, not solved
   - reopen only when a working OPH hadron backend such as GLORB/Echosahedron
@@ -95,14 +95,18 @@ This section is the lab-maintainer summary of the current public paper surface.
 
 ### Screen microphysics branch
 
-- The lab should treat the finite screen-register architecture as a first-class public surface, not a side note.
-- The current microphysics paper carries:
-  - local gauge registers on a finite screen cellulation
+- The lab should treat the federated patch-carrier architecture as a first-class public surface, not a side note.
+- The microphysics paper carries:
+  - echosahedral multi-port patch carriers
+  - toroidal local recurrence channels
+  - \(A_5\)-icosahedral and \(E_8\)-type symmetry framing
   - explicit patch and overlap observables
   - record registers
+  - public hardware-evidence rules
   - checkpoint / restoration machinery
   - observer synchronization as an operational protocol
-- This is a fixed-cutoff reference architecture and simulator target. It is not yet a claim of unique final UV completion.
+- This is a fixed-cutoff reference architecture and simulator target. It does not claim unique final UV completion.
+- The simulator must never be presented as an actual sphere. Sphere language names regulator geometry; the public carrier is a federated patch system.
 
 ## Lab Copy Rules
 
@@ -118,12 +122,12 @@ Use these rules whenever editing explainer text.
   - open scaffold
 - Do not describe compare-only exact-hit sidecars as public theorem rows.
 - Do not describe continuation-level phenomenology templates as recovered-core predictions.
-- Do not use progress-tracking language like “now we have” in public research summaries.
-- Prefer “current paper surface”, “explicit BW branch”, “continuation-only sidecar”, and “compare-only” where applicable.
+- Do not use release-note phrasing in public research summaries.
+- Prefer “paper surface”, “explicit BW branch”, “continuation-only sidecar”, and “compare-only” where applicable.
 
 ## Highest-Priority Drift Points
 
-These are the common places where public copy tends to overstate the current papers.
+These are the common places where public copy tends to overstate the paper claims.
 
 - Home / landing summary:
   - avoid “everything follows from the axioms” wording
@@ -138,7 +142,7 @@ These are the common places where public copy tends to overstate the current pap
 - Particle / masses / predictions pages:
   - keep `W/Z` compare-only until the endpoint and matching gates close
   - keep Higgs/top on the declared D10/D11 surface plus compare-only inverse sidecar
-  - keep charged, quark, and neutrino lanes labeled by their current claim tiers
+  - keep charged, quark, and neutrino lanes labeled by their declared claim tiers
   - keep hadrons labeled closed out-of-scope / computationally blocked, not solved
   - keep GW comb / discrete Hawking / deep-IR galaxy-response language separated by claim tier
 - Consensus / microphysics pages:

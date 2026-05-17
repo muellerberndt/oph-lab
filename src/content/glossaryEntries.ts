@@ -28,7 +28,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     {
         term: 'Holographic Screen',
         symbol: 'S^2',
-        definition: 'The horizon 2-sphere carrying the algebra net. Bulk spacetime is emergent from the screen state and patch relations.',
+        definition: 'Observer-facing regulator geometry chart for support-visible cuts, often represented by a horizon 2-sphere. The microphysics surface does not treat this chart as a literal spherical quantum computer.',
         category: 'foundation',
         usedIn: ['The Screen', 'Entropy'],
     },
@@ -498,8 +498,8 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
         usedIn: ['Screen Microphysics'],
     },
     {
-        term: 'Finite Screen Reference Architecture',
-        definition: 'Chosen finite gauge-register screen model with local links, record registers, overlap observables, and repair dynamics used as the simulator-facing OPH architecture.',
+        term: 'Federated Patch-Carrier Architecture',
+        definition: 'Chosen fixed-cutoff microphysics model with federated finite patches, echosahedral multi-port interfaces, records, overlap observables, and repair dynamics.',
         category: 'methods',
         usedIn: ['Screen Microphysics'],
     },

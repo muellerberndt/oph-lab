@@ -22,7 +22,7 @@ export function QuantumMechanicsPage() {
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Step 1: The Quantum-Algebraic Starting Point</h3>
             <p style={{ marginBottom: '16px' }}>
                 Axiom A1 assigns a von Neumann algebra A(P) to each patch P. Von Neumann algebras act on
-                Hilbert spaces, and the current OPH papers use that algebraic operator language as part of
+                Hilbert spaces, and the OPH papers use that algebraic operator language as part of
                 the formalism.
             </p>
             <p style={{ marginBottom: '16px' }}>

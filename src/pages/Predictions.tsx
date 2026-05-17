@@ -105,7 +105,7 @@ export function PredictionsPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>3. Sharp Null Expectations</h3>
             <p style={{ marginBottom: '16px' }}>
-                The public surface makes some clean exclusions. These are sharper than the older blanket
+                The public surface makes some clean exclusions. These are sharper than blanket
                 wording the lab used before.
             </p>
 
@@ -131,7 +131,7 @@ export function PredictionsPage() {
 
             <Explainer title="Why the page is structured this way">
                 <p>
-                    The older lab treated every eye-catching statement as if it sat on the same status tier. That
+                    A flat lab summary treats every eye-catching statement as if it sits on the same status tier. That
                     wording does not match the papers.
                 </p>
                 <p>

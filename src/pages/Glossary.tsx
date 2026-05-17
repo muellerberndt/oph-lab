@@ -59,7 +59,7 @@ export function GlossaryPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 Expanded concept index aligned with the OPH manuscript structure. The glossary covers the gravity
-                and QFT chains together with the newer consensus and screen-microphysics surfaces.
+                and QFT chains together with the consensus and screen-microphysics surfaces.
             </p>
 
             <div className="card" style={{ marginBottom: '14px', borderLeft: '3px solid var(--accent-gold)' }}>

@@ -35,7 +35,7 @@ const ROUTE_DESCRIPTIONS: Record<string, string> = {
   '/unification': 'Inspect the coupling-unification lesson and the OPH account of apparent grand-unification patterns.',
   '/qft-emerges': 'Follow the argument that quantum field theory is an effective layer emerging from deeper screen dynamics.',
   '/consensus-protocol': 'Explore OPH as observer-based fixed-point consensus: overlap repair, Lyapunov descent, schedule-independent normal form, controlled coarse-graining, holonomy obstructions, and record stability.',
-  '/screen-microphysics': 'Inspect the finite screen-register architecture used by OPH to model records, measurement, checkpoint/restoration, and observer synchronization.',
+  '/screen-microphysics': 'Inspect the federated patch-carrier architecture used by OPH to model records, measurement, checkpoint/restoration, public hardware evidence, and observer synchronization.',
   '/predictions': 'Review the OPH pressure-test surface, separating public quantitative rows from continuation-level signatures and open phenomenology.',
   '/synthesis': 'See how OPH ties the derivation chain together across structural theorems, branch-conditional gravity results, particles, consensus, and observer machinery.',
   '/glossary': 'Use the OPH Lab glossary for concise definitions of the core holography, gravity, and quantum-information terms.',

@@ -64,7 +64,7 @@ export function EntropyPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Von Neumann Entropy</h3>
             <p style={{ marginBottom: '8px' }}>
-                The quantum generalization replaces probabilities with a density matrix &rho;:
+                The quantum generalization uses a density matrix &rho; in place of probabilities:
             </p>
             <div className="math-block">
                 S(&rho;) = &minus;Tr(&rho; ln &rho;)

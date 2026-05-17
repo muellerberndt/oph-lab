@@ -110,7 +110,7 @@ export function EntanglementPage() {
                 on quantum theory. Why exactly 2&radic;2?
             </p>
             <p style={{ marginBottom: '16px' }}>
-                On the current OPH quantum-algebraic surface, the Tsirelson bound is the standard
+                On the OPH quantum-algebraic surface, the Tsirelson bound is the standard
                 complex-Hilbert-space bound. The bound 2&radic;2 is the maximum value of 2&radic;2
                 &middot; sin(&theta;) for the optimal angle &theta; = &pi;/4, a consequence of the geometry
                 of complex projective space. A derivation of Hilbert-space structure from operational records

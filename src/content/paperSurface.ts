@@ -65,10 +65,10 @@ export const OPH_PAPERS: PaperSummary[] = [
     },
     {
         slug: 'microphysics',
-        title: 'Screen Microphysics and Observer Synchronization',
+        title: 'Federated Echosahedral Screen Microphysics',
         href: `${GITHUB_PDF_BASE}/screen_microphysics_and_observer_synchronization.pdf`,
         surface: 'Observer Machinery',
-        summary: 'The concrete finite-screen architecture. It turns patches, overlaps, records, checkpoint/restoration, and observer synchronization into one simulator-facing model.',
+        summary: 'The concrete federated patch-carrier architecture. It turns patches, overlaps, records, public hardware-evidence rules, checkpoint/restoration, and observer synchronization into one fixed-cutoff surface.',
     },
 ];
 
@@ -193,11 +193,11 @@ export const CONSENSUS_HIGHLIGHTS = [
 ];
 
 export const MICROPHYSICS_HIGHLIGHTS = [
-    'A finite screen cellulation carries local gauge registers on links and optional record qubits on vertices or coarse cells.',
-    'Patch algebras, overlap observables, edge-sector measurements, and repair instruments are explicit finite-cutoff objects instead of metaphors.',
+    'A spherical screen is a regulator chart for observer-facing cuts, not a literal spherical quantum computer.',
+    'Federated echosahedral patch carriers expose multi-port overlap data, records, repair instruments, and synchronization interfaces.',
     'Measurement, stable records, checkpoint/restoration, and observer synchronization live inside one shared microscopic model.',
-    'The paper gives a simulator-facing reference architecture. A uniquely identified final UV completion is outside the stated surface.',
-    'The architecture is designed so small digital or tensor-network simulations can probe gauge-invariant patch observables, low collar CMI, and synchronization stability.',
+    'Toroidal subchannels supply local recurrence and winding-sensitive dynamics inside bounded patches.',
+    'Hardware evidence counts only through public bundles with stable hashes, calibration records, controls, and verifier receipts.',
 ];
 
 export const PREDICTION_SURFACE = {

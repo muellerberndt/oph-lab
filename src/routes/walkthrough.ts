@@ -86,7 +86,7 @@ export const WALKTHROUGH_STEPS: WalkthroughStep[] = [
 
     // Consensus & observer machinery
     { to: '/consensus-protocol/', icon: GitBranch, label: 'Consensus Protocol', part: 'observer-machinery', seoTitle: 'Reality as a Consensus Protocol | Overlap Repair, Normal Form, and Records' },
-    { to: '/screen-microphysics/', icon: Cpu, label: 'Screen Microphysics', part: 'observer-machinery', seoTitle: 'Screen Microphysics and Observer Synchronization in OPH' },
+    { to: '/screen-microphysics/', icon: Cpu, label: 'Screen Microphysics', part: 'observer-machinery', seoTitle: 'Federated Echosahedral Screen Microphysics in OPH' },
 
     // Predictions & Synthesis
     { to: '/predictions/', icon: Target, label: 'Testable Predictions', part: 'predictions', seoTitle: 'Testable Predictions of Quantum Gravity | Gravitational Wave Signatures' },
