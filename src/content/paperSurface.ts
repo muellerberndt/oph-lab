@@ -31,6 +31,8 @@ export const BOOK_URL = 'https://oph-book.floatingpragma.io/';
 export const TEXTBOOKS_URL = 'https://learn.floatingpragma.io/';
 export const THREE_BODY_DEMO_URL = 'https://3body.floatingpragma.io/';
 export const CHALLENGE_URL = 'https://challenge.floatingpragma.io/';
+export const COHERENCE_URL = 'https://coherence.floatingpragma.io/';
+export const OMEGA_URL = 'https://omega.floatingpragma.io/';
 
 const GITHUB_PDF_BASE = `${RESEARCH_REPO_URL}/blob/main/paper`;
 

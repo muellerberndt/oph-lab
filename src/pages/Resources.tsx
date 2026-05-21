@@ -3,7 +3,9 @@ import {
     BOOK_URL,
     CHALLENGE_URL,
     CLAIM_TIER_LEGEND,
+    COHERENCE_URL,
     LAB_REPO_URL,
+    OMEGA_URL,
     OPH_PAPERS,
     OVERVIEW_URL,
     RESEARCH_PAPER_DIR_URL,
@@ -152,6 +154,30 @@ export function ResourcesPage() {
                     </p>
                     <a href={THREE_BODY_DEMO_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                         3body.floatingpragma.io &rarr;
+                    </a>
+                </div>
+
+                <div className="card" style={{ borderLeft: '3px solid var(--accent-blue)' }}>
+                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-blue)' }}>
+                        OPH Coherence Map
+                    </h4>
+                    <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
+                        Public graph surface for OPH concepts, overlaps, and cross-domain routes.
+                    </p>
+                    <a href={COHERENCE_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
+                        coherence.floatingpragma.io &rarr;
+                    </a>
+                </div>
+
+                <div className="card" style={{ borderLeft: '3px solid var(--accent-cyan)' }}>
+                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>
+                        OMEGA Hardware Guide
+                    </h4>
+                    <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
+                        Hardware-facing guide for OPH optical chamber computation and consensus.
+                    </p>
+                    <a href={OMEGA_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
+                        omega.floatingpragma.io &rarr;
                     </a>
                 </div>
 

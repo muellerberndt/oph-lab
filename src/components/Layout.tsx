@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { BookOpen, GraduationCap, Menu, X } from 'lucide-react';
+import { BookOpen, Cpu, GraduationCap, Menu, Network, Orbit, X } from 'lucide-react';
 import './Layout.css';
 import { WALKTHROUGH_STEPS, PART_LABELS, PART_COLORS, type PartId } from '../routes/walkthrough';
 import { WalkthroughNav } from './WalkthroughNav';
 import { installLinkTracking, trackPageView } from '../lib/analytics';
 import { SeoManager } from './SeoManager';
 import { getSeoMeta } from '../seo';
-import { BOOK_URL, CHALLENGE_URL, OVERVIEW_URL, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL } from '../content/paperSurface';
+import { BOOK_URL, CHALLENGE_URL, COHERENCE_URL, OMEGA_URL, OVERVIEW_URL, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL, THREE_BODY_DEMO_URL } from '../content/paperSurface';
 
 export function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -99,6 +99,27 @@ export function Layout() {
                                 <small>The book-length route into the framework.</small>
                             </span>
                         </a>
+                        <a className="global-resource-link" href={COHERENCE_URL}>
+                            <Network size={18} />
+                            <span>
+                                <strong>Coherence Map</strong>
+                                <small>Concept graph for OPH overlaps and public routes.</small>
+                            </span>
+                        </a>
+                        <a className="global-resource-link" href={OMEGA_URL}>
+                            <Cpu size={18} />
+                            <span>
+                                <strong>OMEGA</strong>
+                                <small>Hardware-facing optical chamber guide.</small>
+                            </span>
+                        </a>
+                        <a className="global-resource-link" href={THREE_BODY_DEMO_URL}>
+                            <Orbit size={18} />
+                            <span>
+                                <strong>Three-Body Demo</strong>
+                                <small>Finite patch-net simulator and proof walk-through.</small>
+                            </span>
+                        </a>
                     </div>
 
                     <div className={`content-container ${isLandingSurface ? 'content-container-wide' : ''}`}>
@@ -127,6 +148,12 @@ export function Layout() {
                                 <a href={TEXTBOOKS_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Textbooks</a>
                                 {' \u2022 '}
                                 <a href={CHALLENGE_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Challenge</a>
+                                {' \u2022 '}
+                                <a href={COHERENCE_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Coherence</a>
+                                {' \u2022 '}
+                                <a href={OMEGA_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>OMEGA</a>
+                                {' \u2022 '}
+                                <a href={THREE_BODY_DEMO_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>3-Body Demo</a>
                                 {' \u2022 '}
                                 <a href="https://floatingpragma.io/starklab/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>STARK Lab</a>
                                 {' \u2022 '}
