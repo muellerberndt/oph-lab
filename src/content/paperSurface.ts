@@ -27,6 +27,7 @@ export const LAB_REPO_URL = 'https://github.com/muellerberndt/oph-lab';
 export const OVERVIEW_URL = 'https://floatingpragma.io/oph/';
 export const THEORY_URL = 'https://floatingpragma.io/oph/theory-of-everything/';
 export const SIMULATION_URL = 'https://floatingpragma.io/oph/simulation-theory/';
+export const PHYSICS_UNIFICATION_URL = 'https://floatingpragma.io/oph/physics-unification/';
 export const BOOK_URL = 'https://oph-book.floatingpragma.io/';
 export const TEXTBOOKS_URL = 'https://learn.floatingpragma.io/';
 export const THREE_BODY_DEMO_URL = 'https://3body.floatingpragma.io/';

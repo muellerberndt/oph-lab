@@ -8,6 +8,7 @@ import {
     OMEGA_URL,
     OPH_PAPERS,
     OVERVIEW_URL,
+    PHYSICS_UNIFICATION_URL,
     RESEARCH_PAPER_DIR_URL,
     RESEARCH_REPO_URL,
     SIMULATION_URL,
@@ -61,11 +62,14 @@ export function ResourcesPage() {
                 </h4>
                 <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
                     For readers arriving via high-intent public queries, OPH maintains dedicated entry pages for
-                    <strong> theory of everything</strong> and <strong> simulation theory</strong>.
+                    <strong> theory of everything</strong>, <strong> physics unification</strong>, and <strong> simulation theory</strong>.
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                     <a href={THEORY_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                         theory of everything &rarr;
+                    </a>
+                    <a href={PHYSICS_UNIFICATION_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
+                        physics unification &rarr;
                     </a>
                     <a href={SIMULATION_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                         simulation theory &rarr;
