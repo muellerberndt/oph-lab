@@ -39,7 +39,7 @@ const ROUTE_DESCRIPTIONS: Record<string, string> = {
   '/predictions': 'Review the OPH pressure-test surface, separating public quantitative rows from continuation-level signatures and open phenomenology.',
   '/synthesis': 'See how OPH ties the derivation chain together across structural theorems, branch-conditional gravity results, particles, consensus, and observer machinery.',
   '/glossary': 'Use the OPH Lab glossary for concise definitions of the core holography, gravity, and quantum-information terms.',
-  '/resources': 'Find the five-paper OPH stack, book, search-entry pages, coherence map, OMEGA hardware guide, extra demos, challenge, and supporting reading for deeper study of Observer Patch Holography.',
+  '/resources': 'Find the five-paper OPH stack, book, blog, search-entry pages, coherence map, OMEGA hardware guide, extra demos, challenge, and supporting reading for deeper study of Observer Patch Holography.',
 };
 
 function normalizePathname(pathname: string): string {

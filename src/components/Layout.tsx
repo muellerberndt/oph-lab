@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { Atom, BookOpen, Cpu, GraduationCap, Menu, Network, Orbit, X } from 'lucide-react';
+import { Atom, BookOpen, Cpu, GraduationCap, Menu, Network, Newspaper, Orbit, X } from 'lucide-react';
 import './Layout.css';
 import { WALKTHROUGH_STEPS, PART_LABELS, PART_COLORS, type PartId } from '../routes/walkthrough';
 import { WalkthroughNav } from './WalkthroughNav';
 import { installLinkTracking, trackPageView } from '../lib/analytics';
 import { SeoManager } from './SeoManager';
 import { getSeoMeta } from '../seo';
-import { BOOK_URL, CHALLENGE_URL, COHERENCE_URL, OMEGA_URL, OVERVIEW_URL, PHYSICS_UNIFICATION_URL, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL, THREE_BODY_DEMO_URL } from '../content/paperSurface';
+import { BLOG_URL, BOOK_URL, CHALLENGE_URL, COHERENCE_URL, OMEGA_URL, OVERVIEW_URL, PHYSICS_UNIFICATION_URL, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL, THREE_BODY_DEMO_URL } from '../content/paperSurface';
 
 export function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -99,6 +99,13 @@ export function Layout() {
                                 <small>The book-length route into the framework.</small>
                             </span>
                         </a>
+                        <a className="global-resource-link" href={BLOG_URL}>
+                            <Newspaper size={18} />
+                            <span>
+                                <strong>Floating Pragma Blog</strong>
+                                <small>Public essays linking OPH to meaning and computation.</small>
+                            </span>
+                        </a>
                         <a className="global-resource-link" href={COHERENCE_URL}>
                             <Network size={18} />
                             <span>
@@ -145,6 +152,8 @@ export function Layout() {
                                 <a href="https://floatingpragma.io/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Floating Pragma</a>
                                 {' \u2022 '}
                                 <a href={OVERVIEW_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>OPH Overview</a>
+                                {' \u2022 '}
+                                <a href={BLOG_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Blog</a>
                                 {' \u2022 '}
                                 <a href={THEORY_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Theory of Everything</a>
                                 {' \u2022 '}

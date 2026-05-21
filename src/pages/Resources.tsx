@@ -1,5 +1,6 @@
 import { Explainer } from '../components/Explainer';
 import {
+    BLOG_URL,
     BOOK_URL,
     CHALLENGE_URL,
     CLAIM_TIER_LEGEND,
@@ -77,6 +78,9 @@ export function ResourcesPage() {
                     <a href={OVERVIEW_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                         OPH overview &rarr;
                     </a>
+                    <a href={BLOG_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
+                        OPH blog &rarr;
+                    </a>
                 </div>
             </div>
 
@@ -134,6 +138,18 @@ export function ResourcesPage() {
                     </p>
                     <a href={BOOK_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                         oph-book.floatingpragma.io &rarr;
+                    </a>
+                </div>
+
+                <div className="card" style={{ borderLeft: '3px solid var(--accent-green)' }}>
+                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-green)' }}>
+                        Floating Pragma Blog
+                    </h4>
+                    <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
+                        Public essays and entry points connecting OPH to meaning, computation, semiotics, and interpretation.
+                    </p>
+                    <a href={BLOG_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
+                        blog.floatingpragma.io &rarr;
                     </a>
                 </div>
 
