@@ -7,7 +7,7 @@ import { WalkthroughNav } from './WalkthroughNav';
 import { installLinkTracking, trackPageView } from '../lib/analytics';
 import { SeoManager } from './SeoManager';
 import { getSeoMeta } from '../seo';
-import { BLOG_URL, BOOK_URL, CHALLENGE_URL, COHERENCE_URL, OMEGA_URL, OVERVIEW_URL, PHYSICS_UNIFICATION_URL, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL, THREE_BODY_DEMO_URL } from '../content/paperSurface';
+import { APPLICATIONS_URL, BLOG_URL, BOOK_URL, CHALLENGE_URL, COHERENCE_URL, OVERVIEW_URL, PHYSICS_UNIFICATION_URL, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL, THREE_BODY_DEMO_URL } from '../content/paperSurface';
 
 export function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -120,11 +120,11 @@ export function Layout() {
                                 <small>Search entry page for the unification claim.</small>
                             </span>
                         </a>
-                        <a className="global-resource-link" href={OMEGA_URL}>
+                        <a className="global-resource-link" href={APPLICATIONS_URL}>
                             <Cpu size={18} />
                             <span>
-                                <strong>OMEGA</strong>
-                                <small>Hardware-facing optical chamber guide.</small>
+                                <strong>Applications</strong>
+                                <small>Use cases across hardware, compute, energy, AGI, and lift.</small>
                             </span>
                         </a>
                         <a className="global-resource-link" href={THREE_BODY_DEMO_URL}>
@@ -169,7 +169,7 @@ export function Layout() {
                                 {' \u2022 '}
                                 <a href={COHERENCE_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Coherence</a>
                                 {' \u2022 '}
-                                <a href={OMEGA_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>OMEGA</a>
+                                <a href={APPLICATIONS_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Applications</a>
                                 {' \u2022 '}
                                 <a href={THREE_BODY_DEMO_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>3-Body Demo</a>
                                 {' \u2022 '}

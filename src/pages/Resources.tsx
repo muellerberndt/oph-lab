@@ -6,7 +6,7 @@ import {
     CLAIM_TIER_LEGEND,
     COHERENCE_URL,
     LAB_REPO_URL,
-    OMEGA_URL,
+    APPLICATIONS_URL,
     OPH_PAPERS,
     OVERVIEW_URL,
     PHYSICS_UNIFICATION_URL,
@@ -191,12 +191,12 @@ export function ResourcesPage() {
 
                 <div className="card" style={{ borderLeft: '3px solid var(--accent-cyan)' }}>
                     <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>
-                        OMEGA Hardware Guide
+                        Applications
                     </h4>
                     <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
-                        Hardware-facing guide for OPH optical chamber computation and consensus.
+                        OPH use cases across hardware, compute, energy, AGI, lift, and optical chamber consensus.
                     </p>
-                    <a href={OMEGA_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
+                    <a href={APPLICATIONS_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                         omega.floatingpragma.io &rarr;
                     </a>
                 </div>
