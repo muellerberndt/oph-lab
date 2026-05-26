@@ -23,6 +23,8 @@ export type PublicRow = {
 
 export const RESEARCH_REPO_URL = 'https://github.com/FloatingPragma/observer-patch-holography';
 export const RESEARCH_PAPER_DIR_URL = `${RESEARCH_REPO_URL}/tree/main/paper`;
+export const RESEARCH_LICENSE_URL = `${RESEARCH_REPO_URL}/blob/main/LICENSE`;
+export const RESEARCH_PATENT_POLICY_URL = `${RESEARCH_REPO_URL}/blob/main/PATENTS.md`;
 export const LAB_REPO_URL = 'https://github.com/muellerberndt/oph-lab';
 export const OVERVIEW_URL = 'https://floatingpragma.io/oph/';
 export const THEORY_URL = 'https://floatingpragma.io/oph/theory-of-everything/';

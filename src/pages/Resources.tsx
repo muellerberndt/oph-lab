@@ -10,7 +10,9 @@ import {
     OPH_PAPERS,
     OVERVIEW_URL,
     PHYSICS_UNIFICATION_URL,
+    RESEARCH_LICENSE_URL,
     RESEARCH_PAPER_DIR_URL,
+    RESEARCH_PATENT_POLICY_URL,
     RESEARCH_REPO_URL,
     SIMULATION_URL,
     TEXTBOOKS_URL,
@@ -285,6 +287,18 @@ export function ResourcesPage() {
                 <p>
                     <a href={RESEARCH_PAPER_DIR_URL} target="_blank" rel="noopener noreferrer">
                         {RESEARCH_PAPER_DIR_URL}
+                    </a>
+                </p>
+                <p>
+                    License and patent policy:
+                </p>
+                <p>
+                    <a href={RESEARCH_LICENSE_URL} target="_blank" rel="noopener noreferrer">
+                        Main license and anti-patent covenant
+                    </a>
+                    {' | '}
+                    <a href={RESEARCH_PATENT_POLICY_URL} target="_blank" rel="noopener noreferrer">
+                        PATENTS.md
                     </a>
                 </p>
             </Explainer>

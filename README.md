@@ -176,3 +176,11 @@ npm run deploy
 ```
 
 The app uses `gh-pages -d dist` for deployment.
+
+## License And Patent Policy
+
+OPH Lab is a public OPH surface and links back to the canonical OPH repository
+license and anti-patent covenant:
+
+- https://github.com/FloatingPragma/observer-patch-holography/blob/main/LICENSE
+- https://github.com/FloatingPragma/observer-patch-holography/blob/main/PATENTS.md

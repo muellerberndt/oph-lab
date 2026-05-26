@@ -7,7 +7,7 @@ import { WalkthroughNav } from './WalkthroughNav';
 import { installLinkTracking, trackPageView } from '../lib/analytics';
 import { SeoManager } from './SeoManager';
 import { getSeoMeta } from '../seo';
-import { APPLICATIONS_URL, BLOG_URL, BOOK_URL, CHALLENGE_URL, COHERENCE_URL, OVERVIEW_URL, PHYSICS_UNIFICATION_URL, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL, THREE_BODY_DEMO_URL } from '../content/paperSurface';
+import { APPLICATIONS_URL, BLOG_URL, BOOK_URL, CHALLENGE_URL, COHERENCE_URL, OVERVIEW_URL, PHYSICS_UNIFICATION_URL, RESEARCH_LICENSE_URL, RESEARCH_PATENT_POLICY_URL, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL, THREE_BODY_DEMO_URL } from '../content/paperSurface';
 
 export function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -166,6 +166,10 @@ export function Layout() {
                                 <a href={TEXTBOOKS_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Textbooks</a>
                                 {' \u2022 '}
                                 <a href={CHALLENGE_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Challenge</a>
+                                {' \u2022 '}
+                                <a href={RESEARCH_LICENSE_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>License</a>
+                                {' \u2022 '}
+                                <a href={RESEARCH_PATENT_POLICY_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Anti-Patent</a>
                                 {' \u2022 '}
                                 <a href={COHERENCE_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Coherence</a>
                                 {' \u2022 '}
