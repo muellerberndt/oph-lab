@@ -84,7 +84,7 @@ const routeMeta = {
   'de-sitter': {
     title: 'Solving the Cosmological Constant Problem - de Sitter Space from Holography | OPH Lab',
     description:
-      'Explore the OPH treatment of de Sitter space, cosmological horizons, and the cosmological constant problem.',
+      'Explore the OPH treatment of de Sitter space, cosmological horizons, and the cosmological constant derivation as a screen-capacity branch.',
   },
   'dark-matter': {
     title: 'Dark Matter & MOND Explained - Galaxy Rotation Curves from Holography | OPH Lab',
@@ -104,7 +104,7 @@ const routeMeta = {
   entanglement: {
     title: 'Bell\'s Theorem & Quantum Entanglement - Interactive Simulator | OPH Lab',
     description:
-      'Use the entanglement lesson to connect Bell-style correlations and OPH\'s observer-consistency story.',
+      'Use the entanglement lesson to connect Bell-style correlations and the OPH observer-consistency story.',
   },
   'error-correction': {
     title: 'Spacetime as Quantum Error Correcting Code - HaPPY Code Explained | OPH Lab',
@@ -119,17 +119,17 @@ const routeMeta = {
   'standard-model': {
     title: 'Deriving the Standard Model - Particle Physics from Holography | OPH Lab',
     description:
-      'Review the OPH route toward Standard Model structure as emergent effective physics.',
+      'Review the OPH route toward Standard Model structure as emergent effective physics and its connection to the Standard Model unified with gravity search route.',
   },
   masses: {
     title: 'Matter-Sector Continuations | OPH Lab',
     description:
-      'Review the current OPH discussion of downstream matter-sector continuations and coupling structure.',
+      'Review the OPH discussion of downstream matter-sector continuations and coupling structure.',
   },
   unification: {
     title: 'Grand Unification Without GUTs - Coupling Constant Convergence | OPH Lab',
     description:
-      'Inspect the coupling-unification lesson and the OPH account of apparent grand-unification patterns.',
+      'Inspect the coupling-unification lesson and the OPH account of apparent grand-unification patterns, Standard Model plus gravity, and broader physics unification.',
   },
   'qft-emerges': {
     title: 'How Quantum Field Theory Emerges from a Holographic Screen | OPH Lab',
@@ -147,9 +147,9 @@ const routeMeta = {
       'Inspect the federated patch-carrier architecture used by OPH to model records, measurement, checkpoint/restoration, public hardware evidence, and observer synchronization.',
   },
   predictions: {
-    title: 'Predictions and Pressure Tests - Current OPH Empirical Surface | OPH Lab',
+    title: 'Predictions and Pressure Tests - OPH Empirical Surface | OPH Lab',
     description:
-      'Review the current OPH pressure-test surface, separating public quantitative rows from continuation-level signatures and still-open phenomenology.',
+      'Review the OPH pressure-test surface, separating public quantitative rows from continuation-level signatures and open phenomenology.',
   },
   synthesis: {
     title: 'OPH Synthesis - Recovered Core, Particles, Consensus, and Observer Machinery | OPH Lab',
@@ -162,9 +162,9 @@ const routeMeta = {
       'Use the OPH Lab glossary for concise definitions of the core holography, gravity, and quantum-information terms.',
   },
   resources: {
-    title: 'Resources - Current OPH Five-Paper Stack and Study Surfaces | OPH Lab',
+    title: 'Resources - OPH Six-Paper Stack and Study Surfaces | OPH Lab',
     description:
-      'Find the current five-paper OPH stack, book, study surfaces, extra demos, challenge, and supporting reading for deeper study of Observer Patch Holography.',
+      'Find the six-paper OPH stack, HTML paper summaries, book, blog, search-entry pages for Standard Model unified with gravity and cosmological constant derivation, coherence map, applications page, extra demos, challenge, and supporting reading for deeper study of Observer Patch Holography.',
   },
 };
 
