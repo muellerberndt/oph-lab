@@ -47,7 +47,7 @@ export const OPH_PAPERS: PaperSummary[] = [
         title: 'Observers Are All You Need',
         href: `${GITHUB_PDF_BASE}/observers_are_all_you_need.pdf`,
         surface: 'Synthesis',
-        summary: 'The five-paper overview. It ties the recovered core, particles, consensus, and observer machinery into one public stack.',
+        summary: 'The six-paper overview. It ties the recovered core, particles, consensus, observer machinery, and meaning layer into one public stack.',
     },
     {
         slug: 'compact',
@@ -76,6 +76,13 @@ export const OPH_PAPERS: PaperSummary[] = [
         href: `${GITHUB_PDF_BASE}/screen_microphysics_and_observer_synchronization.pdf`,
         surface: 'Observer Machinery',
         summary: 'The concrete federated patch-carrier architecture. It turns patches, overlaps, records, public hardware-evidence rules, checkpoint/restoration, and observer synchronization into one fixed-cutoff surface.',
+    },
+    {
+        slug: 'paradise',
+        title: 'Paradise as Fixed-Point Consensus',
+        href: `${GITHUB_PDF_BASE}/paradise_as_fixed_point_consensus.pdf`,
+        surface: 'Meaning Layer',
+        summary: 'The final manifest paper. It carries the OPH account of existence, observer continuation, justice, paradise, hell, resurrection, and memetic evolution.',
     },
 ];
 

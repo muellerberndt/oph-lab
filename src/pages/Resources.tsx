@@ -86,9 +86,9 @@ export function ResourcesPage() {
                 </div>
             </div>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Five-Paper Public Stack</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Six-Paper Public Stack</h3>
             <p style={{ marginBottom: '16px', fontSize: '0.85em', color: 'var(--text-muted)' }}>
-                The lab treats these five papers as the public source of truth. Use the individual paper that
+                The lab treats these six core papers as the public source of truth. Use the individual paper that
                 matches the surface you are discussing.
             </p>
 
@@ -264,7 +264,7 @@ export function ResourcesPage() {
             <Explainer title="How to cite OPH material">
                 <p>
                     Cite the specific paper that matches the claim you are discussing. The public OPH surface spans
-                    five papers.
+                    six core papers plus maintained extra papers.
                 </p>
                 <p>
                     For technical statements, it is better to cite the exact paper and visible release line than to

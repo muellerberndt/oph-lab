@@ -51,7 +51,7 @@ export function SynthesisPage() {
                 continuation lanes.
             </p>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Five Surfaces, One Program</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Six Surfaces, One Program</h3>
             <div style={{ display: 'grid', gap: '12px', marginBottom: '24px' }}>
                 {OPH_PAPERS.map((paper) => (
                     <div key={paper.slug} className="card" style={{ borderLeft: '3px solid var(--accent-purple)' }}>
