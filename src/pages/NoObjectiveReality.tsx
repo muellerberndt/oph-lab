@@ -38,7 +38,7 @@ const QUESTIONS: Question[] = [
         problem: 'The cosmological constant problem',
         conventional: 'QFT predicts vacuum energy 10\u00b9\u00b2\u2070 times too large.',
         hiddenAssumption: 'Vacuum energy gravitates like other energy.',
-        ophResolution: 'Gravity is derived from null surfaces. Vacuum energy is null-blind (T\u2096\u2096 = 0). \u039b comes from screen capacity, not vacuum energy. The 120-order discrepancy was never real.',
+        ophResolution: 'Gravity is derived from null surfaces. Vacuum energy is null-blind (T\u2096\u2096 = 0). \u039b belongs to the global screen-capacity branch, not vacuum energy. The 120-order discrepancy was never real.',
     },
     {
         problem: 'The dark matter problem',

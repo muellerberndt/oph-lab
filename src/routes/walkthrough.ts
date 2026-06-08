@@ -90,7 +90,7 @@ export const WALKTHROUGH_STEPS: WalkthroughStep[] = [
 
     // Predictions & Synthesis
     { to: '/predictions/', icon: Target, label: 'Testable Predictions', part: 'predictions', seoTitle: 'Testable Predictions of Quantum Gravity | Gravitational Wave Signatures' },
-    { to: '/synthesis/', icon: Infinity, label: 'Two Parameters, All of Physics', part: 'predictions', seoTitle: 'OPH Synthesis | Structural Results, Branches, and Continuation Lanes' },
+    { to: '/synthesis/', icon: Infinity, label: 'Two Fixed Points, All of Physics', part: 'predictions', seoTitle: 'OPH Synthesis | Zero-Input Fixed Points, Branches, and Continuation Lanes' },
 
     // Reference
     { to: '/glossary/', icon: Search, label: 'Glossary', part: 'reference', seoTitle: 'Quantum Gravity & Holography Glossary | Key Terms Explained' },

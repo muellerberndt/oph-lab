@@ -20,9 +20,10 @@ export function SynthesisPage() {
                 Lorentz, gauge, particle, or observer-level statements.
             </p>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Two Parameters, All of Physics</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Two Fixed Points, All of Physics</h3>
             <p style={{ marginBottom: '16px' }}>
-                The entire OPH framework has exactly <strong>two free parameters</strong>:
+                OPH is formulated as a zero-input closure theory. Its two quantitative constants are closure-selected
+                values, not freely tuned parameters:
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginBottom: '24px' }}>
@@ -41,12 +42,16 @@ export function SynthesisPage() {
                         <p style={{ margin: 0, fontSize: '0.85em' }}>
                             {item.note}
                         </p>
+                        <div className="math-block" style={{ fontSize: '0.78em', margin: '12px 0 0' }}>
+                            {item.equation}
+                        </div>
                     </div>
                 ))}
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                These two inputs feed the public quantitative surfaces. The OPH paper set separates recovered
+                With the screen-capacity fixed point, Lambda = 3pi / (G N*) and the remaining public quantitative
+                surfaces are downstream readouts. The OPH paper set separates recovered
                 structural theorems, explicit branch-conditional results, closed calibration sectors, and open
                 continuation lanes.
             </p>
@@ -163,7 +168,7 @@ export function SynthesisPage() {
                             <li>2D screen &rarr; 3+1D spacetime</li>
                             <li>Shared observer-patch basis for gravity and gauge structure</li>
                             <li>Explicit branch and continuation ledger</li>
-                            <li>2 external quantitative inputs on the public surface</li>
+                            <li>2 closure-defined quantitative constants</li>
                         </ul>
                     </div>
                 </div>
@@ -192,7 +197,7 @@ export function SynthesisPage() {
                 <span style={{ color: 'var(--accent-rose)', fontWeight: 600 }}>Old:</span>
                 <span style={{ color: 'var(--text-secondary)' }}>Parameters are tuned</span>
                 <span style={{ color: 'var(--accent-green)', fontWeight: 600 }}>New:</span>
-                <span style={{ color: 'var(--text-secondary)' }}>Many structural constraints are recovered; two quantitative inputs remain explicit</span>
+                <span style={{ color: 'var(--text-secondary)' }}>The two quantitative constants are fixed-point closure targets</span>
 
                 <span style={{ color: 'var(--accent-rose)', fontWeight: 600 }}>Old:</span>
                 <span style={{ color: 'var(--text-secondary)' }}>Gravity and QM are separate</span>

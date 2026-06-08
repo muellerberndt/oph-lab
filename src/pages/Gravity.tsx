@@ -88,9 +88,9 @@ export function GravityPage() {
         },
         {
             title: 'Step 6: Global completion',
-            equation: 'Lambda = 3pi / (G_eff * log(dim H_tot))',
+            equation: 'N_CRC = F(N_CRC), Lambda_CRC = 3pi / (G_eff N_CRC)',
             value: `Lambda = ${formatNumber(derivation.lambda, 2)} m^-2`,
-            concept: 'Screen capacity closes the Lambda ambiguity',
+            concept: 'Self-closure capacity fixed point closes the Lambda ambiguity',
         },
     ];
 
@@ -104,7 +104,7 @@ export function GravityPage() {
             <p style={{ marginBottom: '16px' }}>
                 This simulator visualizes the declared conditional gravity branch: local null-modular data and
                 generalized-entropy stationarity yield the rest-frame Einstein relation on the stated BW/null-stress
-                assumptions, and global screen capacity fixes the separate Lambda branch.
+                assumptions, and the global self-closure capacity fixed point fixes the separate Lambda term.
             </p>
 
             <div className="card" style={{ marginBottom: '20px', borderLeft: '3px solid var(--accent-cyan)' }}>
@@ -139,7 +139,7 @@ export function GravityPage() {
 
                     <div>
                         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.82em' }}>
-                            <span style={{ color: 'var(--accent-gold)' }}>log10(dim H_tot)</span>
+                            <span style={{ color: 'var(--accent-gold)' }}>log10 N_CRC</span>
                             <span style={{ color: 'var(--accent-cyan)' }}>{logCapacity.toFixed(2)}</span>
                         </div>
                         <input
@@ -319,11 +319,12 @@ export function GravityPage() {
                 </p>
             </Explainer>
 
-            <Explainer title="How P and log(dim H) enter">
+            <Explainer title="How P and N_CRC enter">
                 <p>
-                    P changes the effective gravitational and entropy scales in this toy readout. The screen capacity
-                    log(dim H_tot) changes only the global Lambda completion. This split matches the declared OPH paper
-                    surface, where the local gravity branch and the cosmological-capacity branch are distinct.
+                    P is the local pixel fixed point and changes the effective gravitational and entropy scales in this
+                    toy readout. The N_CRC record-capacity fixed point changes only the global Lambda completion.
+                    This split matches the declared OPH paper surface, where the local gravity branch and the
+                    cosmological-capacity branch are distinct.
                 </p>
             </Explainer>
 

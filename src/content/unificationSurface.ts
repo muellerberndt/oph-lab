@@ -13,9 +13,9 @@ export type ExactBundleSection = {
 };
 
 export const LANDING_AUDIT_NOTES = [
-    'The landing page exposes the live P / screen-capacity descendant surface.',
+    'The landing page exposes the live descendants of the P fixed point and screen-capacity fixed-point target.',
     'The particle surface includes an exact selected-class quark sextet, an exact same-family charged witness, weighted-cycle neutrino masses and splittings, and the D11 source-only Higgs/top split theorem.',
-    'The gravity-side local unification bundle uses the inverse G(P) law and its downstream Lambda, de Sitter, and a0 descendants.',
+    'The gravity-side local unification bundle uses the inverse G(P*) law and its downstream Lambda, de Sitter, and a0 descendants.',
 ];
 
 export const LANDING_SCOPE_NOTES = [

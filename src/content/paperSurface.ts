@@ -121,14 +121,16 @@ export const CLAIM_TIER_LEGEND: Array<{ tier: ClaimTier; label: string; descript
 
 export const CORE_PARAMETERS = [
     {
-        label: 'Pixel area',
+        label: 'Local pixel fixed point',
         value: 'a_cell ~ 1.63 l_P^2',
-        note: 'Sets the local gravity and calibration scale. The public particle and gravity numerics are descendants of this branch.',
+        equation: 'P* = phi + sqrt(pi) / A_T(P*)',
+        note: 'Sets the local gravity and calibration scale through the unique outer/inner pixel closure.',
     },
     {
-        label: 'Screen capacity',
-        value: 'log(dim H_tot) ~ 10^122',
-        note: 'Closes the cosmological-capacity branch and supplies the de Sitter benchmark scale.',
+        label: 'Global capacity fixed point',
+        value: 'N_CRC ~ 3.31e122',
+        equation: 'N_CRC = F(N_CRC)',
+        note: 'Defines the input-free readback fixed point for the de Sitter cosmic record capacity.',
     },
 ];
 

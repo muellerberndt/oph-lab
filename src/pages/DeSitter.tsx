@@ -50,19 +50,23 @@ export function DeSitterPage() {
                 bath at temperature T<sub>dS</sub>.
             </p>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>&Lambda; from Screen Capacity</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>&Lambda; from N_CRC</h3>
             <p style={{ marginBottom: '8px' }}>
-                In OPH, the cosmological constant is fixed by the total screen capacity after the local gravity
-                branch leaves the separate metric ambiguity. In the lab we hold the reference pixel
-                normalization fixed at P = {formatPixelConstant(PIXEL_REFERENCE)} and scan the global capacity descendant:
+                OPH is formulated as zero-input closure: after the local gravity branch leaves the separate metric
+                ambiguity, the global capacity fixed point is the cosmic record-closure readback fixed point. In the lab
+                we hold the reference pixel normalization fixed at P = {formatPixelConstant(PIXEL_REFERENCE)} and scan the
+                global capacity descendant:
             </p>
             <div className="math-block" style={{ fontSize: '1.1em' }}>
-                &Lambda;(N<sub>scr</sub>) &prop; N<sub>scr</sub><sup>&minus;1</sup>
+                N<sub>CRC</sub> = F(N<sub>CRC</sub>),
+                &nbsp;&Lambda;<sub>CRC</sub> = 3&pi; / (G N<sub>CRC</sub>)
             </div>
             <p style={{ marginBottom: '16px' }}>
-                With log dim H<sub>tot</sub> &asymp; 10<sup>122</sup> (in natural units), this gives the observed
-                value of &Lambda; &asymp; 10<sup>&minus;52</sup> m<sup>&minus;2</sup>. The screen capacity is a
-                single large number that sets the scale of the cosmological constant.
+                With N<sub>CRC</sub> &asymp; 3.31 x 10<sup>122</sup> (in natural units), this gives the observed
+                value of &Lambda; &asymp; 10<sup>&minus;52</sup> m<sup>&minus;2</sup>. Informally,
+                N<sub>CRC</sub> is the unique point where outside total horizon capacity and inside observer-accessible
+                public record capacity agree. Observers inside infer geometry, horizons, entropy, &Lambda;, history,
+                and records from information available inside the universe.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Why This Solves the Cosmological Constant Problem</h3>
@@ -75,14 +79,14 @@ export function DeSitterPage() {
                 In OPH, this comparison is meaningless. Vacuum energy is "null-blind": the vacuum stress-energy
                 tensor satisfies T<sub>kk</sub> = T<sub>ab</sub>k<sup>a</sup>k<sup>b</sup> = 0 for null vectors k.
                 Since gravity is derived from null surface thermodynamics (&delta;Q = TdS on null horizons), vacuum
-                energy does not contribute to the gravitational equations at all. &Lambda; comes from screen capacity,
+                energy does not contribute to the gravitational equations at all. &Lambda; comes from the global screen-capacity branch,
                 not from vacuum fluctuations. The 120-order discrepancy was comparing apples and oranges.
             </p>
 
             <div className="demo-container">
-                <div className="demo-label">Calculator: De Sitter Parameters from Screen Capacity</div>
+                <div className="demo-label">Calculator: De Sitter Parameters from N_CRC</div>
                 <p style={{ fontSize: '0.85em', color: 'var(--text-muted)', marginBottom: '16px' }}>
-                    Adjust the screen capacity log<sub>10</sub>(dim H<sub>tot</sub>) and see how the cosmological
+                    Adjust log<sub>10</sub>(N<sub>CRC</sub>) and see how the cosmological
                     parameters change.
                 </p>
 
@@ -97,7 +101,7 @@ export function DeSitterPage() {
                         </button>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.85em', marginBottom: '4px' }}>
-                        <span style={{ color: 'var(--accent-gold)' }}>log<sub>10</sub>(dim H<sub>tot</sub>)</span>
+                        <span style={{ color: 'var(--accent-gold)' }}>log<sub>10</sub>(N<sub>CRC</sub>)</span>
                         <span style={{ color: 'var(--accent-cyan)', fontWeight: 700 }}>10<sup>{logDimH}</sup></span>
                     </div>
                     <input
@@ -171,8 +175,11 @@ export function DeSitterPage() {
             <Explainer title="De Sitter entropy and the total bit count">
                 <p>
                     The de Sitter horizon entropy S<sub>dS</sub> = A<sub>H</sub>/(4l<sub>P</sub>&sup2;) &asymp;
-                    10<sup>122</sup> is the total number of bits available to a single observer. This is the same
-                    number as log(dim H<sub>tot</sub>). The screen capacity IS the horizon entropy.
+                    10<sup>122</sup> is the observed-branch total public record capacity for a single observer.
+                    In OPH this is the cosmic record-closure fixed point N<sub>CRC</sub> = F(N<sub>CRC</sub>):
+                    the single screen size where outside horizon capacity and inside observer-readable record
+                    capacity agree. The normalized self-closing observer-form count is the finite-count
+                    representation of the same closure.
                 </p>
                 <p>
                     This gives an entirely different perspective on the "largeness" of the universe. The universe

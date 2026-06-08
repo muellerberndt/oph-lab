@@ -156,9 +156,9 @@ export function QftEmergesPage() {
                         <li>T6: directed colimit of transportable edge sectors with objectwise finite-dimensional fibers</li>
                     </ul>
                     <div style={{ marginTop: '12px', padding: '8px', background: 'rgba(0,0,0,0.2)', fontSize: '0.9em' }}>
-                        <strong>External quantitative inputs on the public surface: 2</strong>
+                        <strong>Current quantitative fixed points on the public surface</strong>
                         <div style={{ color: 'var(--text-muted)', marginTop: '4px' }}>
-                            a<sub>cell</sub> (pixel area) and log(dim H) (screen capacity)
+                            P (pixel closure) and N<sub>CRC</sub> (cosmic record capacity); both are fixed-point values, with local and cosmological descendants downstream.
                         </div>
                     </div>
                 </div>

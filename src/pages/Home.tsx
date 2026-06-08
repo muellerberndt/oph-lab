@@ -111,7 +111,8 @@ export function Home() {
         // Paper references:
         // - particle paper: electroweak repair, pending Ward-projected Thomson
         //   endpoint, and source-only Higgs split.
-        // - compact paper + README local unification surface: G(P) and Lambda = 3 pi / (G N_scr).
+        // - compact paper + README zero-input closure: P and N_CRC are closure values,
+        //   with G(P) and Lambda_CRC = 3 pi / (G N_CRC) as descendant readouts.
         const closure = solveGaugeClosure(pixelConstant, CANONICAL_GAUGE_OPTIONS);
         const electroweakRepair = deriveTargetFreeElectroweakRepair(closure);
         const higgsTop = deriveD11ForwardSeed(electroweakRepair);
@@ -169,7 +170,7 @@ export function Home() {
             value: liveSurface.lambda,
             baseline: canonicalSurface.lambda,
             unit: 'm^-2',
-            note: 'Global screen-capacity descendant on the de Sitter entropy normalization.',
+            note: 'Global screen-capacity descendant of the self-closure target on the de Sitter entropy normalization.',
             format: (value) => formatScientific(value, 3),
         },
         {
@@ -289,17 +290,17 @@ export function Home() {
                     </div>
                 </div>
                 <p className="landing-controls-intro">
-                    OPH models reality as observer-based fixed-point consensus: finite patches compare overlap-visible
-                    records, repair mismatch, and stabilize public physics. The screen we inhabit is configured with
-                    <strong> P = {formatPixelConstant(PIXEL_REFERENCE)}</strong> and <strong> log10 N_scr = {SCREEN_CAPACITY_REFERENCE_LOG10}</strong>.
-                    Adjust either constant to evaluate the OPH formulas on a different screen.
+                    OPH is formulated as a zero-input closure theory: finite patches compare overlap-visible
+                    records, repair mismatch, and stabilize public physics. The two quantitative constants are fixed
+                    by closure, with <strong> P = {formatPixelConstant(PIXEL_REFERENCE)}</strong> and <strong> N_CRC &asymp; 3.31e122</strong>
+                    on our observed branch. Adjust either closure value to evaluate the OPH formulas on a neighboring screen.
                 </p>
 
                 <div className="landing-controls-grid">
                     <div className="input-control-card">
                         <div className="input-control-header">
                             <div>
-                                <div className="input-control-label">Pixel constant P</div>
+                                <div className="input-control-label">Pixel fixed point P</div>
                                 <div className="input-control-value">{formatPixelConstant(pixelConstant)}</div>
                             </div>
                             <div className="input-control-release">our Universe {formatPixelConstant(PIXEL_REFERENCE)}</div>
@@ -330,12 +331,12 @@ export function Home() {
                     <div className="input-control-card">
                         <div className="input-control-header">
                             <div>
-                                <div className="input-control-label">Screen capacity</div>
+                                <div className="input-control-label">N_CRC fixed point</div>
                                 <div className="input-control-value">{logCapacity.toFixed(2)}</div>
                             </div>
                             <div className="input-control-release">our Universe {SCREEN_CAPACITY_REFERENCE_LOG10}</div>
                         </div>
-                        <div className="input-control-caption">log10 N_scr</div>
+                        <div className="input-control-caption">log10 N_CRC</div>
                         <input
                             type="range"
                             min={SCREEN_CAPACITY_UI_MIN}
@@ -362,7 +363,7 @@ export function Home() {
 
             {renderCompactSurfaceBoard(surfaceBoardRows)}
             <p className="landing-surface-note">
-                This board combines the local unification readouts <strong>G(P)</strong> and <strong>Lambda = 3pi / (G N_scr)</strong>,
+                This board combines the fixed-point descendants <strong>G(P*)</strong> and <strong>Lambda = 3pi / (G N*)</strong>,
                 the electroweak repair, the pending Ward-projected Thomson endpoint, the Higgs split, and the
                 candidate quark mass surface used in the lab runtime.
             </p>

@@ -292,7 +292,7 @@ export function DarkMatterPage() {
                     dynamics has nothing to do with cosmology.
                 </p>
                 <p>
-                    In OPH, both scales are set by the screen capacity:
+                    In OPH, both scales are set by the N_CRC record-capacity fixed point:
                 </p>
                 <div className="math-block" style={{ fontSize: '0.85em' }}>
                     a<sub>0</sub> &sim; c&sup2;&radic;(&Lambda;/3) &sim; cH<sub>0</sub>

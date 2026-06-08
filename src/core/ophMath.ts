@@ -634,9 +634,9 @@ export function newtonConstantFromPixel(pixelConstant: number): number {
 // Paper reference:
 // reverse-engineering-reality/paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex
 // Corollary "Cosmological Constant from Capacity":
-// Lambda = 3 pi / (G N_scr), with N_scr = log dim H_tot on the de Sitter branch.
+// Lambda_CRC = 3 pi / (G N_CRC), with N_CRC the de Sitter record-capacity fixed point.
 // Combining that relation with the fixed-a_cell gravity readout gives the normalized
-// lab form Lambda(P, N_scr) = Lambda_ref * (P / P_ref) * 10^(122 - log10 N_scr).
+// lab form Lambda(P, N_CRC) = Lambda_ref * (P / P_ref) * 10^(122 - log10 N_CRC).
 export function lambdaFromScreen(pixelConstant: number, logCapacityBase10: number): number {
     const pixelScale = Math.max(pixelConstant, 0.2) / PIXEL_REFERENCE;
     const capacityScale = Math.pow(10, SCREEN_CAPACITY_REFERENCE_LOG10 - logCapacityBase10);
