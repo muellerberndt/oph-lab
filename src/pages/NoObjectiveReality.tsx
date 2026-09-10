@@ -14,19 +14,19 @@ const QUESTIONS: Question[] = [
         problem: 'How do gravity and QM fit together?',
         conventional: 'Try to quantize the gravitational field. Leads to non-renormalizable infinities.',
         hiddenAssumption: 'Spacetime is fundamental and must be quantized.',
-        ophResolution: 'OPH explores spacetime as a recovered observer-facing structure. A Jacobson-type Einstein relation is obtained on the declared generalized-entropy, null-bridge, projective, and stationarity branch; the physical attachment remains conditional.',
+        ophResolution: 'OPH explores spacetime as a recovered observer-facing structure. A Jacobson-type Einstein relation is obtained on the declared generalized-entropy, null-bridge, projective, and stationarity branch; the physical attachment is conditional.',
     },
     {
         problem: 'The measurement problem',
         conventional: 'Wave function collapses upon observation. Nobody agrees on what triggers collapse.',
         hiddenAssumption: 'A God\'s-eye view exists where the wave function is "really" in superposition.',
-        ophResolution: 'The formalism uses patch-relative states and local record conditioning instead of a privileged global readout. Born trace weights and Lüders updates live on declared algebra/instrument surfaces; source production of the full physical instrument remains open.',
+        ophResolution: 'The formalism uses patch-relative states and local record conditioning instead of a privileged global readout. Born trace weights and Lüders updates live on declared algebra/instrument surfaces; no source production of the full physical instrument is derived.',
     },
     {
         problem: 'Why is the universe so uniform?',
         conventional: 'Distant regions had no causal contact but have the same temperature. Invoke inflation.',
         hiddenAssumption: 'Non-uniformity is the default; uniformity needs explaining.',
-        ophResolution: 'A3 selects the least-informative state inside a fixed compatible constraint family. Turning that local principle into observed cosmological uniformity still requires dynamics, initial-state, clock, and cosmological attachment.',
+        ophResolution: 'A3 selects the least-informative state inside a fixed compatible constraint family. Turning that local principle into observed cosmological uniformity requires dynamics, initial-state, clock, and cosmological attachment.',
     },
     {
         problem: 'Where is all the supersymmetry?',
@@ -56,13 +56,13 @@ const QUESTIONS: Question[] = [
         problem: 'Why three generations?',
         conventional: 'The Standard Model has 3 copies of each fermion type. No explanation why.',
         hiddenAssumption: 'Generation count is a free parameter.',
-        ophResolution: 'On the declared nonempty one-Higgs chiral class, CP capability requires at least 3 and the weak-sector clause bounds the count at 5; the count inside the window is open, and three enters as a declared completion.',
+        ophResolution: 'On the declared nonempty one-Higgs chiral class, CP capability requires at least 3 and the weak-sector clause bounds the count at 5; the clauses do not select a count inside the window, and three enters as a declared completion.',
     },
     {
         problem: 'Proton stability',
         conventional: 'Grand Unified Theories predict proton decay. Never observed.',
         hiddenAssumption: 'Forces were unified in a simple group that was then broken.',
-        ophResolution: 'On the declared product-adjoint branch there is no simple-GUT X/Y generator, so the ordinary X/Y-mediated channel is absent. Other baryon-violating mechanisms remain separate.',
+        ophResolution: 'On the declared product-adjoint branch there is no simple-GUT X/Y generator, so the ordinary X/Y-mediated channel is absent. Other baryon-violating mechanisms are separate.',
     },
     {
         problem: 'The hard problem of consciousness',

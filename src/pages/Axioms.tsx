@@ -77,11 +77,11 @@ export function AxiomsPage() {
             <p style={{ marginBottom: '24px' }}>
                 OPH rests on three core axioms: the oriented twelve-port observer screen, observer
                 agreement, and conditional maximum randomness. Everything else is a theorem, an exact
-                result inside a named finite realization, a declared open interface, an independence
+                result inside a named finite realization, an interface requiring additional data, an independence
                 result with countermodels, a physical identification, or a withdrawn claim. The paper
                 surface names theorem-local premises where specific Lorentz, Einstein, or gauge
-                statements are invoked; none of those premises is an axiom. The current formal corpus contains
-                more than 6,600 theorem and lemma declarations, and that count includes boundaries and
+                statements are invoked; none of those premises is an axiom. The formal corpus contains
+                more than 10,800 theorem and lemma declarations, and that count includes boundaries and
                 countermodels as well as positive results.
             </p>
 
@@ -132,7 +132,7 @@ export function AxiomsPage() {
                     self-reference forces their equality. It does not construct those readings, prove
                     their physical identity, select a branch, or guarantee existence, uniqueness, and
                     stability. Those obligations apply to every closure law. The principle
-                    sits beside the axioms; every axiom count stays three.
+                    sits beside the axioms; every axiom count is three.
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8', margin: 0, fontSize: '0.84em' }}>
                     <li><strong>Screen-grain closure:</strong> P = &phi; + &radic;&pi;/A<sub>T</sub>(P), with one interval-certified root for each declared map. A physical fine-structure value also needs a target-independent map choice, proof that both sides read the same quantity, and same-scheme transport to the laboratory endpoint. The closest declared-map root differs from the measured value by a few parts per million.</li>
@@ -148,12 +148,12 @@ export function AxiomsPage() {
             <div className="card" style={{ marginBottom: '16px', borderLeft: '3px solid var(--accent-blue)' }}>
                 <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Declared Completions (not axioms)</h3>
                 <div style={{ fontSize: '0.84em', color: 'var(--text-secondary)', marginBottom: '10px' }}>
-                    Sector statements the finite results do not derive: each enters as an explicit declaration with open physical status
+                    Sector statements the finite results do not derive: each enters as an explicit declaration without a physical selection theorem
                 </div>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8', margin: 0, fontSize: '0.84em' }}>
-                    <li><strong>Generation count:</strong> the CP-capability and weak-sector clauses give the window 3 to 5; the count inside it is open, with three entering only as a declared completion.</li>
+                    <li><strong>Generation count:</strong> the CP-capability and weak-sector clauses give the window 3 to 5; they do not select a count inside it, and three enters only as a declared completion.</li>
                     <li><strong>One Higgs:</strong> the finite scan fixes compatible scalar charges and channels, not scalar existence or multiplicity.</li>
-                    <li><strong>No extra light sectors:</strong> a source-completeness theorem is open; arbitrary sterile extensions remain countermodels.</li>
+                    <li><strong>No extra light sectors:</strong> no source-completeness theorem is proved; arbitrary sterile extensions are countermodels.</li>
                 </ul>
                 <p style={{ margin: '10px 0 0 0', fontSize: '0.82em', color: 'var(--text-muted)' }}>
                     The first two axioms force the abstract Standard Model compact Lie type. The
@@ -165,9 +165,9 @@ export function AxiomsPage() {
             <Explainer title="Extended Inputs Beyond Core Axioms">
                 <p>The papers distinguish the three axioms from theorem-local technical premises and branch conditions:</p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li><strong>Declared completions:</strong> the generation, scalar, and sector declarations above, each with open physical status</li>
+                    <li><strong>Declared completions:</strong> the generation, scalar, and sector declarations above, none of which supplies its physical identification</li>
                     <li><strong>Transport premise:</strong> central or higher-associator strictification plus at least one allowed strict representative with trivial represented loop holonomy when global transportability is invoked</li>
-                    <li><strong>Scaling premise:</strong> T2 governs the BW/null-modular and smooth physical Einstein branches. It is not needed for the exact finite source-poset theorem, the constructed ambient 1+3 Lorentz carrier, or the typed finite Einstein-shape implication. Promoting those finite results to a physical manifold and smooth curvature still requires the stated continuum certificates.</li>
+                    <li><strong>Scaling premise:</strong> T2 governs the BW/null-modular and smooth physical Einstein branches. It is not needed for the exact finite source-poset theorem, the constructed ambient 1+3 Lorentz carrier, or the typed finite Einstein-shape implication. Promoting those finite results to a physical manifold and smooth Einstein dynamics requires the stated continuum certificates, including tensor-curvature convergence or the independent small-ball/null-balance identification; scalar curvature alone is diagnostic.</li>
                     <li><strong>Stationarity premise:</strong> fixed-cap generalized-entropy stationarity for the admissible first-variation class used in the Jacobson branch</li>
                     <li><strong>Collar-recovery branch:</strong> either the exact central-interface Markov route, or a faithful finite-range Gibbs family with uniform strong conditional matrix mixing and the full boundary-aware rate margin. Ordinary clustering and a bare delta/l<sub>UV</sub> &rarr; infinity ratio do not discharge this premise.</li>
                     <li><strong>Finite collar receipts:</strong> interaction bounds, boundary counts, regional CMI, matrix-defect norms, predeclared mixing constants, held-out cuts, recovery error, and rate margins are finite proxies; they do not prove a cofinal limit.</li>
@@ -179,22 +179,23 @@ export function AxiomsPage() {
             <Explainer title="What these axioms give you">
                 <p>The paper surface separates structural outputs from branch-conditional ones:</p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li>Authenticated read-after-write provenance gives an exact finite informational causal poset and canonical height. Independently of that height, the exact rank-three source quotient defines the ambient carrier W<sub>src</sub> = R &oplus; V<sub>src</sub> with Lorentz inertia (1,3). Height appears only in the later event placement F(e) = (&tau;h(e), x(e)); no result here identifies a physical clock, intrinsic poset dimension, or smooth spacetime.</li>
+                    <li>Authenticated read-after-write provenance gives an exact finite informational causal poset, and source height is exactly its attained maximum authenticated-parent-chain length. Every finite decidable strict partial order compiles into that grammar, and every finite log has an auxiliary injective placement that sends generated ancestry into the future cone of the independently constructed rank-three 1+3 carrier. The compiler is given its order and the placement is enumeration-dependent, so neither selects physical spacetime.</li>
+                    <li>For a source-selected placement, the parent-edge speed bound, equal-height spatial injectivity, and strict spacelike separation of increasing-height non-ancestors imply exact cone/order agreement; event separation and exact intervals follow. Physical coordinates, clock, signal-causal identification, manifoldlikeness, and the continuum are separate inputs.</li>
                     <li>From the screen identity and the explicit BW scaling branch, OPH recovers Lorentz kinematics on the extracted prime geometric subnet.</li>
                     <li>From the null bridge, the separate bounded-interval projective branch, and fixed-cap stationarity, OPH states a conditional Jacobson-type Einstein branch with those added ingredients kept explicit.</li>
-                    <li>In a separately supplied 3+1 tensor interface on the same event type, nine source-direction balances plus Ward/Bianchi conservation and connectedness imply an exact finite Einstein-form shape. Physical fields, curvature, stress, coupling, and the smooth-limit identification remain supplied.</li>
+                    <li>In a separately supplied 3+1 tensor interface on the same event type, nine source-direction balances plus Ward/Bianchi conservation and connectedness imply an exact finite Einstein-form shape. Physical fields, curvature, stress, coupling, and the smooth-limit identification are supplied.</li>
                     <li>Collar CMI controls recovery error on its exact or conditional branch. As a scalar, it is not a stress tensor or dark-sector source.</li>
-                    <li>The half-line generator/null-stress charge identification is internal to the null bridge; UV/BW cap-pair extraction and ordered cut-pair rigidity remain explicit scaffold items.</li>
+                    <li>The half-line generator/null-stress charge identification is internal to the null bridge; UV/BW cap-pair extraction and ordered cut-pair rigidity are explicit scaffold items.</li>
                     <li>The complete compact response clause in the first axiom and the endogenous transport clause in the second force the abstract Lie type u(1)&oplus;su(2)&oplus;su(3) on the twelve-port branch.</li>
-                    <li>Massless photon and graviton remain symmetry-protected structural outputs.</li>
+                    <li>Massless photon and graviton are symmetry-protected structural outputs.</li>
                 </ul>
                 <p>
                     Target-blind readback derives the inverse-port response, while source reconstruction
-                    of the complete current is open. The fifteen-state fixture gives exact hypercharges,
+                    of the complete current is not derived. The fifteen-state fixture gives exact hypercharges,
                     anomalies, three colors, and a common Z<sub>6</sub> kernel inside its declared
                     representation class. The familiar global quotient additionally requires a complete
                     character lattice and a same-source loop-to-kernel identification. Physical matter,
-                    global-form, family, and scalar selections are open.
+                    global-form, family, and scalar selections require separate source constructions.
                 </p>
             </Explainer>
         </div>

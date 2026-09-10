@@ -18,7 +18,7 @@ export function GaugeSymmetryPage() {
                 with trivial loop action under that same choice are tensor-generating seeds, not a finite list
                 closed under tensor product. Their replete rigid tensor category may have infinitely many simple objects. On a
                 cofinal tail carrying the compact-gauge refinement receipt, the construction reconstructs a compact
-                group; the realized sector then enters through declared completions with open physical status.
+                group; the realized sector then enters through declared completions without derived physical selection.
             </p>
             <p style={{ marginBottom: '16px' }}>
                 The derivation adds the extended premise package used by the compact-gauge proof:
@@ -27,7 +27,7 @@ export function GaugeSymmetryPage() {
                 supplies finite-state extendability, center-compatible block-multiplicity embeddings, coherent
                 surjective group pullbacks that intertwine the common stagewise representatives, finite tensor
                 realizations, and compatible forgetful fibers. The three-generation, one-Higgs, and
-                no-extra-light-sector statements enter as declared completions with open physical status.
+                no-extra-light-sector statements enter as declared completions without derived physical selection.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Gauge-as-Gluing Route</h3>
@@ -85,9 +85,9 @@ export function GaugeSymmetryPage() {
             </p>
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-cyan)' }}>
-                <h4 style={{ margin: '0 0 8px', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>Current invariant-form completion</h4>
+                <h4 style={{ margin: '0 0 8px', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>Invariant-form completion</h4>
                 <p style={{ margin: 0, fontSize: '0.84em' }}>
-                    The committed gauge kinetic functional now extends exactly beyond its diagonal axis slice to a
+                    The committed gauge kinetic functional extends exactly beyond its diagonal axis slice to a
                     weighted invariant-form carrier. Exact infinitesimal invariance pins the declared one-ray mirror
                     family and a control weight breaks it. This is finite structural algebra: no gauge-group action on
                     the carrier, source-produced spacetime action, or laboratory current is claimed.
@@ -104,7 +104,7 @@ export function GaugeSymmetryPage() {
                     lives in End(W<sub>1</sub>&otimes;W<sub>1</sub>), represented by a finite two-collar realization;
                     its projector need not belong to the original one-collar center. At the next refinement,
                     surjective group pullback preserves its one-dimensional carrier and the compatible forgetful
-                    fiber remains C, with the identity comparison map.
+                    fiber is C, with the identity comparison map.
                 </p>
             </div>
 
@@ -116,7 +116,7 @@ export function GaugeSymmetryPage() {
                 Compact Lie classification forces the abstract type
                 u(1)&oplus;su(2)&oplus;su(3). The charged-double-triplet matrices give one exact
                 declared witness. Reconstructing the complete response map and bracket from source
-                histories is open.
+                histories is not derived.
             </p>
 
             <div className="card" style={{ marginBottom: '24px' }}>
@@ -159,7 +159,7 @@ export function GaugeSymmetryPage() {
                     edge-mode Hilbert spaces at patch boundaries. The gauge connection is modeled by the transition
                     map between overlapping patches. The declared route supplies the corresponding reconstruction
                     structure under explicit transport and refinement premises; a physical spacetime bundle and
-                    current attachment remain separate.
+                    current attachment are separate inputs.
                 </p>
             </Explainer>
 

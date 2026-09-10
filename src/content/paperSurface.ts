@@ -43,8 +43,8 @@ export const CHALLENGE_URL = 'https://challenge.floatingpragma.io/';
 export const COHERENCE_URL = 'https://coherence.floatingpragma.io/';
 export const APPLICATIONS_URL = 'https://omega.floatingpragma.io/';
 export const OMEGA_URL = APPLICATIONS_URL;
-export const RESEARCH_RELEASE_ID = 'r2033';
-export const RESEARCH_RELEASE_DATE = '30 August 2026';
+export const RESEARCH_RELEASE_ID = 'r2041';
+export const RESEARCH_RELEASE_DATE = '10 September 2026';
 
 const GITHUB_PDF_BASE = `${RESEARCH_REPO_URL}/blob/main/paper`;
 const GITHUB_EXTRA_PDF_BASE = `${RESEARCH_REPO_URL}/blob/main/extra`;
@@ -63,7 +63,7 @@ export const OPH_PAPERS: PaperSummary[] = [
         title: 'Recovering Observer Spacetime and Einstein Dynamics from Overlap Consistency',
         href: `${GITHUB_PDF_BASE}/recovering_observer_spacetime_and_einstein_dynamics_from_overlap_consistency.pdf`,
         surface: 'Spacetime and Gravity',
-        summary: 'The source-derived finite causal poset, constructed 1+3 Lorentz carrier, conditional continuum reconstruction, and Einstein implication chain, with every physical-limit input stated.',
+        summary: 'The source metric, declared causal/count limit and count clock, common free-scalar detector comparison, and conditional Einstein route, with their physical inputs stated.',
     },
     {
         slug: 'gauge',
@@ -134,7 +134,7 @@ export const CLAIM_TIER_LEGEND: Array<{ tier: ClaimTier; label: string; descript
     {
         tier: 'continuation-only',
         label: 'Continuation-Only',
-        description: 'A downstream lane that sharpens an open object without closing the theorem frontier.',
+        description: 'A downstream lane that sharpens an object not established by the theorem surface.',
     },
     {
         tier: 'compare-only',
@@ -143,8 +143,8 @@ export const CLAIM_TIER_LEGEND: Array<{ tier: ClaimTier; label: string; descript
     },
     {
         tier: 'open',
-        label: 'Open',
-        description: 'A theorem object, bridge, or simulator burden is open on the declared corpus.',
+        label: 'Not derived',
+        description: 'The declared corpus supplies no theorem object, physical bridge, or required simulator evidence.',
     },
     {
         tier: 'exploratory',
@@ -155,69 +155,82 @@ export const CLAIM_TIER_LEGEND: Array<{ tier: ClaimTier; label: string; descript
 
 export const CURRENT_RESEARCH_STATUS = [
     {
-        tier: 'structural',
-        label: 'Exact finite structure',
-        summary: 'The current corpus includes more than 6,600 machine-checked theorem and lemma declarations. The exact spacetime precursor includes a source-derived finite causal poset, a four-dimensional ambient Lorentz carrier, and a finite Einstein-shape implication, with their premise boundaries kept explicit.',
+        "tier": "structural",
+        "label": "Exact source structure",
+        "summary": "More than 10,800 machine-checked theorem and lemma declarations support the finite theory. Protected records, the continuous rank-three metric carrier and conditional gauge classification have explicit assumptions and independently inspectable proofs."
     },
     {
-        tier: 'branch-conditional',
-        label: 'Physical bridges remain typed',
-        summary: 'Lorentz, Einstein, gauge-current, matter, clock, and continuum statements retain their named branch premises and physical-identification obligations.',
+        "tier": "branch-conditional",
+        "label": "Controlled continuum comparisons",
+        "summary": "A declared source-record family approaches flat causal order and volume; interval counts recover duration ratios. On prepared addresses from that family, a specified free scalar action supports classical and quantum detector comparisons with certified errors."
     },
     {
-        tier: 'exploratory',
-        label: 'Simulator evidence stays gated',
-        summary: 'The latest finite carrier, observer-statistics, defect, and dimension probes emit auditable receipts; they do not by themselves establish physical particles, three-dimensional space, or a Born-rule derivation.',
-    },
+        "tier": "branch-conditional",
+        "label": "Physical interpretation",
+        "summary": "Population, reading law, action and model time are stated inputs. Their physical selection, the field-to-event clock connection and interacting continuum require separate arguments."
+    }
 ];
 
 export const SPACETIME_PUBLIC_ROWS: PublicRow[] = [
     {
-        label: 'Source-derived finite causal poset',
-        value: 'exact finite order',
-        tier: 'structural',
-        note: 'Authenticated read-after-write provenance generates the strict ancestry relation. Lean proves that its reflexive closure is a partial order with finite intervals and constructs canonical longest-parent-chain height. The height is ordinal: it is not an execution rank, physical clock, or event time.',
+        "label": "Authenticated event order",
+        "value": "exact finite order",
+        "tier": "structural",
+        "note": "Actual read-from dependencies define a finite partial order. Its height is the attained longest authenticated-parent-chain length. This combinatorial coordinate alone does not identify physical duration."
     },
     {
-        label: 'Ambient 1+3 Lorentz carrier',
-        value: 'exact finite construction',
-        tier: 'structural',
-        note: 'Independently of event height, the exact rank-three source Gram quotient defines W_src = R ⊕ V_src with dimension four and inertia (1,3); source-unit directions map exactly to future-null rays. Canonical height is used later only in the event placement F(e) = (tau h(e), x(e)). The carrier is not an intrinsic dimension estimate or a manifold.',
+        "label": "Continuous source metric",
+        "value": "rank three; ambient dimension four",
+        "tier": "structural",
+        "note": "Under the stated conservative-record and metric inputs, the source Gram quotient completes to a continuous three-dimensional Euclidean carrier. Adjoining a time coordinate gives Lorentz signature (1,3). This finite-dimensional carrier is not a finite point set or a physical event population."
     },
     {
-        label: 'Finite Einstein shape',
-        value: 'exact typed implication',
-        tier: 'branch-conditional',
-        note: 'On the same finite event type, nine supplied source-direction balances in a separately supplied 3+1 tensor interface, together with Ward/Bianchi conservation and connectedness, imply all-null balance and an Einstein-form identity. The theorem does not derive physical tensor fields, curvature, stress, coupling, or the smooth limit.',
+        "label": "Source-record causal/count limit",
+        "value": "declared-family continuum theorem",
+        "tier": "branch-conditional",
+        "note": "Golden source records form finite populations in a specified window. Complete reads within a shrinking radius, waiting and a specified layer clock produce causal order and normalized event counts approaching flat spacetime when site gaps shrink faster than that radius. Physical source selection and signal identification are additional conditions."
     },
+    {
+        "label": "Count clock",
+        "value": "proper-duration ratios",
+        "tier": "branch-conditional",
+        "note": "For intervals approaching fixed interior timelike diamonds, fourth roots of record-count ratios recover proper-duration ratios. A reference interval fixes the unit. Finite root enclosures are exact arithmetic; retrospective interval access and the declared count law are required."
+    },
+    {
+        "label": "Common free scalar field",
+        "value": "resolved continuum detector response",
+        "tier": "branch-conditional",
+        "note": "On prepared golden addresses, a specified tensor scalar action defines classical waves and Fock states. At q=233, error below 0.050055 is smaller than the induced signal above 0.137754 throughout model time [0.95,1]. Boundary, action, quantization and time are supplied; field evolution is not identified with the count clock."
+    },
+    {
+        "label": "Einstein relation",
+        "value": "conditional tensor theorem",
+        "tier": "branch-conditional",
+        "note": "Nine supplied directional balances, tensor symmetry, Ward/Bianchi conservation and connectedness imply an Einstein-form identity. Physical stress, coupling and either controlled tensor-curvature convergence or the independent continuum null-balance identification are additional premises."
+    }
 ];
 
 export const SIMULATION_FRONTIER = [
     {
-        label: 'Source-causal and causal-set diagnostics',
-        status: 'exact custody / exploratory geometry',
-        summary: 'The history-family receipt proves exact induced-prefix source-order custody but is not a density refinement. In the separate 2,304-event local-domain diagnostic, all 736 qualifying intervals of size 32-72 fall outside the frozen exploratory 3+1 ordering-fraction band. This is current-cutoff dissimilarity for an informational event semantics, not manifoldlikeness, a count-to-volume law, or a physical no-go.',
+        "label": "Source records and causal geometry",
+        "status": "declared law / authenticated records",
+        "summary": "Finite golden source populations carry exact read/write histories. Their continuum theorem controls causal order and counts under its window, radius and clock assumptions; finite fixture statistics are separate from that analytic limit."
     },
     {
-        label: 'Observer-frame quantum statistics',
-        status: 'exploratory / non-evidential',
-        summary: 'Exact enumeration reproduces the committed Born weights and Lüders-conditioned repeatability for the declared finite contexts. The operation and weights are inputs, so this is a readback/conditioning receipt, not a Born-rule derivation.',
+        "label": "Classical and quantum scalar detectors",
+        "status": "specified common action / certified comparison",
+        "summary": "A compact preparation and a separated detector share one free scalar action on prepared source addresses. The q=233 packet bounds the complete comparison error below its signal over a time interval. Its model time is distinct from the causal-count clock."
     },
     {
-        label: 'Z6 defect and family readout',
-        status: 'exploratory / non-evidential',
-        summary: 'The v2 census makes triality and duality grammar checks live on carrier structures. It is a finite label/readout study, not a physical generation or particle claim.',
+        "label": "Observer-frame quantum statistics",
+        "status": "declared instruments / finite replay",
+        "summary": "Exact finite contexts reproduce their committed Born weights and conditioned repeatability. The operation and weights are supplied; the receipt verifies the readout and conditioning."
     },
     {
-        label: 'Refinement-depth dimension probe',
-        status: 'exploratory / non-evidential',
-        summary: 'Calibrated spectral and Weyl statistics test declared coupled tower operators. Their measured dimensions are operator diagnostics, not measurements of physical spatial dimension.',
-    },
-    {
-        label: 'Evidence handoffs',
-        status: 'display-only packages',
-        summary: 'Fourteen hashed visualizer handoffs separate carrier repair, records, observer conditioning, refinement, defects, finite EM, cosmology diagnostics, and the theorem/paper/simulator evidence atlas.',
-    },
+        "label": "Self-reading visualization data",
+        "status": "separate evidence scopes",
+        "summary": "The visualization handoff groups local port states, records, repairs, field preparations and detectors by actual shared data. Display references and independent model clocks retain their own labels."
+    }
 ];
 
 export const CORE_PARAMETERS = [
@@ -231,7 +244,7 @@ export const CORE_PARAMETERS = [
         label: 'Global capacity closure boundary',
         value: 'no source-selected N',
         equation: 'N = log M0(U_N)',
-        note: 'Self-reference forces equality after both sides are identified as the same typed invariant. An exact bounded generation-register counterfamily is non-identifying, while universal A1–A3 membership is unproved. Direct N is not evaluable and emits no cosmic value. Conditional finite-presence and Poisson reserve formulas remain target-exposed retrospective comparisons.',
+        note: 'Self-reference forces equality after both sides are identified as the same typed invariant. An exact bounded generation-register counterfamily is non-identifying, while universal A1–A3 membership is unproved. Direct N is not evaluable and emits no cosmic value. Conditional finite-presence and Poisson reserve formulas are target-exposed retrospective comparisons.',
     },
 ];
 
@@ -246,7 +259,7 @@ export const BOSON_PUBLIC_ROWS: PublicRow[] = [
         label: 'Z calibration coordinate',
         value: '91.1879781 GeV',
         tier: 'compare-only',
-        note: 'The displayed calibration coordinate consumes the comparison pair. A separate source chart near 91.119 GeV is not a physical complex-pole mass: the strict map kernel is checked, but its OPH-native renormalized inputs and evidence receipts remain open.',
+        note: 'The displayed calibration coordinate consumes the comparison pair. A separate source chart near 91.119 GeV gives a running-chart coordinate. Its physical pole interpretation requires the OPH-native renormalized inputs and evidence receipts used by the checked strict map kernel.',
     },
     {
         label: 'H',
@@ -265,15 +278,15 @@ export const BOSON_PUBLIC_ROWS: PublicRow[] = [
 export const PARTICLE_LANE_STATUS = [
     {
         label: 'Structural carriers',
-        summary: 'Photon, gluons, and graviton stay on exact structural zero on the public surface.',
+        summary: 'Photon, gluons, and graviton have exact structural zero on the public surface.',
     },
     {
         label: 'Quarks',
-        summary: 'The source equations leave a free (R>0)^2 spread fiber, so no numeric quark prediction is emitted. A physical flavor-orbit selector, quark-Higgs carrier, and common-scheme transport are work in progress.',
+        summary: 'The source equations leave a free (R>0)^2 spread fiber, so no numeric quark prediction is emitted. No physical flavor-orbit selector, quark-Higgs carrier, or common-scheme transport is derived.',
     },
     {
         label: 'Charged leptons',
-        summary: 'The icosahedral screen supplies an exact A5/C3 face-corner carrier. The finite CFQ model proves its stipulated schema is nonempty but authors the registers, automaton, clock, and response. Physical source selection, family/Yukawa attachment, determinant descent, interacting refinement, and pole scheme are work in progress; no nonzero source-only mass is emitted.',
+        summary: 'The icosahedral screen supplies an exact A5/C3 face-corner carrier. The finite CFQ model proves its stipulated schema is nonempty but authors the registers, automaton, clock, and response. It derives no physical source selection, family/Yukawa attachment, determinant descent, interacting refinement, or pole scheme; no nonzero source-only mass is emitted.',
     },
     {
         label: 'Neutrinos',
@@ -290,9 +303,11 @@ export const PARTICLE_LANE_STATUS = [
 ];
 
 export const GRAVITY_SURFACE = [
-    'Authenticated read-after-write provenance generates an exact finite informational causal poset and canonical height. Independently, the exact rank-three source quotient defines the ambient carrier R ⊕ V_src with dimension four and Lorentz inertia (1,3). Height enters only in the later event placement F(e) = (tau h(e), x(e)); none of this yet constructs physical spacetime.',
-    'The connection to causal set theory is mathematical and conditional: the finite order satisfies the basic locally finite order axioms, while the physical causet reading still requires causal faithfulness, manifoldlikeness, topology, independent dimension tests, and a calibrated #I/rho -> Vol(I) law. The deterministic OPH history is not a Poisson sprinkling.',
-    'A separate exact finite theorem reduces nine supplied source-direction balances in a supplied 3+1 tensor interface to an Einstein-form shape after Ward/Bianchi conservation and connectedness. Smooth curvature, stress, coupling, and identification with the source carrier remain physical continuum inputs.',
+    'Authenticated dependencies give an exact finite order and longest-chain height. Conservative source records and their metric complete to a continuous rank-three carrier; its Lorentz extension is a space of possible event coordinates.',
+    'On a specified golden source population, complete local reads and a model layer clock approach flat causal order and volume when the read radius shrinks more slowly than the site gaps. Fourth roots of counts in fixed interior timelike intervals recover duration ratios.',
+    'An exact order embedding is one reconstruction route. A deterministic controlled limit with vanishing order error and a count-to-volume law is another; it does not require a Poisson law by definition. Physical population selection, signal propagation, clock and volume identification remain distinct hypotheses.',
+    'A specified free scalar action on prepared addresses from the same family supports classical and quantum detector comparisons with controlled continuum errors. This does not identify its field evolution or model time with the authenticated causal history.',
+    'A separate exact finite theorem reduces nine supplied source-direction balances in a supplied 3+1 tensor interface to an Einstein-form shape after Ward/Bianchi conservation and connectedness. Smooth Einstein promotion needs stress and coupling plus either same-family tensor-curvature convergence or the independent continuum small-ball/null-balance identification; scalar-curvature convergence alone is diagnostic.',
     'Lorentz kinematics is recovered on the explicit BW scaling branch from the screen identity Conf+(S^2) = SO+(3,1).',
     'The Jacobson-type Einstein relation is local and branch-conditional. It uses the null-modular bridge, the separate bounded-interval projective branch, and fixed-cap generalized-entropy stationarity.',
     'Collar recovery has two routes: exact zero CMI on the declared central-interface branch, or a conditional finite-range Gibbs theorem requiring uniform strong conditional matrix mixing.',
@@ -303,13 +318,13 @@ export const GRAVITY_SURFACE = [
 ];
 
 export const STANDARD_MODEL_SURFACE = [
-    'The complete compact response clause and endogenous carrier transport force the abstract Lie type u(1) + su(2) + su(3). Source reconstruction of the complete current is open.',
-    'Inside the declared fifteen-state representation fixture, the hypercharges, anomalies, Nc = 3, and common Z6 kernel are exact. Physical matter selection and the same-source global quotient are open.',
-    'The CP-capability and weak-sector clauses give the window 3 <= Ng <= 5; the count inside it is open, and Ng = 3 enters as a declared completion. Physical three-family status requires the rank-45 attachment, source-selected matter action, and quantum-field-theory construction.',
+    'The complete compact response clause and endogenous carrier transport force the abstract Lie type u(1) + su(2) + su(3). No source reconstruction of the complete current is derived.',
+    'Inside the declared fifteen-state representation fixture, the hypercharges, anomalies, Nc = 3, and common Z6 kernel are exact. No physical matter selection or same-source global quotient is derived.',
+    'The CP-capability and weak-sector clauses give the window 3 <= Ng <= 5; they do not select a count inside it, and Ng = 3 enters as a declared completion. Physical three-family status requires the rank-45 attachment, source-selected matter action, and quantum-field-theory construction.',
     'The product adjoint excludes the ordinary simple-GUT X/Y channel, not every proton-decay mechanism.',
     'Coupling unification is geometric on the published edge-running surface. The published surface uses no simple-group GUT embedding or superpartners.',
-    'The committed charged-current dictionary now derives the W-direction shift algebra and g/sqrt(2) normalization inside the declared carrier. It supplies no physical current operator, W propagator, decay amplitude, Fermi limit, flavor, or mixing matrix.',
-    'The gauge kinetic sector extends exactly from the diagonal pairing to a committed invariant-form completion. A carrier gauge-group action and a source-produced spacetime action remain open.',
+    'The committed charged-current dictionary derives the W-direction shift algebra and g/sqrt(2) normalization inside the declared carrier. It supplies no physical current operator, W propagator, decay amplitude, Fermi limit, flavor, or mixing matrix.',
+    'A declared local Standard Model action on flat spacetime includes gauge fields, anticommuting fermions, the Higgs field and all three Yukawa couplings. Exact first- and second-jet Ward identities and analytic currents are checked. Spacetime, Spin convention, coefficients and field content are supplied; source production and interacting quantization are separate.',
 ];
 
 export const CONSENSUS_HIGHLIGHTS = [
@@ -333,7 +348,7 @@ export const MICROPHYSICS_HIGHLIGHTS = [
     'Measurement, stable records, checkpoint/restoration, and observer synchronization live inside one shared microscopic model.',
     'Toroidal subchannels supply local recurrence and winding-sensitive dynamics inside bounded patches.',
     'Hardware evidence counts only through public bundles with stable hashes, calibration records, controls, and verifier receipts.',
-    'The committed finite Maxwell update proves conditional identities, continuity, and a conserved staggered quadratic form, but the form is not proved positive and exact modes exceed the unit-step stability threshold. Stable calibrated propagation remains open.',
+    'The committed finite Maxwell update proves conditional identities, continuity, and a conserved staggered quadratic form, but the form is not proved positive and exact modes exceed the unit-step stability threshold. No stable calibrated propagation theorem is supplied.',
 ];
 
 export const PREDICTION_SURFACE = {
@@ -342,7 +357,7 @@ export const PREDICTION_SURFACE = {
         tier: 'frozen-prospective' as ClaimTier,
         summary: 'The named physical branch uses a real, reciprocal, finite-range cosine kinetic operator whose complete primitive twelve-port orbit is the sole hop support, with no independent kinetic term through the displayed order. Proper-carrier covariance fixes equal weights. Intrinsic anisotropic ranks j = 1 through 5 vanish. Rank j = 6 has the unique icosahedral shape up to SO(3)/A5 orientation, where A5 is the sixty-element proper icosahedral rotation group.',
         coefficients: 'C4 = -a^2/20, B0 = a^4/840, B6 = 2a^4/7875; B6/C4^2 = 32/315, B0/C4^2 = 10/21, B6/B0 = 16/75.',
-        boundary: 'The certified repair operator acts on internal seams. It does not define spatial hops, a physical readout, or a laboratory frame. Exact propagation calculations also admit distinct vertex, face, and edge orbit rays, so symmetry equalizes weights inside each orbit without selecting the primitive-port ray. The scalar or polarization-independent sector bridge, coherent frame transport, and exclusivity are work in progress. A photon test also requires equal action on both transverse polarizations. The excluded exposure class is the 17 July 2026 WMAP ILC template campaign, its CMB likelihood class, and every inspected data product; its template-only null has no role in this comparison. The linked coefficient relation has no qualifying physical comparison. The comparison is unarmed until its own versioned eligible contract fixes the source operator, readout, frame, covariance, nuisance model, sensitivity, and thresholds. Failure rejects this branch and reaches the full framework only if the bridge derivation proves the branch forced and exclusive.',
+        boundary: 'The certified repair operator acts on internal seams. It does not define spatial hops, a physical readout, or a laboratory frame. Exact propagation calculations also admit distinct vertex, face, and edge orbit rays, so symmetry equalizes weights inside each orbit without selecting the primitive-port ray. No scalar or polarization-independent sector bridge, coherent frame transport, or exclusivity theorem is derived. A photon test also requires equal action on both transverse polarizations. The excluded exposure class is the 17 July 2026 WMAP ILC template campaign, its CMB likelihood class, and every inspected data product; its template-only null has no role in this comparison. The linked coefficient relation has no qualifying physical comparison. The comparison is unarmed until its own versioned eligible contract fixes the source operator, readout, frame, covariance, nuisance model, sensitivity, and thresholds. Failure rejects this branch and reaches the full framework only if the bridge derivation proves the branch forced and exclusive.',
     },
     distinctiveTemplates: [
         {
@@ -368,7 +383,7 @@ export const PREDICTION_SURFACE = {
         },
         {
             title: 'No ordinary simple-GUT X/Y channel',
-            summary: 'The product adjoint blocks the classic X/Y leptoquark route; other baryon-violating mechanisms remain separate.',
+            summary: 'The product adjoint blocks the classic X/Y leptoquark route; other baryon-violating mechanisms are separate.',
         },
         {
             title: 'No simple-group GUT is needed for the published unification surface',
@@ -380,7 +395,7 @@ export const PREDICTION_SURFACE = {
         },
         {
             title: 'Source-derived ambient 1+3 Lorentz precursor',
-            summary: 'The exact rank-three source quotient independently defines the four-dimensional (+---) ambient target carrier R ⊕ V_src. Canonical longest-parent-chain height is not part of that carrier construction; it appears only in the supplied event placement F(e) = (tau h(e), x(e)). The carrier is not an intrinsic poset-dimension estimate, and the physical manifold limit remains conditional.',
+            summary: 'The exact rank-three source quotient independently defines the four-dimensional (+---) ambient target carrier R ⊕ V_src. Exact longest-chain height is not part of that carrier construction. Every finite log has an auxiliary injective forward-causal placement; it is enumeration-dependent and does not reflect the order. The carrier is not an intrinsic poset-dimension estimate, and the physical manifold limit is conditional.',
         },
     ],
     falsificationPressure: [

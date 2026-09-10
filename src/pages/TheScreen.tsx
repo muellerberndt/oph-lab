@@ -65,17 +65,13 @@ export function TheScreenPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                On the OPH geometric-support branch, the screen is a <strong>two-dimensional sphere S&sup2;</strong>.
-                It supplies Lorentz-frame kinematics, while authenticated read-from records supply a finite
-                informational order and its canonical longest-parent-chain height. Independently of that height, the
-                exact rank-three source quotient defines W<sub>src</sub> = R &oplus; V<sub>src</sub>, a four-dimensional
-                ambient target carrier with Lorentz signature (+---); the quotient&apos;s unit directions become
-                future-null directions. Height enters only when events are placed by
-                F(e) = (&tau;h(e), x(e)). The target-carrier dimension is not an intrinsic dimension estimate for the
-                finite poset. The 1+3 precursor supplies neither a physical sky nor a smooth manifold. A source-selected
-                spatial readback, faithful signal causality, count-to-volume
-                calibration, source-selected refinement, manifoldlikeness, topology, and curvature convergence remain
-                separate physical-limit conditions.
+                On the geometric-support branch, the screen is a <strong>two-dimensional sphere S&sup2;</strong>.
+                Its conformal action supplies Lorentz-frame kinematics. Conservative source records and their
+                metric complete to a continuous three-dimensional carrier; adding a time coordinate gives a
+                four-dimensional Lorentz carrier. A specified golden population, local reading law and model clock
+                have a controlled flat causal/count limit. These results do not select physical event populations,
+                signal propagation or laboratory time. Gravity additionally requires common stress, volume, entropy
+                and controlled tensor curvature.
             </p>
             <p style={{ marginBottom: '16px' }}>
                 On the same finite event type, but in a separately supplied 3+1 tensor interface, an exact minimal
@@ -232,7 +228,7 @@ export function TheScreenPage() {
                     candidate conditional on the physical reconstruction receipts.
                 </p>
                 <p>
-                    This ladder names roles in the readback architecture. Particle identities stay on the Lorentz
+                    This ladder names roles in the readback architecture. Particle identities are assigned on the Lorentz
                     and gauge branches: photon on the electromagnetic branch, gluons on color, graviton on geometry,
                     W/Z as incomplete running-chart coordinates, H on its calibration surface, and hadrons as QCD composites.
                 </p>

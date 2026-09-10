@@ -29,14 +29,13 @@ export function ScreenMicrophysicsPage() {
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-gold)' }}>
                 <h4 style={{ margin: '0 0 8px', fontSize: '0.9em', color: 'var(--accent-gold)' }}>
-                    Current simulator handoff
+                    Simulator handoff
                 </h4>
                 <p style={{ margin: '0 0 10px', fontSize: '0.84em' }}>
-                    OPH-FPE now exports fourteen hashed display packages covering carrier repair, public records,
-                    observer conditioning, refinement depth, confluence, modular time, defects, finite electromagnetic
-                    response, cosmology diagnostics, and a theorem/paper/simulator evidence atlas. They preserve the
-                    boundary between display data, finite receipts, and physical claims.
-                </p>
+                The visualization handoff binds port states, public records, repair events and field readouts to
+                specific source receipts. It distinguishes actual shared histories from separate preparations,
+                actions and clocks. Display references retain their labels; they do not supply physical identification.
+            </p>
                 <a href={MINI_UNIVERSE_SIMULATION_URL}>Open the public visualization &rarr;</a>
             </div>
 
@@ -63,7 +62,7 @@ export function ScreenMicrophysicsPage() {
                     <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-gold)' }}>Observer synchronization</h4>
                     <p style={{ margin: 0, fontSize: '0.82em', color: 'var(--text-secondary)' }}>
                         Synchronization is treated operationally. It is the question of how overlap data, records, and
-                        repair schedules stay mutually consistent inside the shared microscopic system.
+                        repair schedules are mutually consistent inside the shared microscopic system.
                     </p>
                 </div>
             </div>

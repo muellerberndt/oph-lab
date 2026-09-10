@@ -172,8 +172,8 @@ export function MassesPage() {
                     The first two axioms force the abstract Standard Model compact Lie type on the
                     twelve-port branch. The declared fifteen-state fixture gives exact hypercharges,
                     N<sub>c</sub> = 3, and a common Z6 kernel. It does not select physical matter.
-                    Source reconstruction of the current, promotion to the global quotient, and
-                    N<sub>g</sub> = 3 as a physical family count are open.
+                    No source reconstruction of the current, promotion to the global quotient, or
+                    physical derivation of N<sub>g</sub> = 3 as the family count is supplied.
                 </p>
                 <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
                     W/Z carry running-chart status and no physical pole-mass status. Their strict-one-loop pole-map
@@ -187,10 +187,10 @@ export function MassesPage() {
             </div>
 
             <div className="card" style={{ marginBottom: '16px' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Open matter-sector lanes</h3>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Matter-sector boundaries</h3>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8', margin: 0, color: 'var(--text-secondary)' }}>
-                    <li><strong>Quarks:</strong> the source equations leave a free (R<sub>&gt;0</sub>)<sup>2</sup> spread fiber, so no numeric quark prediction is emitted. The flavor-orbit selector, quark-Higgs carrier, and common-scheme transport are work in progress.</li>
-                    <li><strong>Charged leptons:</strong> the icosahedral screen gives an exact A<sub>5</sub>/C<sub>3</sub> face-corner carrier. The finite CFQ model proves its stipulated schema is nonempty but authors the registers, automaton, clock, and response. Physical source selection, family/Yukawa attachment, determinant descent, interacting refinement, and pole scheme are work in progress; no nonzero source-only mass is emitted.</li>
+                    <li><strong>Quarks:</strong> the source equations leave a free (R<sub>&gt;0</sub>)<sup>2</sup> spread fiber, so no numeric quark prediction is emitted. No flavor-orbit selector, quark-Higgs carrier, or common-scheme transport is derived.</li>
+                    <li><strong>Charged leptons:</strong> the icosahedral screen gives an exact A<sub>5</sub>/C<sub>3</sub> face-corner carrier. The finite CFQ model proves its stipulated schema is nonempty but authors the registers, automaton, clock, and response. It derives no physical source selection, family/Yukawa attachment, determinant descent, interacting refinement, or pole scheme; no nonzero source-only mass is emitted.</li>
                     <li><strong>Neutrinos:</strong> the isotropic ansatz has an exact no-go. The target-informed weighted-cycle point is rejected by the NuFIT 6.1 correlated profile and has no physical PMNS, ordering, absolute-mass, or Majorana prediction status.</li>
                     <li><strong>Hadrons:</strong> production masses sit outside the closed public scope until a working OPH hadron backend and systematics exist.</li>
                 </ul>
@@ -320,9 +320,9 @@ export function MassesPage() {
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8', margin: 0, color: 'var(--text-secondary)' }}>
                     <li><strong>Closed:</strong> theorem-grade or calibration-grade public result.</li>
-                    <li><strong>Continuation-only:</strong> an internal or same-family sidecar that sharpens the open object without replacing the public theorem frontier.</li>
+                    <li><strong>Continuation-only:</strong> an internal or same-family sidecar that sharpens an object not established by the public theorem surface.</li>
                     <li><strong>Compare-only:</strong> a fit or diagnostic adapter that is numerically useful but not promoted as the theorem object.</li>
-                    <li><strong>Open:</strong> an exact theorem object is open on the declared corpus.</li>
+                    <li><strong>Not derived:</strong> the declared corpus supplies no exact theorem object.</li>
                 </ul>
             </div>
 
@@ -360,8 +360,8 @@ export function MassesPage() {
                 </p>
                 <p>
                     The diagnostic changes the source coordinate used by those formulas, so the bosonic rows move while
-                    the classical structural rows stay fixed. The displayed reference is the measured-endpoint comparison value P<sub>C</sub>.
-                    Charged leptons remain on a separate source-landing surface. The quark runtime is a target-anchored
+                    the classical structural rows are fixed. The displayed reference is the measured-endpoint comparison value P<sub>C</sub>.
+                    Charged leptons occupy a separate source-landing surface. The quark runtime is a target-anchored
                     diagnostic behind the two-modulus spread obstruction and the common-scale physical-Yukawa blocker;
                     hadrons require an OPH hadron backend.
                 </p>

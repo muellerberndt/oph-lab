@@ -191,15 +191,15 @@ export function StandardModelPage() {
             <p style={{ marginBottom: '16px' }}>
                 The first two axioms and compact Lie classification force the abstract type
                 {' '}<strong>u(1) + su(2) + su(3)</strong> on the twelve-port branch.
-                Source reconstruction of the complete current is open. Inside the declared fifteen-state
+                No source reconstruction of the complete current is derived. Inside the declared fifteen-state
                 representation fixture, the hypercharges, anomaly cancellations, <strong>three colors</strong>,
                 and the common Z6 kernel are exact. The global quotient
                 {' '}<strong>[SU(3) x SU(2) x U(1)] / Z6</strong> additionally requires a complete
                 character lattice and a same-source loop-to-kernel identification.
                 The rank-three band is a candidate family carrier; the CP-capability and weak-sector clauses
-                give the window 3 to 5, and <strong>N_g = 3</strong> enters as a declared completion with open
-                physical status. Physical three-family status
-                requires the open rank-45 attachment, source-selected matter action, and quantum-field-theory construction.
+                give the window 3 to 5, and <strong>N_g = 3</strong> enters as a declared completion without a
+                physical derivation. Physical three-family status
+                requires a rank-45 attachment, source-selected matter action, and quantum-field-theory construction.
                 The fixed-stage tensor category first chooses one common strict transport representative and
                 retains only seeds with trivial loop action under that same choice; the receipt intertwines those
                 choices across refinement.
@@ -217,9 +217,9 @@ export function StandardModelPage() {
             </div>
 
             <div className="card" style={{ marginBottom: '20px', borderLeft: '3px solid var(--accent-gold)' }}>
-                <h3 style={{ margin: '0 0 10px', fontSize: '0.95em' }}>Finite carrier readout — exploratory</h3>
+                <h3 style={{ margin: '0 0 10px', fontSize: '0.95em' }}>Finite carrier readout (exploratory)</h3>
                 <p style={{ margin: '0 0 10px', fontSize: '0.84em' }}>
-                    The latest OPH-FPE Z<sub>6</sub> census and v2 family readout make charge, triality, and weak-duality
+                    The OPH-FPE Z<sub>6</sub> census and v2 family readout make charge, triality, and weak-duality
                     grammar checks live on committed carrier structures. The package is explicitly non-evidential:
                     its labels do not establish a physical generation count, matter family, Yukawa sector, or particle.
                 </p>
@@ -398,7 +398,7 @@ export function StandardModelPage() {
 
             <div className="math-block">
                 Axiom-forced Lie type: u(1) + su(2) + su(3). Declared fixture:
-                N_c = 3 with a common Z6 kernel. Matter, global-form, and family selection are open.
+                N_c = 3 with a common Z6 kernel. No matter, global-form, or family selection is derived.
             </div>
 
             <Explainer title="Product structure inside the declared fixture">
@@ -414,8 +414,8 @@ export function StandardModelPage() {
                     The admissibility filters cut the candidate class first: trivial sectors such as pure U(1)
                     fail the chiral, CP, or Yukawa criteria. The minimization stages in the demo are a comparison
                     device across the survivors. The realized sector statements (three generations inside the
-                    window 3 to 5, one Higgs, no extra light sectors) enter as declared completions with open
-                    physical status, not as an axiom.
+                    window 3 to 5, one Higgs, no extra light sectors) enter as declared completions without
+                    derived physical selection, not as an axiom.
                 </p>
             </Explainer>
 

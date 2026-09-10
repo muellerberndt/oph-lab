@@ -262,8 +262,8 @@ export function DarkMatterPage() {
                 </p>
                 <p>
                     The proved output is narrower: exact or quantitatively controlled state recovery across a collar,
-                    on the hypotheses stated above. The MOND curve remains useful for exploring what a future
-                    continuation would have to reproduce.
+                    on the hypotheses stated above. The MOND curve is a benchmark for any physical
+                    continuation; no galaxy-response law is derived from it.
                 </p>
             </Explainer>
 

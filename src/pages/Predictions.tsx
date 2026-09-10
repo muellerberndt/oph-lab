@@ -26,7 +26,7 @@ export function PredictionsPage() {
 
             <p style={{ marginBottom: '16px' }}>
                 The OPH papers do not put every empirical statement on one tier. Some outputs are public quantitative
-                rows. Some are continuation-level signal templates. Others are open phenomenology. The page follows
+                rows. Some are continuation-level signal templates. Others lack a derived physical attachment. The page follows
                 that ledger directly.
             </p>
 
@@ -39,9 +39,9 @@ export function PredictionsPage() {
                     architecture supports a common dependency map across the source-derived finite 1+3 Lorentz precursor, the conditional Einstein branch,
                     quantum public records, a conditional Standard Model recognition packet, three colors, a rank-three
                     candidate family band, and linked conditional Higgs/cosmological capacity coordinates. The capacity
-                    comparisons are target-exposed and carry no prediction status. Physical family attachment and
-                    the finite and perturbative quantum-field constructions remain open. The cumulative compression is the principal evidence;
-                    this page separates that structural achievement from the stronger standard of a frozen prospective test.
+                    comparisons are target-exposed and carry no prediction status. A supplied free-scalar action joins
+                    continuum and Fock detector readouts with a controlled error. Physical interacting matter requires
+                    further attachment; these constructions are distinct from a frozen prospective test.
                 </p>
             </div>
 
@@ -96,7 +96,7 @@ export function PredictionsPage() {
                     <a href={`${RESEARCH_REPO_URL}/blob/main/code/a5_fingerprint/runtime/spin_six_primitive_port_prediction_receipt.json`}>Exact coefficient receipt</a>
                     <a href={`${RESEARCH_REPO_URL}/blob/main/Lean/Screen/A5PrimitivePortPrediction.lean`}>Lean proof</a>
                     <a href={`${RESEARCH_REPO_URL}/blob/main/Lean/Screen/A5OrbitRaySeparation.lean`}>Orbit-ray separation proof</a>
-                    <a href={`${RESEARCH_REPO_URL}/issues/655`}>Open physical bridge</a>
+                    <a href={`${RESEARCH_REPO_URL}/blob/main/claims/claim_registry.yaml`}>Physical-bridge classification</a>
                 </div>
             </div>
 
@@ -195,9 +195,9 @@ export function PredictionsPage() {
                 <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
                     The primitive-port coefficient relation is a frozen prospective prediction of its named physical
                     branch. The certified repair operator acts on internal seams and supplies neither spatial hops nor a
-                    physical readout. Vertex, face, and edge orbit rays remain mathematically distinct. The comparison is
-                    unarmed while source selection, the physical sector bridge, coherent frame transport, and an eligible
-                    dataset contract are open. A failed comparison rejects that branch. It rejects the full framework only
+                    physical readout. Vertex, face, and edge orbit rays are mathematically distinct. The comparison is
+                    unarmed because no source selection, physical sector bridge, coherent frame transport, or eligible
+                    dataset contract is supplied. A failed comparison rejects that branch. It rejects the full framework only
                     if the bridge derivation proves the branch forced and exclusive.
                 </p>
             </div>
@@ -209,10 +209,10 @@ export function PredictionsPage() {
                 </p>
                 <p>
                     The exact displayed W/Z pair consumes the comparison target. The strict-one-loop complex-pole
-                    map is checked for complete declared renormalized inputs, but the separate source values remain
+                    map is checked for complete declared renormalized inputs, but the separate source values are
                     running-chart coordinates because OPH has not supplied those physical inputs and receipts. Higgs and top sit
                     on declared calibration surfaces. The horizon-comb and discrete-Hawking stories belong to
-                    continuation lanes, and the deep-IR galaxy-response story is open.
+                    continuation lanes, and no physical source is supplied for the deep-IR galaxy-response story.
                 </p>
             </Explainer>
 

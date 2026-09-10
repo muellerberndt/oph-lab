@@ -176,7 +176,7 @@ export function ErrorCorrectionPage() {
                     In OPH terms, once the exact branch or the conditional mixing theorem establishes small CMI,
                     Fawzi-Renner supplies a recovered comparison state. The collar theorem controls recovery error;
                     it does not derive the circuit complexity of that map. Complexity-equals-volume and
-                    complexity-equals-action remain separate conjectural interpretations.
+                    complexity-equals-action are separate conjectural interpretations.
                 </p>
             </Explainer>
 

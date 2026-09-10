@@ -25,8 +25,8 @@ Research status is controlled from the sibling `reverse-engineering-reality/` re
 
 The finite-simulation boundary is controlled by the sibling `oph-physics-sim/` repo, especially its `README.md`,
 lane design documents, receipts, and `docs/RUN_OUTPUTS_AND_VISUALIZATION.md`. The Learn site is a guided
-exposition surface; when its prose differs from a current paper or receipt, the research artifact controls claim
-status. When the paper or simulator status changes, update those sources first, then sync the OPH Lab copy.
+exposition surface; when its prose differs from a controlling paper or receipt, the research artifact controls the
+claim. Research changes originate in those sources before the OPH Lab copy is synchronized.
 
 ## Paper Surface Summary
 
@@ -63,7 +63,7 @@ This section is the lab-maintainer summary of the public paper surface.
   It requires a mean-count or projective-limit carrier that the finite theorem
   does not provide.
 - Exact neutral and multiplicative global-capacity completions share the same
-  local survival datum, stay positive, compose across disconnected cuts and
+  local survival datum, are positive, compose across disconnected cuts and
   finite cut-count regrouping, and disagree after one cut. The finite source
   also selects no blocked-event semantics. The named-law branch is therefore
   not evaluable on the declared finite-cut attachment class. Its horizon branch
@@ -73,23 +73,40 @@ This section is the lab-maintainer summary of the public paper surface.
   the Planck base-`Lambda`CDM comparison coordinate. The target was exposed
   and the tested formula menu was dense, so neither comparison is a
   prediction or a source-selected cosmic capacity.
-- `G_SI` comes from the selected no-G scale certificate. The Newton row must
-  stay separate from variable P-slider diagnostics.
+- `G_SI` comes from the selected no-G scale certificate. The Newton row is
+  separate from variable P-slider diagnostics.
 - Off-point controls in the app are formula-sensitivity diagnostics. They are
   separate from certified branch claims.
+
+### Source geometry and scalar fields
+
+- Conservative source records and their metric complete to a continuous
+  three-dimensional carrier. A declared golden population, complete local
+  reading law and model clock have a controlled flat causal/count limit.
+  Fourth roots of counts in fixed interior timelike intervals recover
+  proper-duration ratios relative to a reference interval.
+- A specified free scalar action on prepared golden addresses supports
+  classical waves and Fock detectors, with certified comparison to the
+  massive Dirichlet continuum field. The q=233 separated response exceeds
+  its total error throughout model time [0.95,1]. Population, boundary,
+  action and time are supplied; the field-to-recorded-clock join and an
+  interacting continuum are separate requirements.
+- The local Standard Model action has exact jet Ward identities under
+  supplied spacetime, Spin, matter and coefficient conventions. It does
+  not establish source-produced physical matter or its quantization.
 
 ### Gravity / Lorentz branch
 
 - Lorentz kinematics is recovered on the explicit BW geometric branch.
 - The BW theorem surface is sharpened and stable at the automorphism level.
-- The broader UV/BW internalization lane remains open.
+- The formal surface does not derive broader UV/BW internalization.
 - The remaining UV/BW scaffold is:
   - `canonical_scaling_cap_pair_realization_from_transported_cap_marginals`
   - `independent_bw_rigidity_on_realized_limit`
 - The smallest lower blocker beneath the first object is:
   - `eventual_fixed_local_collar_common_floor_on_modular_transport_marginals`
 - The OPH half-line generator is identified with the effective local null-stress charge on that same half-line family.
-- What remains open downstream on the null/stress side is:
+- The null/stress result does not supply:
   - bounded-interval transport / projective branch
   - tensor reconstruction beyond the null-invisible metric ambiguity
 
@@ -101,13 +118,13 @@ This section is the lab-maintainer summary of the public paper surface.
   the abstract type `u(1) + su(2) + su(3)`.
 - Target-blind readback derives the inverse-port response `R = -J`.
   Reconstructing the complete response map and bracket from source histories
-  is open. The charged-double-triplet matrices are a declared exact witness.
+  is not derived. The charged-double-triplet matrices are a declared exact witness.
 - The declared fifteen-state representation fixture has exact hypercharges,
   anomaly cancellation, `N_c = 3`, and a common `Z_6` kernel. This does not
   select physical matter. The quotient
   `SU(3) x SU(2) x U(1) / Z_6` additionally requires a complete matter
   character lattice and a same-source loop-to-kernel identification.
-  Physical global-form and three-family attachment are open.
+  Physical global-form and three-family attachment require separate source identifications.
 - The sharp exclusion is the ordinary simple-GUT `X/Y` gauge channel, not every proton-decay mechanism.
 
 ### Particle branch
@@ -129,20 +146,20 @@ This section is the lab-maintainer summary of the public paper surface.
     and supplies a fixed-cutoff central accepted/rejected record dilation
   - the model authors its registers, automaton, clock, and response
   - physical source selection, family/Yukawa attachment, phase and determinant
-    descent, interacting refinement, and pole-mass scheme are work in progress
+    descent, interacting refinement, and pole-mass scheme are not derived
   - no nonzero source-only charged-lepton mass is emitted
 - Quarks:
   - the source equations leave an exact free `(R_{>0})^2` spread fiber, so
     selected-frame descent does not emit either physical spread modulus
-  - numeric quark rows remain withheld from the public surface
+  - numeric quark rows are withheld from the public surface
   - the physical flavor-orbit selector, quark-Higgs carrier, and common-scheme
-    source transport are work in progress
+    source transport are not derived
 - Neutrinos:
   - the isotropic neutrino-only ansatz has an exact no-go
   - the target-informed weighted-cycle point is rejected by the NuFIT 6.1
-    correlated profile and remains a comparison record only
-  - physical PMNS, ordering, absolute masses, and Majorana phases remain open
-    behind source, basis, Takagi, ordering, and no-target-leak gates
+    correlated profile and is a comparison record only
+  - physical PMNS, ordering, absolute masses, and Majorana phases require
+    source, basis, Takagi, ordering, and no-target-leak certificates
 - Hadrons:
   - production masses require a working OPH hadron backend and systematics
 
@@ -177,52 +194,30 @@ This section is the lab-maintainer summary of the public paper surface.
 
 ## Lab Copy Rules
 
-Use these rules whenever editing explainer text.
-
-- Do not present Lorentz kinematics or Einstein recovery as unconditional outputs of the local axioms alone.
-- Do not collapse the BW branch condition into generic statements like “modular flow is Lorentz boost” without the branch qualifier.
-- Distinguish these public claim tiers explicitly:
-  - recovered core
-  - conditional branch
-  - continuation lane
-  - compare-only
-  - open scaffold
-- Do not describe compare-only exact-hit sidecars as public theorem rows.
-- Do not describe continuation-level phenomenology templates as recovered-core predictions.
-- Do not use release-note phrasing in public research summaries.
-- Prefer “paper surface”, “explicit BW branch”, “continuation-only sidecar”, and “compare-only” where applicable.
-
-## Highest-Priority Drift Points
-
-These are the common places where public copy tends to overstate the paper claims.
-
-- Home / landing summary:
-  - keep the first screen as a fixed-point dashboard
-  - avoid free-constant language
-  - keep `G_SI` tied to the no-G scale certificate
-  - mark any off-point slider as a sensitivity diagnostic
-- Modular-flow / Lorentz pages:
-  - keep the BW branch qualifier explicit
-  - avoid unconditional `K_C = 2 pi B_C`
-- Gravity / Einstein pages:
-  - avoid “Einstein closure” wording
-  - keep the null/stress remaining boundary explicit
-- Axioms / synthesis pages:
-  - separate local axioms from bridge assumptions and open scaffold objects
-- Particle / masses / predictions pages:
-  - keep `W/Z` on the public electroweak repair surface
-  - keep Higgs/top on the source-only split surface plus the inverse check sidecar
-  - keep the hierarchy/naturality identity conditional on
-    `HIERARCHY-SCREEN-READOUT`
-  - keep charged, quark, and neutrino lanes labeled by their declared claim tiers
-  - keep the quark `(R_{>0})^2` source-spread obstruction separate from the
-    mixed-scheme target audit and physical-Yukawa normalization blocker
-  - do not publish the six target-anchored quark coordinates as OPH mass rows
-  - keep hadrons tied to the missing OPH hadron backend
-  - keep GW comb / discrete Hawking / deep-IR galaxy-response language separated by claim tier
-- Consensus / microphysics pages:
-  - do not demote them to flavor text beneath the gravity and QFT chains
-  - keep the fixed-point, holonomy, record, and synchronization language explicit
+- Keep recovered, conditional, continuation, compare-only and unproved results distinct.
+  Exact-hit diagnostics and phenomenological templates are not theorem predictions.
+- Keep the explicit Bisognano–Wichmann branch qualifier on modular-flow and Lorentz
+  claims. Neither unconditional boost identity nor Einstein recovery follows from
+  the local axioms alone; gravity needs the stated null/stress and continuum inputs.
+- Separate local axioms, bridge assumptions and unproved scaffold objects on the
+  axioms and synthesis pages. Public summaries give the scientific state, without
+  release-note narration.
+- The landing page is a fixed-point dashboard. Avoid free-constant language, keep
+  Newton's constant tied to the no-G scale certificate, and label sliders as
+  sensitivity diagnostics.
+- Keep W/Z on their running-chart surface and Higgs/top on the source-only split
+  plus inverse check sidecar. Their physical hierarchy interpretation requires
+  `HIERARCHY-SCREEN-READOUT`.
+- Preserve charged, quark and neutrino classifications. The quark two-modulus
+  source-spread obstruction is distinct from the mixed-scheme target audit and
+  physical-Yukawa normalization. Never publish the six target-anchored quark
+  coordinates as OPH mass predictions; hadrons need a working backend and systematics.
+- Keep gravitational-wave combs, discrete Hawking templates and galaxy-response
+  hypotheses at their declared tiers.
+- Preserve the consensus and microphysics account of bounded self-reading patches:
+  local state, ports, readback, protected records, feedback and public evidence.
+  Fixed points, holonomy, synchronization and fixed-cutoff architecture are
+  substantive parts of the model.
 
 ## Development
 

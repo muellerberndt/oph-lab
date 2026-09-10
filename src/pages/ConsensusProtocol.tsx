@@ -87,7 +87,7 @@ export function ConsensusProtocolPage() {
                 </a>{' '}
                 for the application-neutral theorem, counterexample, stability, refinement, and Lean-audit layers.
                 Its generic equivalence does not by itself prove that a particular physical boundary map is injective
-                on its consistent quotient; that remains an application certificate.
+                on its consistent quotient; that requires an application certificate.
             </p>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Core Objects</h3>
@@ -136,7 +136,7 @@ export function ConsensusProtocolPage() {
                 </p>
                 <p>
                     Same-source confluence, cross-source boundary identification, liveness, and local repairability
-                    have separate hypotheses. Law-space selection stays in a meta-model box.
+                    have separate hypotheses. Law-space selection is a meta-model construction.
                 </p>
             </Explainer>
         </div>

@@ -1,5 +1,5 @@
 import { Explainer } from '../components/Explainer';
-import { MINI_UNIVERSE_SIMULATION_URL } from '../content/paperSurface';
+import { MINI_UNIVERSE_SIMULATION_URL, RESEARCH_REPO_URL, SIMULATOR_REPO_URL } from '../content/paperSurface';
 
 export function ClassicalPhysicsPage() {
     return (
@@ -10,23 +10,17 @@ export function ClassicalPhysicsPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                The <strong>Chain 1 synthesis page</strong> treats the gravity route as a conditional branch on the
-                declared paper surface. Authenticated read-from provenance supplies a finite informational poset and
-                its canonical longest-parent-chain height. Independently of event height, the exact rank-three source
-                quotient defines W<sub>src</sub> = R &oplus; V<sub>src</sub>, a four-dimensional ambient target carrier
-                with Lorentz signature (+---), not an intrinsic dimension estimate for the finite poset. Height enters
-                only in the event placement F(e) = (&tau;h(e), x(e)). A source-selected spatial readback,
-                physical causal faithfulness, and the continuum receipts are required for an effective event
-                Lorentzian manifold. Lorentz-frame kinematics sits on the explicit BW branch, and the Einstein step sits on a
-                Jacobson-type entanglement-equilibrium branch with the null bridge, the separate bounded-interval
-                projective branch, and fixed-cap stationarity kept explicit. Classical physics is the effective
-                limiting behavior of that branch.
+                Classical field behavior has a controlled example on prepared source addresses. A specified free
+                scalar action supports waves and detectors converging to the massive field in a cube with fixed
+                walls. A separate declared reading law on that address family has a flat causal/count limit.
+                These constructions supply their population, action and clocks. Physical Einstein dynamics further
+                uses the modular/null bridge, fixed-cap entropy stationarity, conserved stress and controlled curvature.
             </p>
             <p style={{ marginBottom: '16px' }}>
                 On the same finite event type, a separate theorem works in a supplied 3+1 tensor interface. Nine
                 supplied balances along exact source-unit tomography directions imply all-null balance and an
                 Einstein-form identity after Ward/Bianchi conservation and connectedness. The informational order
-                does not construct the tensor fields, discrete step, or balances, and the theorem does not yet
+                does not construct the tensor fields, discrete step, or balances, and the theorem does not
                 identify their coordinate differences with the constructed source carrier. It supplies a finite
                 Einstein shape and no identification with smooth physical curvature.
             </p>
@@ -44,11 +38,11 @@ export function ClassicalPhysicsPage() {
                     <div style={{ padding: '12px', border: '1px solid rgba(122,184,212,0.35)', background: 'rgba(122,184,212,0.08)' }}>
                         <strong style={{ color: 'var(--accent-blue)' }}>Source-causal branch</strong>
                         <p style={{ margin: '8px 0 0', fontSize: '0.82em', color: 'var(--text-secondary)' }}>
-                            Authenticated provenance &rarr; exact finite poset and source height. Independently,
-                            R &oplus; the rank-three source quotient &rarr; exact ambient 1+3 carrier and null cone.
-                            The placement F(e) = (&tau;h(e), x(e)) then uses height and a supplied spatial readback;
-                            two-way cone faithfulness and the physical continuum remain certificates.
-                        </p>
+                Conservative records and their metric give a continuous rank-three carrier. A specified golden
+                population, complete local reads and a model layer clock give a causal/count limit when the read
+                radius shrinks more slowly than the gaps. Counts in fixed interior timelike intervals recover duration
+                ratios; source-selected physical populations and signals need additional justification.
+            </p>
                     </div>
                     <div style={{ padding: '12px', border: '1px solid rgba(201,169,110,0.35)', background: 'rgba(201,169,110,0.08)' }}>
                         <strong style={{ color: 'var(--accent-gold)' }}>Modular / entropy branch</strong>
@@ -71,8 +65,9 @@ export function ClassicalPhysicsPage() {
                 <div style={{ padding: '12px', border: '1px solid rgba(0,255,65,0.35)', background: 'rgba(0,255,65,0.07)', textAlign: 'center' }}>
                     <strong style={{ color: 'var(--accent-green)' }}>Conditional physical recombination</strong>
                     <div style={{ marginTop: '6px', fontSize: '0.82em', color: 'var(--text-secondary)' }}>
-                        Same-family physical event/link identification + faithful causal placement + count-to-volume,
-                        manifoldlikeness, dimension, topology, uniqueness, and curvature/stress convergence +
+                        Same-family physical event/link identification + exact order embedding or controlled causal/count
+                        convergence + compatible clock, volume, topology, stress, and
+                        tensor-curvature or small-ball/null-balance identification +
                         source-carrier/tensor identification &rarr; effective 3+1 Einstein description &rarr; classical limits
                     </div>
                 </div>
@@ -84,19 +79,33 @@ export function ClassicalPhysicsPage() {
                 </h4>
                 <p style={{ margin: '0 0 10px', fontSize: '0.84em', color: 'var(--text-secondary)' }}>
                     Mathematically, the source-derived object satisfies the basic finite locally finite order axioms of
-                    causal set theory. The physical interpretation used in that program requires more: faithful
-                    causal embedding, manifoldlikeness and topology tests, independent dimension evidence, and a
-                    calibrated #I/&rho; &rarr; Vol(I) law. Standard Lorentz-invariant controls use Poisson sprinkling;
-                    the deterministic OPH event log is not itself a sprinkling. See the
+                    causal set theory. The standard faithful-embedding proposal in that program asks for an order
+                    embedding with approximately Poisson density (a causal-set faithful embedding), manifoldlikeness
+                    and topology tests, independent dimension evidence, and a calibrated #I/&rho; &rarr; Vol(I) law.
+                    Standard Lorentz-invariant controls use Poisson sprinkling;
+                    the deterministic OPH count/order limit uses a different controlled approximation. See the
                     {' '}<a href="https://doi.org/10.1103/PhysRevLett.59.521" target="_blank" rel="noreferrer">foundational causal-set paper</a>
                     {' '}and <a href="https://doi.org/10.1007/s41114-019-0023-1" target="_blank" rel="noreferrer">Surya&apos;s review</a>.
                 </p>
                 <p style={{ margin: 0, fontSize: '0.84em', color: 'var(--text-secondary)' }}>
-                    The current 2,304-event local-domain diagnostic is informational and current-cutoff only: all
-                    736 qualifying intervals of size 32&ndash;72 fall outside the frozen exploratory 3+1
-                    ordering-fraction band. That is a dissimilarity receipt for this captured event semantics, not a
-                    manifoldlikeness result or a physical no-go. No certified OPH density-refinement family or
-                    count-to-volume result exists yet.
+                The frozen informational 2,304-event diagnostic has all 736 qualifying intervals outside its
+                exploratory 3+1 band. That finite result applies to its captured history and is not a physical no-go.
+                The distinct golden source family has a controlled order/count theorem under its declared population,
+                reading law and clock; it does not change the historical receipt.
+            </p>
+                <p style={{ margin: '10px 0 0', fontSize: '0.84em', color: 'var(--text-secondary)' }}>
+                    Two positive controls sharpen that boundary. All 30 authenticated Hasse links of the frozen
+                    24-event log receive local port labels and normalized null representatives in their hidden
+                    rank-three carrier templates, but the used directions have per-carrier ranks 2, 1, and 2; no
+                    local rank-three span, frame gluing, or global placement follows. Separately, four-seed
+                    Poisson-sprinkled Minkowski 3+1 controls at target means 64, 128, and 256 compile exactly through
+                    the source grammar; every coordinate map is injective and remains inside the sampled interval.
+                    Their mean Myrheim-Meyer estimates are 4.02824, 3.84595, and 3.90346. Their geometry,
+                    density, population, read pattern, and placement were imported, and only their carriers and
+                    transitive orders are nested. This establishes grammar compatibility, not OPH selection,
+                    similarity, manifoldlikeness, or a continuum.
+                    {' '}Inspect the <a href={`${RESEARCH_REPO_URL}/tree/main/evidence/source_causal_history_family`} target="_blank" rel="noreferrer">source-history evidence</a>
+                    {' '}and <a href={`${SIMULATOR_REPO_URL}/blob/main/data/causal_order/causet_likeness_receipt.json`} target="_blank" rel="noreferrer">causet comparison evidence</a>.
                 </p>
             </div>
 
@@ -159,7 +168,7 @@ export function ClassicalPhysicsPage() {
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Thermodynamics</h3>
             <p style={{ marginBottom: '16px' }}>
                 This page separates standard consequences of the conditional Einstein branch from thermodynamic
-                interfaces that OPH still takes as branch inputs:
+                interfaces that OPH takes as branch inputs:
             </p>
             <div className="card" style={{ marginBottom: '12px', borderLeft: '3px solid var(--accent-gold)' }}>
                 <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em' }}>Zeroth Law (Thermal Equilibrium)</h4>
@@ -203,7 +212,7 @@ export function ClassicalPhysicsPage() {
                 <div style={{ padding: '12px', background: 'rgba(201, 112, 112, 0.1)', border: '1px solid rgba(201, 112, 112, 0.3)', fontSize: '0.85em' }}>
                     <div style={{ color: 'var(--accent-rose)', fontWeight: 600, marginBottom: '4px' }}>Declared branch outputs</div>
                     <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8' }}>
-                        <li>Exact source-derived ambient 1+3 Lorentz carrier and conditional faithful causal placement</li>
+                        <li>Exact source-derived ambient 1+3 Lorentz carrier and conditional exact order embedding</li>
                         <li>Conditional effective 3+1 manifold after the physical refinement-limit certificates</li>
                         <li>Lorentz kinematics on the explicit BW branch</li>
                         <li>Conditional Einstein branch</li>
@@ -230,10 +239,10 @@ export function ClassicalPhysicsPage() {
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-cyan)' }}>
                 <h4 style={{ margin: '0 0 8px', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>
-                    Simulator check: refinement depth is not yet physical dimension
+                    Simulator check: refinement depth is not physical dimension
                 </h4>
                 <p style={{ margin: '0 0 10px', fontSize: '0.84em' }}>
-                    The latest OPH-FPE probe calibrates heat-kernel spectral and Weyl estimators, then applies them
+                    The OPH-FPE probe calibrates heat-kernel spectral and Weyl estimators, then applies them
                     to declared coupled refinement-tower operators. The resulting dimensions are exploratory
                     operator statistics. They do not discharge overlap gluing, scale, spacetime attachment, or the
                     physical three-dimensionality premise.
@@ -256,10 +265,10 @@ export function ClassicalPhysicsPage() {
                     But the microscopic laws are time-reversal invariant. Where does the arrow come from?
                 </p>
                 <p>
-                    OPH contains finite record-ordering and conditional entropy-production lanes, but the current
+                    OPH contains finite record-ordering and conditional entropy-production lanes, but the declared
                     corpus does not derive the observed cosmological arrow from a source-selected initial condition.
-                    A small-area beginning and monotonic approach to a de Sitter maximum remain a physical history
-                    proposal requiring dynamics, clock, and cosmological attachment.
+                    A small-area beginning and monotonic approach to a de Sitter maximum is a physical history
+                    proposal that requires dynamics, clock, and cosmological attachment.
                 </p>
             </Explainer>
 
@@ -280,8 +289,8 @@ export function ClassicalPhysicsPage() {
                 </ul>
                 <p>
                     This does not derive a precise a<sub>0</sub>, a galaxy force law, or an effective dark source.
-                    Those steps remain a continuation until separate source-tensor, conservation, normalization,
-                    coupling, and observational receipts are supplied. Other Chain 1 claims stand or fall on their
+                    Those steps are a continuation requiring separate source-tensor, conservation, normalization,
+                    coupling, and observational receipts. Other Chain 1 claims stand or fall on their
                     own declared branch receipts.
                 </p>
             </Explainer>

@@ -147,7 +147,7 @@ export function ModularFlowPage() {
                     over the entangling surface with a weight proportional to distance from the surface. This is
                     one route connecting modular flow to the later gravity branch. In the declared OPH paper surface,
                     the half-line generator/null-stress charge identification is internal, while bounded-interval
-                    transport and the broader UV/BW internalization scaffold are separate open items.
+                    transport and the broader UV/BW internalization scaffold are separate unproved inputs.
                 </p>
             </Explainer>
 

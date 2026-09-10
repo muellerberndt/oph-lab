@@ -78,9 +78,9 @@ export const WALKTHROUGH_STEPS: WalkthroughStep[] = [
     { to: '/entanglement/', icon: Zap, label: 'Bell & Entanglement', part: 'chain2-qft', seoTitle: 'Bell\u2019s Theorem & Quantum Entanglement | Interactive Simulator' },
     { to: '/error-correction/', icon: Lock, label: 'Quantum Error Correction', part: 'chain2-qft', seoTitle: 'Quantum Error Correction on the OPH Recovery Branch' },
     { to: '/gauge-symmetry/', icon: Layers, label: 'Gauge from Gluing', part: 'chain2-qft', seoTitle: 'Gauge Reconstruction from Patch Gluing | OPH' },
-    { to: '/standard-model/', icon: Box, label: 'Standard Model Structure', part: 'chain2-qft', seoTitle: 'Standard Model Structure | Exact Results and Open Physical Attachments' },
+    { to: '/standard-model/', icon: Box, label: 'Standard Model Structure', part: 'chain2-qft', seoTitle: 'Standard Model Structure | Exact Results and Required Physical Attachments' },
     { to: '/masses/', icon: Scale, label: 'Matter Continuations', part: 'chain2-qft', seoTitle: 'Matter Continuations | OPH Sector Status' },
-    { to: '/neutrinos/', icon: Atom, label: 'Neutrino Audit', part: 'chain2-qft', seoTitle: 'Neutrino Audit | Rejected Weighted-Cycle Candidate and Open Source Gates' },
+    { to: '/neutrinos/', icon: Atom, label: 'Neutrino Audit', part: 'chain2-qft', seoTitle: 'Neutrino Audit | Rejected Weighted-Cycle Candidate and Missing Source Certificates' },
     { to: '/unification/', icon: Merge, label: 'Coupling Unification', part: 'chain2-qft', seoTitle: 'Coupling-Unification Continuation | OPH' },
     { to: '/qft-emerges/', icon: Atom, label: 'QFT Boundary', part: 'chain2-qft', seoTitle: 'QFT Reconstruction Boundary | OPH' },
 

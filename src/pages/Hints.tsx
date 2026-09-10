@@ -71,7 +71,7 @@ export function HintsPage() {
 
             <p style={{ marginBottom: '24px' }}>
                 Over the past century, several discoveries challenged familiar intuitions about reality.
-                OPH treats them as motivation to test an observer-first framework, not as experiments that already
+                OPH treats them as motivation to test an observer-first framework, not as experiments that
                 prove spacetime or observer-independent descriptions wrong.
             </p>
 

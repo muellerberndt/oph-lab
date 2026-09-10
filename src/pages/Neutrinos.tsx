@@ -94,7 +94,7 @@ export function NeutrinosPage() {
       </section>
 
       <section className="card neutrino-note-card">
-        <h2 style={{ margin: 0, fontSize: '0.96rem' }}>Current Claim Boundary</h2>
+        <h2 style={{ margin: 0, fontSize: '0.96rem' }}>Claim Boundary</h2>
         <ul className="neutrino-note-list">
           {NEUTRINO_SURFACE_NOTES.map((note) => (
             <li key={note}>{note}</li>
@@ -111,7 +111,7 @@ export function NeutrinosPage() {
             positive mass or mixing prediction.
           </p>
           <p style={{ margin: 0 }}>
-            The weighted-cycle matrix remains reproducible as a historical comparison object. Its
+            The weighted-cycle matrix is reproducible as a historical comparison object. Its
             coordinates can be audited, but they cannot be promoted by relabeling a diagnostic as
             a theorem.
           </p>
@@ -122,10 +122,10 @@ export function NeutrinosPage() {
           <p style={{ margin: '0 0 12px 0' }}>
             The candidate fails the official two-dimensional theta23/delta_CP profiles. Its
             apparent shared-basis recovery was also guaranteed by its own definition, while the
-            charged-lepton basis needed for a physical PMNS matrix remains open.
+            charged-lepton basis needed for a physical PMNS matrix is not derived.
           </p>
           <p style={{ margin: 0 }}>
-            Correcting the Majorana Takagi convention does not rescue the branch. A new attempt must
+            Correcting the Majorana Takagi convention does not rescue the branch. A physical derivation must
             derive its operator, basis placement, label order, and scale without using oscillation
             targets in the source graph.
           </p>
@@ -160,7 +160,7 @@ export function NeutrinosPage() {
       </section>
 
       <section className="demo-container">
-        <div className="demo-label">Current Neutrino Status</div>
+        <div className="demo-label">Neutrino Result</div>
         <div className="neutrino-scalar-grid">
           {[...NEUTRINO_SURVIVING_RESULTS, ...NEUTRINO_ABSENT_OUTPUTS].map((row) => (
             <div key={row.label} className="neutrino-scalar-card">

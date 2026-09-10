@@ -107,7 +107,7 @@ export const QUARK_P_DRIVEN_EVALUATOR_CONTRACT: QuarkPDrivenEvaluatorContract = 
   ),
   notes: [
     ...storedContract.notes,
-    'The current source corpus leaves an exact free (R_{>0})^2 spread fiber; selected-frame descent is not a spread selector.',
+    'The declared source corpus leaves an exact free (R_{>0})^2 spread fiber; selected-frame descent is not a spread selector.',
     'The stored target coordinates mix light, heavy, and top conventions, and the GeV-valued matrices are mass textures rather than physical dimensionless Yukawas.',
   ],
   audit_classification: {

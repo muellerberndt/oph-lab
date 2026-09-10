@@ -250,7 +250,7 @@ export function Home() {
                 primaryLabel: 'non-pole chart',
                 primaryValue: `${formatFixed(canonicalSurface.electroweakRepair.mWGeV, 9)} GeV`,
                 secondaryLabel: 'surface',
-                secondaryValue: 'scheme map open',
+                secondaryValue: 'scheme map absent',
             },
             {
                 label: 'Z running-chart coordinate',
@@ -259,7 +259,7 @@ export function Home() {
                 primaryLabel: 'non-pole chart',
                 primaryValue: `${formatFixed(canonicalSurface.electroweakRepair.mZGeV, 9)} GeV`,
                 secondaryLabel: 'surface',
-                secondaryValue: 'scheme map open',
+                secondaryValue: 'scheme map absent',
             },
             {
                 label: 'Higgs boson mass',
@@ -284,8 +284,8 @@ export function Home() {
     return (
         <div className="landing-surface-page">
             <section className="research-hero">
-                <p className="research-hero-kicker">Research-status companion · {RESEARCH_RELEASE_ID} · {RESEARCH_RELEASE_DATE}</p>
-                <h1>See what OPH proves, assumes, tests, and leaves open.</h1>
+                <p className="research-hero-kicker">Research companion · {RESEARCH_RELEASE_ID} · {RESEARCH_RELEASE_DATE}</p>
+                <h1>See what OPH proves, assumes, tests, and does not derive.</h1>
                 <p className="research-hero-copy">
                     Observer Patch Holography studies bounded, self-reading systems with local state, ports,
                     records, readback, and repair. This Lab connects the formal paper stack to finite simulator
@@ -298,7 +298,7 @@ export function Home() {
                 </div>
             </section>
 
-            <section className="status-grid" aria-label="Current research status">
+            <section className="status-grid" aria-label="Research results and boundaries">
                 {CURRENT_RESEARCH_STATUS.map((item) => (
                     <article key={item.label} className="status-card">
                         <span className="status-card-kicker" style={{ color: item.tier === 'structural' ? 'var(--accent-green)' : item.tier === 'branch-conditional' ? 'var(--accent-gold)' : 'var(--accent-cyan)' }}>
@@ -349,7 +349,7 @@ export function Home() {
                 <div className="landing-links-header">
                     <h3 style={{ margin: 0, fontSize: '0.95em' }}>Inspect The Proof Surfaces</h3>
                     <p className="landing-links-copy">
-                        The lab summarizes the paper stack. The PDFs and code remain the source surface for theorem details.
+                        The lab summarizes the paper stack. The PDFs and code are the source surface for theorem details.
                     </p>
                 </div>
                 <div className="landing-links-grid">
@@ -386,10 +386,10 @@ export function Home() {
 
             <section className="card landing-links-card">
                 <div className="landing-links-header">
-                    <h3 style={{ margin: 0, fontSize: '0.95em' }}>Latest finite-simulator frontier</h3>
+                    <h3 style={{ margin: 0, fontSize: '0.95em' }}>Finite-simulator evidence</h3>
                     <p className="landing-links-copy">
-                        Current OPH-FPE packages instantiate observer-like self-reading systems and emit receipts.
-                        Every lane below is deliberately bounded by what it actually computes.
+                        The source packages describe bounded self-reading systems with local state, ports, records and
+                        feedback. Each calculation states its actual shared data, action and clock.
                     </p>
                 </div>
                 <div className="landing-links-grid">

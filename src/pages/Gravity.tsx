@@ -87,7 +87,7 @@ export function GravityPage() {
             title: 'Step 6: Conditional global boundary',
             equation: 'N = log M0(U_N); finite: M0(q) = alpha(Gq); Lambda ell_*^2 = 3pi/N',
             value: `Lambda = ${formatNumber(derivation.lambda, 2)} m^-2`,
-            concept: 'The displayed Lambda uses the measured comparison coordinate; a source-selected N and horizon attachment remain open',
+            concept: 'The displayed Lambda uses the measured comparison coordinate; no source-selected N or horizon attachment is derived',
         },
     ];
 
@@ -108,19 +108,12 @@ export function GravityPage() {
                 represents the independently reconstructed null charge; it is not scalar collar CMI.
             </p>
             <p style={{ marginBottom: '16px' }}>
-                Authenticated provenance supplies a finite poset and its canonical longest-parent-chain height; that
-                height is only an ordinal on events. Independently, the exact rank-three
-                source quotient defines W<sub>src</sub> = R &oplus; V<sub>src</sub>, a four-dimensional ambient target
-                carrier with Lorentz signature (+---) and exact source-unit null directions. Event placement then uses
-                F(e) = (&tau;h(e), x(e)). The target-carrier dimension is not an intrinsic dimension estimate for the
-                finite poset. Under explicit spatial-readback, edge-speed, and
-                converse-support certificates, the generated order is faithfully represented by its cone and every
-                source interval is exactly the corresponding cone interval on the placed event image. A separate
-                minimal theorem in a supplied 3+1 tensor interface reduces nine supplied source-direction balances to
-                all-null balance and a finite Einstein-form identity after Ward/Bianchi conservation and connectedness.
-                It does not identify tensor-coordinate differences with the constructed carrier. The order does not
-                construct the tensor fields, discrete step, or balances. Physical signal causality, count-volume,
-                manifoldlike refinement, smooth curvature and stress, vacuum, coupling, and scale remain required.
+                The source metric completes to a continuous three-dimensional carrier. A specified golden record
+                population, complete local reading law and model clock approach flat causal order and volume under
+                controlled refinement. Counts in fixed interior timelike intervals recover duration ratios. This is a
+                mathematical construction with declared inputs. Physical gravity also requires a common event and
+                signal interpretation, stress, vacuum, coupling, scale and controlled tensor curvature, or the
+                independent small-ball/null-balance identification. Scalar curvature alone cannot supply that tensor.
             </p>
 
             <div className="card" style={{ marginBottom: '20px', borderLeft: '3px solid var(--accent-cyan)' }}>
@@ -313,7 +306,7 @@ export function GravityPage() {
                     <div>Recovery and generalized-entropy interfaces (declared premises, not axioms)</div>
                     <div>Local MaxEnt and refinement-stable branch</div>
                     <div>Exact central-interface collar branch, or finite-range Gibbs plus uniform strong conditional matrix mixing</div>
-                    <div>Boundary-aware collar rate margin; finite receipts remain proxies</div>
+                    <div>Boundary-aware collar rate margin; finite receipts are proxies</div>
                     <div>Null modular bridge, with half-line generator/charge identification internalized</div>
                     <div>Explicit BW branch and scaling-limit scope</div>
                     <div>Separate bounded-interval projective branch in the small-ball step</div>
@@ -345,7 +338,7 @@ export function GravityPage() {
                 </p>
             </Explainer>
 
-            <Explainer title="Branch conditions and open receipts">
+            <Explainer title="Branch conditions and required receipts">
                 <div style={{ display: 'grid', gap: '10px' }}>
                     {GRAVITY_SURFACE.slice(2).map((item) => (
                         <p key={item} style={{ margin: 0 }}>

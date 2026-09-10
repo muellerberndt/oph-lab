@@ -22,7 +22,7 @@ export const LANDING_AUDIT_NOTES = [
 
 export const LANDING_SCOPE_NOTES = [
     'The first screen is a status dashboard. Its incomplete-map and comparison coordinates carry no physical prediction status.',
-    'Off-point controls on later pages are formula-sensitivity diagnostics and stay separate from certified branch claims.',
+    'Off-point controls on later pages are formula-sensitivity diagnostics and are separate from certified branch claims.',
 ];
 
 export const EXACT_BUNDLE_SECTIONS: ExactBundleSection[] = [
@@ -30,7 +30,7 @@ export const EXACT_BUNDLE_SECTIONS: ExactBundleSection[] = [
         id: 'structural-bosonic',
         title: 'Structural Zeros And Bosonic Diagnostics',
         scope: 'Structural exactness + calibration / compare-only charts',
-        note: 'The massless rows are structural. The W/Z pair is compare-only. The strict-one-loop pole-map algebra is now checked, but its complete OPH/FJ input packet and physical evidence receipts have not been supplied.',
+        note: 'The massless rows are structural. The W/Z pair is compare-only. The strict-one-loop pole-map algebra is checked; its complete OPH/FJ input packet and physical evidence receipts are not supplied.',
         rows: [
             { label: 'Photon', value: '0 GeV', note: 'Structural zero.' },
             { label: 'Gluon', value: '0 GeV', note: 'Structural zero.' },
@@ -44,8 +44,8 @@ export const EXACT_BUNDLE_SECTIONS: ExactBundleSection[] = [
     {
         id: 'charged',
         title: 'Charged Same-Family Exact Witness',
-        scope: 'Exact witness on current_family_only',
-        note: 'The charged theorem lane is open from P, and the exact same-family witness is public and explicit.',
+        scope: 'Exact witness on the declared family only',
+        note: 'The exact same-family witness is public and explicit. The theorem does not produce the physical charged-family source from P.',
         rows: [
             { label: 'Electron', value: '0.00051099895 GeV', note: 'Exact same-family witness.' },
             { label: 'Muon', value: '0.1056583755 GeV', note: 'Exact same-family witness.' },
@@ -55,7 +55,7 @@ export const EXACT_BUNDLE_SECTIONS: ExactBundleSection[] = [
     {
         id: 'quarks',
         title: 'Quark Source-Spread Obstruction',
-        scope: 'Theorem-grade non-identifiability on the current source corpus',
+        scope: 'Theorem-grade non-identifiability on the declared source corpus',
         note: 'The source equations fix two ordered profile rays but leave their positive endpoint spans independent. Target audits mix renormalization conventions, and their GeV-valued matrices are mass textures rather than physical dimensionless Yukawa matrices.',
         rows: [
             { label: 'Up quark', value: 'withheld', note: 'Source spread is not identified; target audit uses MSbar at 2 GeV.' },
@@ -70,11 +70,11 @@ export const EXACT_BUNDLE_SECTIONS: ExactBundleSection[] = [
         id: 'neutrinos',
         title: 'Neutrino Rejection And Source-Closure Audit',
         scope: 'Exact isotropic no-go plus rejected target-informed weighted-cycle comparison candidate',
-        note: 'No physical PMNS matrix, mass ordering, absolute family, or Majorana pair is emitted. A new candidate must close the source, charged-basis, Takagi, ordering, and no-target-leak gates.',
+        note: 'No physical PMNS matrix, mass ordering, absolute family, or Majorana pair is emitted. Any physical candidate requires source, charged-basis, Takagi, ordering, and no-target-leak certificates.',
         rows: [
             { label: 'Isotropic ansatz', value: 'exact no-go', note: 'The spectral cap cannot reach the atmospheric splitting scale.' },
             { label: 'Weighted-cycle point', value: 'rejected', note: 'NuFIT 6.1 correlated-profile failure; target-informed template status.' },
-            { label: 'Physical PMNS / ordering', value: 'not derived', note: 'Source operator and charged-basis placement remain open.' },
+            { label: 'Physical PMNS / ordering', value: 'not derived', note: 'No source operator or charged-basis placement is derived.' },
             { label: 'Absolute masses / Majorana phases', value: 'not emitted', note: 'Historical coordinates are diagnostics on the rejected base.' },
         ],
     },

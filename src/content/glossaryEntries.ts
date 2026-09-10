@@ -68,7 +68,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     },
     {
         term: 'Observer Synchronization',
-        definition: 'Operational question of how overlap data, records, and repair schedules remain mutually consistent across observers in one shared microscopic system.',
+        definition: 'Operational question of how overlap data, records, and repair schedules are mutually consistent across observers in one shared microscopic system.',
         category: 'foundation',
         usedIn: ['Screen Microphysics', 'Consensus Protocol', 'Synthesis'],
     },
@@ -106,7 +106,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     },
     {
         term: 'Declared Completions',
-        definition: 'Sector statements entered as explicit declarations with open physical status: three generations inside the CP-capability and weak-sector window 3 to 5, one Higgs, and no extra light sectors. The finite gauge chain consumes none of them.',
+        definition: 'Sector statements entered as explicit declarations without derived physical selection: three generations inside the CP-capability and weak-sector window 3 to 5, one Higgs, and no extra light sectors. The finite gauge chain consumes none of them.',
         category: 'axioms',
         usedIn: ['Axioms', 'Standard Model'],
     },
@@ -130,7 +130,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     },
     {
         term: 'Technical Premise T2',
-        definition: 'Controlled refinement/scaling-limit scope clause for the BW/null-modular and smooth physical Einstein branches. It does not govern the exact finite source-poset theorem, the constructed ambient 1+3 Lorentz carrier, or the typed finite Einstein-shape implication; connecting those finite results to a physical manifold and smooth curvature requires the full continuum certificate.',
+        definition: 'Controlled refinement/scaling-limit scope clause for the BW/null-modular and smooth physical Einstein branches. It does not govern the exact finite source-poset theorem, the constructed ambient 1+3 Lorentz carrier, or the typed finite Einstein-shape implication; connecting those finite results to a physical manifold and smooth Einstein dynamics requires the full continuum certificate, including tensor-curvature convergence or the independent small-ball/null-balance identification. Scalar-curvature convergence alone is diagnostic.',
         category: 'axioms',
         usedIn: ['Axioms', 'Gravity'],
     },
@@ -334,7 +334,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     },
     {
         term: 'Declared Sector Completions',
-        definition: 'The three-generation, one-Higgs, and no-extra-light-sector statements enter as declarations with open physical status after the admissibility filters; they are classifications of the realized sector, not a dynamics law and not an axiom.',
+        definition: 'The three-generation, one-Higgs, and no-extra-light-sector statements enter as declarations without derived physical selection after the admissibility filters; they are classifications of the realized sector, not a dynamics law and not an axiom.',
         category: 'gauge',
         usedIn: ['Axioms', 'Gauge Symmetry', 'Standard Model', 'QFT Boundary', 'Synthesis'],
         links: [
@@ -422,14 +422,14 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     {
         term: 'Z6 Defect Suppression',
         symbol: 'epsilon = 1/6',
-        definition: 'Conditional suppression factor attached to the declared order-six quotient. Its physical use depends on the open global-form selection.',
+        definition: 'Conditional suppression factor attached to the declared order-six quotient. Its physical use requires a global-form selection that is not derived.',
         category: 'spectrum',
         usedIn: ['Matter Continuations', 'Standard Model'],
     },
     {
         term: 'Koide Continuation Phase',
         symbol: 'delta = 2/9',
-        definition: 'Frozen phenomenological phase used by the charged-lepton continuation. Current OPH dynamics does not derive it as a generation-space holonomy.',
+        definition: 'Frozen phenomenological phase used by the charged-lepton continuation. OPH dynamics does not derive it as a generation-space holonomy.',
         category: 'spectrum',
         usedIn: ['Matter Continuations'],
     },
@@ -443,7 +443,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     {
         term: 'CFQ Digital Carrier',
         symbol: 'CFQ1-CFQ8 fixture',
-        definition: 'Engineered finite software model of the stipulated charged face-quotient register and path schema. It verifies reciprocal trace arithmetic, a central accepted/rejected record dilation, A5 graph covariance, and inert stabilization. Its dimensions, automaton, grading, clock, and response are authored; physical charged-source selection is work in progress.',
+        definition: 'Engineered finite software model of the stipulated charged face-quotient register and path schema. It verifies reciprocal trace arithmetic, a central accepted/rejected record dilation, A5 graph covariance, and inert stabilization. Its dimensions, automaton, grading, clock, and response are authored; it derives no physical charged-source selection.',
         category: 'spectrum',
         usedIn: ['Matter Continuations', 'Standard Model'],
     },
@@ -631,7 +631,7 @@ export const GLOSSARY_ENTRIES: GlossaryEntry[] = [
     {
         term: 'No-Cheat Audit',
         symbol: 'Input contract',
-        definition: 'Methodological check that the prediction pipeline depends only on declared inputs, derived structures, and explicitly open theorem targets.',
+        definition: 'Methodological check that the prediction pipeline depends only on declared inputs, derived structures, and explicitly unproved theorem targets.',
         category: 'meta',
         usedIn: ['Matter Continuations', 'Synthesis'],
     },

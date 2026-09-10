@@ -64,8 +64,8 @@ export function ResourcesPage() {
 
             <p style={{ marginBottom: '24px' }}>
                 Primary sources, mirrors, and entry points for the OPH public stack. This Lab is aligned to paper
-                snapshot <strong>{RESEARCH_RELEASE_ID}</strong> ({RESEARCH_RELEASE_DATE}) and the current finite
-                simulator boundary.
+                snapshot <strong>{RESEARCH_RELEASE_ID}</strong> ({RESEARCH_RELEASE_DATE}) and the finite
+                simulator boundary recorded with that snapshot.
             </p>
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-gold)' }}>
@@ -73,7 +73,7 @@ export function ResourcesPage() {
                 <p style={{ margin: 0, fontSize: '0.84em' }}>
                     Use the textbooks for guided exposition, this Lab for interactive status-aware exploration, the
                     papers and Lean/code for technical claims, and simulator receipts for finite computational tests.
-                    If explanatory wording conflicts with a current paper or receipt, the paper plus its formal or
+                    If explanatory wording conflicts with a controlling paper or receipt, the paper plus its formal or
                     executable evidence controls the research status.
                 </p>
             </div>

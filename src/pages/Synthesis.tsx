@@ -1,5 +1,5 @@
 import { Explainer } from '../components/Explainer';
-import { CORE_PARAMETERS, OPH_PAPERS, SPACETIME_PUBLIC_ROWS } from '../content/paperSurface';
+import { CORE_PARAMETERS, OPH_PAPERS, RESEARCH_REPO_URL, SPACETIME_PUBLIC_ROWS } from '../content/paperSurface';
 import {
     ALPHA_U_COMPARISON_REFERENCE_DISPLAY,
     ALPHA_U_FORWARD_REFERENCE_DISPLAY,
@@ -21,34 +21,13 @@ export function SynthesisPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                Both chains converge, but they do so at different claim tiers. Chain 1 yields a conditional Lorentz
-                branch on the BW scaling surface, a conditional Jacobson-type Einstein branch under the null bridge,
-                the separate bounded-interval projective branch, and fixed-cap stationarity, and separate
-                cosmological-capacity consequences. Given the explicit compact-gauge refinement receipt, Chain 2
-                yields the receipt-conditional structural Standard Model branch together with several downstream
-                conditional extensions. The same paper surface includes a dedicated consensus
-                spine and a concrete screen-microphysics architecture. Both start from the same three-axiom basis on a
-                holographic screen S&sup2;, while specific pages add the theorem-local technical premises needed for
-                Lorentz, gauge, particle, or observer-level statements. The consensus spine produces an authenticated
-                finite informational poset and its canonical longest-parent-chain height. Independently of event height,
-                the exact rank-three source Gram quotient defines W<sub>src</sub> = R &oplus; V<sub>src</sub>, a
-                four-dimensional ambient target carrier with one positive and three negative directions; the
-                quotient&apos;s unit directions become future-null directions. This target-carrier dimension is not an
-                intrinsic dimension estimate for the finite poset, and the 1+3 precursor supplies no smooth Lorentzian
-                manifold. Event placement uses height only as F(e) = (&tau;h(e), x(e)) and therefore still needs a
-                source-selected spatial readback. Given an explicit edge-speed bound and converse-support
-                certificate, the generated order embeds faithfully into the constructed Lorentz cone and every
-                source interval is exactly the corresponding cone interval on the placed event image.
-                A physical continuum additionally requires agreement with signal causality, count-to-volume
-                calibration, source-selected refinement convergence, manifoldlikeness, dimension and topology, and
-                curvature convergence. On the same finite event type, a separate minimal theorem in a supplied 3+1
-                tensor interface turns nine supplied source-direction balances, Ward/Bianchi conservation, and
-                connectedness into all-null balance and an Einstein-form identity. The order and tensor fields share
-                events, but the order does not generate the fields, step, or balance laws or identify
-                tensor-coordinate differences with the constructed source carrier; physical curvature, stress,
-                coupling, vacuum, and scale remain continuum attachments. Imposed compatibility controls do not
-                establish source-selected refinement or
-                manifoldlikeness.
+                OPH connects bounded self-reading patches, protected records and conditional gauge structure.
+                Conservative records supply a continuous rank-three metric carrier. A declared population and local
+                reading law have a flat causal/count limit, with fixed interior interval counts recovering duration ratios.
+                On prepared addresses from that family, a specified free scalar action supports classical and quantum
+                detectors with certified continuum errors. A declared local Standard Model action has exact gauge
+                identities, while Einstein reconstruction uses separate stress, entropy and curvature hypotheses.
+                Their common physical realization, and the field-to-recorded-clock connection, require additional arguments.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px', marginBottom: '16px' }}>
@@ -63,17 +42,20 @@ export function SynthesisPage() {
             </div>
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-purple)' }}>
-                <h4 style={{ margin: '0 0 8px', fontSize: '0.9em', color: 'var(--accent-purple)' }}>Causal-set connection and present evidence</h4>
+                <h4 style={{ margin: '0 0 8px', fontSize: '0.9em', color: 'var(--accent-purple)' }}>Causal order, counts and physical interpretation</h4>
+                <p style={{ margin: '0 0 10px', fontSize: '0.82em', color: 'var(--text-secondary)' }}>
+                Exact finite order embedding and controlled order approximation are separate mathematical routes.
+                The golden source family uses the latter: population gaps vanish faster than the read radius, equal
+                volume assignments converge, and complete reads provide the causal law. Poisson sprinkling is one
+                reference construction in causal set theory; it is not a required law for this deterministic limit.
+            </p>
                 <p style={{ margin: 0, fontSize: '0.82em', color: 'var(--text-secondary)' }}>
-                    The exact finite source order is causal-set-like in the minimal mathematical sense of being a
-                    locally finite order. Causal set theory&apos;s physical reading also needs faithful embedding,
-                    manifoldlikeness, topology, dimension, and count-to-volume calibration; Lorentz-invariant
-                    reference constructions use Poisson sprinkling. OPH&apos;s deterministic log is not a sprinkling.
-                    The current 2,304-event diagnostic finds all 736 qualifying intervals outside its frozen
-                    exploratory 3+1 band, so the honest receipt is current-cutoff dissimilarity for the captured
-                    informational event semantics. It supplies neither manifoldlikeness nor a #I/&rho; &rarr; Vol(I)
-                    law, and it is not a physical no-go.
-                </p>
+                The <a href={`${RESEARCH_REPO_URL}/tree/main/code/causal_refinement`} target="_blank" rel="noreferrer">causal and clock receipts</a>
+                replay specified source histories. The <a href={`${RESEARCH_REPO_URL}/tree/main/code/source_scalar_packet`} target="_blank" rel="noreferrer">scalar certificate</a>
+                uses prepared addresses from the same family, but supplies its own action and model time. Shared
+                addresses do not establish a common field/event history. The physical population, signal, clock,
+                volume, stress and curvature identifications are explicit requirements.
+            </p>
             </div>
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Local Closure And Global Readback</h3>
@@ -176,7 +158,7 @@ export function SynthesisPage() {
                         </div>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '8px' }}>
                             {[
-                                ['Source-causal', 'Exact finite poset + source height; independently R ⊕ rank-3 quotient → ambient 1+3 carrier; F(e) = (tau h(e), x(e)) uses height only at placement.'],
+                                ['Source-causal', 'Exact finite poset + attained longest-chain height; universal strict-order compiler; auxiliary injective one-way 1+3 placement; physical order reflection is conditional.'],
                                 ['Modular / entropy', 'BW, collar, null-stress, projective, and stationarity inputs supply the conditional geometric/stress route.'],
                                 ['Finite tensor', 'Supplied 3+1 tensors + nine balances + Ward/Bianchi → exact finite Einstein-form shape.'],
                             ].map(([title, detail]) => (
@@ -221,7 +203,7 @@ export function SynthesisPage() {
                         fontWeight: 700,
                         fontSize: '0.9em',
                     }}>
-                        SHARED EFFECTIVE OPH PROGRAM — WITH CLAIM TIERS PRESERVED
+                        SHARED EFFECTIVE OPH PROGRAM: CLAIM TIERS PRESERVED
                     </div>
                 </div>
             </div>
@@ -259,7 +241,7 @@ export function SynthesisPage() {
                             <li>Source-derived ambient 1+3 causal precursor; smooth 3+1 spacetime is an effective-limit target</li>
                             <li>Shared observer-patch basis for gravity and gauge structure</li>
                             <li>Explicit branch assumptions and continuation conditions</li>
-                            <li>Certified local map roots; direct global N closure remains non-evaluable</li>
+                            <li>Certified local map roots; direct global N closure is non-evaluable</li>
                         </ul>
                     </div>
                 </div>
@@ -283,7 +265,7 @@ export function SynthesisPage() {
                 <span style={{ color: 'var(--accent-rose)', fontWeight: 600 }}>Standard:</span>
                 <span style={{ color: 'var(--text-secondary)' }}>Laws of physics are inputs</span>
                 <span style={{ color: 'var(--accent-green)', fontWeight: 600 }}>OPH:</span>
-                <span style={{ color: 'var(--text-secondary)' }}>Some laws are recovered structurally; others remain branch-conditional or continuation-level</span>
+                <span style={{ color: 'var(--text-secondary)' }}>Some laws are recovered structurally; others are branch-conditional or continuation-level</span>
 
                 <span style={{ color: 'var(--accent-rose)', fontWeight: 600 }}>Standard:</span>
                 <span style={{ color: 'var(--text-secondary)' }}>Parameters are tuned</span>
@@ -309,7 +291,7 @@ export function SynthesisPage() {
                     OPH should be evaluated by the same standards as any physical theory: internal consistency,
                     agreement with existing data, and testable predictions. The paper stack separates structural
                     theorems, branch conditions, calibration results, and additional-premise constructions.
-                    Physical identification, continuum, instrument, source-action, clock, and comparison remain
+                    Physical identification, continuum, instrument, source-action, clock, and comparison are
                     distinct scientific requirements; the Lab does not compress them into one generic claim.
                 </p>
             </Explainer>
@@ -321,9 +303,10 @@ export function SynthesisPage() {
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
                     <li>
                         <strong>Causal set theory:</strong> The source-derived finite order realizes the minimal locally
-                        finite order structure, while faithful embedding, Poisson-sprinkling comparison,
-                        manifoldlikeness, topology, dimension, and count-volume calibration remain explicit physical
-                        tests. See <a href="https://doi.org/10.1103/PhysRevLett.59.521" target="_blank" rel="noreferrer">Bombelli et al.</a>
+                        finite order structure, and every finite strict order compiles into its authenticated grammar,
+                        while physical source selection and identification are separate requirements. The declared
+                        golden family uses controlled order/count convergence; Poisson sprinkling supplies a different
+                        comparison model. See <a href="https://doi.org/10.1103/PhysRevLett.59.521" target="_blank" rel="noreferrer">Bombelli et al.</a>
                         {' '}and <a href="https://doi.org/10.1007/s41114-019-0023-1" target="_blank" rel="noreferrer">Surya&apos;s review</a>.
                     </li>
                     <li><strong>AdS/CFT:</strong> The holographic principle and bulk reconstruction, with OPH asking for a separately tested analogue in cosmological settings</li>

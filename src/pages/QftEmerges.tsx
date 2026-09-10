@@ -1,5 +1,5 @@
 import { Explainer } from '../components/Explainer';
-import { BOSON_PUBLIC_ROWS, PARTICLE_LANE_STATUS, SPACETIME_PUBLIC_ROWS, STANDARD_MODEL_SURFACE } from '../content/paperSurface';
+import { BOSON_PUBLIC_ROWS, PARTICLE_LANE_STATUS, RESEARCH_REPO_URL, SPACETIME_PUBLIC_ROWS, STANDARD_MODEL_SURFACE } from '../content/paperSurface';
 import { SCREEN_CAPACITY_REFERENCE_DISPLAY } from '../core/ophMath';
 
 export function QftEmergesPage() {
@@ -11,17 +11,16 @@ export function QftEmergesPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                The <strong>Chain 2 synthesis page</strong> traces the reconstruction from the quantum-algebraic OPH
-                ledger plus theorem-local technical premises to the structural Standard Model branch and several
-                downstream matter-sector continuations. A local relativistic quantum field theory is the intended
-                effective endpoint; the nonperturbative observable tower, locality, positivity, spectral condition,
-                continuum transport, and physical field attachment are still explicit open receipts.
+                The finite quantum record algebra and conditional gauge classification supply distinct mathematical
+                ingredients. A specified free scalar action on prepared source addresses supports a common classical
+                and Fock-space detector comparison with controlled continuum errors. The full physical interacting
+                Standard Model requires further source, locality, state and continuum identifications.
             </p>
 
             <div className="math-block" style={{ fontSize: '0.95em', lineHeight: '2.2' }}>
                 complete compact port response plus endogenous carrier transport &rarr;
                 u(1)&oplus;su(2)&oplus;su(3) &rarr; declared fifteen-state fixture with
-                N_c=3 and a common Z6 kernel &rarr; open matter and global-form selection
+                N_c=3 and a common Z6 kernel &rarr; matter and global-form selection not derived
             </div>
 
             <div className="card" style={{ marginTop: '24px', marginBottom: '24px', borderLeft: '3px solid var(--accent-cyan)' }}>
@@ -43,7 +42,7 @@ export function QftEmergesPage() {
                 </div>
             </div>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>The Complete Chain 2 Derivation</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Quantum reconstruction routes</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                 {[
                     {
@@ -55,7 +54,7 @@ export function QftEmergesPage() {
                     {
                         step: '2',
                         title: 'Entanglement structure',
-                        detail: 'The Tsirelson upper bound 2\u221a2 and a declared Bell-state witness live in the supplied complex Hilbert-space setting. Current source counts do not produce a Bell violation; contextual readout routes remain separate.',
+                        detail: 'The Tsirelson upper bound 2\u221a2 and a declared Bell-state witness live in the supplied complex Hilbert-space setting. The declared source counts do not produce a Bell violation; contextual readout requires a separate construction.',
                         color: 'var(--accent-blue)',
                     },
                     {
@@ -73,13 +72,13 @@ export function QftEmergesPage() {
                     {
                         step: '5',
                         title: 'Standard Model gauge group',
-                        detail: 'The finite A5 packet forces the abstract Lie type and the declared fixture carries three colors plus a common Z6 kernel. Physical global form and matter selection are open; N_g=3 is a declared completion inside the 3-to-5 window.',
+                        detail: 'The finite A5 packet forces the abstract Lie type and the declared fixture carries three colors plus a common Z6 kernel. No physical global form or matter selection is derived; N_g=3 is a declared completion inside the 3-to-5 window.',
                         color: 'var(--accent-cyan)',
                     },
                     {
                         step: '6',
                         title: 'Matter-sector continuations',
-                        detail: 'The icosahedral screen supplies an exact A5/C3 local three-corner carrier. Its physical charged-family attachment and mass-value laws remain downstream continuations outside the recovered-core theorem stack.',
+                        detail: 'The icosahedral screen supplies an exact A5/C3 local three-corner carrier. It derives no physical charged-family attachment or mass-value law.',
                         color: 'var(--accent-gold)',
                     },
                     {
@@ -91,7 +90,7 @@ export function QftEmergesPage() {
                     {
                         step: '8',
                         title: 'Quantum field theory as effective description',
-                        detail: 'The intended endpoint is a local relativistic QFT. A nonperturbative OS/Wightman-quality construction and physical field/readout attachment remain open.',
+                        detail: 'A specified massive free scalar field in a Dirichlet cube has a controlled source-population approximation for classical and Fock detectors. A physical interacting relativistic field theory requires additional construction.',
                         color: 'var(--accent-green)',
                     },
                 ].map((item) => (
@@ -133,10 +132,10 @@ export function QftEmergesPage() {
                         <li>Measurement as local record updating</li>
                         <li>Tsirelson bound (2&radic;2) in the supplied operator setting; no source-derived Bell violation</li>
                         <li>Axiom-forced compact Lie type u(1) &oplus; su(2) &oplus; su(3)</li>
-                        <li>Source reconstruction of the complete current is open</li>
+                        <li>No source reconstruction of the complete current is derived</li>
                         <li>Rank-three candidate family band; declared completion N<sub>g</sub> = 3</li>
                         <li>Three colors and hypercharges inside the declared matter fixture</li>
-                        <li>Common Z6 kernel inside that fixture; physical global form open</li>
+                        <li>Common Z6 kernel inside that fixture; no physical global form is derived</li>
                         <li>Gauge-calibration and unification surfaces</li>
                         <li>No minimal simple-GUT X/Y exchange channel in the product adjoint</li>
                         <li>Conditional classical massless photon and graviton carrier modes</li>
@@ -152,7 +151,7 @@ export function QftEmergesPage() {
                         <li>Finite-dimensional regulator premise</li>
                         <li>Boundary gauge fixed-point premise</li>
                         <li>Central or higher-associator strictification plus at least one allowed strict representative with trivial represented loop holonomy where global transportability is invoked</li>
-                        <li>Declared sector completions (three generations, one Higgs, no extra light sectors) with open physical status</li>
+                        <li>Declared sector completions (three generations, one Higgs, no extra light sectors) without derived physical selection</li>
                         <li>Symmetric braiding in the 3+1D EFT branch</li>
                         <li>Compact-gauge refinement receipt: finite extendability, explicit center-compatible block-multiplicity embeddings, common stagewise strict representatives, and coherent surjective boundary-group maps that intertwine them</li>
                         <li>Finite tensor realizations and compatible objectwise finite-dimensional forgetful fibers, or an explicit super-Tannakian fork</li>
@@ -172,9 +171,9 @@ export function QftEmergesPage() {
 
             <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Shared causal-spacetime substrate</h3>
             <p style={{ marginBottom: '16px' }}>
-                A relativistic QFT endpoint needs the same event and continuum substrate as the gravity branch. The
-                finite results below are exact at their stated types; they do not by themselves produce a physical
-                manifold or a local quantum field theory.
+                A physical relativistic field theory needs a common event, metric and clock interpretation. The
+                source-record causal/count limit and the supplied free scalar comparison give concrete mathematical
+                models. Their shared source addresses do not identify the field history with the recorded event order.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px', marginBottom: '16px' }}>
                 {SPACETIME_PUBLIC_ROWS.map((row) => (
@@ -187,17 +186,22 @@ export function QftEmergesPage() {
                 ))}
             </div>
             <p style={{ marginBottom: '24px', fontSize: '0.84em', color: 'var(--text-secondary)' }}>
-                This finite-order route connects mathematically to causal set theory, whose physical reconstruction
-                program adds faithful embedding, manifoldlikeness, topology, dimension, and count-to-volume tests;
-                standard Lorentz-invariant controls use Poisson sprinkling. The deterministic OPH log is not a
-                sprinkling. Its current 2,304-event diagnostic is dissimilar at the present cutoff on all 736
-                qualifying intervals. That informational receipt is neither manifoldlikeness nor a physical no-go,
-                and no #I/&rho; &rarr; Vol(I) calibration has been obtained.
+                The declared golden record family has an analytic causal/count limit. Complete local reads use a
+                radius that shrinks more slowly than the population gaps. Interior interval counts recover volume
+                and proper-duration ratios. The field action uses the same prepared address family with different
+                finite mass weights; its model evolution and count clock are not identified by that fact.
+            </p>
+            <p style={{ marginBottom: '24px', fontSize: '0.84em', color: 'var(--text-secondary)' }}>
+                The <a href={`${RESEARCH_REPO_URL}/tree/main/code/source_scalar_packet`} target="_blank" rel="noreferrer">scalar packet</a>
+                compares a compact coherent preparation and separated compact detector with the massive Dirichlet
+                continuum field. At q=233, the total probability error is below 0.050055 while the induced signal is
+                above 0.137754 for every model time in [0.95,1]. The full operator residual includes leakage outside
+                the retained modes. Boundary, action, quantum convention and clock are declared.
             </p>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>QFT as Continuum Limit</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Physical interacting continuum</h3>
             <p style={{ marginBottom: '16px' }}>
-                The proposed QFT endpoint is sought in a continuum/scaling regime where:
+                A cosmological application of the proposed interacting field theory would additionally relate the model to these physical scales:
             </p>
             <ul style={{ paddingLeft: '20px', lineHeight: '1.8', marginBottom: '16px' }}>
                 <li>The Lambda-located horizon count is large (N<sub>&Lambda;</sub> &asymp; {SCREEN_CAPACITY_REFERENCE_DISPLAY})</li>
@@ -205,9 +209,9 @@ export function QftEmergesPage() {
                 <li>The observables are "coarse-grained" over many pixels</li>
             </ul>
             <p style={{ marginBottom: '16px' }}>
-                In this proposed limit, the screen algebra would be modeled by a local quantum field theory on
-                the conditionally reconstructed effective 3+1 manifold. A nonperturbative OS/Wightman completion, including locality,
-                Poincar&eacute; covariance, positivity, and the spectral condition, remains an open Q4 receipt.
+                The free Dirichlet comparison does not require this cosmological scale identification. A physical
+                interacting field theory on reconstructed spacetime additionally needs a nonperturbative observable
+                construction with locality, covariance, positivity, a spectral condition and controlled refinement.
             </p>
 
             <Explainer title="Why QFT breaks down at the Planck scale">
@@ -250,9 +254,9 @@ export function QftEmergesPage() {
                     Chain 2 separates a strong structural core from several matter-sector boundaries:
                 </p>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
-                    <li>Quark source equations leave a free (R<sub>&gt;0</sub>)<sup>2</sup> spread fiber, so numeric rows remain withheld; the mixed-scheme target packet and GeV mass textures do not define physical dimensionless Yukawas.</li>
-                    <li>Charged leptons have an exact A<sub>5</sub>/C<sub>3</sub> face-corner carrier and a conditional fixed-point theorem for one declared map. An engineered digital CFQ model closes schema nonemptiness and gives a central record dilation, but its registers, automaton, grading, clock, and response are authored inputs, and historical no-target ancestry fails audit. A conditional nature/pole theorem gives the correct transport implications after the physical Yukawa response and CFQ-to-Dyson singularity readout are assumed; its zero-self-energy kernel is only a free witness. Its 0.000300 ppm headline uses rounded fields; the tau residual is -1.387289 ppm against the packet's higher-precision central value. Physical source selection, attachment, determinant, coherent branch, cofinal refinement, interacting kernel, and infrared completion remain open.</li>
-                    <li>Neutrino isotropic no-go retained; the target-informed weighted-cycle point is a rejected comparison candidate with open source, basis, Takagi, and ordering gates</li>
+                    <li>Quark source equations leave a free (R<sub>&gt;0</sub>)<sup>2</sup> spread fiber, so numeric rows are withheld; the mixed-scheme target packet and GeV mass textures do not define physical dimensionless Yukawas.</li>
+                    <li>Charged leptons have an exact A<sub>5</sub>/C<sub>3</sub> face-corner carrier and a conditional fixed-point theorem for one declared map. An engineered digital CFQ model closes schema nonemptiness and gives a central record dilation, but its registers, automaton, grading, clock, and response are authored inputs, and historical no-target ancestry fails audit. A conditional nature/pole theorem gives the correct transport implications after the physical Yukawa response and CFQ-to-Dyson singularity readout are assumed; its zero-self-energy kernel is only a free witness. Its 0.000300 ppm headline uses rounded fields; the tau residual is -1.387289 ppm against the packet's higher-precision central value. No physical source selection, attachment, determinant, coherent branch, cofinal refinement, interacting kernel, or infrared completion is derived.</li>
+                    <li>Neutrino isotropic no-go retained; the target-informed weighted-cycle point is a rejected comparison candidate without source, basis, Takagi, or ordering certificates</li>
                     <li>Higgs/top proof structure and scope discipline around the closed source-only split theorem</li>
                     <li>Hadron backend / compute-bound closure</li>
                 </ul>
@@ -263,9 +267,9 @@ export function QftEmergesPage() {
                     QFT-Q4 separately requires a nonperturbative observable tower and resonance continuation.
                     These conditional implications are checked. W/Z carry no physical pole prediction status because
                     the OPH-native action, quantum construction, matching and identity transcripts, physical-current
-                    amplitudes, numerical freeze, observable tower, analytic sheet, and clock remain open. The
+                    amplitudes, numerical freeze, observable tower, analytic sheet, and clock are not supplied. The
                     weighted-cycle neutrino candidate is rejected, while the charged lane and the quark source-spread,
-                    scheme-coordinate, and physical-Yukawa boundaries remain explicit.
+                    scheme-coordinate and physical-Yukawa boundaries are stated explicitly.
                 </p>
                 <div style={{ display: 'grid', gap: '8px', marginTop: '12px' }}>
                     {PARTICLE_LANE_STATUS.map((lane) => (

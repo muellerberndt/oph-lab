@@ -1,7 +1,7 @@
 export type NeutrinoAuditRow = {
   label: string;
   value: string;
-  status: 'exact no-go' | 'rejected comparison' | 'open';
+  status: 'exact no-go' | 'rejected comparison' | 'not derived';
   note: string;
 };
 
@@ -14,7 +14,7 @@ export const NEUTRINO_AUDIT_CHAIN = [
   'target-ranked weighted-cycle candidate',
   'frozen comparison coordinates',
   'NuFIT 6.1 correlated-profile rejection',
-  'source, basis, Takagi, and ordering gates remain open',
+  'Physical source, basis, and ordering certificates are absent',
 ] as const;
 
 export const NEUTRINO_STATUS_CARDS = [
@@ -103,41 +103,41 @@ export const NEUTRINO_SURVIVING_RESULTS: NeutrinoAuditRow[] = [
 export const NEUTRINO_BLOCKERS = [
   'The family-transport kernel, cycle topology, and weight law are template inputs; the exponent was selected after ranking candidates against oscillation data.',
   'The historical shared-basis construction defined U_nu,shared = U_e U_wc, so U_e^dagger U_nu,shared = U_wc was an identity rather than an independent PMNS derivation.',
-  'The stored charged-lepton left basis comes from an open, nearly degenerate source artifact and does not identify a stable physical U_e.',
+  'The stored charged-lepton left basis is nearly degenerate and does not identify a stable physical U_e.',
   'Older intrinsic builders exported left singular vectors instead of the Majorana Takagi matrix. The corrected conditional readout is also far outside the oscillation surface.',
   'The physical mass-eigenstate labels, ordering rule, basis placement, and holonomy orientation are not selected by source-closed OPH inputs.',
-  'A future candidate needs a pre-reference dependency lock so oscillation targets cannot enter its source graph.',
+  'A physical candidate requires a pre-reference dependency lock so oscillation targets cannot enter its source graph.',
 ] as const;
 
 export const NEUTRINO_ABSENT_OUTPUTS: NeutrinoAuditRow[] = [
   {
     label: 'Physical PMNS matrix',
     value: 'Not derived',
-    status: 'open',
+    status: 'not derived',
     note: 'Blocked by the source operator and charged-basis placement problems.',
   },
   {
     label: 'Mass ordering',
     value: 'Not derived',
-    status: 'open',
+    status: 'not derived',
     note: 'No source-side mass-eigenstate label and ordering rule is emitted.',
   },
   {
     label: 'Absolute masses or mass sum',
     value: 'Not emitted',
-    status: 'open',
+    status: 'not derived',
     note: 'Historical absolute-attachment values are compare-only coordinates on the rejected base.',
   },
   {
     label: 'Physical Majorana phases',
     value: 'Not emitted',
-    status: 'open',
-    note: 'Canonical phase coordinates remain conditional on the rejected matrix and open basis.',
+    status: 'not derived',
+    note: 'Canonical phase coordinates are conditional on the rejected matrix; no physical basis or physical Majorana phases are derived.',
   },
 ] as const;
 
 export const NEUTRINO_SURFACE_NOTES = [
-  'No current OPH neutrino value has source-only prediction status.',
-  'The frozen weighted-cycle coordinates remain visible only to make the rejection reproducible.',
+  'No OPH neutrino value has source-only prediction status.',
+  'The frozen weighted-cycle coordinates are displayed only to make the rejection reproducible.',
   'Failure of this continuation candidate does not falsify the recovered structural OPH core.',
 ] as const;

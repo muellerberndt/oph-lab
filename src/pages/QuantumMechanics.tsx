@@ -64,7 +64,7 @@ export function QuantumMechanicsPage() {
             </p>
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-cyan)' }}>
-                <h4 style={{ margin: '0 0 8px', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>Current exact boundary</h4>
+                <h4 style={{ margin: '0 0 8px', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>Exact boundary</h4>
                 <p style={{ margin: '0 0 10px', fontSize: '0.84em' }}>
                     On the produced finite instrument set, normalized context weights force additivity for the
                     coexistent sums that the instrument actually contains. An exact cubic countermodel reproduces
@@ -73,7 +73,7 @@ export function QuantumMechanicsPage() {
                     not prove a universal Born valuation law.
                 </p>
                 <p style={{ margin: 0, fontSize: '0.8em', color: 'var(--text-muted)' }}>
-                    This distinction is part of the current paper surface.
+                    This distinction is part of the paper surface.
                 </p>
             </div>
 
@@ -118,7 +118,7 @@ export function QuantumMechanicsPage() {
                     </div>
                     <div>
                         <div style={{ color: 'var(--accent-green)', fontWeight: 600, marginBottom: '4px' }}>
-                            Current OPH surface:
+                            OPH surface:
                         </div>
                         <ul style={{ paddingLeft: '16px', margin: 0, lineHeight: '1.8', color: 'var(--text-secondary)' }}>
                             <li>Condition on a recorded local outcome</li>
@@ -135,7 +135,7 @@ export function QuantumMechanicsPage() {
                     Simulator receipt: observer-frame statistics
                 </h4>
                 <p style={{ margin: '0 0 10px', fontSize: '0.84em' }}>
-                    The latest finite simulator exactly enumerates the committed Born fractions and reproduces
+                    The finite simulator exactly enumerates the committed Born fractions and reproduces
                     Lüders-conditioned repeatability and cross-context weights. It is explicitly exploratory and
                     non-evidential: the operation, contexts, and rational weights are declared inputs, so the run is
                     a conditioning/readback receipt rather than a derivation of quantum theory.
@@ -161,7 +161,7 @@ export function QuantumMechanicsPage() {
                 <p>
                     The difference: QBism takes the Born rule as a normative constraint on rational agents.
                     OPH places the Born/L&uuml;ders law on a declared patch-record surface inside a broader
-                    reconstruction program. Source-production of the complete physical instrument remains open.
+                    reconstruction program. No source production of the complete physical instrument is derived.
                 </p>
             </Explainer>
 
