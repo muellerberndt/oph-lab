@@ -41,9 +41,7 @@ export const MINI_UNIVERSE_SIMULATION_URL = 'https://simulation.floatingpragma.i
 export const THREE_BODY_DEMO_URL = 'https://3body.floatingpragma.io/';
 export const CHALLENGE_URL = 'https://challenge.floatingpragma.io/';
 export const COHERENCE_URL = 'https://coherence.floatingpragma.io/';
-export const APPLICATIONS_URL = 'https://omega.floatingpragma.io/';
-export const OMEGA_URL = APPLICATIONS_URL;
-export const RESEARCH_RELEASE_ID = 'r2041';
+export const RESEARCH_RELEASE_ID = 'r2042';
 export const RESEARCH_RELEASE_DATE = '10 September 2026';
 
 const GITHUB_PDF_BASE = `${RESEARCH_REPO_URL}/blob/main/paper`;
@@ -63,7 +61,7 @@ export const OPH_PAPERS: PaperSummary[] = [
         title: 'Recovering Observer Spacetime and Einstein Dynamics from Overlap Consistency',
         href: `${GITHUB_PDF_BASE}/recovering_observer_spacetime_and_einstein_dynamics_from_overlap_consistency.pdf`,
         surface: 'Spacetime and Gravity',
-        summary: 'The source metric, declared causal/count limit and count clock, common free-scalar detector comparison, and conditional Einstein route, with their physical inputs stated.',
+        summary: 'The source metric, declared causal/count limit, reconstructed action clock and joint spatial/time scalar detector limit, with physical inputs stated for the Einstein route.',
     },
     {
         slug: 'gauge',
@@ -162,12 +160,12 @@ export const CURRENT_RESEARCH_STATUS = [
     {
         "tier": "branch-conditional",
         "label": "Controlled continuum comparisons",
-        "summary": "A declared source-record family approaches flat causal order and volume; interval counts recover duration ratios. On prepared addresses from that family, a specified free scalar action supports classical and quantum detector comparisons with certified errors."
+        "summary": "A declared source-record family approaches flat causal order and volume. A specified free scalar action on prepared addresses has a joint spatial/time detector limit and a resolved finite error bound. A separate 64-site execution supports an inferred action clock and quantum comparisons over its time intervals."
     },
     {
         "tier": "branch-conditional",
         "label": "Physical interpretation",
-        "summary": "Population, reading law, action and model time are stated inputs. Their physical selection, the field-to-event clock connection and interacting continuum require separate arguments."
+        "summary": "Population, reading law, action and relative time scale are stated inputs. Physical preparation, calibrated clocks, regional interpretation and interacting continuum require separate arguments. The inferred action clock is conditional on the supplied stationary action."
     }
 ];
 
@@ -200,7 +198,13 @@ export const SPACETIME_PUBLIC_ROWS: PublicRow[] = [
         "label": "Common free scalar field",
         "value": "resolved continuum detector response",
         "tier": "branch-conditional",
-        "note": "On prepared golden addresses, a specified tensor scalar action defines classical waves and Fock states. At q=233, error below 0.050055 is smaller than the induced signal above 0.137754 throughout model time [0.95,1]. Boundary, action, quantization and time are supplied; field evolution is not identified with the count clock."
+        "note": "On prepared golden addresses, a specified tensor action defines classical waves and Fock states. At q=233 and step 2^-17, the nearest update inside [0.95,1] has reference-time probability error below 0.050078 and selected split response above 0.137746 throughout that window. These bounds include spatial and temporal errors; the large tensor history is unexecuted. Action, boundary, quantization and time refinement are supplied."
+    },
+    {
+        "label": "Action clock from field records",
+        "value": "64 sites; 21 interval comparisons",
+        "tier": "branch-conditional",
+        "note": "A separate 64-site execution retains 5,888 writes and 34,944 reads. Its configuration records and supplied stationary action identify one duration per whole layer. With a declared error budget and a hidden common stationary-history hypothesis, 15 of 21 quantum comparisons resolve a response throughout the inferred time intervals. Physical seconds, observed outcomes and the q=233 preparation are separate."
     },
     {
         "label": "Einstein relation",
@@ -219,7 +223,7 @@ export const SIMULATION_FRONTIER = [
     {
         "label": "Classical and quantum scalar detectors",
         "status": "specified common action / certified comparison",
-        "summary": "A compact preparation and a separated detector share one free scalar action on prepared source addresses. The q=233 packet bounds the complete comparison error below its signal over a time interval. Its model time is distinct from the causal-count clock."
+        "summary": "A compact preparation and separated detector share one free scalar action. The q=233 packet bounds spatial and temporal errors below its signal without executing a large history. A separate 64-site record history supports an action-clock comparison; its preparation and clock bounds do not transfer to q=233."
     },
     {
         "label": "Observer-frame quantum statistics",
@@ -306,7 +310,7 @@ export const GRAVITY_SURFACE = [
     'Authenticated dependencies give an exact finite order and longest-chain height. Conservative source records and their metric complete to a continuous rank-three carrier; its Lorentz extension is a space of possible event coordinates.',
     'On a specified golden source population, complete local reads and a model layer clock approach flat causal order and volume when the read radius shrinks more slowly than the site gaps. Fourth roots of counts in fixed interior timelike intervals recover duration ratios.',
     'An exact order embedding is one reconstruction route. A deterministic controlled limit with vanishing order error and a count-to-volume law is another; it does not require a Poisson law by definition. Physical population selection, signal propagation, clock and volume identification remain distinct hypotheses.',
-    'A specified free scalar action on prepared addresses from the same family supports classical and quantum detector comparisons with controlled continuum errors. This does not identify its field evolution or model time with the authenticated causal history.',
+    'A specified free scalar action on prepared addresses has a joint spatial/time detector limit. Compact preparations have vanishing induced detector response before continuum arrival in that limit. A separate finite field history admits an action clock; neither result identifies field-read ancestry with the causal-count law or supplies physical clock calibration.',
     'A separate exact finite theorem reduces nine supplied source-direction balances in a supplied 3+1 tensor interface to an Einstein-form shape after Ward/Bianchi conservation and connectedness. Smooth Einstein promotion needs stress and coupling plus either same-family tensor-curvature convergence or the independent continuum small-ball/null-balance identification; scalar-curvature convergence alone is diagnostic.',
     'Lorentz kinematics is recovered on the explicit BW scaling branch from the screen identity Conf+(S^2) = SO+(3,1).',
     'The Jacobson-type Einstein relation is local and branch-conditional. It uses the null-modular bridge, the separate bounded-interval projective branch, and fixed-cap generalized-entropy stationarity.',

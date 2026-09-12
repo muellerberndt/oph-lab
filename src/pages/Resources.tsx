@@ -6,7 +6,6 @@ import {
     COHERENCE_URL,
     FLAGSHIP_PAPER_URL,
     LAB_REPO_URL,
-    APPLICATIONS_URL,
     MINI_UNIVERSE_SIMULATION_URL,
     MATH_FOUNDATIONS_PAPER,
     OPH_PAPERS,
@@ -265,18 +264,6 @@ export function ResourcesPage() {
                     </p>
                     <a href={COHERENCE_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                         coherence.floatingpragma.io &rarr;
-                    </a>
-                </div>
-
-                <div className="card" style={{ borderLeft: '3px solid var(--accent-cyan)' }}>
-                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>
-                        Applications
-                    </h4>
-                    <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
-                        OPH use cases across hardware, compute, energy, AGI, lift, and optical chamber consensus.
-                    </p>
-                    <a href={APPLICATIONS_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
-                        omega.floatingpragma.io &rarr;
                     </a>
                 </div>
 
