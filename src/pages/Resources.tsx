@@ -3,7 +3,6 @@ import {
     BLOG_URL,
     CHALLENGE_URL,
     CLAIM_TIER_LEGEND,
-    COHERENCE_URL,
     FLAGSHIP_PAPER_URL,
     LAB_REPO_URL,
     MINI_UNIVERSE_SIMULATION_URL,
@@ -22,7 +21,6 @@ import {
     TEXTBOOK_MACHINE_URL,
     TEXTBOOK_OUTPUTS_URL,
     TEXTBOOKS_URL,
-    THREE_BODY_DEMO_URL,
     THEORY_URL,
 } from '../content/paperSurface';
 
@@ -240,30 +238,6 @@ export function ResourcesPage() {
                     {' · '}
                     <a href={SIMULATOR_REPO_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                         receipt source &rarr;
-                    </a>
-                </div>
-
-                <div className="card" style={{ borderLeft: '3px solid var(--accent-gold)' }}>
-                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-gold)' }}>
-                        Three-Body Problem OPH Demo
-                    </h4>
-                    <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
-                        Extra simulator and proof walk-through for the OPH three-body problem solution, framed as a loop holonomy gluing example.
-                    </p>
-                    <a href={THREE_BODY_DEMO_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
-                        3body.floatingpragma.io &rarr;
-                    </a>
-                </div>
-
-                <div className="card" style={{ borderLeft: '3px solid var(--accent-blue)' }}>
-                    <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-blue)' }}>
-                        OPH Coherence Map
-                    </h4>
-                    <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
-                        Public graph surface for OPH concepts, overlaps, and cross-domain routes.
-                    </p>
-                    <a href={COHERENCE_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
-                        coherence.floatingpragma.io &rarr;
                     </a>
                 </div>
 

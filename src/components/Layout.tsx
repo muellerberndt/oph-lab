@@ -7,7 +7,7 @@ import { WalkthroughNav } from './WalkthroughNav';
 import { installLinkTracking, trackPageView } from '../lib/analytics';
 import { SeoManager } from './SeoManager';
 import { getSeoMeta } from '../seo';
-import { BLOG_URL, CHALLENGE_URL, COHERENCE_URL, MINI_UNIVERSE_SIMULATION_URL, OVERVIEW_URL, PHYSICS_UNIFICATION_URL, RESEARCH_LICENSE_URL, RESEARCH_PATENT_POLICY_URL, RESEARCH_RELEASE_DATE, RESEARCH_RELEASE_ID, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL, THREE_BODY_DEMO_URL } from '../content/paperSurface';
+import { BLOG_URL, CHALLENGE_URL, MINI_UNIVERSE_SIMULATION_URL, OVERVIEW_URL, PHYSICS_UNIFICATION_URL, RESEARCH_LICENSE_URL, RESEARCH_PATENT_POLICY_URL, RESEARCH_RELEASE_DATE, RESEARCH_RELEASE_ID, RESEARCH_REPO_URL, SIMULATION_URL, TEXTBOOKS_URL, THEORY_URL } from '../content/paperSurface';
 
 export function Layout() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -123,10 +123,6 @@ export function Layout() {
                                 <a href={RESEARCH_LICENSE_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>License</a>
                                 {' \u2022 '}
                                 <a href={RESEARCH_PATENT_POLICY_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Anti-Patent</a>
-                                {' \u2022 '}
-                                <a href={COHERENCE_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Coherence</a>
-                                {' \u2022 '}
-                                <a href={THREE_BODY_DEMO_URL} style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>3-Body Demo</a>
                                 {' \u2022 '}
                                 <a href="https://floatingpragma.io/starklab/" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>STARK Lab</a>
                                 {' \u2022 '}

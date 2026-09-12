@@ -38,9 +38,7 @@ export const TEXTBOOKS_URL = 'https://learn.floatingpragma.io/';
 export const TEXTBOOK_MACHINE_URL = 'https://learn.floatingpragma.io/book/machine/chapter/0';
 export const TEXTBOOK_OUTPUTS_URL = 'https://learn.floatingpragma.io/book/outputs/chapter/0';
 export const MINI_UNIVERSE_SIMULATION_URL = 'https://simulation.floatingpragma.io/';
-export const THREE_BODY_DEMO_URL = 'https://3body.floatingpragma.io/';
 export const CHALLENGE_URL = 'https://challenge.floatingpragma.io/';
-export const COHERENCE_URL = 'https://coherence.floatingpragma.io/';
 export const RESEARCH_RELEASE_ID = 'r2042';
 export const RESEARCH_RELEASE_DATE = '10 September 2026';
 
