@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Explainer } from '../components/Explainer';
-import { CLAIM_TIER_LEGEND, PARTICLE_LANE_STATUS } from '../content/paperSurface';
+import { CLAIM_TIER_LEGEND, PARTICLE_LANE_STATUS, ENTANGLED_PAIR_CANDIDATE, RESEARCH_REPO_URL } from '../content/paperSurface';
 import {
     ALPHA_U_COMPARISON_REFERENCE_DISPLAY,
     ALPHA_U_FORWARD_REFERENCE_DISPLAY,
@@ -31,13 +31,15 @@ const MASS_SURFACE_OPTIONS = {
 
 type DynamicMassRow = {
     label: string;
-    valueGeV: number;
-    deltaGeV: number;
-    tier: 'structural' | 'calibration' | 'compare-only';
+    valueGeV: number | null;
+    displayValue?: string;
+    deltaGeV: number | null;
+    tier: 'branch-conditional' | 'compare-only';
     note: string;
 };
 
-function formatMass(value: number) {
+function formatMass(value: number | null) {
+    if (value === null) return 'physical mass unproved';
     if (!Number.isFinite(value)) {
         return 'n/a';
     }
@@ -47,7 +49,8 @@ function formatMass(value: number) {
     return `${value.toFixed(6)} GeV`;
 }
 
-function formatSignedMass(value: number) {
+function formatSignedMass(value: number | null) {
+    if (value === null) return 'not applicable';
     if (!Number.isFinite(value)) {
         return 'n/a';
     }
@@ -63,7 +66,7 @@ function formatScalar(value: number, digits = 6) {
 }
 
 function tierBorderColor(tier: DynamicMassRow['tier']) {
-    if (tier === 'structural') return 'var(--accent-gold)';
+    if (tier === 'branch-conditional') return 'var(--accent-gold)';
     if (tier === 'compare-only') return 'var(--accent-cyan)';
     return 'var(--accent-green)';
 }
@@ -103,24 +106,27 @@ export function MassesPage() {
         () => [
             {
                 label: 'photon',
-                valueGeV: 0,
-                deltaGeV: 0,
-                tier: 'structural',
-                note: 'Structural massless carrier on the realized electromagnetic branch. This row is symmetry-protected and does not move with P.',
+                valueGeV: null,
+                displayValue: '0 (classical hard parameter)',
+                deltaGeV: null,
+                tier: 'branch-conditional',
+                note: 'Zero hard quadratic parameter on a separately declared unbroken Maxwell branch. The quantum-particle, positive-pole and physical photon receipts are unproved.',
             },
             {
                 label: 'gluons',
-                valueGeV: 0,
-                deltaGeV: 0,
-                tier: 'structural',
-                note: 'Structural massless color carriers. Confinement changes free-particle observability, not the structural zero on this lane.',
+                valueGeV: null,
+                displayValue: '0 (classical hard parameter)',
+                deltaGeV: null,
+                tier: 'branch-conditional',
+                note: 'Zero hard quadratic parameter in the declared perturbative Yang-Mills action. This does not identify a free asymptotic gluon; confinement and physical field construction are separate.',
             },
             {
                 label: 'graviton',
-                valueGeV: 0,
-                deltaGeV: 0,
-                tier: 'structural',
-                note: 'Structural spin-2 zero on the OPH dynamical-metric branch. The P slider does not alter that exact structural statement.',
+                valueGeV: null,
+                displayValue: '0 (classical hard parameter)',
+                deltaGeV: null,
+                tier: 'branch-conditional',
+                note: 'Zero hard quadratic parameter on a separately declared pure-Einstein background. No quantized graviton state or positive physical pole is supplied.',
             },
             {
                 label: 'W running chart',
@@ -140,15 +146,15 @@ export function MassesPage() {
                 label: 'H',
                 valueGeV: higgsTop.mHGeV,
                 deltaGeV: higgsTop.mHGeV - canonicalHiggsTop.mHGeV,
-                tier: 'calibration',
-                note: 'Public Higgs row from the source-only Higgs/top split surface fed by the same electroweak source basis.',
+                tier: 'compare-only',
+                note: 'Conditional Higgs comparison coordinate on a declared running/matching chart. The physical vacuum, family coefficients and pole attachment are unselected.',
             },
             {
                 label: 't',
                 valueGeV: higgsTop.mtPoleGeV,
                 deltaGeV: higgsTop.mtPoleGeV - canonicalHiggsTop.mtPoleGeV,
-                tier: 'calibration',
-                note: 'Companion top row from the same source-only Higgs/top split surface.',
+                tier: 'compare-only',
+                note: 'Companion top comparison coordinate on the same declared chart. It is not a source-selected physical mass.',
             },
         ],
         [canonicalElectroweakRepair.mWGeV, canonicalElectroweakRepair.mZGeV, canonicalHiggsTop.mHGeV, canonicalHiggsTop.mtPoleGeV, electroweakRepair.mWGeV, electroweakRepair.mZGeV, higgsTop.mHGeV, higgsTop.mtPoleGeV]
@@ -162,12 +168,12 @@ export function MassesPage() {
             </div>
 
             <p style={{ marginBottom: '16px' }}>
-                This page separates structural outputs, calibration rows, diagnostic charts, and work-in-progress
-                physical source laws.
+                This page separates conditional internal matter representations, classical action parameters and
+                numerical comparison charts. No observed particle mass is source-selected.
             </p>
 
             <div className="card" style={{ marginBottom: '16px', borderLeft: '3px solid var(--accent-gold)' }}>
-                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Structural, calibration, and chart surfaces</h3>
+                <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Finite matter contracts and comparison charts</h3>
                 <p style={{ margin: '0 0 10px 0' }}>
                     The first two axioms force the abstract Standard Model compact Lie type on the
                     twelve-port branch. The declared fifteen-state fixture gives exact hypercharges,
@@ -179,7 +185,7 @@ export function MassesPage() {
                     W/Z carry running-chart status and no physical pole-mass status. Their strict-one-loop pole-map
                     kernel is checked, while the OPH/FJ renormalized input, tadpole conversion, thresholds, matching,
                     independent gauge/BRST evidence, covariance, amplitudes, and clock are missing. Higgs/top sit
-                    on the source-only Higgs/top split surface, and the inverse pair is a check surface.
+                    on a declared comparison chart, and the inverse pair is a separate diagnostic.
                     The displayed bosonic comparison surface uses P<sub>C</sub> = {formatPixelConstant(PIXEL_REFERENCE)}, derived from the measured endpoint. The
                     sensitivity panel below moves the input away from that comparison coordinate and reports
                     the formula response as a diagnostic.
@@ -189,11 +195,19 @@ export function MassesPage() {
             <div className="card" style={{ marginBottom: '16px' }}>
                 <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>Matter-sector boundaries</h3>
                 <ul style={{ paddingLeft: '20px', lineHeight: '1.8', margin: 0, color: 'var(--text-secondary)' }}>
-                    <li><strong>Quarks:</strong> the source equations leave a free (R<sub>&gt;0</sub>)<sup>2</sup> spread fiber, so no numeric quark prediction is emitted. No flavor-orbit selector, quark-Higgs carrier, or common-scheme transport is derived.</li>
+                    <li><strong>Quarks:</strong> the source equations leave a free (R<sub>&gt;0</sub>)<sup>2</sup> spread fiber, so no numeric quark prediction is emitted. The one-Higgs invariant vertices are constructed; the family-matrix selector and common-scheme physical transport are unproved.</li>
                     <li><strong>Charged leptons:</strong> the icosahedral screen gives an exact A<sub>5</sub>/C<sub>3</sub> face-corner carrier. The finite CFQ model proves its stipulated schema is nonempty but authors the registers, automaton, clock, and response. It derives no physical source selection, family/Yukawa attachment, determinant descent, interacting refinement, or pole scheme; no nonzero source-only mass is emitted.</li>
                     <li><strong>Neutrinos:</strong> the isotropic ansatz has an exact no-go. The target-informed weighted-cycle point is rejected by the NuFIT 6.1 correlated profile and has no physical PMNS, ordering, absolute-mass, or Majorana prediction status.</li>
                     <li><strong>Hadrons:</strong> production masses sit outside the closed public scope until a working OPH hadron backend and systematics exist.</li>
                 </ul>
+            </div>
+
+            <div className="card" style={{ marginBottom: '16px' }}>
+                <h3>Finite matter and interaction readout</h3>
+                <p>A declared spin lift and central trace redistribution decode the five internal multiplets of one Standard Model generation. One Higgs doublet admits all three charged-fermion interaction channels, with 648 exact current/family/component identities. Family coefficients, the vacuum scale, physical chirality and particle poles retain independent requirements.</p>
+                <a href={`${RESEARCH_REPO_URL}/tree/r2053/model/observer_particles`}>Read the finite contracts and retained calculations</a>
+                <h3>Entangled-pair coupling candidate</h3>
+                <p><a href={ENTANGLED_PAIR_CANDIDATE.href}>{ENTANGLED_PAIR_CANDIDATE.author}</a> gives the exact finite scalar whose inverse is {ENTANGLED_PAIR_CANDIDATE.inverse}. {ENTANGLED_PAIR_CANDIDATE.scope}</p>
             </div>
 
             <div className="card" style={{ marginBottom: '16px', borderLeft: '3px solid var(--accent-purple)' }}>
@@ -300,11 +314,11 @@ export function MassesPage() {
                         >
                             <div style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', marginBottom: '6px' }}>
                                 <strong>{row.label}</strong>
-                                <span style={{ color: 'var(--accent-cyan)' }}>{formatMass(row.valueGeV)}</span>
+                                <span style={{ color: 'var(--accent-cyan)' }}>{row.displayValue ?? formatMass(row.valueGeV)}</span>
                             </div>
                             <div style={{ fontSize: '0.76em', color: 'var(--text-muted)', marginBottom: '6px' }}>
-                                {row.tier === 'structural'
-                                    ? 'Invariant under P on the structural lane.'
+                                {row.tier === 'branch-conditional'
+                                    ? 'Declared classical action branch; quantum-particle identification unproved.'
                                     : `Delta from comparison P_C = ${formatPixelConstant(PIXEL_REFERENCE)}: ${formatSignedMass(row.deltaGeV)} (${row.tier})`}
                             </div>
                             <div style={{ fontSize: '0.8em', color: 'var(--text-secondary)' }}>{row.note}</div>
@@ -355,7 +369,7 @@ export function MassesPage() {
                     The particle paper makes a sharp split. The conditional classical Maxwell, Yang–Mills, and gravity
                     actions have no mass term for their transverse modes; quantum photon, gluon, and graviton particle
                     claims need separate receipts. W and Z sit on an incomplete
-                    running chart with no physical pole comparison, while Higgs/top sit on the downstream source-only
+                    running chart with no physical pole comparison, while Higgs/top sit on the declared comparison
                     split surface fed by the same gauge core.
                 </p>
                 <p>

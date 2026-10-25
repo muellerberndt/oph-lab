@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Explainer } from '../components/Explainer';
-import { STANDARD_MODEL_SURFACE } from '../content/paperSurface';
+import { STANDARD_MODEL_SURFACE, ENTANGLED_PAIR_CANDIDATE } from '../content/paperSurface';
 import {
     BETA_COEFFICIENTS_MSSM_LIKE,
     BETA_COEFFICIENTS_SM_1LOOP,
@@ -98,6 +98,11 @@ export function UnificationPage() {
 
     return (
         <div>
+            <div className="card" style={{ marginBottom: '16px' }}>
+                <h3>Independent entangled-pair candidate</h3>
+                <p><a href={ENTANGLED_PAIR_CANDIDATE.href}>{ENTANGLED_PAIR_CANDIDATE.author}</a> supplies the finite spectral expression with inverse {ENTANGLED_PAIR_CANDIDATE.inverse}. {ENTANGLED_PAIR_CANDIDATE.scope}</p>
+                <p>The running chart below keeps its own declared map and matching inputs. The candidate does not replace those equations or source-select particle masses.</p>
+            </div>
             <div className="section-header">
                 <span className="section-tag qft">Chain 2: QFT</span>
                 <h1 style={{ fontSize: '1.5rem', margin: 0 }}>Coupling Unification</h1>

@@ -268,7 +268,7 @@ export function QftEmergesPage() {
                     <li>Quark source equations leave a free (R<sub>&gt;0</sub>)<sup>2</sup> spread fiber, so numeric rows are withheld; the mixed-scheme target packet and GeV mass textures do not define physical dimensionless Yukawas.</li>
                     <li>Charged leptons have an exact A<sub>5</sub>/C<sub>3</sub> face-corner carrier and a conditional fixed-point theorem for one declared map. An engineered digital CFQ model closes schema nonemptiness and gives a central record dilation, but its registers, automaton, grading, clock, and response are authored inputs, and historical no-target ancestry fails audit. A conditional nature/pole theorem gives the correct transport implications after the physical Yukawa response and CFQ-to-Dyson singularity readout are assumed; its zero-self-energy kernel is only a free witness. Its 0.000300 ppm headline uses rounded fields; the tau residual is -1.387289 ppm against the packet's higher-precision central value. No physical source selection, attachment, determinant, coherent branch, cofinal refinement, interacting kernel, or infrared completion is derived.</li>
                     <li>Neutrino isotropic no-go retained; the target-informed weighted-cycle point is a rejected comparison candidate without source, basis, Takagi, or ordering certificates</li>
-                    <li>Higgs/top proof structure and scope discipline around the closed source-only split theorem</li>
+                    <li>Conditional Higgs/top split identities and one-Higgs invariant interactions, with physical mass selection unproved</li>
                     <li>Hadron backend / compute-bound closure</li>
                 </ul>
                 <p>

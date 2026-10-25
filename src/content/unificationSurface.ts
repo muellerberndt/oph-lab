@@ -16,7 +16,7 @@ export const LANDING_AUDIT_NOTES = [
     'The landing page exposes a certified root of the declared incomplete P map, the Lambda-located capacity comparison coordinate, and the selected no-G scale certificate.',
     'The measured-endpoint hierarchy coordinate and source-forward common-load coordinate are distinct. The source-forward value is 6.6166% above the Planck base-LambdaCDM comparison. Conditional finite-presence and Poisson expressions sit 0.6287% and 0.3880% below that comparison.',
     'Exact neutral, one-class, and six-class compositional completions share the declared local datum and disagree globally. The declared finite-cut attachment class selects none of them. The exposed reserve comparisons are retrospective arithmetic and carry no prediction status.',
-    'The particle surface includes a two-modulus quark source-spread obstruction, an exact same-family charged witness, the source-only Higgs/top split theorem, and a neutrino audit that rejects the target-informed weighted-cycle candidate.',
+    'The particle surface includes a two-modulus quark source-spread obstruction, an exact same-family charged witness, the conditional Higgs/top split chart, and a neutrino audit that rejects the target-informed weighted-cycle candidate.',
     'The gravity-side bundle uses the scale-certificate Newton readout with Lambda, de Sitter, and a0 displays evaluated at the Lambda-located capacity coordinate.',
 ];
 
@@ -37,7 +37,7 @@ export const EXACT_BUNDLE_SECTIONS: ExactBundleSection[] = [
             { label: 'Graviton', value: '0 GeV', note: 'Structural zero.' },
             { label: 'W boson comparison coordinate', value: '80.377 GeV', note: 'The measured pair is consumed as input. The separate 80.330 GeV source chart has no pole-prediction status without the missing scheme map.' },
             { label: 'Z boson comparison coordinate', value: '91.18797809193725 GeV', note: 'The measured pair is consumed as input. The separate 91.119 GeV source chart has no pole-prediction status without the missing scheme map.' },
-            { label: 'Higgs boson', value: '125.1995304097179 GeV', note: 'Exact source-only split theorem. The pair consumed its measured targets; audit witness, not an output row.' },
+            { label: 'Higgs boson', value: '125.1995304097179 GeV', note: 'Conditional split chart. The pair consumed its measured targets; audit witness, not a physical prediction.' },
             { label: 'Top quark', value: '172.35235532883115 GeV', note: 'Exact split companion on the declared electroweak surface; consumed its measured target, and not a separate source-only quark-mass row.' },
         ],
     },

@@ -30,24 +30,24 @@ export const RESEARCH_LICENSE_URL = `${RESEARCH_REPO_URL}/blob/main/LICENSE`;
 export const RESEARCH_PATENT_POLICY_URL = `${RESEARCH_REPO_URL}/blob/main/PATENTS.md`;
 export const LAB_REPO_URL = 'https://github.com/muellerberndt/oph-lab';
 export const SIMULATOR_REPO_URL = 'https://github.com/muellerberndt/oph-physics-sim';
-export const OVERVIEW_URL = 'https://floatingpragma.io/oph/';
-export const THEORY_URL = 'https://floatingpragma.io/oph/theory-of-everything/';
-export const SIMULATION_URL = 'https://floatingpragma.io/oph/simulation-theory/';
-export const PHYSICS_UNIFICATION_URL = 'https://floatingpragma.io/oph/physics-unification/';
+export const OVERVIEW_URL = 'https://floatingpragma.io/';
+export const THEORY_URL = 'https://philpapers.org/rec/MUEFOC';
+export const SIMULATION_URL = 'https://simulation.floatingpragma.io/';
+export const PHYSICS_UNIFICATION_URL = 'https://philpapers.org/rec/MUEFOC';
 export const BLOG_URL = 'https://blog.floatingpragma.io/';
 export const TEXTBOOKS_URL = 'https://learn.floatingpragma.io/';
 export const TEXTBOOK_MACHINE_URL = 'https://learn.floatingpragma.io/book/machine/chapter/0';
 export const TEXTBOOK_OUTPUTS_URL = 'https://learn.floatingpragma.io/book/outputs/chapter/0';
 export const MINI_UNIVERSE_SIMULATION_URL = 'https://simulation.floatingpragma.io/';
 export const CHALLENGE_URL = 'https://challenge.floatingpragma.io/';
-export const RESEARCH_RELEASE_ID = 'r2042';
-export const RESEARCH_RELEASE_DATE = '10 September 2026';
+export const RESEARCH_RELEASE_ID = 'r2053';
+export const RESEARCH_RELEASE_DATE = '25 October 2026';
 
 const GITHUB_PDF_BASE = `${RESEARCH_REPO_URL}/blob/main/paper`;
 const GITHUB_EXTRA_PDF_BASE = `${RESEARCH_REPO_URL}/blob/main/extra`;
-export const FLAGSHIP_PAPER_TITLE = 'Finite Observer Consensus as a Reconstruction Principle';
+export const FLAGSHIP_PAPER_TITLE = 'Observers Who Read Their Universe into Existence';
 export const FLAGSHIP_PHILPAPERS_URL = 'https://philpapers.org/rec/MUEFOC';
-export const FLAGSHIP_PAPER_HTML_URL = 'https://floatingpragma.io/oph/papers/from-observer-consensus-to-standard-physics/';
+export const FLAGSHIP_PAPER_HTML_URL = FLAGSHIP_PHILPAPERS_URL;
 
 export const OPH_PAPERS: PaperSummary[] = [
     {
@@ -63,7 +63,7 @@ export const OPH_PAPERS: PaperSummary[] = [
         title: 'Recovering Observer Spacetime and Einstein Dynamics from Overlap Consistency',
         href: `${GITHUB_PDF_BASE}/recovering_observer_spacetime_and_einstein_dynamics_from_overlap_consistency.pdf`,
         surface: 'Spacetime and Gravity',
-        summary: 'The source metric, declared causal/count limit, reconstructed action clock and joint spatial/time scalar detector limit, with physical inputs stated for the Einstein route.',
+        summary: 'Conditional spacetime and Einstein theorems, a common pointwise metric dictionary, and the static-product relative-stress obstruction requiring a geometry response.',
     },
     {
         slug: 'gauge',
@@ -77,7 +77,7 @@ export const OPH_PAPERS: PaperSummary[] = [
         title: 'Deriving the Particle Zoo from Observer Consistency',
         href: `${GITHUB_PDF_BASE}/deriving_the_particle_zoo_from_observer_consistency.pdf`,
         surface: 'Particles',
-        summary: 'The particle-status paper. It separates structural outputs, running-chart diagnostics, the conditional capacity-electroweak bridge, compare-only sidecars, continuation lanes, and theorem surfaces.',
+        summary: 'Conditional internal matter decoding and one-Higgs interactions, common field operators and the unselected family coefficients, vacuum scale and physical masses.',
     },
     {
         slug: 'consensus',
@@ -94,11 +94,18 @@ export const OPH_PAPERS: PaperSummary[] = [
         summary: 'The concrete federated patch-carrier architecture. It turns patches, overlaps, records, public hardware-evidence rules, checkpoint/restoration, and observer synchronization into one fixed-cutoff surface.',
     },
     {
-        slug: 'paradise',
-        title: 'Paradise as Fixed-Point Consensus',
-        href: `${GITHUB_PDF_BASE}/paradise_as_fixed_point_consensus.pdf`,
-        surface: 'Meaning Layer',
-        summary: 'The final manifest paper. It carries the OPH account of existence, observer continuation, justice, paradise, hell, resurrection, and memetic evolution.',
+        slug: 'executable-observer',
+        title: 'An Executable Observer for Observer Patch Holography',
+        href: `${GITHUB_PDF_BASE}/executable_observer_construction.pdf`,
+        surface: 'Executable observer',
+        summary: 'The runnable observer, complete histories, declared services, common field operators, finite premise witnesses and physical-identification requirements.',
+    },
+    {
+        slug: 'observers',
+        title: 'Observers Are All You Need',
+        href: `${GITHUB_PDF_BASE}/observers_are_all_you_need.pdf`,
+        surface: 'Observers and records',
+        summary: 'Observer algebras, quantum records, conditional thermodynamics, matter fields and closure equations with their independent physical premises.',
     },
 ];
 
@@ -271,13 +278,13 @@ export const BOSON_PUBLIC_ROWS: PublicRow[] = [
         label: 'H',
         value: '125.199530 GeV',
         tier: 'calibration',
-        note: 'Public row carried by the source-only Higgs/top split surface. The exact inverse adapter is a check.',
+        note: 'Comparison coordinate on a declared Higgs/top chart; physical source selection and pole matching are unproved.',
     },
     {
         label: 't',
         value: '172.352355 GeV',
         tier: 'calibration',
-        note: 'Public row carried by the same source-only Higgs/top split surface, not by the inverse check surface.',
+        note: 'Comparison coordinate on the same declared Higgs/top chart; no physical mass prediction is promoted.',
     },
 ];
 
@@ -324,6 +331,8 @@ export const GRAVITY_SURFACE = [
 ];
 
 export const STANDARD_MODEL_SURFACE = [
+    'Under the declared geometric response, spin lift and central trace redistribution, charge/Casimir projectors decode the five internal multiplets of one Standard Model generation. This does not source-select the physical Weyl field or its global lift.',
+    'One Higgs doublet admits Qu^cH, Qd^cH* and Le^cH* with 648 exact family/current/component identities. Family coefficients, the Higgs phase and scale are independent inputs; measured masses are not derived.',
     'The complete compact response clause and endogenous carrier transport force the abstract Lie type u(1) + su(2) + su(3). No source reconstruction of the complete current is derived.',
     'Inside the declared fifteen-state representation fixture, the hypercharges, anomalies, Nc = 3, and common Z6 kernel are exact. No physical matter selection or same-source global quotient is derived.',
     'The CP-capability and weak-sector clauses give the window 3 <= Ng <= 5; they do not select a count inside it, and Ng = 3 enters as a declared completion. Physical three-family status requires the rank-45 attachment, source-selected matter action, and quantum-field-theory construction.',
@@ -332,6 +341,15 @@ export const STANDARD_MODEL_SURFACE = [
     'The committed charged-current dictionary derives the W-direction shift algebra and g/sqrt(2) normalization inside the declared carrier. It supplies no physical current operator, W propagator, decay amplitude, Fermi limit, flavor, or mixing matrix.',
     'A declared local Standard Model action on flat spacetime includes gauge fields, anticommuting fermions, the Higgs field and all three Yukawa couplings. Exact first- and second-jet Ward identities and analytic currents are checked. Spacetime, Spin convention, coefficients and field content are supplied; source production and interacting quantization are separate.',
 ];
+
+export const ENTANGLED_PAIR_CANDIDATE = {
+    author: 'A. D. Wissner-Gross',
+    title: 'A Parameter-Free Candidate for the Fine-Structure Constant from Entangled Qudits',
+    href: 'https://alexwg.org/publications/ChainTheoryAlpha.pdf',
+    inverse: '137.035999189566',
+    expression: '(79 + 48 sqrt(2) + 42 sqrt(3) + 3 sqrt(6)) / 31104',
+    scope: 'Wissner-Gross supplies the finite exchange construction and exact scalar. OPH independently reconstructs it and tests complete outcomes, support alignment and normalized readouts. Physical photon/Thomson and same-cell identifications remain conditional.',
+};
 
 export const CONSENSUS_HIGHLIGHTS = [
     'Accepted local repairs strictly lower the inconsistency potential Phi on the overlaps they touch.',

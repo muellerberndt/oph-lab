@@ -30,6 +30,15 @@ claim. Research changes originate in those sources before the OPH Lab copy is sy
 
 ## Paper Surface Summary
 
+The r2053 material records conditional response-derived internal matter,
+one-Higgs invariant interactions and common field operators. The observed
+mass spectrum, physical photon normalization and full gravitational entropy
+stationarity are unproved. The independent entangled-pair candidate and its
+spectral construction are credited to A. D. Wissner-Gross in the linked
+primary preprint. Classical zero hard parameters and massive comparison
+coordinates are separated from physical mass predictions.
+
+
 This section is the lab-maintainer summary of the public paper surface.
 
 ### Fixed-point and scale surface
@@ -136,7 +145,7 @@ This section is the lab-maintainer summary of the public paper surface.
 - Electroweak:
   - `W/Z` values form a declared running/chart surface, not physical pole-mass predictions
 - Higgs/top:
-  - public rows are carried by the source-only Higgs/top split surface
+  - public rows are comparison coordinates on a declared Higgs/top split chart
   - the exact inverse pair is a check sidecar
   - the selected algebraic branch has `epsilon_H = 0`; its physical hierarchy
     interpretation requires `HIERARCHY-SCREEN-READOUT`
@@ -205,7 +214,7 @@ This section is the lab-maintainer summary of the public paper surface.
 - The landing page is a fixed-point dashboard. Avoid free-constant language, keep
   Newton's constant tied to the no-G scale certificate, and label sliders as
   sensitivity diagnostics.
-- Keep W/Z on their running-chart surface and Higgs/top on the source-only split
+- Keep W/Z on their running-chart surface and Higgs/top on the declared comparison split
   plus inverse check sidecar. Their physical hierarchy interpretation requires
   `HIERARCHY-SCREEN-READOUT`.
 - Preserve charged, quark and neutrino classifications. The quark two-modulus
