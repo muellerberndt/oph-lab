@@ -138,7 +138,8 @@ This section is the lab-maintainer summary of the public paper surface.
 
 ### Particle branch
 
-- Symmetry-protected classical carrier zeros:
+- Zero hard quadratic parameters on separately declared classical branches
+  (physical quantum-particle identification and poles are unproved):
   - photon
   - gluons
   - graviton
@@ -161,8 +162,8 @@ This section is the lab-maintainer summary of the public paper surface.
   - the source equations leave an exact free `(R_{>0})^2` spread fiber, so
     selected-frame descent does not emit either physical spread modulus
   - numeric quark rows are withheld from the public surface
-  - the physical flavor-orbit selector, quark-Higgs carrier, and common-scheme
-    source transport are not derived
+  - one-Higgs invariant vertices are constructed; the family-matrix selector,
+    physical field attachment and common-scheme source transport remain unproved
 - Neutrinos:
   - the isotropic neutrino-only ansatz has an exact no-go
   - the target-informed weighted-cycle point is rejected by the NuFIT 6.1
