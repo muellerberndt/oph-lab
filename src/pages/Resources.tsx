@@ -281,7 +281,7 @@ export function ResourcesPage() {
             <Explainer title="How to cite OPH material">
                 <p>
                     Cite the specific paper that matches the claim you are discussing. The public OPH surface spans
-                    the flagship synthesis, six focused papers, and maintained extra papers.
+                    the flagship synthesis, seven focused papers, and maintained extra papers.
                 </p>
                 <p>
                     For the flagship paper, cite its PhilPapers record:{' '}

@@ -65,7 +65,7 @@ export function getStructuredData(pathname: string) {
     },
     citation: {
       '@type': 'ScholarlyArticle',
-      name: 'Finite Observer Consensus as a Reconstruction Principle: Normal Forms, the Standard Model Lie Type, and a Route to the Einstein Field Equation',
+      name: 'Observers Who Read Their Universe into Existence: Finite Consensus, an Executable Observer, and Standard Physics',
       author: { '@type': 'Person', name: 'Bernhard Mueller' },
       url: 'https://philpapers.org/rec/MUEFOC',
     },
