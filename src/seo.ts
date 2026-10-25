@@ -61,7 +61,7 @@ export function getStructuredData(pathname: string) {
     about: {
       '@type': 'Thing',
       name: 'Observer Patch Holography',
-      url: 'https://floatingpragma.io/physics/',
+      url: 'https://github.com/FloatingPragma/observer-patch-holography',
     },
     citation: {
       '@type': 'ScholarlyArticle',

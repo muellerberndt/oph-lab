@@ -30,10 +30,6 @@ export const RESEARCH_LICENSE_URL = `${RESEARCH_REPO_URL}/blob/main/LICENSE`;
 export const RESEARCH_PATENT_POLICY_URL = `${RESEARCH_REPO_URL}/blob/main/PATENTS.md`;
 export const LAB_REPO_URL = 'https://github.com/muellerberndt/oph-lab';
 export const SIMULATOR_REPO_URL = 'https://github.com/muellerberndt/oph-physics-sim';
-export const OVERVIEW_URL = 'https://floatingpragma.io/';
-export const THEORY_URL = 'https://philpapers.org/rec/MUEFOC';
-export const SIMULATION_URL = 'https://simulation.floatingpragma.io/';
-export const PHYSICS_UNIFICATION_URL = 'https://philpapers.org/rec/MUEFOC';
 export const BLOG_URL = 'https://blog.floatingpragma.io/';
 export const TEXTBOOKS_URL = 'https://learn.floatingpragma.io/';
 export const TEXTBOOK_MACHINE_URL = 'https://learn.floatingpragma.io/book/machine/chapter/0';
@@ -47,14 +43,12 @@ const GITHUB_PDF_BASE = `${RESEARCH_REPO_URL}/blob/main/paper`;
 const GITHUB_EXTRA_PDF_BASE = `${RESEARCH_REPO_URL}/blob/main/extra`;
 export const FLAGSHIP_PAPER_TITLE = 'Observers Who Read Their Universe into Existence';
 export const FLAGSHIP_PHILPAPERS_URL = 'https://philpapers.org/rec/MUEFOC';
-export const FLAGSHIP_PAPER_HTML_URL = FLAGSHIP_PHILPAPERS_URL;
 
 export const OPH_PAPERS: PaperSummary[] = [
     {
         slug: 'flagship',
         title: FLAGSHIP_PAPER_TITLE,
         href: FLAGSHIP_PHILPAPERS_URL,
-        htmlHref: FLAGSHIP_PAPER_HTML_URL,
         surface: 'Flagship synthesis',
         summary: 'The primary OPH paper: finite self-reading patches, public quantum records, Lorentz-frame algebra, and conditional geometry, Einstein, and Standard Model branches.',
     },

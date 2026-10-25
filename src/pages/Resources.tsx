@@ -3,15 +3,12 @@ import {
     BLOG_URL,
     CHALLENGE_URL,
     CLAIM_TIER_LEGEND,
-    FLAGSHIP_PAPER_HTML_URL,
     FLAGSHIP_PAPER_TITLE,
     FLAGSHIP_PHILPAPERS_URL,
     LAB_REPO_URL,
     MINI_UNIVERSE_SIMULATION_URL,
     MATH_FOUNDATIONS_PAPER,
     OPH_PAPERS,
-    OVERVIEW_URL,
-    PHYSICS_UNIFICATION_URL,
     RESEARCH_LICENSE_URL,
     RESEARCH_PAPER_DIR_URL,
     RESEARCH_PATENT_POLICY_URL,
@@ -19,11 +16,9 @@ import {
     RESEARCH_RELEASE_ID,
     RESEARCH_REPO_URL,
     SIMULATOR_REPO_URL,
-    SIMULATION_URL,
     TEXTBOOK_MACHINE_URL,
     TEXTBOOK_OUTPUTS_URL,
     TEXTBOOKS_URL,
-    THEORY_URL,
 } from '../content/paperSurface';
 
 const BACKGROUND_READING = [
@@ -77,36 +72,10 @@ export function ResourcesPage() {
                 </p>
             </div>
 
-            <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-cyan)' }}>
-                <h4 style={{ margin: '0 0 8px 0', fontSize: '0.9em', color: 'var(--accent-cyan)' }}>
-                    Search Entry Pages
-                </h4>
-                <p style={{ margin: '0 0 8px 0', fontSize: '0.85em' }}>
-                    For readers arriving via high-intent public queries, OPH maintains dedicated entry pages for
-                    <strong> theory of everything</strong>, <strong> physics unification</strong>, and <strong> simulation theory</strong>.
-                </p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
-                    <a href={THEORY_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
-                        theory of everything &rarr;
-                    </a>
-                    <a href={PHYSICS_UNIFICATION_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
-                        physics unification &rarr;
-                    </a>
-                    <a href={SIMULATION_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
-                        simulation theory &rarr;
-                    </a>
-                    <a href={OVERVIEW_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
-                        OPH overview &rarr;
-                    </a>
-                    <a href={BLOG_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
-                        OPH blog &rarr;
-                    </a>
-                </div>
-            </div>
 
-            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Seven-Paper Release Stack</h3>
+            <h3 style={{ fontSize: '1em', marginTop: '32px' }}>Eight-Paper Release Stack</h3>
             <p style={{ marginBottom: '16px', fontSize: '0.85em', color: 'var(--text-muted)' }}>
-                The Lab lists the flagship synthesis plus six focused papers. Use the individual paper that matches
+                The Lab lists the flagship synthesis plus seven focused papers. Use the individual paper that matches
                 the surface you are discussing.
             </p>
 
@@ -141,7 +110,7 @@ export function ResourcesPage() {
             <p style={{ marginBottom: '16px', fontSize: '0.85em', color: 'var(--text-muted)' }}>
                 This standalone paper supplies the application-neutral theorem layer used to distinguish repair-order
                 independence from reconstruction across different states with the same observable boundary. It is not a
-                seventh core OPH paper and does not select a physical boundary map or repair law.
+                member of the core eight-paper release and does not select a physical boundary map or repair law.
             </p>
 
             <div className="card" style={{ marginBottom: '24px', borderLeft: '3px solid var(--accent-purple)' }}>
@@ -204,9 +173,6 @@ export function ResourcesPage() {
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                         <a href={FLAGSHIP_PHILPAPERS_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
                             philpapers.org/rec/MUEFOC &rarr;
-                        </a>
-                        <a href={FLAGSHIP_PAPER_HTML_URL} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.85em' }}>
-                            HTML version &rarr;
                         </a>
                     </div>
                 </div>
