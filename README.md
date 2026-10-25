@@ -14,6 +14,10 @@ Research status is controlled from the sibling `reverse-engineering-reality/` re
 - `paper/deriving_standard_model_gauge_structure_from_observer_overlap_consistency.tex`
 - `paper/deriving_the_particle_zoo_from_observer_consistency.tex`
 - `paper/reality_as_consensus_protocol.tex`
+- `paper/executable_observer_construction.tex`
+- `flagship/from_observer_consensus_to_standard_physics.tex`
+- `model/observer_particles/DERIVATION.md`
+- `model/PREMISES.md`
 - `paper/screen_microphysics_and_observer_synchronization.tex`
 - `paper/tex_fragments/PAPER.tex`
 - `paper/tex_fragments/THREE_AXIOM_BASIS.tex`
@@ -23,10 +27,13 @@ Research status is controlled from the sibling `reverse-engineering-reality/` re
 - `tracking/premise_register.json`
 - `README.md`
 
-The finite-simulation boundary is controlled by the sibling `oph-physics-sim/` repo, especially its `README.md`,
-lane design documents, receipts, and `docs/RUN_OUTPUTS_AND_VISUALIZATION.md`. The Learn site is a guided
-exposition surface; when its prose differs from a controlling paper or receipt, the research artifact controls the
-claim. Research changes originate in those sources before the OPH Lab copy is synchronized.
+The live executable observer, its tests and its matter/field contracts live in
+`reverse-engineering-reality/model/`. The separate public `oph-physics-sim`
+repository supplies earlier finite simulations and controls under their own
+contracts; it does not replace the owning model receipts. The Learn site is a
+guided exposition surface. When its prose differs from a controlling paper or
+receipt, the research artifact controls the claim. Research changes originate
+in those sources before the OPH Lab copy is synchronized.
 
 ## Paper Surface Summary
 
