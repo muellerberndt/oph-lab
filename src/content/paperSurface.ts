@@ -271,25 +271,25 @@ export const BOSON_PUBLIC_ROWS: PublicRow[] = [
     {
         label: 'H',
         value: '125.199530 GeV',
-        tier: 'calibration',
+        tier: 'compare-only',
         note: 'Comparison coordinate on a declared Higgs/top chart; physical source selection and pole matching are unproved.',
     },
     {
         label: 't',
         value: '172.352355 GeV',
-        tier: 'calibration',
+        tier: 'compare-only',
         note: 'Comparison coordinate on the same declared Higgs/top chart; no physical mass prediction is promoted.',
     },
 ];
 
 export const PARTICLE_LANE_STATUS = [
     {
-        label: 'Structural carriers',
-        summary: 'Photon, gluons, and graviton have exact structural zero on the public surface.',
+        label: 'Conditional classical carriers',
+        summary: 'The declared Maxwell, Yang-Mills and Einstein actions have zero hard quadratic parameters. Physical quantum-particle states and poles are unproved.',
     },
     {
         label: 'Quarks',
-        summary: 'The source equations leave a free (R>0)^2 spread fiber, so no numeric quark prediction is emitted. No physical flavor-orbit selector, quark-Higgs carrier, or common-scheme transport is derived.',
+        summary: 'The source equations leave a free (R>0)^2 spread fiber, so no numeric quark prediction is emitted. One-Higgs invariant vertices are constructed; the family-matrix selector, physical field attachment and common-scheme transport remain unproved.',
     },
     {
         label: 'Charged leptons',

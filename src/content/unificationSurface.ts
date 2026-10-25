@@ -28,13 +28,13 @@ export const LANDING_SCOPE_NOTES = [
 export const EXACT_BUNDLE_SECTIONS: ExactBundleSection[] = [
     {
         id: 'structural-bosonic',
-        title: 'Structural Zeros And Bosonic Diagnostics',
-        scope: 'Structural exactness + calibration / compare-only charts',
-        note: 'The massless rows are structural. The W/Z pair is compare-only. The strict-one-loop pole-map algebra is checked; its complete OPH/FJ input packet and physical evidence receipts are not supplied.',
+        title: 'Conditional Carrier Parameters and Bosonic Comparisons',
+        scope: 'Declared classical branches and comparison charts',
+        note: 'The carrier rows are zero hard quadratic parameters on declared classical branches; physical quantum-particle masses are unproved. The W/Z pair is compare-only. The strict-one-loop pole-map algebra is checked; its complete OPH/FJ input packet and physical evidence receipts are not supplied.',
         rows: [
-            { label: 'Photon', value: '0 GeV', note: 'Structural zero.' },
-            { label: 'Gluon', value: '0 GeV', note: 'Structural zero.' },
-            { label: 'Graviton', value: '0 GeV', note: 'Structural zero.' },
+            { label: 'Photon', value: '0 classical hard parameter', note: 'Declared classical action; physical quantum-particle identification and poles are unproved.' },
+            { label: 'Gluon', value: '0 classical hard parameter', note: 'Declared classical action; physical quantum-particle identification and poles are unproved.' },
+            { label: 'Graviton', value: '0 classical hard parameter', note: 'Declared classical action; physical quantum-particle identification and poles are unproved.' },
             { label: 'W boson comparison coordinate', value: '80.377 GeV', note: 'The measured pair is consumed as input. The separate 80.330 GeV source chart has no pole-prediction status without the missing scheme map.' },
             { label: 'Z boson comparison coordinate', value: '91.18797809193725 GeV', note: 'The measured pair is consumed as input. The separate 91.119 GeV source chart has no pole-prediction status without the missing scheme map.' },
             { label: 'Higgs boson', value: '125.1995304097179 GeV', note: 'Conditional split chart. The pair consumed its measured targets; audit witness, not a physical prediction.' },

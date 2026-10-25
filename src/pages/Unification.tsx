@@ -98,14 +98,15 @@ export function UnificationPage() {
 
     return (
         <div>
+            <div className="section-header">
+                <span className="section-tag qft">Chain 2: QFT</span>
+                <h1 style={{ fontSize: '1.5rem', margin: 0 }}>Coupling Unification</h1>
+            </div>
+
             <div className="card" style={{ marginBottom: '16px' }}>
                 <h3>Independent entangled-pair candidate</h3>
                 <p><a href={ENTANGLED_PAIR_CANDIDATE.href}>{ENTANGLED_PAIR_CANDIDATE.author}</a> supplies the finite spectral expression with inverse {ENTANGLED_PAIR_CANDIDATE.inverse}. {ENTANGLED_PAIR_CANDIDATE.scope}</p>
                 <p>The running chart below keeps its own declared map and matching inputs. The candidate does not replace those equations or source-select particle masses.</p>
-            </div>
-            <div className="section-header">
-                <span className="section-tag qft">Chain 2: QFT</span>
-                <h1 style={{ fontSize: '1.5rem', margin: 0 }}>Coupling Unification</h1>
             </div>
 
             <p style={{ marginBottom: '16px' }}>
@@ -117,7 +118,7 @@ export function UnificationPage() {
             <div className="card" style={{ marginBottom: '20px', borderLeft: '3px solid var(--accent-cyan)' }}>
                 <h3 style={{ margin: '0 0 10px 0', fontSize: '0.95em' }}>How this surface reads</h3>
                 <div style={{ display: 'grid', gap: '8px', marginBottom: '10px' }}>
-                    {STANDARD_MODEL_SURFACE.slice(1).map((item) => (
+                    {STANDARD_MODEL_SURFACE.map((item) => (
                         <div key={item} style={{ fontSize: '0.82em', color: 'var(--text-secondary)' }}>
                             {item}
                         </div>
